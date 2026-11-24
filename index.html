@@ -171,7 +171,7 @@
             <select id="selModel" onchange="onYmmChange()"></select>
           </div>
         </div>
-        <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Live lookups so far:</b> Toyota Prius, Camry &amp; Corolla, Honda Civic &amp; Accord, Ford F-150 — mostly under Filters &amp; Fluids and Ignition. <b>Demo:</b> a 2004–2009 Prius + <b>Oil Filter</b> shows the finished format.</div>
+        <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Live lookups so far:</b> Toyota Prius, Camry &amp; Corolla, Honda Civic &amp; Accord, Ford F-150, Kia Sorento — under Filters &amp; Fluids, Ignition, and Transmission &amp; Drivetrain. <b>Demo:</b> a 2004–2009 Prius + <b>Oil Filter</b> shows the finished format.</div>
       </div>
     </div>
 
@@ -263,7 +263,8 @@
         { id: 'exhaust-pipe', name: 'Exhaust Pipe / Resonator' }, { id: 'egr-valve', name: 'EGR Valve' } ] },
       { name: 'Transmission & Drivetrain', parts: [
         { id: 'cv-axle', name: 'CV Axle' }, { id: 'clutch-kit', name: 'Clutch Kit' },
-        { id: 'transmission-filter', name: 'Transmission Filter' }, { id: 'u-joint', name: 'Universal Joint (U-Joint)' },
+        { id: 'transmission-filter', name: 'Transmission Filter' }, { id: 'torque-converter', name: 'Torque Converter' },
+        { id: 'u-joint', name: 'Universal Joint (U-Joint)' },
         { id: 'transmission-mount', name: 'Transmission Mount' }, { id: 'shift-cable', name: 'Shift Cable' } ] },
       { name: 'Filters & Fluids', parts: [
         { id: 'oil-filter', name: 'Oil Filter' }, { id: 'engine-air-filter', name: 'Engine Air Filter' },
@@ -303,6 +304,7 @@
     // Every number below was verified against a live catalog/listing source
     // before publishing (OEM catalogs, dealer fitment listings, PartsGeek
     // vehicle-specific listings, manufacturer manuals). Batch 2 added 2026-11-24.
+    // Batch 3 (Kia Sorento torque converter) added 2026-11-24.
     var VERIFIED = [
       {
         demo: true,
@@ -543,6 +545,23 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95605+spark+plug') }
         ],
         companion: 'Set of 8. Factory gap: 0.049–0.053 in. The 2015–2017 5.0L uses a different plug (SP-548) — do not mix them.'
+      },
+      {
+        partId: 'torque-converter', make: 'Kia', model: 'Sorento', y0: 2018, y1: 2020,
+        title: 'Torque Converter — 2018–2020 Kia Sorento (3.3L V6, 8-Speed Automatic)',
+        oemBrand: 'Kia (OEM)', oemPart: '45100-4G100',
+        rows: [
+          { brand: 'Florida Torque Converters', part: '42-KAB', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=42-KAB+torque+converter') },
+          { brand: 'Kia (OEM)', part: '45100-4G100', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+45100-4G100+torque+converter') }
+        ],
+        companion: '<b>Best value:</b> the remanufactured 42-KAB does the same job for roughly half the money of a new OEM unit. ' +
+                   '<b>Fitment:</b> this is the converter for the 8-speed A8LF1 automatic only — converter ID codes <b>KAB / KAC</b>, 23-spline. ' +
+                   'Converters for the older 6-speed Sorento do <b>not</b> fit, even though they look similar. ' +
+                   'The reman unit is sold with a refundable core charge — you get it back when the old converter is returned.'
       }
     ];
     var PARTS = {};
