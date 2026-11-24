@@ -199,7 +199,7 @@
   <script>
     // ================= DATA =================
     var MAKES_MODELS = {
-      'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner'],
+      'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
       'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V'],
       'Ford': ['F-150', 'F-150 3.5L EcoBoost', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
@@ -307,6 +307,7 @@
     // vehicle-specific listings, manufacturer manuals). Batch 2 added 2026-11-24.
     // Batch 3 (Kia Sorento torque converter) added 2026-11-24.
     // Batch 9 (Altima filters, F-150 3.5L EcoBoost, Corolla 2020-2024, Accord 2018-2022) merged 2026-11-24.
+    // Batch 10 (Toyota C-HR brakes + wheel — priority serviced-vehicle build) merged 2026-11-24.
     var VERIFIED = [
       {
         demo: true,
@@ -1483,6 +1484,85 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+DILKAR8P8SY+spark+plug') }
         ],
         companion: 'The factory plug is the <b>NGK DILKAR8P8SY</b> iridium — Honda 12290-6A0-A01 is the same plug in a Honda box (Bosch\'s cross-reference lists the two numbers as equivalents). Set of 4. The 2.0L turbo takes a different heat range — do not mix them.'
+      },
+      {
+        partId: 'rear-brake-pads', make: 'Toyota', model: 'C-HR', y0: 2019, y1: 2022,
+        title: 'Rear Brake Pads — 2019–2022 Toyota C-HR (2.0L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04466-F4010',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '04466-F4010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04466-F4010+rear+brake+pads') },
+          { brand: 'Bosch', part: 'BE2202H', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Bosch+BE2202H+brake+pads') },
+          { brand: 'Bosch', part: 'BC2202', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Bosch+BC2202+brake+pads') }
+        ],
+        companion: '<b>Build date matters on this car:</b> this pad (FMSI shape <b>D2202</b>) fits C-HRs <b>built June 2018 or later</b> — check the build date on the driver\'s door-jamb label before you buy. Earlier-build cars take a different pad (Toyota 04466-10010) that is a different shape. <b>Watch out:</b> Akebono pads widely listed for "2018–2022 C-HR" fit only the early cars — if a listing doesn\'t say D2202 or "from 06/2018," don\'t buy it. <b>Service note:</b> this car has an electric parking brake — the rear caliper motors must be retracted (scan tool or service mode) before the pistons will push back; never force them with a clamp. Shim kit: Toyota 04946-F4010 · Hardware kit: 04948-F4010.'
+      },
+      {
+        partId: 'rear-brake-rotors', make: 'Toyota', model: 'C-HR', y0: 2019, y1: 2021,
+        title: 'Rear Brake Rotor — 2019–2021 Toyota C-HR (2.0L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '42431-F4020',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '42431-F4020', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+42431-F4020+rear+brake+rotor') },
+          { brand: 'Raybestos', part: '982498R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Raybestos+982498R+rotor') },
+          { brand: 'Brembo', part: '08.E033.11', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Brembo+08.E033.11+rotor') }
+        ],
+        companion: 'Solid rear disc, <b>292 mm</b> diameter (minimum thickness 9.5 mm). <b>Trap:</b> some "C-HR" brake kits bundle a smaller 281 mm disc (Toyota 42431-78010, a Lexus NX disc) — that is the early-production rear setup and it does <b>not</b> fit cars in this entry\'s range. If a kit doesn\'t state 292 mm, skip it. Priced each — rotors are replaced in pairs.'
+      },
+      {
+        partId: 'front-brake-pads', make: 'Toyota', model: 'C-HR', y0: 2018, y1: 2019,
+        title: 'Front Brake Pads — 2018–2019 Toyota C-HR (2.0L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04465-F4021',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '04465-F4021', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04465-F4021+front+brake+pads') },
+          { brand: 'Akebono', part: 'ACT2065', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Akebono+ACT2065+brake+pads') },
+          { brand: 'Raybestos', part: 'EHT2065H', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Raybestos+EHT2065H+brake+pads') }
+        ],
+        companion: 'FMSI shape <b>D2065</b>. This is Toyota\'s current number — it supersedes 04465-F4010 and 04465-F4020, and either earlier number is the same pad. <b>Production split:</b> C-HRs built from <b>October 2019</b> (the 2020 model year) switched to a larger 305 mm front brake system with different pads (Toyota 04465-33480) — if your C-HR is a 2020 or newer, this is not your pad. Shim kit: Toyota 04945-F4020.'
+      },
+      {
+        partId: 'front-brake-rotors', make: 'Toyota', model: 'C-HR', y0: 2018, y1: 2019,
+        title: 'Front Brake Rotor — 2018–2019 Toyota C-HR (2.0L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '43512-F4010',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '43512-F4010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+43512-F4010+front+brake+rotor') },
+          { brand: 'Brembo', part: '09.D417.11', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Brembo+09.D417.11+rotor') }
+        ],
+        companion: 'Vented front disc, <b>298 mm</b> diameter (minimum thickness 25 mm). <b>Watch out:</b> some catalogs list a 305 mm rotor (Toyota 43512-33150) for this car by model year — that is the late-production system fitted from October 2019 builds (2020+ models) and it does <b>not</b> fit cars in this entry\'s range. Priced each — rotors are replaced in pairs.'
+      },
+      {
+        partId: 'wheel-rim', make: 'Toyota', model: 'C-HR', y0: 2018, y1: 2022,
+        title: 'Wheel / Rim (18" Alloy) — 2018–2022 Toyota C-HR (XLE & Limited)',
+        oemBrand: 'Toyota (OEM)', oemPart: '42611-F4040',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '42611-F4040', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+42611-F4040+wheel') },
+          { brand: 'Toyota (OEM)', part: '75224 (Hollander)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=75224+C-HR+wheel') }
+        ],
+        companion: 'The 18-inch machined-face / black split 5-spoke alloy fitted to the <b>XLE and Limited</b> trims — the LE came on 17-inch wheels, a different rim. Size <b>18 × 7</b>, offset ET50, bolt pattern 5×114.3, and the <b>same wheel fits all four corners</b>. Tire: 225/50R18. Salvage yards and remanufacturers list this wheel under Hollander interchange <b>75224</b>. Center cap, lug nuts and the TPMS sensor transfer over from your old wheel.'
       }
     ];
     var PARTS = {};
