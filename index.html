@@ -201,7 +201,7 @@
     var MAKES_MODELS = {
       'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner'],
       'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V'],
-      'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
+      'Ford': ['F-150', 'F-150 3.5L EcoBoost', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
       'Ram': ['1500', '2500', 'ProMaster'],
@@ -306,6 +306,7 @@
     // before publishing (OEM catalogs, dealer fitment listings, PartsGeek
     // vehicle-specific listings, manufacturer manuals). Batch 2 added 2026-11-24.
     // Batch 3 (Kia Sorento torque converter) added 2026-11-24.
+    // Batch 9 (Altima filters, F-150 3.5L EcoBoost, Corolla 2020-2024, Accord 2018-2022) merged 2026-11-24.
     var VERIFIED = [
       {
         demo: true,
@@ -1281,6 +1282,207 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-530+spark+plug') }
         ],
         companion: 'Iridium plugs. Ford\'s current service number is <b>SP-530X</b> — the same plug (engineering number AYFS-32Y-R, which is how the 2013–2014 manuals list it). Set of 4. Factory gap: 0.049–0.053 in. This is the 2.5L non-turbo plug — the EcoBoost engines take different plugs.'
+      },
+      // ---- Batch 9 (merged 2026-11-24): Altima air/cabin filters, F-150
+      // 3.5L EcoBoost, Corolla 2020-2024 2.0L, Accord 2018-2022 1.5T.
+      // The EcoBoost F-150 entries use the distinct model label
+      // 'F-150 3.5L EcoBoost': the matcher has no engine field and takes the
+      // first model match, so EcoBoost plugs (SP-534 / SP-578) and the 5.0L
+      // plug (SP-551, under plain 'F-150') can never cross.
+      {
+        partId: 'engine-air-filter', make: 'Nissan', model: 'Altima', y0: 2013, y1: 2018,
+        title: 'Engine Air Filter — 2013–2018 Nissan Altima (2.5L, Sedan)',
+        oemBrand: 'Nissan (OEM)', oemPart: '16546-3TA0J',
+        rows: [
+          { brand: 'Nissan (OEM)', part: '16546-3TA0J', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+16546-3TA0J+air+filter') },
+          { brand: 'Nissan (OEM)', part: '16546-3TA0A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+16546-3TA0A+air+filter') }
+        ],
+        companion: 'The current Nissan number is <b>16546-3TA0J</b> — it supersedes the earlier 16546-3TA0A, and either number fits this car.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Nissan', model: 'Altima', y0: 2013, y1: 2018,
+        title: 'Cabin Air Filter — 2013–2018 Nissan Altima (2.5L, Sedan)',
+        oemBrand: 'Nissan (OEM)', oemPart: '27277-3JC1C',
+        rows: [
+          { brand: 'Nissan (OEM)', part: '27277-3JC1C', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+27277-3JC1C+cabin+air+filter') },
+          { brand: 'Nissan (OEM)', part: '27277-3JC1A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+27277-3JC1A+cabin+air+filter') }
+        ],
+        companion: 'This is Nissan\'s in-cabin microfilter — it sits behind the glove box. The current number is <b>27277-3JC1C</b>; it supersedes 27277-3JC1B and the original 27277-3JC1A, and the earlier numbers fit the same housing.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2015, y1: 2020,
+        title: 'Oil Filter — 2015–2020 Ford F-150 (3.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-500-S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-500-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B001KR1BQE?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'FL-500-S', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-500-S+oil+filter') },
+          { brand: 'WIX', part: '57502', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57502+oil+filter') },
+          { brand: 'FRAM', part: 'PH10575', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH10575+oil+filter') }
+        ],
+        companion: 'Spin-on filter. Ford\'s owner\'s manuals list this same <b>FL-500-S</b> for the 3.5L EcoBoost in every year 2015–2020 — it is also the 5.0L V8 filter. The 2.7L EcoBoost is the odd one out (it takes a cartridge, FL-2062).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2015, y1: 2020,
+        title: 'Engine Air Filter — 2015–2020 Ford F-150 (3.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1883',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1883', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B000V53VR8?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'FA-1883', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1883+air+filter') },
+          { brand: 'FRAM', part: 'CA10262', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA10262+air+filter') }
+        ],
+        companion: 'One air filter serves the whole 2015–2020 F-150 line — Ford\'s manuals list <b>FA-1883</b> for the 3.5L EcoBoost and every other engine in these trucks.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2015, y1: 2019,
+        title: 'Spark Plugs — 2015–2019 Ford F-150 (3.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-534',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-534', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-534+spark+plug') }
+        ],
+        companion: 'Set of 6. Ford\'s owner\'s manuals list <b>SP-534</b> for the 3.5L EcoBoost in 2015, 2018 and 2019 — the second-generation EcoBoost (2017+) kept the same plug. <b>2020 trucks take a different plug (SP-578)</b> — see the 2020 entry. Some websites list SP-550 for these years; that number does not appear in Ford\'s manuals for this engine.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2020, y1: 2020,
+        title: 'Spark Plugs — 2020 Ford F-150 (3.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-578',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-578', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-578+spark+plug') }
+        ],
+        companion: 'Set of 6. New plug number for 2020 — Ford\'s 2020 owner\'s manual lists <b>SP-578</b> for the 3.5L EcoBoost, replacing the SP-534 used through 2019. Do not mix the two.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Corolla', y0: 2020, y1: 2024,
+        title: 'Oil Filter — 2020–2024 Toyota Corolla (2.0L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZN1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-YZZN1+oil+filter') },
+          { brand: 'Toyota (OEM)', part: '90915-10009', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-10009+oil+filter') }
+        ],
+        companion: 'Spin-on filter — <b>90915-YZZN1</b> is Toyota\'s service number; it replaces the factory OE number 90915-10009, and either fits. This is NOT the cartridge element (04152-type) the older 1.8L Corollas used.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'Corolla', y0: 2020, y1: 2024,
+        title: 'Engine Air Filter — 2020–2024 Toyota Corolla (2.0L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-F0020',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-F0020', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0DY8RVBT9?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '17801-F0020', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-F0020+air+filter') }
+        ],
+        companion: 'Toyota\'s own Fast Moving Parts Catalog lists <b>17801-F0020</b> for the 2.0L (M20A-FKS) Corolla from 2020 on. The Corolla Hybrid uses a different filter — do not cross them.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Toyota', model: 'Corolla', y0: 2020, y1: 2024,
+        title: 'Cabin Air Filter — 2020–2024 Toyota Corolla (2.0L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '87139-58010',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '87139-58010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+87139-58010+cabin+air+filter') }
+        ],
+        companion: 'Toyota\'s catalog number for this car\'s cabin filter is <b>87139-58010</b>. It sits behind the glove box and swaps out in minutes with no tools.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'Corolla', y0: 2020, y1: 2024,
+        title: 'Spark Plugs — 2020–2024 Toyota Corolla (2.0L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90919-01297',
+        rows: [
+          { brand: 'DENSO', part: 'FC20HR-Q8', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+FC20HR-Q8+spark+plug') },
+          { brand: 'Toyota (OEM)', part: '90919-01297', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01297+spark+plug') }
+        ],
+        companion: 'The factory plug is the <b>DENSO FC20HR-Q8</b> iridium (Toyota 90919-01297 is the same plug in a Toyota box). Set of 4. Factory gap: 0.032 in (0.8 mm). The 1.8L Corolla uses a different plug (FC16HR-Q8) — do not mix them.'
+      },
+      {
+        partId: 'oil-filter', make: 'Honda', model: 'Accord', y0: 2018, y1: 2022,
+        title: 'Oil Filter — 2018–2022 Honda Accord (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '15400-PLM-A02',
+        rows: [
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00BFDFJA2?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+15400-PLM-A02+oil+filter') },
+          { brand: 'FRAM', part: 'PH7317', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH7317+oil+filter') }
+        ],
+        companion: 'Spin-on filter. Honda uses this same <b>15400-PLM-A02</b> across nearly its whole line — WIX\'s catalog lists it as the original-equipment number for the 1.5L turbo Accord. It is the same filter this site lists for the Civic and the 2013–2017 Accord.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Honda', model: 'Accord', y0: 2018, y1: 2022,
+        title: 'Engine Air Filter — 2018–2022 Honda Accord (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '17220-6A0-A00',
+        rows: [
+          { brand: 'Honda (OEM)', part: '17220-6A0-A00', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+17220-6A0-A00+air+filter') },
+          { brand: 'FRAM', part: 'CA12290', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12290+air+filter') }
+        ],
+        companion: 'Panel filter for the 1.5L turbo only. Baldwin\'s catalog crosses its PA10433 to Honda <b>17220-6A0-A00</b> for the 2018–2023 Accord, and Honda dealer listings confirm the 6A0 air-cleaner parts family for 2018–2022. The 2.0L turbo and the Hybrid use different elements — do not cross them.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Honda', model: 'Accord', y0: 2018, y1: 2022,
+        title: 'Cabin Air Filter — 2018–2022 Honda Accord (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '80292-SDA-407',
+        rows: [
+          { brand: 'Honda (OEM)', part: '80292-SDA-407', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+80292-SDA-407+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF10134', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF10134+cabin+air+filter') }
+        ],
+        companion: 'The tenth-generation Accord kept the same cabin filter as the previous generation — WIX\'s catalog lists <b>80292-SDA-407</b> as the original-equipment number for the 1.5L turbo Accord. It sits behind the glove box and swaps out in minutes with no tools.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Honda', model: 'Accord', y0: 2018, y1: 2022,
+        title: 'Spark Plugs — 2018–2022 Honda Accord (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '12290-6A0-A01',
+        rows: [
+          { brand: 'Honda (OEM)', part: '12290-6A0-A01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+12290-6A0-A01+spark+plug') },
+          { brand: 'NGK', part: 'DILKAR8P8SY', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+DILKAR8P8SY+spark+plug') }
+        ],
+        companion: 'The factory plug is the <b>NGK DILKAR8P8SY</b> iridium — Honda 12290-6A0-A01 is the same plug in a Honda box (Bosch\'s cross-reference lists the two numbers as equivalents). Set of 4. The 2.0L turbo takes a different heat range — do not mix them.'
       }
     ];
     var PARTS = {};
