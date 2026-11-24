@@ -113,6 +113,35 @@
     .building-box a { color: #0f2439; font-weight: 800; }
     .companion { font-size: 13px; color: #334155; margin-top: 12px; }
     .companion b { color: #0f2439; }
+    .qual-box {
+      margin-top: 12px; border: 1.5px solid #0f2439; border-radius: 10px;
+      padding: 12px 14px; background: #f8fafc;
+    }
+    .qual-q { font-size: 14.5px; font-weight: 800; color: #0f2439; }
+    .qual-help { font-size: 12.5px; color: #475569; margin: 6px 0 0; }
+    .qual-opts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .qual-btn {
+      padding: 8px 12px; font-size: 13px; font-weight: 700;
+      border-radius: 999px; border: 1.5px solid #cbd5e1;
+      background: #ffffff; color: #0f2439; cursor: pointer;
+    }
+    .qual-btn:hover { border-color: #b48327; }
+    .qual-btn.selected { background: #0f2439; color: #ffffff; border-color: #0f2439; border-bottom: 3px solid #b48327; }
+    .warn-banner {
+      margin-top: 12px; border: 1.5px solid #b45309; background: #fffbeb;
+      border-radius: 10px; padding: 11px 14px; font-size: 13.5px; color: #78350f;
+    }
+    .fits-banner {
+      margin-top: 12px; border: 1.5px solid #059669; background: #ecfdf5;
+      border-radius: 10px; padding: 11px 14px; font-size: 13.5px; color: #065f46;
+    }
+    .variant-head {
+      margin-top: 14px; font-size: 13px; font-weight: 800; color: #0f2439;
+      text-transform: uppercase; letter-spacing: 0.03em;
+      border-bottom: 2px solid #b48327; padding-bottom: 4px;
+    }
+    .variant-note { font-size: 13px; color: #334155; margin-top: 10px; }
+    .variant-note b { color: #0f2439; }
     .footer { max-width: 960px; margin: 20px auto 0; padding: 0 12px; font-size: 12.5px; color: #475569; }
     .footer .verse { color: #0f2439; font-size: 13.5px; text-align: center; margin: 18px 0 4px; }
     .footer .verse-ref { text-align: center; color: #b48327; font-weight: 800; margin: 0 0 14px; }
@@ -309,6 +338,15 @@
     // Batch 9 (Altima filters, F-150 3.5L EcoBoost, Corolla 2020-2024, Accord 2018-2022) merged 2026-11-24.
     // Batch 10 (Toyota C-HR brakes + wheel — priority serviced-vehicle build) merged 2026-11-24.
     // Batch 13 (TX 350 coolant + Corolla door lock actuators — priority leftovers; Highlander 2014-19 + Forester 2014-18 general batch; FIRST-PICK row ordering applied) merged 2026-11-24.
+    // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
+    // `qualifier: { question, helpText, options: [...] }`. Each option either
+    // has `useEntry: true` (it IS this entry's oemPart/rows) or carries its own
+    // oemBrand/oemPart/rows — or only a `note`, making it a warning-only variant
+    // that is explained but never sold. Unanswered / "not sure" always shows
+    // ALL variants grouped under a warning — a search is never blocked.
+    // First user: C-HR rear brake pads (build-date split, both pads verified
+    // from Toyota's Fast Moving Parts Catalog: 04466-10010 to 05/2018
+    // production, 04466-F4010 from 06/2018, Japan-built ZGX10).
     var VERIFIED = [
       {
         demo: true,
@@ -1639,6 +1677,23 @@
             url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Bosch+BC2202+brake+pads') }
         ],
+        qualifier: {
+          question: 'When was your C-HR built?',
+          helpText: 'The build month and year are printed on the certification label on the driver\'s door jamb — look for "MFD BY TOYOTA" and a date like 06/18. US C-HRs are Japan-built, and Toyota changed the rear pad shape in <b>June 2018</b> production (Toyota Fast Moving Parts Catalog): the two pads look similar but are different shapes and do <b>not</b> interchange.',
+          options: [
+            { label: 'Built June 2018 or later', useEntry: true },
+            { label: 'Built before June 2018', oemBrand: 'Toyota (OEM)', oemPart: '04466-10010',
+              rows: [
+                { brand: 'Toyota (OEM)', part: '04466-10010', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04466-10010+rear+brake+pads') },
+                { brand: 'Akebono', part: 'ACT1879', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Akebono+ACT1879+brake+pads') }
+              ],
+              note: 'Early-production cars take the <b>Akebono-system</b> pad (FMSI shape <b>D1805</b>) — a different shape from the later D2202 pad, and the two do <b>not</b> interchange. This early pad is what most "2018–2022 C-HR" listings are actually selling: right for early cars, wrong for later ones. Shim kit: Toyota 04946-48130 · Fitting kit: 04948-58010 (Toyota FMPC). Same service note as the later cars: this car has an electric parking brake — retract the caliper motors (scan tool or service mode) before pushing the pistons back; never force them with a clamp.' }
+          ]
+        },
         companion: '<b>Build date matters on this car:</b> this pad (FMSI shape <b>D2202</b>) fits C-HRs <b>built June 2018 or later</b> — check the build date on the driver\'s door-jamb label before you buy. Earlier-build cars take a different pad (Toyota 04466-10010) that is a different shape. <b>Watch out:</b> Akebono pads widely listed for "2018–2022 C-HR" fit only the early cars — if a listing doesn\'t say D2202 or "from 06/2018," don\'t buy it. <b>Service note:</b> this car has an electric parking brake — the rear caliper motors must be retracted (scan tool or service mode) before the pistons will push back; never force them with a clamp. Shim kit: Toyota 04946-F4010 · Hardware kit: 04948-F4010.'
       },
       {
@@ -2123,6 +2178,17 @@
     }
 
     // ================= RESULT =================
+    // Fitment-flexibility state (De, 2026-11-24): an entry may carry an optional
+    // `qualifier` — one extra question (trim, build date, ...) whose options map
+    // to variants of the part. qualifierPick: null = not answered yet,
+    // -1 = "not sure — show all", >= 0 = the chosen option index.
+    // An unanswered qualifier NEVER blocks results: the default view shows every
+    // variant grouped under a warning. Entries without a qualifier render
+    // exactly as they always have.
+    var currentPartId = null;
+    var currentEntry = null;
+    var qualifierPick = null;
+
     function vehicleMatches(e) {
       if (!vehicle.year || !vehicle.make || !vehicle.model) return false;
       var y = parseInt(vehicle.year, 10);
@@ -2130,42 +2196,88 @@
              vehicle.model.toLowerCase() === e.model.toLowerCase() &&
              y >= e.y0 && y <= e.y1;
     }
-    function renderVerified(e) {
-      var h = e.demo ? '<p style="margin:12px 0 0;"><span class="demo-badge">Demo entry — the finished format</span></p>' : '';
-      h += '<div style="font-size:14.5px; font-weight:800; color:#0f2439; margin-top:8px;">' + esc(e.title) + '</div>';
-      h += '<p style="font-size:13.5px; color:#334155; margin:6px 0 0;">OEM part number: <b>' +
-           esc(e.oemBrand) + ' ' + esc(e.oemPart) + '</b></p>';
-      h += '<table class="compare"><thead><tr><th>Brand</th><th>Part #</th><th>Price</th><th>Where</th></tr></thead><tbody>';
-      for (var i = 0; i < e.rows.length; i++) {
-        var r = e.rows[i];
+    function rowsTableHtml(rows) {
+      var h = '<table class="compare"><thead><tr><th>Brand</th><th>Part #</th><th>Price</th><th>Where</th></tr></thead><tbody>';
+      for (var i = 0; i < rows.length; i++) {
+        var r = rows[i];
         h += '<tr><td>' + esc(r.brand) + '</td><td>' + esc(r.part) + '</td><td>' + esc(r.price) +
              '</td><td class="where"><a href="' + r.url + '" target="_blank" rel="noopener sponsored">' +
              esc(r.where) + '</a></td></tr>';
       }
       h += '</tbody></table>';
+      return h;
+    }
+    // Renders one variant: the entry itself (opt == null or opt.useEntry) or one
+    // qualifier option. An option with a note but no rows is a warning-only
+    // variant — explained, never sold.
+    function variantHtml(e, opt) {
+      var useEntry = !opt || opt.useEntry;
+      var brand = useEntry ? e.oemBrand : opt.oemBrand;
+      var part = useEntry ? e.oemPart : opt.oemPart;
+      var rows = useEntry ? e.rows : opt.rows;
+      var h = '';
+      if (part) {
+        h += '<p style="font-size:13.5px; color:#334155; margin:6px 0 0;">OEM part number: <b>' +
+             esc(brand) + ' ' + esc(part) + '</b></p>';
+      }
+      if (rows && rows.length) h += rowsTableHtml(rows);
+      if (opt && opt.note) h += '<p class="variant-note">' + opt.note + '</p>';
+      return h;
+    }
+    function qualifierHtml(e) {
+      var q = e.qualifier;
+      var h = '<div class="qual-box">';
+      h += '<div class="qual-q">One quick question: ' + esc(q.question) + '</div>';
+      if (q.helpText) h += '<p class="qual-help">' + q.helpText + '</p>';
+      h += '<div class="qual-opts">';
+      for (var i = 0; i < q.options.length; i++) {
+        h += '<button type="button" class="qual-btn' + (qualifierPick === i ? ' selected' : '') +
+             '" onclick="pickVariant(' + i + ')">' + esc(q.options[i].label) + '</button>';
+      }
+      h += '<button type="button" class="qual-btn' + (qualifierPick === -1 ? ' selected' : '') +
+           '" onclick="pickVariant(-1)">Not sure — show me all of them</button>';
+      h += '</div></div>';
+      return h;
+    }
+    function renderVerified(e) {
+      var h = e.demo ? '<p style="margin:12px 0 0;"><span class="demo-badge">Demo entry — the finished format</span></p>' : '';
+      h += '<div style="font-size:14.5px; font-weight:800; color:#0f2439; margin-top:8px;">' + esc(e.title) + '</div>';
+      if (!e.qualifier) {
+        h += variantHtml(e, null);
+      } else {
+        h += qualifierHtml(e);
+        if (qualifierPick === null || qualifierPick === -1) {
+          h += '<div class="warn-banner">⚠ <b>Careful — this part changed during production, so one version does not fit all of these cars.</b> ' +
+               'Every version is shown below, grouped under the cars it fits. Match yours before you buy — and if you\'re not sure, ' +
+               'text De a photo of your door label at <a href="sms:13607728205">360-772-8205</a> and he\'ll tell you which one your car takes.</div>';
+          for (var i = 0; i < e.qualifier.options.length; i++) {
+            h += '<div class="variant-head">' + esc(e.qualifier.options[i].label) + '</div>';
+            h += variantHtml(e, e.qualifier.options[i]);
+          }
+        } else {
+          var chosen = e.qualifier.options[qualifierPick];
+          var hasRows = chosen.useEntry || (chosen.rows && chosen.rows.length);
+          h += '<div class="fits-banner">✓ <b>Fits your selection:</b> ' + esc(chosen.label) +
+               (hasRows ? ' — the parts below are the ones for your car.' : '') + '</div>';
+          h += variantHtml(e, chosen);
+        }
+      }
       h += '<p class="fit-note">Prices change daily, so we send you to today\'s price at the store instead of printing a stale one. ' +
            'More stores join this comparison as affiliate agreements are signed.</p>';
       if (e.companion) h += '<p class="companion">' + e.companion + '</p>';
       h += fitNoteHtml();
       return h;
     }
-    function selectPart(id, btn) {
-      var all = document.querySelectorAll('.part-btn');
-      for (var i = 0; i < all.length; i++) all[i].classList.remove('selected');
-      if (btn) btn.classList.add('selected');
-      var part = PARTS[id];
+    function renderResult(scroll) {
+      var part = PARTS[currentPartId];
       if (!part) return;
       document.getElementById('resultState').textContent = part.name;
       var h = '<div style="font-size:15px; font-weight:800; color:#0f2439;">' + esc(part.name) + '</div>';
       h += '<p style="font-size:13px; color:#475569; margin:4px 0 0;">Category: ' + esc(part.cat) + ' · Lookup ' +
            (vehicle.label ? 'for your <b>' + esc(vehicle.label) + '</b>' :
             '(no vehicle picked yet — pick your vehicle in Step 1 for exact fitment)') + '.</p>';
-      var entry = null;
-      for (var j = 0; j < VERIFIED.length; j++) {
-        if (VERIFIED[j].partId === id && vehicleMatches(VERIFIED[j])) { entry = VERIFIED[j]; break; }
-      }
-      if (entry) {
-        h += renderVerified(entry);
+      if (currentEntry) {
+        h += renderVerified(currentEntry);
       } else {
         h += '<div class="building-box">Part number lookup for this selection is being built — text De at ' +
              '<a href="sms:13607728205">360-772-8205</a> and he\'ll get you the number.</div>';
@@ -2173,7 +2285,25 @@
       }
       h += ctaHtml();
       document.getElementById('resultBody').innerHTML = h;
-      document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (scroll) document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function pickVariant(i) {
+      qualifierPick = i;
+      renderResult(false);
+    }
+    function selectPart(id, btn) {
+      var all = document.querySelectorAll('.part-btn');
+      for (var i = 0; i < all.length; i++) all[i].classList.remove('selected');
+      if (btn) btn.classList.add('selected');
+      var part = PARTS[id];
+      if (!part) return;
+      currentPartId = id;
+      qualifierPick = null;
+      currentEntry = null;
+      for (var j = 0; j < VERIFIED.length; j++) {
+        if (VERIFIED[j].partId === id && vehicleMatches(VERIFIED[j])) { currentEntry = VERIFIED[j]; break; }
+      }
+      renderResult(true);
     }
 
     // ================= INIT =================
