@@ -264,6 +264,7 @@
       { name: 'Transmission & Drivetrain', parts: [
         { id: 'cv-axle', name: 'CV Axle' }, { id: 'clutch-kit', name: 'Clutch Kit' },
         { id: 'transmission-filter', name: 'Transmission Filter' }, { id: 'torque-converter', name: 'Torque Converter' },
+        { id: 'complete-transmission', name: 'Complete Transmission' },
         { id: 'u-joint', name: 'Universal Joint (U-Joint)' },
         { id: 'transmission-mount', name: 'Transmission Mount' }, { id: 'shift-cable', name: 'Shift Cable' } ] },
       { name: 'Filters & Fluids', parts: [
@@ -562,6 +563,25 @@
                    '<b>Fitment:</b> this is the converter for the 8-speed A8LF1 automatic only — converter ID codes <b>KAB / KAC</b>, 23-spline. ' +
                    'Converters for the older 6-speed Sorento do <b>not</b> fit, even though they look similar. ' +
                    'The reman unit is sold with a refundable core charge — you get it back when the old converter is returned.'
+      },
+      // Batch 4 (Sorento complete transmission) added 2026-11-24. OEM assembly number is
+      // VIN-specific and NOT published as verified — entry is search-based, see companion.
+      {
+        partId: 'complete-transmission', make: 'Kia', model: 'Sorento', y0: 2019, y1: 2020,
+        title: 'Complete Transmission — 2019–2020 Kia Sorento (3.3L V6, 8-Speed Automatic A8LF1)',
+        oemBrand: 'Kia (OEM)', oemPart: 'confirm by VIN before ordering',
+        rows: [
+          { brand: 'Used — complete transmission', part: 'A8LF1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=2020+Kia+Sorento+3.3L+transmission') },
+          { brand: 'Remanufactured / rebuilt', part: 'A8LF1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=A8LF1+transmission') }
+        ],
+        companion: '<b>Best value:</b> a good used A8LF1 usually costs far less than a remanufactured or new unit, and the torque converter is included with a complete transmission. ' +
+                   '<b>Fitment:</b> this is the 8-speed A8LF1 for the 3.3L V6 only — 2019–2020. The 2018-and-older 3.3L and every 2.4L Sorento use a 6-speed that does <b>not</b> fit. ' +
+                   'Interchange reference: Hollander 400-10498. Kia sells this transmission as a complete assembly and the exact assembly number is specific to your VIN — confirm it by VIN before you buy. ' +
+                   'Core charges vary by seller, and a complete transmission ships by freight, not parcel.'
       }
     ];
     var PARTS = {};
