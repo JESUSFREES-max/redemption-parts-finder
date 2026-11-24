@@ -171,7 +171,7 @@
             <select id="selModel" onchange="onYmmChange()"></select>
           </div>
         </div>
-        <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Demo:</b> pick a 2004–2009 Toyota Prius, then tap <b>Oil Filter</b> under Filters &amp; Fluids to see a finished lookup.</div>
+        <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Live lookups so far:</b> Toyota Prius, Camry &amp; Corolla, Honda Civic &amp; Accord, Ford F-150 — mostly under Filters &amp; Fluids and Ignition. <b>Demo:</b> a 2004–2009 Prius + <b>Oil Filter</b> shows the finished format.</div>
       </div>
     </div>
 
@@ -300,8 +300,12 @@
     // VERIFIED entries — the ONLY place part numbers appear on this site.
     // Comparison rows list ONLY affiliate-agreement stores (Amazon, eBay).
     // Stores without an affiliate agreement never appear in the table.
+    // Every number below was verified against a live catalog/listing source
+    // before publishing (OEM catalogs, dealer fitment listings, PartsGeek
+    // vehicle-specific listings, manufacturer manuals). Batch 2 added 2026-11-24.
     var VERIFIED = [
       {
+        demo: true,
         partId: 'oil-filter', make: 'Toyota', model: 'Prius', y0: 2004, y1: 2009,
         title: 'Oil Filter — 2004–2009 Toyota Prius',
         oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZF2',
@@ -314,9 +318,233 @@
         ],
         companion: '<b>Grab at the same time:</b> drain plug gasket — Toyota (OEM) <b>90430-12031</b>. ' +
                    '<b>Oil for this car:</b> 5W-30, about 3.9 qt with a filter change.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Camry', y0: 2018, y1: 2024,
+        title: 'Oil Filter — 2018–2024 Toyota Camry (2.5L 4-Cylinder)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZN1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6SQ1M2T?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-YZZN1+oil+filter') },
+          { brand: 'FRAM', part: 'PH4967', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH4967+oil+filter') }
+        ],
+        companion: 'Toyota\'s previous number for this same filter is <b>90915-YZZF2</b> — either number is the right spin-on filter for the 2.5L.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'Camry', y0: 2018, y1: 2024,
+        title: 'Engine Air Filter — 2018–2024 Toyota Camry (2.5L 4-Cylinder)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-F0050',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-F0050', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-F0050+air+filter') },
+          { brand: 'WIX', part: 'WA10859', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10859+air+filter') }
+        ]
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Corolla', y0: 2014, y1: 2015,
+        title: 'Oil Filter (Cartridge) — 2014–2015 Toyota Corolla (1.8L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04152-YZZA6',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '04152-YZZA6', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0044AZ426?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '04152-YZZA6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04152-YZZA6+oil+filter') },
+          { brand: 'WIX', part: '57064', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57064+oil+filter') }
+        ],
+        companion: 'This is a cartridge element — it goes inside the reusable filter housing under the engine.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Corolla', y0: 2016, y1: 2019,
+        title: 'Oil Filter (Spin-On) — 2016–2019 Toyota Corolla (1.8L, as equipped)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZN1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6SQ1M2T?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-YZZN1+oil+filter') },
+          { brand: 'WIX', part: '51394', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51394+oil+filter') }
+        ],
+        companion: '<b>Check before you buy:</b> 2016–2019 Corollas came with BOTH filter styles. If your car has a cartridge housing instead of a spin-on can, you need Toyota <b>04152-YZZA6</b> — look at what is on the car first.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'Corolla', y0: 2009, y1: 2019,
+        title: 'Engine Air Filter — 2009–2019 Toyota Corolla (1.8L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-0T030',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-0T030', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-0T030+air+filter') },
+          { brand: 'FRAM', part: 'CA10190', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA10190+air+filter') }
+        ]
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Oil Filter (Cartridge) — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04152-YZZA6',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '04152-YZZA6', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0044AZ426?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '04152-YZZA6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04152-YZZA6+oil+filter') },
+          { brand: 'FRAM', part: 'CH10358', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH10358+oil+filter') }
+        ],
+        companion: 'This is a cartridge element — it goes inside the reusable filter housing under the engine.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Engine Air Filter — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-37020',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-37020', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-37020+air+filter') },
+          { brand: 'Premium Guard', part: 'PA6114', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Premium+Guard+PA6114+air+filter') },
+          { brand: 'FRAM', part: 'CA10741', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA10741+air+filter') }
+        ]
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Spark Plugs — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90919-01253',
+        rows: [
+          { brand: 'DENSO', part: 'SC20HR11', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+SC20HR11+spark+plug') },
+          { brand: 'Toyota (OEM)', part: '90919-01253', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01253+spark+plug') }
+        ],
+        companion: 'The factory plug is the <b>DENSO SC20HR11</b> iridium (Toyota 90919-01253 is the same plug in a Toyota box). Set of 4. Factory gap: 0.043 in. Toyota later superseded it with a hotter plug (90919-01275 / DENSO SC16HR11) — either is a correct service plug for this engine.'
+      },
+      {
+        partId: 'oil-filter', make: 'Honda', model: 'Civic', y0: 2016, y1: 2021,
+        title: 'Oil Filter — 2016–2021 Honda Civic (2.0L)',
+        oemBrand: 'Honda (OEM)', oemPart: '15400-PLM-A02',
+        rows: [
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00BFDFJA2?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57356XP', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5SZN9S?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+15400-PLM-A02+oil+filter') }
+        ]
+      },
+      {
+        partId: 'engine-air-filter', make: 'Honda', model: 'Civic', y0: 2016, y1: 2021,
+        title: 'Engine Air Filter — 2016–2021 Honda Civic (2.0L)',
+        oemBrand: 'Honda (OEM)', oemPart: '17220-5BA-A00',
+        rows: [
+          { brand: 'Honda (OEM)', part: '17220-5BA-A00', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+17220-5BA-A00+air+filter') },
+          { brand: 'WIX', part: 'WA10416', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10416+air+filter') }
+        ],
+        companion: 'This is the 2.0L non-turbo filter — the 1.5L turbo Civic uses a different one.'
+      },
+      {
+        partId: 'oil-filter', make: 'Honda', model: 'Accord', y0: 2013, y1: 2017,
+        title: 'Oil Filter — 2013–2017 Honda Accord (2.4L)',
+        oemBrand: 'Honda (OEM)', oemPart: '15400-PLM-A02',
+        rows: [
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00BFDFJA2?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+15400-PLM-A02+oil+filter') },
+          { brand: 'FRAM', part: 'PH7317', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH7317+oil+filter') }
+        ]
+      },
+      {
+        partId: 'engine-air-filter', make: 'Honda', model: 'Accord', y0: 2013, y1: 2017,
+        title: 'Engine Air Filter — 2013–2017 Honda Accord (2.4L)',
+        oemBrand: 'Honda (OEM)', oemPart: '17220-5A2-A00',
+        rows: [
+          { brand: 'Honda (OEM)', part: '17220-5A2-A00', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+17220-5A2-A00+air+filter') },
+          { brand: 'FRAM', part: 'CA11476', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA11476+air+filter') }
+        ]
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'F-150', y0: 2015, y1: 2020,
+        title: 'Oil Filter — 2015–2020 Ford F-150 (5.0L V8)',
+        oemBrand: 'Ford (Motorcraft)', oemPart: 'FL-500-S',
+        rows: [
+          { brand: 'Ford (Motorcraft)', part: 'FL-500-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B001KR1BQE?tag=redemptionm06-20' },
+          { brand: 'Ford (Motorcraft)', part: 'FL-500-S', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-500-S+oil+filter') },
+          { brand: 'WIX', part: '57502', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57502+oil+filter') },
+          { brand: 'FRAM', part: 'PH10575', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH10575+oil+filter') }
+        ],
+        companion: 'Verified for the 5.0L V8. Trucks with a different engine can take a different filter — confirm your engine before ordering.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'F-150', y0: 2015, y1: 2020,
+        title: 'Engine Air Filter — 2015–2020 Ford F-150 (5.0L V8)',
+        oemBrand: 'Ford (Motorcraft)', oemPart: 'FA-1883',
+        rows: [
+          { brand: 'Ford (Motorcraft)', part: 'FA-1883', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B000V53VR8?tag=redemptionm06-20' },
+          { brand: 'Ford (Motorcraft)', part: 'FA-1883', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1883+air+filter') },
+          { brand: 'FRAM', part: 'CA10262', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA10262+air+filter') }
+        ],
+        companion: 'Verified for the 5.0L V8 application.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150', y0: 2018, y1: 2020,
+        title: 'Spark Plugs — 2018–2020 Ford F-150 (5.0L V8)',
+        oemBrand: 'Ford (Motorcraft)', oemPart: 'SP-551',
+        rows: [
+          { brand: 'Ford (Motorcraft)', part: 'SP-551', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-551+spark+plug') },
+          { brand: 'NGK', part: '95605', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95605+spark+plug') }
+        ],
+        companion: 'Set of 8. Factory gap: 0.049–0.053 in. The 2015–2017 5.0L uses a different plug (SP-548) — do not mix them.'
       }
     ];
-
     var PARTS = {};
     var vehicle = { year: '', make: '', model: '', label: '' };
 
@@ -451,7 +679,7 @@
              y >= e.y0 && y <= e.y1;
     }
     function renderVerified(e) {
-      var h = '<p style="margin:12px 0 0;"><span class="demo-badge">Demo entry — the finished format</span></p>';
+      var h = e.demo ? '<p style="margin:12px 0 0;"><span class="demo-badge">Demo entry — the finished format</span></p>' : '';
       h += '<div style="font-size:14.5px; font-weight:800; color:#0f2439; margin-top:8px;">' + esc(e.title) + '</div>';
       h += '<p style="font-size:13.5px; color:#334155; margin:6px 0 0;">OEM part number: <b>' +
            esc(e.oemBrand) + ' ' + esc(e.oemPart) + '</b></p>';
