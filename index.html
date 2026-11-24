@@ -215,7 +215,7 @@
       'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Golf'],
       'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
       'Mercedes-Benz': ['C-Class', 'E-Class', 'S-Class', 'GLC'],
-      'Lexus': ['ES', 'RX', 'IS', 'GS', 'LS'],
+      'Lexus': ['ES', 'RX', 'IS', 'GS', 'LS', 'TX 350'],
       'Acura': ['TLX', 'RDX', 'MDX', 'ILX']
     };
 
@@ -246,7 +246,7 @@
         { id: 'steering-rack', name: 'Rack & Pinion Steering Gear' } ] },
       { name: 'Electrical & Starting/Charging', parts: [
         { id: 'alternator', name: 'Alternator' }, { id: 'starter', name: 'Starter Motor' },
-        { id: 'battery-cable-set', name: 'Battery Cables' }, { id: 'ignition-switch', name: 'Ignition Switch' },
+        { id: 'battery-cable-set', name: 'Battery Cables' }, { id: 'ignition-switch', name: 'Ignition Switch' }, { id: 'door-lock-actuator', name: 'Door Lock Actuator' },
         { id: 'fuses-relays', name: 'Fuses & Relays' }, { id: 'ground-strap', name: 'Ground Strap' } ] },
       { name: 'Ignition', parts: [
         { id: 'spark-plugs', name: 'Spark Plugs' }, { id: 'ignition-coils', name: 'Ignition Coils' },
@@ -308,6 +308,7 @@
     // Batch 3 (Kia Sorento torque converter) added 2026-11-24.
     // Batch 9 (Altima filters, F-150 3.5L EcoBoost, Corolla 2020-2024, Accord 2018-2022) merged 2026-11-24.
     // Batch 10 (Toyota C-HR brakes + wheel — priority serviced-vehicle build) merged 2026-11-24.
+    // Batch 13 (TX 350 coolant + Corolla door lock actuators — priority leftovers; Highlander 2014-19 + Forester 2014-18 general batch; FIRST-PICK row ordering applied) merged 2026-11-24.
     var VERIFIED = [
       {
         demo: true,
@@ -1701,6 +1702,186 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=75224+C-HR+wheel') }
         ],
         companion: 'The 18-inch machined-face / black split 5-spoke alloy fitted to the <b>XLE and Limited</b> trims — the LE came on 17-inch wheels, a different rim. Size <b>18 × 7</b>, offset ET50, bolt pattern 5×114.3, and the <b>same wheel fits all four corners</b>. Tire: 225/50R18. Salvage yards and remanufacturers list this wheel under Hollander interchange <b>75224</b>. Center cap, lug nuts and the TPMS sensor transfer over from your old wheel.'
+      },
+      {
+        partId: 'coolant-antifreeze', make: 'Lexus', model: 'TX 350', y0: 2024, y1: 2024,
+        title: 'Coolant / Antifreeze — 2024 Lexus TX 350 (2.4L Turbo)',
+        oemBrand: 'Toyota (OEM)', oemPart: '00272-SLLC2',
+        rows: [
+          { brand: 'Zerex (Valvoline)', part: '910234 (Concentrate, 1 gal)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Zerex+910234+Asian+Vehicle+Red+concentrate') },
+          { brand: 'Toyota (OEM)', part: '00272-SLLC2 (50/50 Premixed, 1 gal)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+00272-SLLC2+coolant') }
+        ],
+        companion: 'Pink phosphate-HOAT coolant — Toyota Super Long Life Coolant. The TX 350 has <b>two</b> coolant circuits: engine 12.2 qt and intercooler 3.3 qt, <b>15.5 qt total</b> (2024 owner\'s manual). The Toyota bottle is <b>50/50 premixed</b>, ready to pour. The Zerex is a <b>concentrate</b> — mix it 50/50 with distilled water before filling; one gallon of concentrate makes two gallons mixed, and it is the same Asian-vehicle red formula Redemption installed on this exact vehicle (Invoice INV-000339). First pick is the Zerex concentrate: same chemistry, double the mixed coolant per bottle.'
+      },
+      {
+        partId: 'door-lock-actuator', make: 'Toyota', model: 'Corolla', y0: 2000, y1: 2002,
+        title: 'Door Lock Actuator (Front Doors) — 2000–2002 Toyota Corolla',
+        oemBrand: 'Toyota (OEM)', oemPart: '69040-02060 (Left) / 69030-02060 (Right)',
+        rows: [
+          { brand: 'Dorman', part: '746-850 (Front Left)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Dorman+746-850+door+lock+actuator') },
+          { brand: 'Dorman', part: '746-851 (Front Right)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Dorman+746-851+door+lock+actuator') },
+          { brand: 'Toyota (OEM)', part: '69040-02060 (Front Left)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+69040-02060+door+lock') },
+          { brand: 'Toyota (OEM)', part: '69030-02060 (Front Right)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+69030-02060+door+lock') },
+          { brand: 'SKP', part: 'SK746850 (Front Left)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=SKP+SK746850+door+lock+actuator') },
+          { brand: 'SKP', part: 'SK746851 (Front Right)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=SKP+SK746851+door+lock+actuator') }
+        ],
+        companion: 'These are the actuator <b>motors only</b> (non-integrated) for the <b>front doors</b>, on cars <b>without the anti-theft package</b> — on these cars the motor is serviced separately from the latch, so you replace just the failed motor. Left (driver) and right (passenger) are different parts — order the side that failed. First picks are the Dorman motors: brand-name, motor-only fix instead of a whole lock assembly. <b>Honest scope:</b> verified for <b>2000–2002 only</b> — Dorman\'s own catalog starts this application at 2000, and the 1998–1999 cars could not be confirmed from a primary Toyota catalog, so if your Corolla is a 1998–1999, confirm the part against your VIN before ordering. Rear-door actuators for this generation are not yet verified.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Highlander', y0: 2014, y1: 2019,
+        title: 'Oil Filter — 2014–2019 Toyota Highlander (3.5L V6)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04152-YZZA1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '04152-YZZA1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04152-YZZA1+oil+filter') },
+          { brand: 'WIX', part: '57047', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57047+oil+filter') },
+          { brand: 'FRAM', part: 'CH9972', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH9972+oil+filter') }
+        ],
+        companion: 'Cartridge element (not a spin-on). One element serves the whole run — the 2GR-FE (2014–2016) and the direct-injected 2GR-FKS (2017–2019) take the same <b>04152-YZZA1</b>.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'Highlander', y0: 2014, y1: 2019,
+        title: 'Engine Air Filter — 2014–2019 Toyota Highlander (3.5L V6)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-0P051',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-0P051', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-0P051+air+filter') },
+          { brand: 'WIX', part: '49430', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+49430+air+filter') }
+        ],
+        companion: 'Panel filter. One element, <b>17801-0P051</b>, serves every 3.5L Highlander from 2014 through 2019.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Toyota', model: 'Highlander', y0: 2014, y1: 2019,
+        title: 'Cabin Air Filter — 2014–2019 Toyota Highlander (3.5L V6)',
+        oemBrand: 'Toyota (OEM)', oemPart: '87139-07020',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '87139-07020', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+87139-07020+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF10285', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF10285+cabin+air+filter') },
+          { brand: 'WIX', part: '24483', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24483+cabin+air+filter') }
+        ],
+        companion: 'It sits behind the glove box and swaps out in minutes with no tools.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'Highlander', y0: 2014, y1: 2016,
+        title: 'Spark Plugs — 2014–2016 Toyota Highlander (3.5L V6)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90919-01247',
+        rows: [
+          { brand: 'DENSO', part: 'FK20HR11', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+FK20HR11+spark+plug') },
+          { brand: 'Toyota (OEM)', part: '90919-01247', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01247+spark+plug') }
+        ],
+        companion: 'Set of 6. The factory plug is the <b>DENSO FK20HR11</b> iridium — Toyota <b>90919-01247</b> is the same plug in a Toyota box. The 2017 and newer Highlander takes a different plug — see the 2017–2019 entry.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'Highlander', y0: 2017, y1: 2019,
+        title: 'Spark Plugs — 2017–2019 Toyota Highlander (3.5L V6)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90919-01263',
+        rows: [
+          { brand: 'DENSO', part: 'FK20HBR8', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+FK20HBR8+spark+plug') },
+          { brand: 'Toyota (OEM)', part: '90919-01263', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01263+spark+plug') }
+        ],
+        companion: 'Set of 6. These years run the direct-injected 2GR-FKS — the factory plug is the <b>DENSO FK20HBR8</b> (Toyota <b>90919-01263</b>). Do not substitute the FK20HR11 used through 2016.'
+      },
+      {
+        partId: 'oil-filter', make: 'Subaru', model: 'Forester', y0: 2014, y1: 2018,
+        title: 'Oil Filter — 2014–2018 Subaru Forester (2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '15208AA15A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '15208AA15A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+15208AA15A+oil+filter') },
+          { brand: 'Subaru (OEM)', part: '15208AA15A (6-Pack)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B071J2GZYN?tag=redemptionm06-20' },
+          { brand: 'Subaru (OEM)', part: '15208AA21A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+15208AA21A+oil+filter') },
+          { brand: 'Subaru (OEM)', part: '15208AA21A', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BQX1RDFK?tag=redemptionm06-20' }
+        ],
+        companion: 'Spin-on filter that mounts on top of the engine. Subaru has superseded this number — the current filter is <b>15208AA21A</b>; either fits. (Same filter this site lists for the Outback 2.5L.)'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Subaru', model: 'Forester', y0: 2014, y1: 2018,
+        title: 'Engine Air Filter — 2014–2018 Subaru Forester (2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '16546AA12A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '16546AA12A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+16546AA12A+air+filter') },
+          { brand: 'FRAM', part: 'CA9997', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA9997+air+filter') },
+          { brand: 'FRAM', part: 'CA9997', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B001C6Q34S?tag=redemptionm06-20' }
+        ],
+        companion: 'Panel filter for the 2.5L FB25. <b>16546AA12A</b> is the current number — it supersedes 16546AA120, and either fits. (Same filter this site lists for the Outback.)'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Subaru', model: 'Forester', y0: 2014, y1: 2018,
+        title: 'Cabin Air Filter — 2014–2018 Subaru Forester (2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '72880FG000',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '72880FG000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+72880FG000+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF10930', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF10930+cabin+air+filter') }
+        ],
+        companion: 'It sits behind the glove box and swaps out in minutes with no tools.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Subaru', model: 'Forester', y0: 2014, y1: 2018,
+        title: 'Spark Plugs — 2014–2018 Subaru Forester (2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '22401AA781',
+        rows: [
+          { brand: 'NGK', part: '93482', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+93482+spark+plug') },
+          { brand: 'Subaru (OEM)', part: '22401AA781', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+22401AA781+spark+plug') },
+          { brand: 'Subaru (OEM)', part: '22401AA781 (Set of 4)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B071R3R5MJ?tag=redemptionm06-20' }
+        ],
+        companion: 'The factory plug is the <b>NGK SILZKAR7B11</b> iridium (NGK 93482; Subaru 22401AA781 is the same plug in a Subaru box). Set of 4. (Same plug this site lists for the Outback 2.5L.)'
       }
     ];
     var PARTS = {};
