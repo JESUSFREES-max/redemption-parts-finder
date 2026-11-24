@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redemption Parts Finder — Find the Right Part Number for Your Car</title>
+  <meta name="description" content="Redemption Parts Finder by Redemption Mobile Service LLC: enter your vehicle, pick the part, and get the correct OEM part number plus aftermarket equivalents side by side. Then book De to install it — we come to you. Call/Text 360-772-8205.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0 0 48px 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+      line-height: 1.4;
+    }
+    .topbar {
+      background: #0f2439;
+      color: #ffffff;
+      border-bottom: 4px solid #b48327;
+      padding: 12px 16px;
+    }
+    .topbar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-title { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: 0.02em; }
+    .brand-sub { margin: 2px 0 0 0; font-size: 12px; font-weight: 600; color: #fbbf24; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .btn-gold {
+      display: inline-block; text-decoration: none;
+      background: #b48327; color: #ffffff; font-size: 12.5px; font-weight: 800;
+      padding: 8px 12px; border-radius: 8px; border: none; cursor: pointer;
+    }
+    .btn-ghost {
+      display: inline-block; text-decoration: none;
+      background: rgba(255,255,255,0.12); color: #ffffff; font-size: 12px; font-weight: 700;
+      padding: 8px 11px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.28); cursor: pointer;
+    }
+    .btn-navy {
+      display: inline-block; text-decoration: none;
+      background: #0f2439; color: #ffffff; font-size: 13px; font-weight: 800;
+      padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;
+    }
+    .container { max-width: 960px; margin: 14px auto 0; padding: 0 12px; }
+    .card {
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      overflow: hidden; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .card-head {
+      background: #0f2439; color: #ffffff; padding: 9px 14px;
+      font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em;
+      border-left: 4px solid #b48327;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px;
+    }
+    .card-body { padding: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+    .step-box { border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px 14px; background: #f8fafc; }
+    .step-box b { color: #0f2439; }
+    label.fld { display: block; font-size: 12.5px; font-weight: 700; color: #334155; margin: 0 0 4px; }
+    input[type="text"], select {
+      width: 100%; padding: 10px; font-size: 14px;
+      border: 1.5px solid #cbd5e1; border-radius: 8px; background: #ffffff; color: #0f172a;
+    }
+    .vin-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .vin-row input { flex: 1; min-width: 220px; text-transform: uppercase; }
+    .sel-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .or-div { text-align: center; font-size: 12px; font-weight: 800; color: #64748b; margin: 14px 0 10px; letter-spacing: 0.08em; }
+    .vehicle-line { margin-top: 12px; font-size: 13.5px; color: #334155; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 8px; padding: 9px 12px; }
+    .vehicle-line b { color: #0f2439; }
+    details.cat {
+      border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px 14px;
+      margin: 0 0 10px; background: #ffffff;
+    }
+    details.cat summary { cursor: pointer; font-weight: 800; color: #0f2439; font-size: 14.5px; }
+    details.cat summary .count { color: #64748b; font-weight: 600; font-size: 12.5px; }
+    .part-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .part-btn {
+      padding: 8px 12px; font-size: 13px; font-weight: 700;
+      border-radius: 999px; border: 1.5px solid #cbd5e1;
+      background: #ffffff; color: #0f2439; cursor: pointer;
+    }
+    .part-btn:hover { border-color: #b48327; }
+    .part-btn.selected { background: #0f2439; color: #ffffff; border-color: #0f2439; border-bottom: 3px solid #b48327; }
+    table.compare { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 10px; }
+    table.compare th {
+      background: #0f2439; color: #ffffff; text-align: left;
+      padding: 8px 10px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    table.compare td { padding: 8px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    table.compare td.where a { color: #0f2439; font-weight: 800; }
+    .demo-badge {
+      display: inline-block; background: #b48327; color: #ffffff;
+      font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
+      padding: 3px 8px; border-radius: 999px; text-transform: uppercase;
+    }
+    .fit-note { font-size: 12.5px; color: #475569; margin-top: 10px; }
+    .cta-box {
+      margin-top: 14px; border: 1px solid #b48327; background: #fffbeb;
+      border-radius: 10px; padding: 12px 14px; font-size: 14px; color: #0f2439;
+    }
+    .cta-box a { color: #0f2439; font-weight: 800; }
+    .building-box {
+      border: 1px dashed #94a3b8; border-radius: 10px; padding: 14px;
+      background: #f8fafc; font-size: 14px; color: #334155; margin-top: 10px;
+    }
+    .building-box a { color: #0f2439; font-weight: 800; }
+    .companion { font-size: 13px; color: #334155; margin-top: 12px; }
+    .companion b { color: #0f2439; }
+    .footer { max-width: 960px; margin: 20px auto 0; padding: 0 12px; font-size: 12.5px; color: #475569; }
+    .footer .verse { color: #0f2439; font-size: 13.5px; text-align: center; margin: 18px 0 4px; }
+    .footer .verse-ref { text-align: center; color: #b48327; font-weight: 800; margin: 0 0 14px; }
+    .footer a { color: #0f2439; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <h1 class="brand-title">Redemption Parts Finder</h1>
+        <p class="brand-sub">The right part number, side by side — by Redemption Mobile Service LLC</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn-gold" href="tel:+13607728205">Call / Text 360-772-8205</a>
+        <a class="btn-ghost" href="https://jesusfrees-max.github.io/">Main Site — Book a Mechanic</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="card-head"><span>How it works</span><span>We don't sell parts — we find them, you buy, De installs</span></div>
+      <div class="card-body">
+        <div class="grid-3">
+          <div class="step-box"><b>1. Tell us your vehicle</b><br>Decode your VIN free, or pick year / make / model.</div>
+          <div class="step-box"><b>2. Pick the part</b><br>Browse the categories below and tap the part you need.</div>
+          <div class="step-box"><b>3. Compare &amp; book</b><br>Get the OEM part number and equivalents side by side — then book De to install it.</div>
+        </div>
+        <p style="font-size:13px; color:#475569; margin:12px 0 0;">Every part number shown on this site is verified against a real parts catalog before it is published. If a lookup is still being built for your selection, we say so plainly — we never guess a part number.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span>Step 1 — Your vehicle</span><span id="vehicleState">No vehicle picked yet</span></div>
+      <div class="card-body">
+        <label class="fld" for="vinInput">Have your VIN? Decode it free (NHTSA federal database)</label>
+        <div class="vin-row">
+          <input type="text" id="vinInput" maxlength="17" placeholder="17-character VIN" autocomplete="off">
+          <button type="button" class="btn-navy" onclick="decodeVin()">Decode My VIN</button>
+        </div>
+        <div class="or-div">— OR —</div>
+        <div class="sel-row">
+          <div>
+            <label class="fld" for="selYear">Year</label>
+            <select id="selYear" onchange="onYmmChange()"></select>
+          </div>
+          <div>
+            <label class="fld" for="selMake">Make</label>
+            <select id="selMake" onchange="onMakeChange()"></select>
+          </div>
+          <div>
+            <label class="fld" for="selModel">Model</label>
+            <select id="selModel" onchange="onYmmChange()"></select>
+          </div>
+        </div>
+        <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Demo:</b> pick a 2004–2009 Toyota Prius, then tap <b>Oil Filter</b> under Filters &amp; Fluids to see a finished lookup.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span>Step 2 — Pick your part</span><span>All common parts</span></div>
+      <div class="card-body" id="categoryList"></div>
+    </div>
+
+    <div class="card" id="resultCard">
+      <div class="card-head"><span>Step 3 — Your part number &amp; options</span><span id="resultState">Waiting for a selection</span></div>
+      <div class="card-body" id="resultBody">
+        <p style="font-size:14px; color:#475569; margin:0;">Pick a part above and your comparison will appear here: the OEM part number, aftermarket equivalents, and where to get each one.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p class="verse">"Nor is there salvation in any other, for there is no other name under heaven given among men by which we must be saved."</p>
+    <p class="verse-ref">— Acts 4:12</p>
+    <p>Disclosure: Some links on this site are affiliate links. If you buy through one, Redemption Mobile Service may earn a small commission — at no extra cost to you. It helps keep a small local business on the road. Thank you for the support!</p>
+    <p>Redemption Mobile Service LLC · Clackamas, OR · Serving Beaverton, Gresham, Clackamas, Vancouver &amp; nearby areas · Open 24/7 · <a href="tel:+13607728205">360-772-8205</a> · <a href="https://jesusfrees-max.github.io/">jesusfrees-max.github.io</a></p>
+  </div>
+
+  <script>
+    // ================= DATA =================
+    var MAKES_MODELS = {
+      'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner'],
+      'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V'],
+      'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
+      'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
+      'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
+      'Ram': ['1500', '2500', 'ProMaster'],
+      'Dodge': ['Charger', 'Challenger', 'Durango', 'Grand Caravan', 'Journey'],
+      'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator'],
+      'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
+      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy'],
+      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent'],
+      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul'],
+      'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
+      'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Golf'],
+      'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
+      'Mercedes-Benz': ['C-Class', 'E-Class', 'S-Class', 'GLC'],
+      'Lexus': ['ES', 'RX', 'IS', 'GS', 'LS'],
+      'Acura': ['TLX', 'RDX', 'MDX', 'ILX']
+    };
+
+    // Category tree: part NAMES only. Part numbers live exclusively in VERIFIED below.
+    var CATEGORIES = [
+      { name: 'Engine', parts: [
+        { id: 'timing-belt-kit', name: 'Timing Belt Kit' }, { id: 'timing-chain-kit', name: 'Timing Chain Kit' },
+        { id: 'engine-mount', name: 'Engine Mount' }, { id: 'valve-cover-gasket', name: 'Valve Cover Gasket' },
+        { id: 'oil-pan-gasket', name: 'Oil Pan Gasket' }, { id: 'head-gasket-set', name: 'Head Gasket Set' },
+        { id: 'pcv-valve', name: 'PCV Valve' }, { id: 'crank-position-sensor', name: 'Crankshaft Position Sensor' },
+        { id: 'cam-position-sensor', name: 'Camshaft Position Sensor' } ] },
+      { name: 'Cooling', parts: [
+        { id: 'radiator', name: 'Radiator' }, { id: 'water-pump', name: 'Water Pump' },
+        { id: 'thermostat', name: 'Thermostat' }, { id: 'upper-radiator-hose', name: 'Upper Radiator Hose' },
+        { id: 'lower-radiator-hose', name: 'Lower Radiator Hose' }, { id: 'cooling-fan', name: 'Cooling Fan' },
+        { id: 'radiator-cap', name: 'Radiator Cap' }, { id: 'coolant-reservoir', name: 'Coolant Reservoir' } ] },
+      { name: 'Brakes', parts: [
+        { id: 'front-brake-pads', name: 'Front Brake Pads' }, { id: 'rear-brake-pads', name: 'Rear Brake Pads' },
+        { id: 'front-brake-rotors', name: 'Front Brake Rotors' }, { id: 'rear-brake-rotors', name: 'Rear Brake Rotors' },
+        { id: 'brake-caliper', name: 'Brake Caliper' }, { id: 'brake-hose', name: 'Brake Hose' },
+        { id: 'brake-master-cylinder', name: 'Brake Master Cylinder' }, { id: 'brake-booster', name: 'Brake Booster' },
+        { id: 'abs-wheel-speed-sensor', name: 'ABS Wheel Speed Sensor' } ] },
+      { name: 'Suspension & Steering', parts: [
+        { id: 'shock-absorber', name: 'Shock Absorber' }, { id: 'strut-assembly', name: 'Strut Assembly' },
+        { id: 'control-arm', name: 'Control Arm' }, { id: 'ball-joint', name: 'Ball Joint' },
+        { id: 'tie-rod-end', name: 'Tie Rod End' }, { id: 'sway-bar-link', name: 'Sway Bar Link' },
+        { id: 'wheel-hub-assembly', name: 'Wheel Bearing & Hub Assembly' }, { id: 'power-steering-pump', name: 'Power Steering Pump' },
+        { id: 'steering-rack', name: 'Rack & Pinion Steering Gear' } ] },
+      { name: 'Electrical & Starting/Charging', parts: [
+        { id: 'alternator', name: 'Alternator' }, { id: 'starter', name: 'Starter Motor' },
+        { id: 'battery-cable-set', name: 'Battery Cables' }, { id: 'ignition-switch', name: 'Ignition Switch' },
+        { id: 'fuses-relays', name: 'Fuses & Relays' }, { id: 'ground-strap', name: 'Ground Strap' } ] },
+      { name: 'Ignition', parts: [
+        { id: 'spark-plugs', name: 'Spark Plugs' }, { id: 'ignition-coils', name: 'Ignition Coils' },
+        { id: 'spark-plug-wires', name: 'Spark Plug Wire Set' }, { id: 'distributor-cap-rotor', name: 'Distributor Cap & Rotor' },
+        { id: 'ignition-control-module', name: 'Ignition Control Module' } ] },
+      { name: 'Fuel System', parts: [
+        { id: 'fuel-pump', name: 'Fuel Pump' }, { id: 'fuel-filter', name: 'Fuel Filter' },
+        { id: 'fuel-injector', name: 'Fuel Injector' }, { id: 'fuel-pressure-regulator', name: 'Fuel Pressure Regulator' },
+        { id: 'throttle-body', name: 'Throttle Body' }, { id: 'maf-sensor', name: 'Mass Air Flow (MAF) Sensor' },
+        { id: 'fuel-level-sending-unit', name: 'Fuel Level Sending Unit' } ] },
+      { name: 'Exhaust', parts: [
+        { id: 'catalytic-converter', name: 'Catalytic Converter' }, { id: 'oxygen-sensor', name: 'Oxygen (O2) Sensor' },
+        { id: 'muffler', name: 'Muffler' }, { id: 'exhaust-manifold', name: 'Exhaust Manifold' },
+        { id: 'exhaust-pipe', name: 'Exhaust Pipe / Resonator' }, { id: 'egr-valve', name: 'EGR Valve' } ] },
+      { name: 'Transmission & Drivetrain', parts: [
+        { id: 'cv-axle', name: 'CV Axle' }, { id: 'clutch-kit', name: 'Clutch Kit' },
+        { id: 'transmission-filter', name: 'Transmission Filter' }, { id: 'u-joint', name: 'Universal Joint (U-Joint)' },
+        { id: 'transmission-mount', name: 'Transmission Mount' }, { id: 'shift-cable', name: 'Shift Cable' } ] },
+      { name: 'Filters & Fluids', parts: [
+        { id: 'oil-filter', name: 'Oil Filter' }, { id: 'engine-air-filter', name: 'Engine Air Filter' },
+        { id: 'cabin-air-filter', name: 'Cabin Air Filter' }, { id: 'engine-oil', name: 'Engine Oil' },
+        { id: 'coolant-antifreeze', name: 'Coolant / Antifreeze' }, { id: 'brake-fluid', name: 'Brake Fluid' },
+        { id: 'power-steering-fluid', name: 'Power Steering Fluid' }, { id: 'washer-fluid', name: 'Windshield Washer Fluid' } ] },
+      { name: 'Belts & Hoses', parts: [
+        { id: 'serpentine-belt', name: 'Serpentine Belt' }, { id: 'belt-tensioner', name: 'Belt Tensioner' },
+        { id: 'idler-pulley', name: 'Idler Pulley' }, { id: 'heater-hose', name: 'Heater Hose' },
+        { id: 'vacuum-hose', name: 'Vacuum Hose' } ] },
+      { name: 'Lighting', parts: [
+        { id: 'headlight-bulb', name: 'Headlight Bulb' }, { id: 'headlight-assembly', name: 'Headlight Assembly' },
+        { id: 'tail-light-assembly', name: 'Tail Light Assembly' }, { id: 'turn-signal-bulb', name: 'Turn Signal Bulb' },
+        { id: 'brake-light-bulb', name: 'Brake Light Bulb' }, { id: 'fog-light', name: 'Fog Light' },
+        { id: 'license-plate-bulb', name: 'License Plate Bulb' } ] },
+      { name: 'Wipers & Glass', parts: [
+        { id: 'wiper-blades', name: 'Wiper Blades' }, { id: 'wiper-motor', name: 'Wiper Motor' },
+        { id: 'wiper-linkage', name: 'Wiper Linkage' }, { id: 'washer-pump', name: 'Windshield Washer Pump' },
+        { id: 'windshield', name: 'Windshield' }, { id: 'side-mirror', name: 'Side Mirror' } ] },
+      { name: 'Batteries (12V & Hybrid)', parts: [
+        { id: 'car-battery-12v', name: '12V Car Battery' }, { id: 'battery-terminal-ends', name: 'Battery Terminal Ends' },
+        { id: 'hybrid-battery-pack', name: 'Hybrid Battery Pack' }, { id: 'hybrid-battery-fan', name: 'Hybrid Battery Cooling Fan' },
+        { id: 'battery-charger', name: 'Battery Charger / Maintainer' } ] },
+      { name: 'Heating & A/C', parts: [
+        { id: 'ac-compressor', name: 'A/C Compressor' }, { id: 'ac-condenser', name: 'A/C Condenser' },
+        { id: 'blower-motor', name: 'Blower Motor' }, { id: 'heater-core', name: 'Heater Core' },
+        { id: 'blend-door-actuator', name: 'Blend Door Actuator' }, { id: 'ac-refrigerant', name: 'A/C Refrigerant' } ] },
+      { name: 'Wheels & Tires', parts: [
+        { id: 'tire', name: 'Tire' }, { id: 'wheel-rim', name: 'Wheel / Rim' },
+        { id: 'lug-nuts', name: 'Lug Nuts' }, { id: 'tpms-sensor', name: 'TPMS Sensor' },
+        { id: 'spare-tire-kit', name: 'Spare Tire & Jack Kit' } ] }
+    ];
+
+    // VERIFIED entries — the ONLY place part numbers appear on this site.
+    // Comparison rows list ONLY affiliate-agreement stores (Amazon, eBay).
+    // Stores without an affiliate agreement never appear in the table.
+    var VERIFIED = [
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Prius', y0: 2004, y1: 2009,
+        title: 'Oil Filter — 2004–2009 Toyota Prius',
+        oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZF2',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90915-YZZF2', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0044B0Y9S?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '90915-YZZF2', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-YZZF2+oil+filter') }
+        ],
+        companion: '<b>Grab at the same time:</b> drain plug gasket — Toyota (OEM) <b>90430-12031</b>. ' +
+                   '<b>Oil for this car:</b> 5W-30, about 3.9 qt with a filter change.'
+      }
+    ];
+
+    var PARTS = {};
+    var vehicle = { year: '', make: '', model: '', label: '' };
+
+    // ================= HELPERS =================
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+    function setSelectValue(id, val) {
+      var s = document.getElementById(id);
+      for (var i = 0; i < s.options.length; i++) {
+        if (s.options[i].value === String(val)) { s.value = s.options[i].value; return; }
+      }
+    }
+    function findMake(raw) {
+      if (!raw) return '';
+      var up = String(raw).toUpperCase();
+      for (var k in MAKES_MODELS) { if (k.toUpperCase() === up) return k; }
+      return '';
+    }
+    function fitNoteHtml() {
+      return '<p class="fit-note">Confirm fitment for your exact vehicle before you buy.</p>';
+    }
+    function ctaHtml() {
+      return '<div class="cta-box"><b>Want it installed?</b> De comes to you — $65 service call · Call or Text ' +
+        '<a href="tel:+13607728205">360-772-8205</a> · ' +
+        '<a href="https://jesusfrees-max.github.io/">Book on our main site</a></div>';
+    }
+
+    // ================= VEHICLE PICKER =================
+    function buildVehiclePickers() {
+      var yr = document.getElementById('selYear');
+      var yh = '<option value="">Year</option>';
+      for (var y = 2026; y >= 1996; y--) yh += '<option value="' + y + '">' + y + '</option>';
+      yr.innerHTML = yh;
+      var mk = document.getElementById('selMake');
+      var mh = '<option value="">Make</option>';
+      for (var k in MAKES_MODELS) mh += '<option value="' + k + '">' + k + '</option>';
+      mh += '<option value="Other">Other</option>';
+      mk.innerHTML = mh;
+      fillModels('', '');
+    }
+    function fillModels(make, selected) {
+      var md = document.getElementById('selModel');
+      var list = MAKES_MODELS[make] || [];
+      var h = '<option value="">Model</option>';
+      for (var i = 0; i < list.length; i++) h += '<option value="' + list[i] + '">' + list[i] + '</option>';
+      h += '<option value="Other">Other / Not Listed</option>';
+      md.innerHTML = h;
+      if (selected) {
+        for (var j = 0; j < md.options.length; j++) {
+          if (md.options[j].value.toLowerCase() === String(selected).toLowerCase()) { md.value = md.options[j].value; break; }
+        }
+      }
+    }
+    function setVehicle(year, make, model) {
+      vehicle = { year: String(year), make: make, model: model, label: (year + ' ' + make + ' ' + model) };
+      document.getElementById('vehicleState').textContent = vehicle.label;
+    }
+    function onMakeChange() {
+      fillModels(document.getElementById('selMake').value, '');
+      onYmmChange();
+    }
+    function onYmmChange() {
+      var year = document.getElementById('selYear').value;
+      var make = document.getElementById('selMake').value;
+      var model = document.getElementById('selModel').value;
+      if (year && make && model) {
+        setVehicle(year, make, model);
+        document.getElementById('vehicleLine').innerHTML =
+          '<b>Your vehicle:</b> ' + esc(vehicle.label) + ' — now pick your part below.';
+      } else {
+        vehicle = { year: year, make: make, model: model, label: '' };
+        document.getElementById('vehicleState').textContent = 'No vehicle picked yet';
+      }
+    }
+    function decodeVin() {
+      var vin = document.getElementById('vinInput').value.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+      var line = document.getElementById('vehicleLine');
+      if (vin.length !== 17) {
+        line.innerHTML = 'A VIN has 17 characters — check it and try again, or use the year / make / model picker.';
+        return;
+      }
+      line.innerHTML = 'Decoding your VIN in the NHTSA federal database…';
+      fetch('https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/' + encodeURIComponent(vin) + '?format=json')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var res = (data && data.Results) || [];
+          function get(name) {
+            for (var i = 0; i < res.length; i++) { if (res[i].Variable === name) return res[i].Value || ''; }
+            return '';
+          }
+          var year = get('Model Year'), make = get('Make'), model = get('Model'), trim = get('Trim');
+          if (!year && !make) {
+            line.innerHTML = 'That VIN didn\'t decode cleanly — double-check the characters (a VIN never uses the letters I, O or Q), or use the picker below.';
+            return;
+          }
+          setSelectValue('selYear', year);
+          var mk = findMake(make);
+          if (mk) { document.getElementById('selMake').value = mk; fillModels(mk, model); }
+          setVehicle(year, mk || make, model);
+          line.innerHTML = '<b>Decoded:</b> ' + esc(year) + ' ' + esc(make) + ' ' + esc(model) +
+            (trim ? ' · ' + esc(trim) : '') + ' — now pick your part below.';
+        })
+        .catch(function () {
+          line.innerHTML = 'The VIN decoder didn\'t answer just now — use the year / make / model picker, or text us the VIN at 360-772-8205.';
+        });
+    }
+
+    // ================= CATEGORIES =================
+    function buildCategories() {
+      var wrap = document.getElementById('categoryList');
+      var h = '';
+      for (var i = 0; i < CATEGORIES.length; i++) {
+        var c = CATEGORIES[i];
+        h += '<details class="cat"><summary>' + esc(c.name) + ' <span class="count">(' + c.parts.length + ' parts)</span></summary><div class="part-grid">';
+        for (var j = 0; j < c.parts.length; j++) {
+          var p = c.parts[j];
+          PARTS[p.id] = { name: p.name, cat: c.name };
+          h += '<button type="button" class="part-btn" onclick="selectPart(\'' + p.id + '\', this)">' + esc(p.name) + '</button>';
+        }
+        h += '</div></details>';
+      }
+      wrap.innerHTML = h;
+    }
+
+    // ================= RESULT =================
+    function vehicleMatches(e) {
+      if (!vehicle.year || !vehicle.make || !vehicle.model) return false;
+      var y = parseInt(vehicle.year, 10);
+      return vehicle.make.toLowerCase() === e.make.toLowerCase() &&
+             vehicle.model.toLowerCase() === e.model.toLowerCase() &&
+             y >= e.y0 && y <= e.y1;
+    }
+    function renderVerified(e) {
+      var h = '<p style="margin:12px 0 0;"><span class="demo-badge">Demo entry — the finished format</span></p>';
+      h += '<div style="font-size:14.5px; font-weight:800; color:#0f2439; margin-top:8px;">' + esc(e.title) + '</div>';
+      h += '<p style="font-size:13.5px; color:#334155; margin:6px 0 0;">OEM part number: <b>' +
+           esc(e.oemBrand) + ' ' + esc(e.oemPart) + '</b></p>';
+      h += '<table class="compare"><thead><tr><th>Brand</th><th>Part #</th><th>Price</th><th>Where</th></tr></thead><tbody>';
+      for (var i = 0; i < e.rows.length; i++) {
+        var r = e.rows[i];
+        h += '<tr><td>' + esc(r.brand) + '</td><td>' + esc(r.part) + '</td><td>' + esc(r.price) +
+             '</td><td class="where"><a href="' + r.url + '" target="_blank" rel="noopener sponsored">' +
+             esc(r.where) + '</a></td></tr>';
+      }
+      h += '</tbody></table>';
+      h += '<p class="fit-note">Prices change daily, so we send you to today\'s price at the store instead of printing a stale one. ' +
+           'More stores join this comparison as affiliate agreements are signed.</p>';
+      if (e.companion) h += '<p class="companion">' + e.companion + '</p>';
+      h += fitNoteHtml();
+      return h;
+    }
+    function selectPart(id, btn) {
+      var all = document.querySelectorAll('.part-btn');
+      for (var i = 0; i < all.length; i++) all[i].classList.remove('selected');
+      if (btn) btn.classList.add('selected');
+      var part = PARTS[id];
+      if (!part) return;
+      document.getElementById('resultState').textContent = part.name;
+      var h = '<div style="font-size:15px; font-weight:800; color:#0f2439;">' + esc(part.name) + '</div>';
+      h += '<p style="font-size:13px; color:#475569; margin:4px 0 0;">Category: ' + esc(part.cat) + ' · Lookup ' +
+           (vehicle.label ? 'for your <b>' + esc(vehicle.label) + '</b>' :
+            '(no vehicle picked yet — pick your vehicle in Step 1 for exact fitment)') + '.</p>';
+      var entry = null;
+      for (var j = 0; j < VERIFIED.length; j++) {
+        if (VERIFIED[j].partId === id && vehicleMatches(VERIFIED[j])) { entry = VERIFIED[j]; break; }
+      }
+      if (entry) {
+        h += renderVerified(entry);
+      } else {
+        h += '<div class="building-box">Part number lookup for this selection is being built — text De at ' +
+             '<a href="sms:13607728205">360-772-8205</a> and he\'ll get you the number.</div>';
+        h += fitNoteHtml();
+      }
+      h += ctaHtml();
+      document.getElementById('resultBody').innerHTML = h;
+      document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // ================= INIT =================
+    buildVehiclePickers();
+    buildCategories();
+  </script>
+
+</body>
+</html>
