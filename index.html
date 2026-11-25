@@ -99,6 +99,8 @@
     }
     table.compare td { padding: 8px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
     table.compare td.where a { color: #0f2439; font-weight: 800; }
+    table.compare tr.nolisting td { color: #94a3b8; background: #f8fafc; }
+    table.compare tr.nolisting td.where span { font-weight: 700; }
     .demo-badge {
       display: inline-block; background: #b48327; color: #ffffff;
       font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
@@ -251,7 +253,8 @@
       'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
       'Mercedes-Benz': ['C-Class', 'E-Class', 'S-Class', 'GLC'],
       'Lexus': ['ES', 'RX', 'IS', 'GS', 'LS', 'TX 350'],
-      'Acura': ['TLX', 'RDX', 'MDX', 'ILX']
+      'Acura': ['TLX', 'RDX', 'MDX', 'ILX'],
+      'Infiniti': ['Q50', 'Q60']
     };
 
     // Category tree: part NAMES only. Part numbers live exclusively in VERIFIED below.
@@ -345,6 +348,7 @@
     // Batch 10 (Toyota C-HR brakes + wheel — priority serviced-vehicle build) merged 2026-11-24.
     // Batch 13 (TX 350 coolant + Corolla door lock actuators — priority leftovers; Highlander 2014-19 + Forester 2014-18 general batch; FIRST-PICK row ordering applied) merged 2026-11-24.
     // Batch 22 (Sportage + Santa Fe + Crosstrek 2.5L plugs) merged 2026-11-25.
+    // Batch 23 (Infiniti Q50/Q60 3.0L VR30DDTT timing chain kit — priority serviced-vehicle build; DNJ kits + TSU chain, all store slots grey No Listing Yet) merged 2026-11-25.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -3676,6 +3680,34 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+22401AA940+spark+plug') }
         ],
         companion: 'Set of 4, Laser Iridium. Subaru manuals specify NGK <b>DILKAR7Q8</b> for the 2.5L FB25 (Sport and Limited) — Subaru number <b>22401AA940</b>. <b>2.5L ONLY:</b> the 2.0L takes a different plug (22401AA880 / DILKAR7B8) — do not cross them.'
+      },
+      {
+        partId: 'timing-chain-kit', make: 'Infiniti', model: 'Q50', y0: 2016, y1: 2021,
+        title: 'Timing Chain Kit — 2016–2021 Infiniti Q50 (3.0L VR30DDTT Twin-Turbo V6)',
+        oemBrand: 'Nissan (OEM reference)', oemPart: '13028-5CA0A',
+        rows: [
+          { brand: 'DNJ', part: 'TK4485WP', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'DNJ', part: 'TK4485WP', price: '—', where: 'eBay', nolisting: true },
+          { brand: 'DNJ', part: 'TK4485', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'DNJ', part: 'TK4485', price: '—', where: 'eBay', nolisting: true },
+          { brand: 'TSU / Camellia', part: 'W0133-2793356', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'TSU / Camellia', part: 'W0133-2793356', price: '—', where: 'eBay', nolisting: true }
+        ],
+        companion: 'For the <b>3.0L twin-turbo (VR30DDTT)</b> engine only — it does <b>not</b> fit the 2.0L turbo Q50 (a Mercedes-built engine) or the older 3.5L / 3.7L VQ cars, and the timing kits sold for those VQ engines (Cloyes, Melling and others) do <b>not</b> fit this engine. <b>DNJ is the only quality aftermarket kit made for the VR30</b> — first pick is the <b>TK4485WP</b>, the full kit with the water pump; the <b>TK4485</b> is the same kit without the pump. The TSU / Camellia row is the camshaft chain by itself (Japanese-made; the engine uses two, one per bank). The Nissan number above (<b>13028-5CA0A</b>, the cam chain) is the factory fitment reference. <b>One thing no kit includes, from any brand: the gaskets and seals for this job.</b> There is no formed front-cover gasket for this engine — the cover is sealed with liquid gasket (RTV) from the factory — and the valve cover gaskets and front crank seal this job disturbs are not bundled in any kit, so plan on those separately. The kits also leave out the VVT cam gears and solenoids, which are inspected and reused unless worn. Amazon and eBay do not carry these kits, so the store slots show <b>No Listing Yet</b> instead of a link — the kits are sold through regular parts catalogs.'
+      },
+      {
+        partId: 'timing-chain-kit', make: 'Infiniti', model: 'Q60', y0: 2017, y1: 2021,
+        title: 'Timing Chain Kit — 2017–2021 Infiniti Q60 (3.0L VR30DDTT Twin-Turbo V6)',
+        oemBrand: 'Nissan (OEM reference)', oemPart: '13028-5CA0A',
+        rows: [
+          { brand: 'DNJ', part: 'TK4485WP', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'DNJ', part: 'TK4485WP', price: '—', where: 'eBay', nolisting: true },
+          { brand: 'DNJ', part: 'TK4485', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'DNJ', part: 'TK4485', price: '—', where: 'eBay', nolisting: true },
+          { brand: 'TSU / Camellia', part: 'W0133-2793356', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'TSU / Camellia', part: 'W0133-2793356', price: '—', where: 'eBay', nolisting: true }
+        ],
+        companion: 'For the <b>3.0L twin-turbo (VR30DDTT)</b> engine only — it does <b>not</b> fit the 2.0L turbo Q60 (a Mercedes-built engine) or the older 3.5L / 3.7L VQ cars, and the timing kits sold for those VQ engines (Cloyes, Melling and others) do <b>not</b> fit this engine. <b>DNJ is the only quality aftermarket kit made for the VR30</b> — first pick is the <b>TK4485WP</b>, the full kit with the water pump; the <b>TK4485</b> is the same kit without the pump. The TSU / Camellia row is the camshaft chain by itself (Japanese-made; the engine uses two, one per bank). The Nissan number above (<b>13028-5CA0A</b>, the cam chain) is the factory fitment reference. <b>One thing no kit includes, from any brand: the gaskets and seals for this job.</b> There is no formed front-cover gasket for this engine — the cover is sealed with liquid gasket (RTV) from the factory — and the valve cover gaskets and front crank seal this job disturbs are not bundled in any kit, so plan on those separately. The kits also leave out the VVT cam gears and solenoids, which are inspected and reused unless worn. Amazon and eBay do not carry these kits, so the store slots show <b>No Listing Yet</b> instead of a link — the kits are sold through regular parts catalogs.'
       }
 
     ];
@@ -3867,9 +3899,16 @@
       var h = '<table class="compare"><thead><tr><th>Brand</th><th>Part #</th><th>Price</th><th>Where</th></tr></thead><tbody>';
       for (var i = 0; i < rows.length; i++) {
         var r = rows[i];
-        h += '<tr><td>' + esc(r.brand) + '</td><td>' + esc(r.part) + '</td><td>' + esc(r.price) +
-             '</td><td class="where"><a href="' + r.url + '" target="_blank" rel="noopener sponsored">' +
-             esc(r.where) + '</a></td></tr>';
+        if (r.nolisting) {
+          // NO-LISTING RULE: no verified listing exists for this part at this
+          // store — show a greyed, non-clickable slot, never a search link.
+          h += '<tr class="nolisting"><td>' + esc(r.brand) + '</td><td>' + esc(r.part) + '</td><td>' + esc(r.price) +
+               '</td><td class="where"><span>' + esc(r.where) + ' — No Listing Yet</span></td></tr>';
+        } else {
+          h += '<tr><td>' + esc(r.brand) + '</td><td>' + esc(r.part) + '</td><td>' + esc(r.price) +
+               '</td><td class="where"><a href="' + r.url + '" target="_blank" rel="noopener sponsored">' +
+               esc(r.where) + '</a></td></tr>';
+        }
       }
       h += '</tbody></table>';
       return h;
