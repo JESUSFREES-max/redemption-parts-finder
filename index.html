@@ -88,6 +88,9 @@
     }
     .part-btn:hover { border-color: #b48327; }
     .part-btn.selected { background: #0f2439; color: #ffffff; border-color: #0f2439; border-bottom: 3px solid #b48327; }
+    .part-btn .incat { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: #dcfce7; color: #166534; font-size: 11px; font-weight: 800; vertical-align: 1px; }
+    .part-btn.has-entry { border-color: #16a34a; background: #f0fdf4; }
+    .part-btn.has-entry.selected { background: #0f2439; color: #ffffff; border-color: #0f2439; }
     table.compare { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 10px; }
     table.compare th {
       background: #0f2439; color: #ffffff; text-align: left;
@@ -219,10 +222,10 @@
   </div>
 
   <div class="footer">
-    <p class="verse">"Nor is there salvation in any other, for there is no other name under heaven given among men by which we must be saved."</p>
+    <p class="verse">"Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved."</p>
     <p class="verse-ref">— Acts 4:12</p>
     <p>Disclosure: Some links on this site are affiliate links. If you buy through one, Redemption Mobile Service may earn a small commission — at no extra cost to you. It helps keep a small local business on the road. Thank you for the support!</p>
-    <p>Redemption Mobile Service LLC · Clackamas, OR · Serving Beaverton, Gresham, Clackamas, Vancouver &amp; nearby areas · Open 24/7 · <a href="tel:+13607728205">360-772-8205</a> · <a href="https://jesusfrees-max.github.io/">jesusfrees-max.github.io</a></p>
+    <p>Redemption Mobile Service LLC · Clackamas, OR · Serving Beaverton, Gresham, Clackamas, Vancouver &amp; surrounding areas — about 30 miles · Open 24/7 · <a href="tel:+13607728205">360-772-8205</a> · <a href="https://jesusfrees-max.github.io/">jesusfrees-max.github.io</a></p>
   </div>
 
   <script>
@@ -338,6 +341,7 @@
     // Batch 9 (Altima filters, F-150 3.5L EcoBoost, Corolla 2020-2024, Accord 2018-2022) merged 2026-11-24.
     // Batch 10 (Toyota C-HR brakes + wheel — priority serviced-vehicle build) merged 2026-11-24.
     // Batch 13 (TX 350 coolant + Corolla door lock actuators — priority leftovers; Highlander 2014-19 + Forester 2014-18 general batch; FIRST-PICK row ordering applied) merged 2026-11-24.
+    // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
     // `qualifier: { question, helpText, options: [...] }`. Each option either
     // has `useEntry: true` (it IS this entry's oemPart/rows) or carries its own
@@ -2380,6 +2384,614 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+SP143877AB+spark+plug') }
         ],
         companion: 'Set of 16 — the Hemi takes two plugs per cylinder. Mopar <b>SP143877AB</b> is the NGK LZFR5CI-11 Laser Iridium (NGK 92145). Do NOT substitute NGK 92174 (LZFR5C-11) — that copper plug is for pre-2014 Hemis. Factory gap: 0.044 in.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: '12V Auxiliary Battery — 2010–2015 Toyota Prius',
+        oemBrand: 'BCI Group', oemPart: 'S46B24R (AGM)',
+        rows: [
+          { brand: 'Interstate', part: 'MTX-S46B24R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-S46B24R+battery') },
+          { brand: 'Interstate (Optima-built)', part: 'SC46B24RD', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+SC46B24RD+Prius+battery') }
+        ],
+        companion: 'This is the 12-volt <b>auxiliary</b> battery in the right rear corner of the cargo area — not the hybrid pack. It runs the computers, locks and lights, and a weak one causes a no-start even with a healthy hybrid battery. AGM only, and keep the vent tube connected. Factory spec is 325 CCA (Deka OE data); both replacements above exceed it (410 / 450 CCA).'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Prius', y0: 2004, y1: 2009,
+        title: '12V Auxiliary Battery — 2004–2009 Toyota Prius',
+        oemBrand: 'BCI Group', oemPart: 'S46B24R (AGM)',
+        rows: [
+          { brand: 'Interstate', part: 'MTX-S46B24R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-S46B24R+battery') },
+          { brand: 'Interstate (Optima-built)', part: 'SC46B24RD', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+SC46B24RD+Prius+battery') }
+        ],
+        qualifier: {
+          question: 'Does your Prius have Smart Key (keyless unlock and start)?',
+          helpText: 'Interstate\'s application data fits the S46B24R battery to the Smart Key cars (their fitment note reads "HD, Opt or Smart Key"). Priuses without Smart Key left the factory with a smaller auxiliary battery.',
+          options: [
+            { label: 'Yes — Smart Key', useEntry: true },
+            { label: 'No Smart Key', note: 'Your car takes the smaller auxiliary battery fitted to non-Smart-Key cars. We have not verified that battery\'s number from a Toyota source, so we won\'t guess at it — text De a photo of the battery\'s top label at <a href="sms:13607728205">360-772-8205</a> and he\'ll get you the exact one.' }
+          ]
+        },
+        companion: 'This is the 12-volt <b>auxiliary</b> battery in the right rear corner of the cargo area — not the hybrid pack. It runs the computers, locks and lights, and a weak one causes a no-start even with a healthy hybrid battery. AGM only, and keep the vent tube connected.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Camry', y0: 2012, y1: 2017,
+        title: '12V Battery — 2012–2017 Toyota Camry (2.5L)',
+        oemBrand: 'BCI Group', oemPart: '24F',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 24F', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6Y7KQYN?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '00544-24F60-575 (TrueStart 24F)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+TrueStart+00544-24F60-575+battery') },
+          { brand: 'Interstate', part: 'MTP-24F', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-24F+battery') }
+        ],
+        companion: 'Factory minimum is 585 CCA. The <b>F</b> in 24F means the terminals are reversed versus a plain Group 24 — a plain 24 will not hook up correctly, so don\'t substitute it.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Camry', y0: 2018, y1: 2019,
+        title: '12V Battery — 2018–2019 Toyota Camry (2.5L)',
+        oemBrand: 'BCI Group', oemPart: 'H6 (48)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') }
+        ],
+        companion: 'Toyota switched the Camry from the 24F case to the H6 (48) case for 2018 — the two do not interchange. Factory minimum 605 CCA.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Camry', y0: 2020, y1: 2024,
+        title: '12V Battery — 2020–2024 Toyota Camry (2.5L)',
+        oemBrand: 'BCI Group', oemPart: 'H5 (47)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 47 (H5)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSPTMX2?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-47/H5', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-47+H5+battery') }
+        ],
+        companion: 'For 2020 the Camry moved down a case size to H5 (47) — it is not interchangeable with the H6 in the 2018–2019 cars. Factory minimum 585 CCA.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Corolla', y0: 2009, y1: 2018,
+        title: '12V Battery — 2009–2018 Toyota Corolla (1.8L)',
+        oemBrand: 'BCI Group', oemPart: '35',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 35', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6YS7396?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTP-35', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-35+battery') },
+          { brand: 'Interstate', part: 'MTX-35', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-35+battery') }
+        ],
+        companion: 'Interstate\'s own fit tool confirms Group 35 for the 1.8L; the factory minimum is only 355 CCA, and every battery above clears it easily. <b>2019 is a transition year</b> (some cars take Group 35, some H5), so this entry stops at 2018 — for a 2019, match the group size printed on your current battery.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Corolla', y0: 2020, y1: 2024,
+        title: '12V Battery — 2020–2024 Toyota Corolla',
+        oemBrand: 'BCI Group', oemPart: 'H5 (47)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 47 (H5)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSPTMX2?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-47/H5', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-47+H5+battery') }
+        ],
+        qualifier: {
+          question: 'Which engine does your Corolla have?',
+          helpText: 'The engine is named on the emissions label under the hood. The two engines take different battery sizes that do not interchange (Interstate\'s application data).',
+          options: [
+            { label: '2.0L', useEntry: true },
+            { label: '1.8L', oemBrand: 'BCI Group', oemPart: 'H4 (140R)',
+              rows: [
+                { brand: 'Interstate', part: 'MTX-H4', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-H4+battery') },
+                { brand: 'Interstate', part: 'MTP-H4', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-H4+battery') }
+              ],
+              note: 'The 1.8L takes the smaller H4 (140R) case — Toyota\'s original battery is labeled 345LN1-MF. Interstate\'s own product pages recommend the MTX-H4 (570 CCA AGM) and MTP-H4 (480 CCA) for this exact engine.' }
+          ]
+        },
+        companion: 'If you\'re not sure which engine you have, match the group size printed on your current battery\'s top label — it never lies.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'RAV4', y0: 2013, y1: 2018,
+        title: '12V Battery — 2013–2018 Toyota RAV4',
+        oemBrand: 'BCI Group', oemPart: '24F',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 24F', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6Y7KQYN?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '00544-24F60-575 (TrueStart 24F)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+TrueStart+00544-24F60-575+battery') },
+          { brand: 'Interstate', part: 'MTP-24F', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-24F+battery') }
+        ],
+        companion: 'Group 24F — the reversed-terminal version of Group 24. Don\'t substitute a plain 24; the cables land on the wrong posts.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Tacoma', y0: 2016, y1: 2023,
+        title: '12V Battery — 2016–2023 Toyota Tacoma',
+        oemBrand: 'BCI Group', oemPart: '24F',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 24F', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6Y7KQYN?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '00544-24F60-575 (TrueStart 24F)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+TrueStart+00544-24F60-575+battery') },
+          { brand: 'Interstate', part: 'MTP-24F', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-24F+battery') }
+        ],
+        companion: 'All engines take Group 24F; Toyota\'s minimum spec is 585 CCA.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'Highlander', y0: 2014, y1: 2019,
+        title: '12V Battery — 2014–2019 Toyota Highlander (3.5L)',
+        oemBrand: 'BCI Group', oemPart: '24F',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 24F', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6Y7KQYN?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '00544-24F60-575 (TrueStart 24F)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+TrueStart+00544-24F60-575+battery') },
+          { brand: 'Interstate', part: 'MTP-24F', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-24F+battery') }
+        ],
+        companion: 'Factory spec is 585 CCA. <b>2017–2019 with engine start-stop:</b> your Highlander left the factory with an EFB (enhanced flooded) battery — replace it with an EFB or AGM (the Weize AGM above qualifies), not a plain flooded battery.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: '4Runner', y0: 2010, y1: 2024,
+        title: '12V Battery — 2010–2024 Toyota 4Runner (4.0L)',
+        oemBrand: 'BCI Group', oemPart: '24F',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 24F', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6Y7KQYN?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '00544-24F60-575 (TrueStart 24F)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+TrueStart+00544-24F60-575+battery') },
+          { brand: 'Interstate', part: 'MTP-24F', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-24F+battery') }
+        ],
+        companion: 'Group 24F, 585 CCA factory spec. A few early trucks (around 2010) were fitted with the larger 27F case — if your current battery\'s label says 27F, match that instead.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Toyota', model: 'C-HR', y0: 2018, y1: 2022,
+        title: '12V Battery — 2018–2022 Toyota C-HR (2.0L)',
+        oemBrand: 'BCI Group', oemPart: 'H5 (47 / LN2)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 47 (H5)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSPTMX2?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '00544-H5061-540 (TrueStart H5)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+TrueStart+00544-H5061-540+battery') },
+          { brand: 'Interstate', part: 'MTX-47/H5', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-47+H5+battery') }
+        ],
+        companion: 'Toyota\'s own parts description for this car calls out "BCI group H5 (LN2)". The replacement class is 650 CCA — the Weize and Interstate above meet it; Toyota\'s TrueStart H5 is the 540 CCA factory battery.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Honda', model: 'Accord', y0: 2013, y1: 2017,
+        title: '12V Battery — 2013–2017 Honda Accord (2.4L)',
+        oemBrand: 'BCI Group', oemPart: '51R',
+        rows: [
+          { brand: 'Interstate', part: 'MTX-51R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-51R+battery') },
+          { brand: 'Interstate', part: 'M-51R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+M-51R+battery') }
+        ],
+        companion: 'For the 2.4L 4-cylinder (this catalog\'s Accord scope). Factory minimum 410 CCA. The V6 cars take a larger battery.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Honda', model: 'Accord', y0: 2018, y1: 2022,
+        title: '12V Battery — 2018–2022 Honda Accord (1.5T)',
+        oemBrand: 'BCI Group', oemPart: 'H5 (47 / LN2)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 47 (H5)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSPTMX2?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '31500-TGG-100M', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+31500-TGG-100M+battery') },
+          { brand: 'Interstate', part: 'MTX-47/H5', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-47+H5+battery') }
+        ],
+        companion: 'Honda\'s catalog battery for 2018–2020 is 31500-TGG-100M, an LN2 (H5) case; 2021–2022 cars take the H5 EFB version, 31500-TLA-EFB100M — an AGM or EFB in the H5 case is the right replacement class.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Honda', model: 'Civic', y0: 2016, y1: 2021,
+        title: '12V Battery — 2016–2021 Honda Civic (2.0L)',
+        oemBrand: 'BCI Group', oemPart: '51R',
+        rows: [
+          { brand: 'Interstate', part: 'MTX-51R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-51R+battery') },
+          { brand: 'Interstate', part: 'M-51R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+M-51R+battery') }
+        ],
+        companion: 'Catalogued for the 2.0L (this catalog\'s Civic scope); Interstate\'s fitment data lists the 51R for these cars.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Honda', model: 'CR-V', y0: 2017, y1: 2022,
+        title: '12V Battery — 2017–2022 Honda CR-V (1.5T)',
+        oemBrand: 'BCI Group', oemPart: '51R',
+        rows: [
+          { brand: 'Interstate', part: 'MTX-51R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-51R+battery') },
+          { brand: 'Interstate', part: 'M-51R', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+M-51R+battery') }
+        ],
+        qualifier: {
+          question: 'What group size is printed on your current battery\'s top label?',
+          helpText: 'Honda genuinely fitted BOTH sizes to these CR-Vs across 2017–2022 (Interstate\'s application data lists 51R and H5 in the same range). The two are different shapes and do not interchange — the label on the battery in the car is the decider.',
+          options: [
+            { label: '51R', useEntry: true },
+            { label: 'H5 (47)', oemBrand: 'BCI Group', oemPart: 'H5 (47)',
+              rows: [
+                { brand: 'Weize', part: 'Platinum AGM — Group 47 (H5)', price: 'See today\'s price', where: 'Amazon',
+                  url: 'https://www.amazon.com/dp/B0BXSPTMX2?tag=redemptionm06-20' },
+                { brand: 'Interstate', part: 'MTX-47/H5', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-47+H5+battery') }
+              ],
+              note: 'Later and start-stop-equipped CR-Vs take the H5 case, often as an EFB from the factory — the AGM above is the right replacement class.' }
+          ]
+        },
+        companion: 'If the label is unreadable, text De a photo of the battery at <a href="sms:13607728205">360-772-8205</a> and he\'ll read the size off it.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Honda', model: 'Pilot', y0: 2016, y1: 2022,
+        title: '12V Battery — 2016–2022 Honda Pilot (3.5L)',
+        oemBrand: 'BCI Group', oemPart: 'H6 (48)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') },
+          { brand: 'Interstate', part: 'MTP-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-48+H6+battery') }
+        ],
+        companion: 'Factory spec is 650 CCA. Touring and Elite trims left the factory with an AGM battery — if yours is one, stay with AGM (the top two rows).'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Honda', model: 'Odyssey', y0: 2018, y1: 2022,
+        title: '12V Battery — 2018–2022 Honda Odyssey (3.5L)',
+        oemBrand: 'BCI Group', oemPart: 'H6 (48)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') },
+          { brand: 'Interstate', part: 'MTP-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-48+H6+battery') }
+        ],
+        companion: 'Same H6 (48) case as the Pilot. Interstate lists 730 CCA standard / 760 CCA AGM replacements for this van.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Ford', model: 'F-150', y0: 2015, y1: 2020,
+        title: '12V Battery — 2015–2020 Ford F-150',
+        oemBrand: 'BCI Group', oemPart: 'H6 (48) AGM',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+          { brand: 'Motorcraft (OEM)', part: 'BAGM-48H6-760', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+BAGM-48H6-760+battery') },
+          { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') }
+        ],
+        qualifier: {
+          question: 'What group size is printed on your truck\'s current battery?',
+          helpText: 'Ford\'s own battery table for these trucks (owner\'s manual Motorcraft data) lists two batteries — the H6 (48) and the larger H7 (94R) — depending on trim and electrical equipment, and Interstate\'s data splits them the same way. The two are different lengths; the label on the battery in the truck settles it.',
+          options: [
+            { label: 'H6 (48) — most trims', useEntry: true },
+            { label: 'H7 (94R) — King Ranch / Lariat / Platinum & heavy-electrical trucks', oemBrand: 'BCI Group', oemPart: 'H7 (94R) AGM',
+              rows: [
+                { brand: 'Weize', part: 'Platinum AGM — Group 94R (H7)', price: 'See today\'s price', where: 'Amazon',
+                  url: 'https://www.amazon.com/dp/B0CBQ4GR6T?tag=redemptionm06-20' },
+                { brand: 'Motorcraft (OEM)', part: 'BAGM-94RH7-800', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+BAGM-94RH7-800+battery') },
+                { brand: 'Interstate', part: 'MTX-94R-H7', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-94R-H7+battery') }
+              ],
+              note: 'Ford\'s listed Motorcraft battery for these trucks is the BAGM-94RH7-800 (800 CCA AGM).' }
+          ]
+        },
+        companion: 'These trucks charge an AGM battery — replace AGM with AGM. After a battery swap, the battery-monitoring system should be reset so the truck charges the new battery correctly.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2015, y1: 2020,
+        title: '12V Battery — 2015–2020 Ford F-150 (3.5L EcoBoost)',
+        oemBrand: 'BCI Group', oemPart: 'H6 (48) AGM',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+          { brand: 'Motorcraft (OEM)', part: 'BAGM-48H6-760', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+BAGM-48H6-760+battery') },
+          { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') }
+        ],
+        qualifier: {
+          question: 'What group size is printed on your truck\'s current battery?',
+          helpText: 'Ford\'s own battery table for these trucks (owner\'s manual Motorcraft data) lists two batteries — the H6 (48) and the larger H7 (94R) — depending on trim and electrical equipment, and Interstate\'s data splits them the same way. The two are different lengths; the label on the battery in the truck settles it.',
+          options: [
+            { label: 'H6 (48) — most trims', useEntry: true },
+            { label: 'H7 (94R) — King Ranch / Lariat / Platinum & heavy-electrical trucks', oemBrand: 'BCI Group', oemPart: 'H7 (94R) AGM',
+              rows: [
+                { brand: 'Weize', part: 'Platinum AGM — Group 94R (H7)', price: 'See today\'s price', where: 'Amazon',
+                  url: 'https://www.amazon.com/dp/B0CBQ4GR6T?tag=redemptionm06-20' },
+                { brand: 'Motorcraft (OEM)', part: 'BAGM-94RH7-800', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+BAGM-94RH7-800+battery') },
+                { brand: 'Interstate', part: 'MTX-94R-H7', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-94R-H7+battery') }
+              ],
+              note: 'Ford\'s listed Motorcraft battery for these trucks is the BAGM-94RH7-800 (800 CCA AGM).' }
+          ]
+        },
+        companion: 'These trucks charge an AGM battery — replace AGM with AGM. After a battery swap, the battery-monitoring system should be reset so the truck charges the new battery correctly.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Ford', model: 'Escape', y0: 2013, y1: 2019,
+        title: '12V Battery — 2013–2019 Ford Escape (2.5L)',
+        oemBrand: 'BCI Group', oemPart: '96R',
+        rows: [
+          { brand: 'Motorcraft (OEM)', part: 'BXT-96R-590', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+BXT-96R-590+battery') },
+          { brand: 'Motorcraft (OEM)', part: 'BXT-96R-500', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+BXT-96R-500+battery') }
+        ],
+        companion: 'Ford\'s battery for the 2.5L is the Group 96R — the 590 is the 590 CCA version; the 500 is the earlier 500 CCA fitment in Ford\'s parts catalog, and either hooks up the same. The battery sits under the cowl at the back of the engine bay, and the battery-monitoring system should be reset after replacement.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Ford', model: 'Explorer', y0: 2020, y1: 2024,
+        title: '12V Battery — 2020–2024 Ford Explorer',
+        oemBrand: 'BCI Group', oemPart: 'H6 (48) AGM',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+          { brand: 'Motorcraft (OEM)', part: 'BAGM-48H6-760', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+BAGM-48H6-760+battery') },
+          { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') }
+        ],
+        companion: 'All engines take the same H6 AGM (760 CCA class, Interstate application data). The battery should be registered/reset with a scan tool after replacement so the charging system treats it as new.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Chevrolet', model: 'Silverado 1500', y0: 2014, y1: 2019,
+        title: '12V Battery — 2014–2019 Chevrolet Silverado 1500 (5.3L)',
+        oemBrand: 'BCI Group', oemPart: 'H6 (48)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+          { brand: 'ACDelco (OEM)', part: '48AGM', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+48AGM+battery') },
+          { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') }
+        ],
+        qualifier: {
+          question: 'What group size is printed on your current battery\'s label?',
+          helpText: 'GM built these trucks with both battery sizes depending on equipment — the catalogs list "Group 94R (H7) or 48 (H6)" for the 5.3L. The two are different lengths with different terminal layouts, so they don\'t swap; the label on the battery in the truck is the decider.',
+          options: [
+            { label: 'Group 48 (H6)', useEntry: true },
+            { label: 'Group 94R (H7)', oemBrand: 'BCI Group', oemPart: '94R (H7)',
+              rows: [
+                { brand: 'Weize', part: 'Platinum AGM — Group 94R (H7)', price: 'See today\'s price', where: 'Amazon',
+                  url: 'https://www.amazon.com/dp/B0CBQ4GR6T?tag=redemptionm06-20' },
+                { brand: 'ACDelco (OEM)', part: '94RAGM', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+94RAGM+battery') },
+                { brand: 'Interstate', part: 'MTX-94R-H7', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-94R-H7+battery') }
+              ] }
+          ]
+        },
+        companion: 'ACDelco is GM\'s own brand — the 48AGM (GM 88864541) and 94RAGM are the factory-line batteries in each size.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Chevrolet', model: 'Tahoe', y0: 2015, y1: 2020,
+        title: '12V Battery — 2015–2020 Chevrolet Tahoe (5.3L)',
+        oemBrand: 'BCI Group', oemPart: '94R (H7)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 94R (H7)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0CBQ4GR6T?tag=redemptionm06-20' },
+          { brand: 'ACDelco (OEM)', part: '94RAGM', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+94RAGM+battery') },
+          { brand: 'Interstate', part: 'MTX-94R-H7', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-94R-H7+battery') }
+        ],
+        qualifier: {
+          question: 'What group size is printed on your current battery\'s label?',
+          helpText: 'Most 2015–2020 Tahoes take the 94R (the O\'Reilly catalog data behind Interstate-era fitment lists it as the size for these years), but some builds are listed with the shorter Group 48 (H6). The two don\'t swap — the label on the battery in the truck is the decider.',
+          options: [
+            { label: 'Group 94R (H7) — most of these Tahoes', useEntry: true },
+            { label: 'Group 48 (H6)', oemBrand: 'BCI Group', oemPart: 'H6 (48)',
+              rows: [
+                { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+                  url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+                { brand: 'ACDelco (OEM)', part: '48AGM', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+48AGM+battery') },
+                { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') }
+              ] }
+          ]
+        },
+        companion: 'ACDelco is GM\'s own brand — the 94RAGM (GM 88865934) is the factory-line battery in this size.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Chevrolet', model: 'Equinox', y0: 2010, y1: 2017,
+        title: '12V Battery — 2010–2017 Chevrolet Equinox (2.4L)',
+        oemBrand: 'BCI Group', oemPart: 'H5 (47)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 47 (H5)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSPTMX2?tag=redemptionm06-20' },
+          { brand: 'ACDelco (OEM)', part: '47G', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+47G+battery') },
+          { brand: 'Interstate', part: 'MTX-47/H5', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-47+H5+battery') }
+        ],
+        companion: 'For the 2.4L 4-cylinder (the 3.6L V6 takes the larger H6). Factory minimum 525 CCA per Interstate\'s data. ACDelco\'s 47G is its catalogued Group 47 battery for this vehicle.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Jeep', model: 'Grand Cherokee', y0: 2014, y1: 2020,
+        title: '12V Battery — 2014–2020 Jeep Grand Cherokee (3.6L)',
+        oemBrand: 'BCI Group', oemPart: 'H7 (94R) AGM',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 94R (H7)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0CBQ4GR6T?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-94R-H7', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-94R-H7+battery') }
+        ],
+        qualifier: {
+          question: 'Does your Grand Cherokee shut the engine off at stoplights (engine start-stop)?',
+          helpText: 'Start-stop arrived on the 3.6L for 2016 and changes the main battery size (Interstate\'s application data). Either way, the battery lives under the front passenger seat and it is an AGM battery — replace AGM with AGM.',
+          options: [
+            { label: 'No start-stop', useEntry: true },
+            { label: 'Yes — start-stop (2016 and newer)', oemBrand: 'BCI Group', oemPart: 'H6 (48) AGM',
+              rows: [
+                { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+                  url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+                { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') }
+              ],
+              note: 'Start-stop cars also carry a small auxiliary battery (Interstate AUX14) beside the main one. If you\'re chasing a start-stop warning light, the pair is usually replaced together.' }
+          ]
+        },
+        companion: 'The main battery is under the front passenger seat — slide the seat to reach the compartment cover.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Jeep', model: 'Wrangler', y0: 2019, y1: 2023,
+        title: '12V Battery — 2019–2023 Jeep Wrangler (3.6L JL)',
+        oemBrand: 'BCI Group', oemPart: 'H6 (48) AGM',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 48 (H6)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BXSQDNVZ?tag=redemptionm06-20' },
+          { brand: 'Mopar (OEM)', part: '56029758AB', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+56029758AB+battery') },
+          { brand: 'Interstate', part: 'MTX-48/H6', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-48+H6+battery') }
+        ],
+        companion: 'The 3.6L JL\'s factory battery is the Mopar 56029758AB, a Group H6 AGM. Start-stop JLs also carry a small auxiliary battery next to the main one — if the start-stop light is on, plan on replacing both together. A few non-start-stop builds take an H7 instead — check your label if yours has no start-stop.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Ram', model: '1500', y0: 2019, y1: 2024,
+        title: '12V Battery — 2019–2024 Ram 1500 (5.7L Hemi, New Body Style)',
+        oemBrand: 'BCI Group', oemPart: 'H7 (94R)',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 94R (H7)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0CBQ4GR6T?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-94R-H7', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-94R-H7+battery') }
+        ],
+        companion: 'Same H7 (94R) case across the 2019+ body style, eTorque included — eTorque trucks must stay with an AGM battery.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Nissan', model: 'Altima', y0: 2013, y1: 2018,
+        title: '12V Battery — 2013–2018 Nissan Altima (2.5L)',
+        oemBrand: 'BCI Group', oemPart: '35',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 35', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6YS7396?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-35', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-35+battery') },
+          { brand: 'Interstate', part: 'MTP-35', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-35+battery') }
+        ],
+        companion: 'Group 35 across 2012–2018 per Interstate\'s application data; factory minimum 550 CCA. The same size fits the 3.5L V6 cars.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Subaru', model: 'Outback', y0: 2015, y1: 2019,
+        title: '12V Battery — 2015–2019 Subaru Outback (2.5L)',
+        oemBrand: 'BCI Group', oemPart: '25',
+        rows: [
+          { brand: 'Interstate', part: 'MT-25', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MT-25+battery') }
+        ],
+        companion: 'For the 2.5L (the 3.6L takes Group 35). Group 25 and Group 35 share a footprint but the terminals are reversed — they do not interchange, so match the label. Interstate\'s own MT-25 product page lists the 2015–2019 Outback as a fit.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Subaru', model: 'Forester', y0: 2014, y1: 2018,
+        title: '12V Battery — 2014–2018 Subaru Forester (2.5L)',
+        oemBrand: 'BCI Group', oemPart: '35',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 35', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6YS7396?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTP-35', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTP-35+battery') },
+          { brand: 'Interstate', part: 'MTX-35', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-35+battery') }
+        ],
+        companion: 'The factory battery is a Panasonic JIS Q85 — Group 35 is its BCI equivalent, and Interstate\'s own fit tool confirms Group 35 for the 2.5L.'
+      },
+      {
+        partId: 'car-battery-12v', make: 'Kia', model: 'Sorento', y0: 2018, y1: 2020,
+        title: '12V Battery — 2018–2020 Kia Sorento (3.3L)',
+        oemBrand: 'BCI Group', oemPart: 'H7 (94R) AGM',
+        rows: [
+          { brand: 'Weize', part: 'Platinum AGM — Group 94R (H7)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0CBQ4GR6T?tag=redemptionm06-20' },
+          { brand: 'Interstate', part: 'MTX-94R-H7', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Interstate+MTX-94R-H7+battery') }
+        ],
+        companion: 'For the 3.3L V6 (this catalog\'s Sorento scope). The application guides (Interstate 2023 / Mopar 2021 BCI data) spec an 800 CCA AGM in the H7 case for these years — both batteries above meet it. Replace AGM with AGM.'
       }
     ];
     var PARTS = {};
@@ -2439,6 +3051,7 @@
     function setVehicle(year, make, model) {
       vehicle = { year: String(year), make: make, model: model, label: (year + ' ' + make + ' ' + model) };
       document.getElementById('vehicleState').textContent = vehicle.label;
+      refreshCatalogMarks();
     }
     function onMakeChange() {
       fillModels(document.getElementById('selMake').value, '');
@@ -2456,6 +3069,7 @@
         vehicle = { year: year, make: make, model: model, label: '' };
         document.getElementById('vehicleState').textContent = 'No vehicle picked yet';
       }
+      refreshCatalogMarks();
     }
     function decodeVin() {
       var vin = document.getElementById('vinInput').value.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -2496,15 +3110,53 @@
       var h = '';
       for (var i = 0; i < CATEGORIES.length; i++) {
         var c = CATEGORIES[i];
-        h += '<details class="cat"><summary>' + esc(c.name) + ' <span class="count">(' + c.parts.length + ' parts)</span></summary><div class="part-grid">';
+        h += '<details class="cat"><summary>' + esc(c.name) + ' <span class="count" data-orig="(' + c.parts.length + ' parts)">(' + c.parts.length + ' parts)</span></summary><div class="part-grid">';
         for (var j = 0; j < c.parts.length; j++) {
           var p = c.parts[j];
           PARTS[p.id] = { name: p.name, cat: c.name };
-          h += '<button type="button" class="part-btn" onclick="selectPart(\'' + p.id + '\', this)">' + esc(p.name) + '</button>';
+          h += '<button type="button" class="part-btn" data-part="' + p.id + '" onclick="selectPart(\'' + p.id + '\', this)">' + esc(p.name) + '<span class="incat" hidden>\u2713 In catalog</span></button>';
         }
         h += '</div></details>';
       }
       wrap.innerHTML = h;
+    }
+
+    // Step 2 guidance (De, 2026-11-24): when a vehicle is picked, parts that
+    // HAVE a verified entry for it get a visible "\u2713 In catalog" tag and are
+    // sorted to the top of their category. Parts without an entry stay listed
+    // and tappable \u2014 a visitor is never locked out.
+    function refreshCatalogMarks() {
+      var hasVehicle = !!(vehicle.year && vehicle.make && vehicle.model);
+      var grids = document.querySelectorAll('.part-grid');
+      for (var g = 0; g < grids.length; g++) {
+        var grid = grids[g];
+        var btns = grid.querySelectorAll('.part-btn');
+        var marked = [], plain = [], n = 0;
+        for (var i = 0; i < btns.length; i++) {
+          var b = btns[i];
+          var pid = b.getAttribute('data-part');
+          var hit = false;
+          if (hasVehicle && pid) {
+            for (var j = 0; j < VERIFIED.length; j++) {
+              if (VERIFIED[j].partId === pid && vehicleMatches(VERIFIED[j])) { hit = true; break; }
+            }
+          }
+          var tag = b.querySelector('.incat');
+          if (tag) tag.hidden = !hit;
+          if (hit) { b.classList.add('has-entry'); marked.push(b); n++; }
+          else { b.classList.remove('has-entry'); plain.push(b); }
+        }
+        for (var m = 0; m < marked.length; m++) grid.appendChild(marked[m]);
+        for (var p = 0; p < plain.length; p++) grid.appendChild(plain[p]);
+        var det = grid.parentNode;
+        if (det) {
+          var cnt = det.querySelector('.count');
+          if (cnt && cnt.getAttribute('data-orig')) {
+            cnt.textContent = cnt.getAttribute('data-orig') +
+              (hasVehicle && n ? ' \u00b7 ' + n + ' \u2713 in catalog for your vehicle' : '');
+          }
+        }
+      }
     }
 
     // ================= RESULT =================
@@ -2602,15 +3254,26 @@
       var part = PARTS[currentPartId];
       if (!part) return;
       document.getElementById('resultState').textContent = part.name;
-      var h = '<div style="font-size:15px; font-weight:800; color:#0f2439;">' + esc(part.name) + '</div>';
+      var h = '';
       h += '<p style="font-size:13px; color:#475569; margin:4px 0 0;">Category: ' + esc(part.cat) + ' · Lookup ' +
            (vehicle.label ? 'for your <b>' + esc(vehicle.label) + '</b>' :
             '(no vehicle picked yet — pick your vehicle in Step 1 for exact fitment)') + '.</p>';
       if (currentEntry) {
         h += renderVerified(currentEntry);
       } else {
-        h += '<div class="building-box">Part number lookup for this selection is being built — text De at ' +
-             '<a href="sms:13607728205">360-772-8205</a> and he\'ll get you the number.</div>';
+        if (currentPartId === 'car-battery-12v') {
+          h += '<div class="building-box"><b>Find your battery\'s group size first \u2014 it\'s printed on the battery you already have.</b><br><br>' +
+               'Every car battery carries a <b>group size</b> code on its top label \u2014 that code is the battery\'s shape, size and terminal layout, and it\'s the one thing that has to match exactly. Common ones: <b>24F</b> and <b>35</b> (many Toyotas, Nissans and Subarus) \u00b7 <b>51R</b> (smaller Hondas) \u00b7 <b>H5 (47)</b> and <b>H6 (48)</b> (many newer cars, GM and Ford) \u00b7 <b>94R (H7)</b> (trucks and bigger SUVs) \u00b7 <b>25</b> (Subaru Outback).<br><br>' +
+               'Pick your vehicle in Step 1 and we\'ll look up the verified size for it \u2014 battery lookups already in the catalog are marked <b>\u2713 In catalog</b> in Step 2. Not sure what yours says? Text De a photo of the battery\'s top label at <a href="sms:13607728205">360-772-8205</a> and he\'ll read it for you \u2014 or book a battery service call and he\'ll bring the right one.</div>';
+        } else if (vehicle.label) {
+          h += '<div class="building-box"><b>This part isn\'t in the catalog for your ' + esc(vehicle.label) + ' yet.</b><br><br>' +
+               'Every number on this page is verified against the manufacturer\'s catalog before it\'s published, and this one hasn\'t been verified for your vehicle yet \u2014 De is adding verified parts every day. Parts that <i>are</i> verified for your vehicle are marked <b>\u2713 In catalog</b> in Step 2.<br><br>' +
+               '<b>Fastest way to the exact number:</b> text a photo of the part \u2014 or of the VIN sticker on your driver\'s door jamb \u2014 to De at <a href="sms:13607728205">360-772-8205</a> and he\'ll get you the exact part number for your vehicle.</div>';
+        } else {
+          h += '<div class="building-box"><b>Pick your vehicle in Step 1 first</b> \u2014 parts with a verified entry for it are marked <b>\u2713 In catalog</b> in Step 2.<br><br>' +
+               'If this part isn\'t marked for your vehicle, it hasn\'t been verified for it yet \u2014 every number here is checked against the manufacturer\'s catalog before it\'s published, and De is adding verified parts every day.<br><br>' +
+               '<b>Fastest way to the exact number:</b> text a photo of the part \u2014 or of the VIN sticker on your driver\'s door jamb \u2014 to De at <a href="sms:13607728205">360-772-8205</a> and he\'ll get you the exact part number for your vehicle.</div>';
+        }
         h += fitNoteHtml();
       }
       h += ctaHtml();
@@ -2639,6 +3302,7 @@
     // ================= INIT =================
     buildVehiclePickers();
     buildCategories();
+    refreshCatalogMarks();
   </script>
 
 </body>
