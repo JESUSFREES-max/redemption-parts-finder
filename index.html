@@ -243,9 +243,9 @@
       'Dodge': ['Charger', 'Challenger', 'Durango', 'Grand Caravan', 'Journey'],
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
-      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Crosstrek 2.0L', 'Impreza', 'Legacy'],
+      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Crosstrek 2.0L', 'Crosstrek 2.5L', 'Impreza', 'Legacy'],
       'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Tucson 2.0L', 'Santa Fe', 'Accent'],
-      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul'],
+      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Sportage 2.4L', 'Sportage 2.0L Turbo', 'Soul'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
       'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Golf'],
       'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
@@ -344,6 +344,7 @@
     // Batch 9 (Altima filters, F-150 3.5L EcoBoost, Corolla 2020-2024, Accord 2018-2022) merged 2026-11-24.
     // Batch 10 (Toyota C-HR brakes + wheel — priority serviced-vehicle build) merged 2026-11-24.
     // Batch 13 (TX 350 coolant + Corolla door lock actuators — priority leftovers; Highlander 2014-19 + Forester 2014-18 general batch; FIRST-PICK row ordering applied) merged 2026-11-24.
+    // Batch 22 (Sportage + Santa Fe + Crosstrek 2.5L plugs) merged 2026-11-25.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -3530,6 +3531,151 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+22401AA880+spark+plug') }
         ],
         companion: 'Set of 4, Laser Iridium. Subarus manuals specify NGK <b>DILKAR7B8</b> (stock 92217) for the 2.0L FB20 — Subaru number <b>22401AA880</b>. <b>2.0L ONLY:</b> the 2021+ 2.5L takes DILKAR7Q8 / 22401AA940. Beware the widely mislisted 22401AA781 / SILZKAR7B11 — that plug fits the pre-2017 port-injection cars, NOT this Crosstrek.'
+      },
+      {
+        partId: 'oil-filter', make: 'Kia', model: 'Sportage', y0: 2017, y1: 2022,
+        title: 'Oil Filter — 2017–2022 Kia Sportage (2.4L and 2.0L Turbo)',
+        oemBrand: 'Kia (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'FRAM', part: 'PH9688', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07BCFMXFN?tag=redemptionm06-20' },
+          { brand: 'Kia (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+26300-35505+oil+filter') },
+          { brand: 'WIX', part: '51334', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51334+oil+filter') }
+        ],
+        companion: 'Spin-on filter — one filter serves both Sportage engines. The current Kia/Hyundai number is <b>26300-35505</b>, superseding 26300-35504 and 26300-35503 (maker catalogs from ECOGARD and MAHLE cross the whole chain for this Sportage).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Kia', model: 'Sportage', y0: 2017, y1: 2022,
+        title: 'Engine Air Filter — 2017–2022 Kia Sportage (2.4L and 2.0L Turbo)',
+        oemBrand: 'Kia (OEM)', oemPart: '28113-D3300',
+        rows: [
+          { brand: 'Kia (OEM)', part: '28113-D3300', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+28113-D3300+air+filter') },
+          { brand: 'FRAM', part: 'CA12065', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12065+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 28 035', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+28+035+air+filter') },
+          { brand: 'WIX', part: 'WA9834', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA9834+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. The Purflux (FRAM-group) maker catalog lists Kia <b>28113-D3300</b> for the Sportage IV with both US engines — one element for the whole 2017–2022 run.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Kia', model: 'Sportage', y0: 2017, y1: 2022,
+        title: 'Cabin Air Filter — 2017–2022 Kia Sportage',
+        oemBrand: 'Kia (OEM)', oemPart: '97133-D3000',
+        rows: [
+          { brand: 'Kia (OEM)', part: '97133-D3000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+97133-D3000+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12160', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12160+cabin+air+filter') },
+          { brand: 'MANN-FILTER', part: 'CU 23 019', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+23+019+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Maker cross groups (MANN, FRAM, Hengst) group Kia <b>97133-D3000</b> with 97133-D1000 / D3200 for this one filter — the Sportage catalog number is D3000.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Kia', model: 'Sportage 2.4L', y0: 2017, y1: 2022,
+        title: 'Spark Plugs — 2017–2022 Kia Sportage (2.4L only)',
+        oemBrand: 'Kia (OEM)', oemPart: '18849-11070',
+        rows: [
+          { brand: 'NGK', part: '92315 (SILZKR7E11)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+92315+SILZKR7E11+spark+plug') },
+          { brand: 'Kia (OEM)', part: '18849-11070', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+18849-11070+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium. Kia <b>18849-11070</b> is the NGK <b>SILZKR7E11</b> (stock 92315), gap 0.044 in. <b>2.4L ONLY</b> — the 2.0L Turbo takes a different plug (see the Sportage 2.0L Turbo entry).'
+      },
+      {
+        partId: 'spark-plugs', make: 'Kia', model: 'Sportage 2.0L Turbo', y0: 2017, y1: 2018,
+        title: 'Spark Plugs — 2017–2018 Kia Sportage (2.0L Turbo only)',
+        oemBrand: 'Kia (OEM)', oemPart: '18857-09085',
+        rows: [
+          { brand: 'Kia (OEM)', part: '18857-09085', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+18857-09085+spark+plug') },
+          { brand: 'NGK', part: 'SILZKR8H9G', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+SILZKR8H9G+spark+plug') }
+        ],
+        companion: 'Set of 4. Per Kia bulletin PS608, the updated 2.0T plug is <b>18857-09085</b>, replacing 18849-09085 (longer thread shoulder to protect the insulator). The NGK cross SILZKR8H9G comes from TecDoc catalog data. <b>Scope is 2017–2018 per the Kia bulletin</b> — the 2019–2022 turbo plug is not yet verified, and the 2.4L plug (18849-11070) does NOT fit this engine.'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Santa Fe', y0: 2019, y1: 2020,
+        title: 'Oil Filter — 2019–2020 Hyundai Santa Fe (2.4L and 2.0L Turbo)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'FRAM', part: 'PH9688', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07BCFMXFN?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+26300-35505+oil+filter') },
+          { brand: 'WIX', part: '51334', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51334+oil+filter') }
+        ],
+        companion: 'Spin-on filter — one filter serves both Santa Fe engines (ECOGARD maker catalog lists the 2019–2020 Santa Fe 2.0L and 2.4L against the 26300-35503 / -35504 / <b>-35505</b> chain). <b>Not for the 2019 Santa Fe XL</b> (the carryover 3.3L vehicle).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Hyundai', model: 'Santa Fe', y0: 2019, y1: 2020,
+        title: 'Engine Air Filter — 2019–2020 Hyundai Santa Fe (2.4L and 2.0L Turbo)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '28113-A9100',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '28113-A9100', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+28113-A9100+air+filter') },
+          { brand: 'FRAM', part: 'CA11943', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA11943+air+filter') },
+          { brand: 'WIX', part: 'WA10271', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10271+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox — Hyundai <b>28113-A9100</b> for the 2019–2020 Santa Fe with either engine. <b>Not for the 2019 Santa Fe XL.</b> (A similar number, 28113-A9200, is a different-dimension filter — do not substitute it.)'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Hyundai', model: 'Santa Fe', y0: 2019, y1: 2020,
+        title: 'Cabin Air Filter — 2019–2020 Hyundai Santa Fe',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97133-J5000',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '97133-J5000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+97133-J5000+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12556', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12556+cabin+air+filter') },
+          { brand: 'MANN-FILTER', part: 'CUK26019', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CUK26019+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. The Purflux maker catalog crosses Hyundai <b>97133-J5000</b> for the Santa Fe IV (TM); Valeo catalog data agrees on the size. <b>Not for the 2019 Santa Fe XL.</b>'
+      },
+      {
+        partId: 'spark-plugs', make: 'Subaru', model: 'Crosstrek 2.5L', y0: 2021, y1: 2023,
+        title: 'Spark Plugs — 2021–2023 Subaru Crosstrek (2.5L only)',
+        oemBrand: 'Subaru (OEM)', oemPart: '22401AA940',
+        rows: [
+          { brand: 'NGK', part: 'DILKAR7Q8', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+DILKAR7Q8+spark+plug') },
+          { brand: 'Subaru (OEM)', part: '22401AA940', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+22401AA940+spark+plug') }
+        ],
+        companion: 'Set of 4, Laser Iridium. Subaru manuals specify NGK <b>DILKAR7Q8</b> for the 2.5L FB25 (Sport and Limited) — Subaru number <b>22401AA940</b>. <b>2.5L ONLY:</b> the 2.0L takes a different plug (22401AA880 / DILKAR7B8) — do not cross them.'
       }
 
     ];
