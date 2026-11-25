@@ -237,14 +237,14 @@
       'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
       'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V'],
       'Ford': ['F-150', 'F-150 3.5L EcoBoost', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
-      'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
+      'Chevrolet': ['Silverado 1500', 'Equinox', 'Equinox 1.5L Turbo', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
       'Ram': ['1500', '2500', 'ProMaster'],
       'Dodge': ['Charger', 'Challenger', 'Durango', 'Grand Caravan', 'Journey'],
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
-      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy'],
-      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent'],
+      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Crosstrek 2.0L', 'Impreza', 'Legacy'],
+      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Tucson 2.0L', 'Santa Fe', 'Accent'],
       'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
       'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Golf'],
@@ -344,6 +344,7 @@
     // Batch 9 (Altima filters, F-150 3.5L EcoBoost, Corolla 2020-2024, Accord 2018-2022) merged 2026-11-24.
     // Batch 10 (Toyota C-HR brakes + wheel — priority serviced-vehicle build) merged 2026-11-24.
     // Batch 13 (TX 350 coolant + Corolla door lock actuators — priority leftovers; Highlander 2014-19 + Forester 2014-18 general batch; FIRST-PICK row ordering applied) merged 2026-11-24.
+    // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
     // `qualifier: { question, helpText, options: [...] }`. Each option either
@@ -3312,6 +3313,223 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=GM+23281440+cabin+air+filter') }
         ],
         companion: 'ACDelco CF188 is GM part number <b>23281440</b> on the Sierra per GM\'s manual. <b>2019 owners:</b> this entry covers the 2019 Sierra 1500 <b>Limited</b> only — the new-body 2019 uses a different filter (ACDelco CF185, GM 13508023).'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Tucson', y0: 2016, y1: 2021,
+        title: 'Oil Filter — 2016–2021 Hyundai Tucson (all engines)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'FRAM', part: 'PH9688', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0CYTG21J4?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+26300-35505+oil+filter') },
+          { brand: 'WIX', part: '51334', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51334+oil+filter') }
+        ],
+        companion: 'Spin-on filter — one filter serves every 2016–2021 Tucson engine (2.0L, 2.4L and the 2016–2018 1.6L Turbo). Hyundais current number is <b>26300-35505</b>, superseding 26300-35503 / 26300-35504. FRAM row is the PH9688 (2-pack listing).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Hyundai', model: 'Tucson', y0: 2016, y1: 2021,
+        title: 'Engine Air Filter — 2016–2021 Hyundai Tucson (all engines)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '28113-D3300',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '28113-D3300', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+28113-D3300+air+filter') },
+          { brand: 'FRAM', part: 'CA12065', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12065+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 28 035', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+28+035+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. One element serves the whole 2016–2021 Tucson line — every engine (Purflux/FRAM-group catalog crosses Hyundai <b>28113-D3300</b> for the TL generation).'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Hyundai', model: 'Tucson', y0: 2016, y1: 2021,
+        title: 'Cabin Air Filter — 2016–2021 Hyundai Tucson',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97133-D1000',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '97133-D1000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+97133-D1000+cabin+air+filter') },
+          { brand: 'ECOGARD', part: 'XC10490', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01N7K57CS?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CF12160', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12160+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Maker catalogs list Hyundai <b>97133-D1000</b> (with D3000 / D3200 as equivalent references) for this filter across all 2016–2021 Tucsons. Do not confuse it with the prior generations 97133-1R000.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Hyundai', model: 'Tucson 2.0L', y0: 2016, y1: 2021,
+        title: 'Spark Plugs — 2016–2021 Hyundai Tucson (2.0L only)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '18846-11070',
+        rows: [
+          { brand: 'NGK', part: '9723 (SILZKR7B11)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B003B3ECB6?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '18846-11070', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+18846-11070+spark+plug') }
+        ],
+        companion: 'Set of 4, Laser Iridium. Hyundai <b>18846-11070</b> is the NGK <b>SILZKR7B11</b> (stock 9723), gap 0.044 in. <b>2.0L ONLY:</b> the 2.4L (2018–2021) and 1.6L Turbo (2016–2018) plugs are NOT verified yet — do not use this plug for those engines.'
+      },
+      {
+        partId: 'oil-filter', make: 'Chevrolet', model: 'Equinox', y0: 2018, y1: 2022,
+        title: 'Oil Filter — 2018–2022 Chevrolet Equinox (1.5L Turbo; also 2.0L)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF64',
+        rows: [
+          { brand: 'ACDelco', part: 'PF64', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B094YWQCNT?tag=redemptionm06-20' },
+          { brand: 'ACDelco', part: 'PF64', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+PF64+oil+filter') },
+          { brand: 'WIX', part: 'WL10290', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10290+oil+filter') },
+          { brand: 'FRAM', part: 'PH12060', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH12060+oil+filter') }
+        ],
+        companion: 'GMs Equinox manuals list ACDelco <b>PF64</b> for the 1.5L every year 2018–2022 (GM number superseded 12640445 → 12696048 → 12706595; the ACDelco number never changed). The 2.0L takes the same PF64. Use the PF64-spec filter — its bypass pressure differs from older PF48-type filters.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Chevrolet', model: 'Equinox', y0: 2018, y1: 2020,
+        title: 'Engine Air Filter — 2018–2020 Chevrolet Equinox',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'A3226C',
+        rows: [
+          { brand: 'ACDelco', part: 'A3226C', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+A3226C+air+filter') },
+          { brand: 'GM (OEM)', part: '23279657', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=GM+23279657+air+filter') }
+        ],
+        companion: 'ACDelco A3226C is GM part number <b>23279657</b> per GMs Equinox manual — the same filter two ways. <b>2021–2022 Equinoxes use a different filter</b> — see the 2021–2022 entry (A3240C).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Chevrolet', model: 'Equinox', y0: 2021, y1: 2022,
+        title: 'Engine Air Filter — 2021–2022 Chevrolet Equinox',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'A3240C',
+        rows: [
+          { brand: 'ACDelco', part: 'A3240C', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+A3240C+air+filter') },
+          { brand: 'GM (OEM)', part: '84390002', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=GM+84390002+air+filter') }
+        ],
+        companion: 'ACDelco A3240C is GM part number <b>84390002</b> per GMs Equinox manual. GM changed the listing for 2021 — <b>2018–2020 Equinoxes list a different filter</b> (A3226C); FRAMs CA12260 crosses both numbers.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Chevrolet', model: 'Equinox', y0: 2018, y1: 2022,
+        title: 'Cabin Air Filter — 2018–2022 Chevrolet Equinox',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'CF185',
+        rows: [
+          { brand: 'ACDelco', part: 'CF185', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+CF185+cabin+air+filter') },
+          { brand: 'GM (OEM)', part: '13508023', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=GM+13508023+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF11966', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11966+cabin+air+filter') }
+        ],
+        companion: 'ACDelco CF185 is GM part number <b>13508023</b> per GMs Equinox manual, all years 2018–2022 and all engines. (The similar CF184 / 13356914 is a related GM number — the manual spec for this Equinox is CF185.)'
+      },
+      {
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Equinox 1.5L Turbo', y0: 2018, y1: 2019,
+        title: 'Spark Plugs — 2018–2019 Chevrolet Equinox (1.5L Turbo)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-153',
+        rows: [
+          { brand: 'ACDelco', part: '41-153', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-153+spark+plug') },
+          { brand: 'GM (OEM)', part: '12673527', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=GM+12673527+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium. ACDelco 41-153 is GM part number <b>12673527</b> per GMs manual for the 1.5L. Factory gap: 0.024–0.028 in, preset — GM says do not re-gap. <b>2020–2022 1.5L takes a different plug</b> (41-156), and the 2.0L takes 41-125 — do not cross them.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Equinox 1.5L Turbo', y0: 2020, y1: 2022,
+        title: 'Spark Plugs — 2020–2022 Chevrolet Equinox (1.5L Turbo)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-156',
+        rows: [
+          { brand: 'NGK', part: '91970 (ILNAR8B7G)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+91970+ILNAR8B7G+spark+plug') },
+          { brand: 'ACDelco', part: '41-156', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-156+spark+plug') },
+          { brand: 'GM (OEM)', part: '12683541', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=GM+12683541+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium. ACDelco 41-156 is GM part number <b>12683541</b> per GMs manual for the 1.5L from 2020. Factory gap: 0.024–0.028 in, preset — GM says do not re-gap. <b>2018–2019 1.5L takes 41-153</b> and the 2.0L takes 41-125 — do not cross them.'
+      },
+      {
+        partId: 'oil-filter', make: 'Subaru', model: 'Crosstrek', y0: 2018, y1: 2023,
+        title: 'Oil Filter — 2018–2023 Subaru Crosstrek (2.0L and 2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '15208AA21A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '15208AA21A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+15208AA21A+oil+filter') }
+        ],
+        companion: 'Subarus current filter for this Crosstrek is <b>15208AA21A</b>, superseding 15208AA15A / 15208AA160 / 15208AA20A — any of those numbers on the box is the same application. One filter serves both the 2.0L and the 2021+ 2.5L. Change the crush washer (803916010) with the filter.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Subaru', model: 'Crosstrek', y0: 2018, y1: 2023,
+        title: 'Engine Air Filter — 2018–2023 Subaru Crosstrek',
+        oemBrand: 'Subaru (OEM)', oemPart: '16546AA16A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '16546AA16A', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B072YV45X1?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA12295', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07QRB9FQR?tag=redemptionm06-20' },
+          { brand: 'Subaru (OEM)', part: '16546AA16A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+16546AA16A+air+filter') },
+          { brand: 'WIX', part: 'WA10713', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10713+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox — Subaru <b>16546AA16A</b> for the 2018–2023 Crosstrek, both engines. Do not use the older 16546AA12A — it fits the previous generation, not this one.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Subaru', model: 'Crosstrek', y0: 2018, y1: 2023,
+        title: 'Cabin Air Filter — 2018–2023 Subaru Crosstrek',
+        oemBrand: 'Subaru (OEM)', oemPart: '72880FL00A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '72880FL00A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+72880FL00A+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12436', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12436+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP10322', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10322+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Subaru <b>72880FL00A</b> (superseding 72880FL000) fits the 2018–2023 Crosstrek. Do not use the old-generation 72880FG000 (2013–2017). The 2024+ Crosstrek takes a different filter (72880FN00A).'
+      },
+      {
+        partId: 'spark-plugs', make: 'Subaru', model: 'Crosstrek 2.0L', y0: 2018, y1: 2023,
+        title: 'Spark Plugs — 2018–2023 Subaru Crosstrek (2.0L only)',
+        oemBrand: 'Subaru (OEM)', oemPart: '22401AA880',
+        rows: [
+          { brand: 'NGK', part: '92217 (DILKAR7B8)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+92217+DILKAR7B8+spark+plug') },
+          { brand: 'Subaru (OEM)', part: '22401AA880', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+22401AA880+spark+plug') }
+        ],
+        companion: 'Set of 4, Laser Iridium. Subarus manuals specify NGK <b>DILKAR7B8</b> (stock 92217) for the 2.0L FB20 — Subaru number <b>22401AA880</b>. <b>2.0L ONLY:</b> the 2021+ 2.5L takes DILKAR7Q8 / 22401AA940. Beware the widely mislisted 22401AA781 / SILZKAR7B11 — that plug fits the pre-2017 port-injection cars, NOT this Crosstrek.'
       }
 
     ];
