@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free VIN Decoder — Redemption Parts Finder</title>
+  <meta name="description" content="Free VIN decoder by Redemption Mobile Service LLC: type or share a VIN and see the vehicle fully decoded — year, make, model, engine, transmission and where it was built. Data from the NHTSA federal database. Call/Text 360-772-8205.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0 0 48px 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+      line-height: 1.4;
+    }
+    .topbar {
+      background: #0f2439;
+      color: #ffffff;
+      border-bottom: 4px solid #b48327;
+      padding: 12px 16px;
+    }
+    .topbar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-title { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: 0.02em; }
+    .brand-sub { margin: 2px 0 0 0; font-size: 12px; font-weight: 600; color: #fbbf24; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .btn-gold {
+      display: inline-block; text-decoration: none;
+      background: #b48327; color: #ffffff; font-size: 12.5px; font-weight: 800;
+      padding: 8px 12px; border-radius: 8px; border: none; cursor: pointer;
+    }
+    .btn-ghost {
+      display: inline-block; text-decoration: none;
+      background: rgba(255,255,255,0.12); color: #ffffff; font-size: 12px; font-weight: 700;
+      padding: 8px 11px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.28); cursor: pointer;
+    }
+    .btn-navy {
+      display: inline-block; text-decoration: none;
+      background: #0f2439; color: #ffffff; font-size: 13px; font-weight: 800;
+      padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;
+    }
+    .btn-decode {
+      font-size: 16px; padding: 13px 22px; border-bottom: 3px solid #b48327;
+    }
+    .btn-decode:disabled { opacity: 0.6; cursor: wait; }
+    .container { max-width: 960px; margin: 14px auto 0; padding: 0 12px; }
+    .card {
+      background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px;
+      overflow: hidden; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .card-head {
+      background: #0f2439; color: #ffffff; padding: 9px 14px;
+      font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em;
+      border-left: 4px solid #b48327;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px;
+    }
+    .card-body { padding: 14px; }
+    label.fld { display: block; font-size: 12.5px; font-weight: 700; color: #334155; margin: 0 0 4px; }
+    input[type="text"] {
+      width: 100%; padding: 10px; font-size: 14px;
+      border: 1.5px solid #cbd5e1; border-radius: 8px; background: #ffffff; color: #0f172a;
+    }
+    .vin-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .vin-row input { flex: 1; min-width: 220px; text-transform: uppercase; font-size: 16px; letter-spacing: 0.04em; }
+    .status-line { margin-top: 12px; font-size: 13.5px; color: #334155; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 8px; padding: 9px 12px; }
+    .status-line:empty { display: none; }
+    .status-line b { color: #0f2439; }
+    .vin-big {
+      font-size: 19px; font-weight: 800; color: #0f2439; letter-spacing: 0.05em;
+      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+      padding: 10px 12px; margin: 0 0 12px; word-break: break-all; text-align: center;
+    }
+    .vin-big span { display: block; font-size: 11.5px; font-weight: 700; color: #64748b; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px; }
+    table.spec { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 0 0 14px; }
+    table.spec th.group {
+      background: #0f2439; color: #ffffff; text-align: left;
+      padding: 7px 10px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    table.spec td { padding: 7px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    table.spec td.k { width: 38%; color: #475569; font-weight: 700; }
+    table.spec td.v { color: #0f172a; font-weight: 600; }
+    .note-line { font-size: 12.5px; color: #475569; margin: 0 0 12px; }
+    .share-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 6px; }
+    .share-row input { flex: 1; min-width: 240px; font-size: 12.5px; color: #334155; background: #f8fafc; }
+    .copy-msg { font-size: 12.5px; color: #166534; font-weight: 700; margin: 0 0 10px; }
+    .copy-msg:empty { display: none; }
+    .next-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .next-row .btn-navy, .next-row .btn-gold { font-size: 14px; padding: 12px 16px; }
+    .footer { max-width: 960px; margin: 20px auto 0; padding: 0 12px; font-size: 12.5px; color: #475569; }
+    .footer .verse-name { text-align: center; color: #0284c7; font-weight: 900; font-size: 16px; letter-spacing: .5px; margin: 18px 0 2px; }
+    .footer .verse { color: #0f2439; font-size: 13.5px; text-align: center; margin: 0 0 4px; }
+    .footer .verse-ref { text-align: center; color: #b48327; font-weight: 800; margin: 0 0 14px; }
+    .footer a { color: #0f2439; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <h1 class="brand-title">Redemption Parts Finder — Free VIN Decoder</h1>
+        <p class="brand-sub">We don't sell parts — we find them, you buy, De installs</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn-gold" href="tel:+13607728205">Call / Text 360-772-8205</a>
+        <a class="btn-ghost" href="https://jesusfrees-max.github.io/">Main Site — Book a Mechanic</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="card-head"><span>Decode your vehicle</span><span>Free — NHTSA federal database</span></div>
+      <div class="card-body">
+        <label class="fld" for="vinInput">Your VIN (17 characters — on the driver's door jamb sticker, or the plate at the bottom of the windshield)</label>
+        <div class="vin-row">
+          <input type="text" id="vinInput" maxlength="24" placeholder="17-character VIN" autocomplete="off" autocapitalize="characters" spellcheck="false">
+          <button type="button" class="btn-navy btn-decode" id="decodeBtn" onclick="decodeFromInput()">Decode my vehicle</button>
+        </div>
+        <div class="status-line" id="statusLine"></div>
+      </div>
+    </div>
+
+    <div class="card" id="resultsCard" hidden>
+      <div class="card-head"><span>Your decoded vehicle</span><span id="resultsState"></span></div>
+      <div class="card-body" id="resultsBody"></div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p class="verse-name">Jesus Christ</p>
+    <p class="verse">"Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved."</p>
+    <p class="verse-ref">— Acts 4:12</p>
+    <p>Disclosure: Some links on this site are affiliate links. If you buy through one, Redemption Mobile Service may earn a small commission — at no extra cost to you. It helps keep a small local business on the road. Thank you for the support!</p>
+    <p>Redemption Mobile Service LLC · Clackamas, OR · Serving Beaverton, Gresham, Clackamas, Vancouver &amp; surrounding areas — about 30 miles · Open 24/7 · <a href="tel:+13607728205">360-772-8205</a> · <a href="https://jesusfrees-max.github.io/">jesusfrees-max.github.io</a></p>
+  </div>
+
+  <script>
+    // ================= VIN DECODER =================
+    // Data source: NHTSA vPIC (the federal vehicle database) — the same free
+    // source the Parts Finder uses. No key, no cost, no sign-up.
+    // Shareable links: this page with ?vin=<VIN> decodes on load, so a link
+    // someone receives opens already decoded.
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+
+    function cleanVin(v) {
+      return String(v || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+    }
+
+    function setStatus(html) {
+      document.getElementById('statusLine').innerHTML = html;
+    }
+
+    function shareUrlFor(vin) {
+      return window.location.origin + window.location.pathname + '?vin=' + encodeURIComponent(vin);
+    }
+
+    // Field groups for the decoded sheet. A field is shown only when the
+    // federal database returned a non-empty value for it.
+    function fieldGroups(r) {
+      function dispL(v) {
+        var n = parseFloat(v);
+        return isNaN(n) ? v : n.toFixed(1) + ' L';
+      }
+      return [
+        { title: 'Vehicle', fields: [
+          ['Year', r.ModelYear],
+          ['Make', r.Make],
+          ['Model', r.Model],
+          ['Trim', r.Trim],
+          ['Series', r.Series],
+          ['Body style', r.BodyClass],
+          ['Doors', r.Doors],
+          ['Drive type', r.DriveType],
+          ['Vehicle type', r.VehicleType]
+        ]},
+        { title: 'Engine', fields: [
+          ['Engine model', r.EngineModel],
+          ['Displacement', r.DisplacementL ? dispL(r.DisplacementL) : ''],
+          ['Cylinders', r.EngineCylinders],
+          ['Configuration', r.EngineConfiguration],
+          ['Fuel type', r.FuelTypePrimary],
+          ['Fuel type — secondary', r.FuelTypeSecondary],
+          ['Horsepower', r.EngineHP ? r.EngineHP + ' hp' : '']
+        ]},
+        { title: 'Transmission', fields: [
+          ['Style', r.TransmissionStyle],
+          ['Speeds', r.TransmissionSpeeds]
+        ]},
+        { title: 'Origin', fields: [
+          ['Manufacturer', r.Manufacturer],
+          ['Plant city', r.PlantCity],
+          ['Plant state / region', r.PlantState],
+          ['Plant country', r.PlantCountry]
+        ]}
+      ];
+    }
+
+    function renderResults(r, vin) {
+      var groups = fieldGroups(r);
+      var h = '<p class="vin-big"><span>VIN</span>' + esc(vin) + '</p>';
+      var any = false;
+      for (var g = 0; g < groups.length; g++) {
+        var rows = '';
+        for (var i = 0; i < groups[g].fields.length; i++) {
+          var label = groups[g].fields[i][0];
+          var val = groups[g].fields[i][1];
+          if (val != null && String(val).trim() !== '') {
+            rows += '<tr><td class="k">' + esc(label) + '</td><td class="v">' + esc(val) + '</td></tr>';
+            any = true;
+          }
+        }
+        if (rows) {
+          h += '<table class="spec"><tr><th class="group" colspan="2">' + esc(groups[g].title) + '</th></tr>' + rows + '</table>';
+        }
+      }
+      if (!any) return false;
+      var errCode = String(r.ErrorCode || '0');
+      if (errCode !== '0') {
+        h += '<p class="note-line">Heads up: the federal database flagged a possible problem with this VIN — if anything above looks wrong, double-check the characters (a VIN never uses the letters I, O or Q).</p>';
+      }
+      h += '<label class="fld" for="shareUrl">Share this decode — send the link and it opens already decoded</label>';
+      h += '<div class="share-row"><input type="text" id="shareUrl" readonly value="' + esc(shareUrlFor(vin)) + '">' +
+           '<button type="button" class="btn-gold" onclick="copyShareLink()">Copy link to this decode</button></div>';
+      h += '<p class="copy-msg" id="copyMsg"></p>';
+      h += '<div class="next-row">' +
+           '<a class="btn-navy" href="https://jesusfrees-max.github.io/redemption-parts-finder/">Find parts for this vehicle</a>' +
+           '<a class="btn-gold" href="https://jesusfrees-max.github.io/?view=quote">Book De to install — $65 service call</a>' +
+           '</div>';
+      document.getElementById('resultsBody').innerHTML = h;
+      document.getElementById('resultsState').textContent =
+        [r.ModelYear, r.Make, r.Model].filter(function (x) { return x; }).join(' ');
+      document.getElementById('resultsCard').hidden = false;
+      return true;
+    }
+
+    function copyShareLink() {
+      var input = document.getElementById('shareUrl');
+      var msg = document.getElementById('copyMsg');
+      var url = input ? input.value : '';
+      function done(ok) {
+        if (msg) msg.textContent = ok ? 'Link copied — send it to anyone and their vehicle opens already decoded.' : '';
+        if (!ok && input) { input.focus(); input.select(); }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(false); });
+      } else {
+        done(false);
+      }
+    }
+
+    function decodeVin(vin) {
+      vin = cleanVin(vin);
+      var btn = document.getElementById('decodeBtn');
+      if (vin.length !== 17) {
+        setStatus('A VIN has 17 characters — this one has ' + vin.length + '. Check it and try again. (You can find it on the driver\'s door jamb sticker or the plate at the bottom of the windshield.)');
+        return;
+      }
+      btn.disabled = true;
+      setStatus('Decoding your VIN in the NHTSA federal database…');
+      fetch('https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/' + encodeURIComponent(vin) + '?format=json')
+        .then(function (resp) { return resp.json(); })
+        .then(function (data) {
+          btn.disabled = false;
+          var r = (data && data.Results && data.Results[0]) || null;
+          if (!r || (!r.ModelYear && !r.Make)) {
+            setStatus('That VIN didn\'t decode — double-check the characters (a VIN never uses the letters I, O or Q) and try again, or text us the VIN at <b>360-772-8205</b> and we\'ll look it up for you.');
+            return;
+          }
+          if (renderResults(r, vin)) {
+            setStatus('<b>Decoded:</b> ' + esc([r.ModelYear, r.Make, r.Model].filter(function (x) { return x; }).join(' ')) + ' — the full sheet is below.');
+            if (window.history && window.history.replaceState) {
+              window.history.replaceState(null, '', shareUrlFor(vin));
+            }
+            var card = document.getElementById('resultsCard');
+            if (card && card.scrollIntoView) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            setStatus('That VIN decoded but the database returned no details for it — text us the VIN at <b>360-772-8205</b> and we\'ll look it up for you.');
+          }
+        })
+        .catch(function () {
+          btn.disabled = false;
+          setStatus('The VIN decoder didn\'t answer just now — check your connection and try again, or text us the VIN at <b>360-772-8205</b>.');
+        });
+    }
+
+    function decodeFromInput() {
+      decodeVin(document.getElementById('vinInput').value);
+    }
+
+    // Auto-decode a shared link: ?vin=<VIN> decodes on load.
+    (function init() {
+      var input = document.getElementById('vinInput');
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); decodeFromInput(); }
+      });
+      var params = new URLSearchParams(window.location.search);
+      var vin = params.get('vin');
+      if (vin) {
+        input.value = cleanVin(vin);
+        decodeVin(vin);
+      }
+    })();
+  </script>
+
+</body>
+</html>
