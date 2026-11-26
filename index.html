@@ -388,6 +388,7 @@
     // Batch 25 (Sienna standard four + plug split, HR-V standard four, Ranger standard four, Sentra 1.8L oil + air) merged 2026-11-25.
     // Batch 26 (Edge 2.0L with year splits, Traverse 2019-2023 standard four) merged 2026-11-25.
     // Batch 27 (Colorado 2015-2016 LFX standard four, Mazda3 2014-2018 SkyActiv standard four) merged 2026-11-25.
+    // Batch 29 (GMC Canyon 2015-2016 LFX standard four, Mazda6 2014-2018 2.5L standard four, Pathfinder 2017-2020 oil) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -4550,7 +4551,158 @@
         ],
         companion: 'Volkswagen of America\'s own fluid/capacity chart names <b>5Q0-129-620-B</b> for the 2018 Tiguan 2.0L Turbo (DGUA). Scoped to 2018 only — later years are held until the VW catalog settles the 5Q0 vs 5QM number split.'
       }
-
+,
+      {
+        partId: 'oil-filter', make: 'GMC', model: 'Canyon', y0: 2015, y1: 2016,
+        title: 'Oil Filter (Cartridge) — 2015–2016 GMC Canyon (3.6L V6 LFX)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF2130',
+        rows: [
+          { brand: 'ACDelco', part: 'PF2130 (GM 19303249)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+PF2130+oil+filter') },,
+          { brand: 'WIX', part: '57090', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57090+oil+filter') },,
+          { brand: 'FRAM', part: 'CH8765ECO', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH8765ECO+oil+filter') },
+        ],
+        companion: 'CARTRIDGE element (not a spin-on). GM’s own Canyon owner manuals (2015 and 2016) list <b>19303249 / ACDelco PF2130</b> for the 3.6L LFX; WIX’s catalog data names GM 19303249 as the number its 57090 replaces. <b>Do NOT use PF2257G</b> — that cartridge is for the 2017+ LGZ engine — and do not use a PF63/PF64 spin-on on this truck.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'GMC', model: 'Canyon', y0: 2015, y1: 2016,
+        title: 'Engine Air Filter — 2015–2016 GMC Canyon (3.6L V6)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'A3195C',
+        rows: [
+          { brand: 'ACDelco', part: 'A3195C', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00S0A6FRE?tag=redemptionm06-20' },,
+          { brand: 'FRAM', part: 'CA11959', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA11959+air+filter') },,
+          { brand: 'WIX', part: 'WA10256', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10256+air+filter') },
+        ],
+        companion: 'Panel filter in the engine airbox. GM’s Canyon manual table lists <b>94775933 / ACDelco A3195C</b> (all engines); the maker catalog table pairs FRAM CA11959 and WIX WA10256 with it for the 2015–2019 trucks — the same filter verified for the Colorado.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'GMC', model: 'Canyon', y0: 2015, y1: 2016,
+        title: 'Cabin Air Filter — 2015–2016 GMC Canyon',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'CF196',
+        rows: [
+          { brand: 'ACDelco', part: 'CF196 (GM 23135671)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+CF196+cabin+air+filter') },,
+          { brand: 'FRAM', part: 'CF11966', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11966+cabin+air+filter') },,
+          { brand: 'WIX', part: '24211', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24211+cabin+air+filter') },
+        ],
+        companion: 'Behind the glove box. GM’s Canyon manual table lists <b>23135671 / ACDelco CF196</b>; maker cross lists pair FRAM CF11966 and WIX 24211 with that GM number. Note the FRAM number (CF11966) is a different brand number for the same panel — not a typo for CF196.'
+      },
+      {
+        partId: 'spark-plugs', make: 'GMC', model: 'Canyon', y0: 2015, y1: 2016,
+        title: 'Spark Plugs — 2015–2016 GMC Canyon (3.6L V6 LFX)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-109',
+        rows: [
+          { brand: 'ACDelco', part: '41-109', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00496LZIW?tag=redemptionm06-20' },,
+          { brand: 'NGK', part: '90117 (ILTR6E11)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+90117+ILTR6E11+spark+plug') },,
+          { brand: 'DENSO', part: 'ITV16', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+ITV16+spark+plug') },,
+          { brand: 'ACDelco', part: '41-109 (GM 12622561)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-109+spark+plug') },
+        ],
+        companion: 'Set of 6, iridium, gap 0.037–0.043 in. GM’s Canyon manual tables list <b>12622561 / ACDelco 41-109</b> for the 3.6L LFX; NGK’s official cross-reference ties its ILTR6E11 (90117) to the 41-109, and DENSO’s cross ties the ITV16 to it. Do NOT use the 2017+ LGZ plug (41-130).'
+      },
+      {
+        partId: 'oil-filter', make: 'Mazda', model: 'Mazda6', y0: 2014, y1: 2018,
+        title: 'Oil Filter — 2014–2018 Mazda Mazda6 (2.5L SkyActiv-G, Non-Turbo)',
+        oemBrand: 'Mazda (OEM)', oemPart: 'PE01-14-302A',
+        rows: [
+          { brand: 'Mazda (OEM)', part: 'PE01-14-302A', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00KWELWOW?tag=redemptionm06-20' },,
+          { brand: 'Mazda (OEM)', part: 'PE01-14-302A', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mazda+PE01-14-302A+oil+filter') },,
+          { brand: 'WIX', part: '57002', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57002+oil+filter') },,
+          { brand: 'MANN-FILTER', part: 'W 6018', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+W+6018+oil+filter') },
+        ],
+        companion: 'Spin-on filter. MANN-FILTER’s catalog lists the <b>PE01-14-302</b> family as the OE numbers for the Mazda6 2.5 SkyActiv-G — the same filter this catalog verifies for the CX-5 and Mazda3. Use the SkyActiv-spec filter (WIX 57002 is the SkyActiv-specific WIX). <b>2018 2.5T turbo cars take a different filter (PY8W-14-302) — not this one.</b>'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Mazda', model: 'Mazda6', y0: 2014, y1: 2018,
+        title: 'Engine Air Filter — 2014–2018 Mazda Mazda6 (2.5L SkyActiv-G, Non-Turbo)',
+        oemBrand: 'Mazda (OEM)', oemPart: 'PE07-13-3A0A',
+        rows: [
+          { brand: 'FRAM', part: 'CA11259', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00J5ZL42O?tag=redemptionm06-20' },,
+          { brand: 'Mazda (OEM)', part: 'PE07-13-3A0A', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mazda+PE07-13-3A0A+air+filter') },,
+          { brand: 'MAHLE', part: 'LX 4143', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MAHLE+LX+4143+air+filter') },
+        ],
+        companion: 'Panel filter in the engine airbox. FRAM’s own application data lists the CA11259 for the Mazda6 2.5L (2014–2021); MAHLE’s catalog crosses its LX 4143 to Mazda <b>PE07-13-3A0A</b> — the same filter verified for the CX-5 and Mazda3. Non-turbo cars only.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Mazda', model: 'Mazda6', y0: 2014, y1: 2018,
+        title: 'Cabin Air Filter — 2014–2018 Mazda Mazda6 (2.5L SkyActiv-G)',
+        oemBrand: 'Mazda (OEM)', oemPart: 'KD45-61-J6X',
+        rows: [
+          { brand: 'Mazda (OEM)', part: 'KD45-61-J6X', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mazda+KD45-61-J6X+cabin+air+filter') },,
+          { brand: 'MANN-FILTER', part: 'CU 24 009', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+24+009+cabin+air+filter') },,
+          { brand: 'FRAM', part: 'CF11811', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11811+cabin+air+filter') },
+        ],
+        companion: 'Behind the glove box. Maker catalog data (WIX/Baldwin product listings) names <b>KD45-61-J6X</b> as the OE cabin element for the Mazda6 2.5L; MANN-FILTER’s product data crosses its CU 24 009 to that number. Do NOT use GE6T-61-J6X — that is the 1998–2002-era Mazda6 filter.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Mazda', model: 'Mazda6', y0: 2014, y1: 2018,
+        title: 'Spark Plugs — 2014–2018 Mazda Mazda6 (2.5L SkyActiv-G, Non-Turbo)',
+        oemBrand: 'Mazda (OEM)', oemPart: 'PE5R-18-110',
+        rows: [
+          { brand: 'NGK', part: '94124 (ILKAR7L11)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+94124+ILKAR7L11+spark+plug') },,
+          { brand: 'Mazda (OEM)', part: 'PE5R-18-110', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mazda+PE5R-18-110+spark+plug') },
+        ],
+        companion: 'Set of 4, iridium, gap ~0.044 in. Mazda’s own owner manuals specify <b>PE5R-18-110 or PE5S-18-110</b> for the SkyActiv-G 2.5 and explicitly separate it from the 2.5T plug (PY8V-18-110); NGK’s cross data ties its ILKAR7L11 (94124) to both genuine numbers. <b>Turbo (2018 2.5T) cars take PY8V-18-110 — not this plug.</b>'
+      },
+      {
+        partId: 'oil-filter', make: 'Nissan', model: 'Pathfinder', y0: 2017, y1: 2020,
+        title: 'Oil Filter — 2017–2020 Nissan Pathfinder (3.5L V6)',
+        oemBrand: 'Nissan (OEM)', oemPart: '15208-65F0E',
+        rows: [
+          { brand: 'Nissan (OEM)', part: '15208-65F0E', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00HKSM1A2?tag=redemptionm06-20' },,
+          { brand: 'WIX', part: '51358', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51358+oil+filter') },,
+          { brand: 'Nissan (OEM)', part: '15208-65F0E', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+15208-65F0E+oil+filter') },
+        ],
+        companion: 'Spin-on filter. The Pathfinder 3.5L takes the same <b>15208-65F0E</b> this catalog verifies for the Altima, Rogue and Sentra (ECOGARD’s maker catalog lists the Pathfinder 3.5L 2004–2020 against this number family). <b>Do NOT substitute 15208-65F1A/65F1B</b> — Nissan’s own bulletin says those are NOT interchangeable with 65F0E (different bypass relief). Pathfinder air/cabin/plugs are still being verified — not published yet.'
+      }
     ];
     var PARTS = {};
     var vehicle = { year: '', make: '', model: '', trim: '', engine: '', label: '' };
