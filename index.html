@@ -270,7 +270,7 @@
     // ================= DATA =================
     var MAKES_MODELS = {
       'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
-      'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V'],
+      'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline'],
       'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
@@ -393,6 +393,7 @@
     // Batch 31 (Acadia 2017-2023 3.6L standard four + oil split, Titan 2017-2024 5.6L oil/air/plugs) merged 2026-11-26.
     // Batch 32 (Colorado + Canyon 2017-2022 3.6L LGZ standard fours, F-150 2018-2020 3.3L V6 standard four) merged 2026-11-26.
     // Batch 33 (Colorado + Canyon 2015-2022 2.5L oil + plugs; 3.6L oil/plug entries engine-scoped) merged 2026-11-26.
+    // Batch 34 (F-150 2018-2021 3.0L diesel oil/air/cabin/fuel, Ridgeline 2017-2023 oil/air/plugs, Tiguan 2019 + 2021 oil with build-date split + air) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -5190,6 +5191,166 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-115+spark+plug') }
         ],
         companion: 'Set of 4, gap 0.037–0.043 in. GM’s 2017 Canyon manual lists <b>12627160 / ACDelco 41-115</b> for the 2.5L, and GM’s Colorado manuals confirm the same number across the generation. <b>Do NOT use 41-109 or 41-130</b> — those are the 3.6L plugs.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'F-150', engine: '3.0L Diesel', y0: 2018, y1: 2021,
+        title: 'Oil Filter (Cartridge) — 2018–2021 Ford F-150 (3.0L Power Stroke Diesel)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-2081',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-2081', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-2081+oil+filter') }
+        ],
+        companion: 'Cartridge filter (Ford JL3Z-6731-A). Ford\'s owner\'s-manual Motorcraft tables list <b>FL-2081</b> for the 3.0L diesel in every year 2018–2021. Oil: SAE 5W-30 FA-4 (WSS-M2C214-B1), 6.5 qt with filter. <b>Traps:</b> FL-2051/FL-2124-S are the 6.7L Super Duty diesel filter, FL-2062 is the 2.7L EcoBoost cartridge, and FL-500-S fits the gas engines only — none of them fit this truck.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'F-150', engine: '3.0L Diesel', y0: 2018, y1: 2021,
+        title: 'Engine Air Filter — 2018–2021 Ford F-150 (3.0L Power Stroke Diesel)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1883',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1883', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B000V53VR8?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'FA-1883', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1883+air+filter') },
+          { brand: 'FRAM', part: 'CA10262', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA10262+air+filter') }
+        ],
+        companion: 'Ford\'s owner\'s-manual Motorcraft tables list <b>FA-1883</b> (Ford 7C3Z-9601-A) for the 3.0L diesel — the same element the gas F-150s of these years use.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'F-150', engine: '3.0L Diesel', y0: 2018, y1: 2021,
+        title: 'Cabin Air Filter — 2018–2021 Ford F-150 (3.0L Power Stroke Diesel)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-79',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-79', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-79+cabin+air+filter') },
+          { brand: 'COCOAUTO (Engine + Cabin Filter Kit)', part: 'FP-79', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D8JLT2YP?tag=redemptionm06-20' }
+        ],
+        companion: 'Ford\'s owner\'s-manual Motorcraft tables list <b>FP-79</b> (Ford FL3Z-19N619-A) for the 3.0L diesel in every year 2018–2021; current Ford parts listings supersede it to FP-92, but FP-79 is the number these trucks\' manuals specify. The filter sits behind the glove box.'
+      },
+      {
+        partId: 'fuel-filter', make: 'Ford', model: 'F-150', engine: '3.0L Diesel', y0: 2018, y1: 2021,
+        title: 'Fuel Filter Kit — 2018–2021 Ford F-150 (3.0L Power Stroke Diesel)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FD-4627',
+        rows: [
+          { brand: 'Motorcraft', part: 'FD-4627', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FD-4627+fuel+filter') }
+        ],
+        companion: 'Kit (Ford JL3Z-9N184-A) — it includes <b>both</b> fuel filters: the engine-mounted primary and the frame-mounted secondary. Ford\'s owner\'s-manual Motorcraft tables list <b>FD-4627</b> for the 3.0L diesel in every year 2018–2021. <b>Traps:</b> FD-4615 and FD-4625 are 6.7L Super Duty kits, and FD-4629 is a different single-filter listing — do not substitute them.'
+      },
+      {
+        partId: 'oil-filter', make: 'Honda', model: 'Ridgeline', y0: 2017, y1: 2023,
+        title: 'Oil Filter — 2017–2023 Honda Ridgeline (3.5L V6)',
+        oemBrand: 'Honda (OEM)', oemPart: '15400-PLM-A02',
+        rows: [
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00BFDFJA2?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57356XP', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5SZN9S?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+15400-PLM-A02+oil+filter') }
+        ],
+        companion: 'Spin-on filter. American Honda\'s own service bulletin 24-002 names <b>15400-PLM-A02</b> as the oil filter for the Ridgeline — the same filter this site lists for the Pilot, Civic, Accord and CR-V. One filter serves the whole 2017–2023 run.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Honda', model: 'Ridgeline', y0: 2017, y1: 2023,
+        title: 'Engine Air Filter — 2017–2023 Honda Ridgeline (3.5L V6)',
+        oemBrand: 'Honda (OEM)', oemPart: '17220-5J6-A10',
+        rows: [
+          { brand: 'ECOGARD', part: 'XA10486', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01LWM3AMJ?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '17220-5J6-A10', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+17220-5J6-A10+air+filter') },
+          { brand: 'FRAM', part: 'CA12061', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12061+air+filter') },
+          { brand: 'WIX', part: 'WA10339', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10339+air+filter') }
+        ],
+        companion: 'Rigid panel filter — unclip the airbox lid and swap it, no tools. Honda\'s Ridgeline documentation names <b>17220-5J6-A10</b>, the same element this site lists for the Pilot and Odyssey.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Honda', model: 'Ridgeline', y0: 2017, y1: 2023,
+        title: 'Spark Plugs — 2017–2023 Honda Ridgeline (3.5L V6)',
+        oemBrand: 'Honda (OEM)', oemPart: '12290-R9P-A01',
+        rows: [
+          { brand: 'NGK', part: '95350', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95350+spark+plug') },
+          { brand: 'Honda (OEM)', part: '12290-R9P-A01', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+12290-R9P-A01+spark+plug') }
+        ],
+        companion: 'Set of 6. The Ridgeline owner\'s manuals specify the <b>NGK DILZKR7B11G</b> Laser Iridium (NGK 95350) — Honda <b>12290-R9P-A01</b> is the same plug in a Honda box, confirmed in DENSO\'s official cross-reference. Factory gap: 0.044 in. <b>Trap:</b> 12290-R70-A01 / NGK ILZKR7B11 (7751) is the 2006–2014 first-generation Ridgeline plug — it does not fit these trucks.'
+      },
+      {
+        partId: 'oil-filter', make: 'Volkswagen', model: 'Tiguan', y0: 2019, y1: 2019,
+        title: 'Oil Filter (Cartridge) — 2019 Volkswagen Tiguan (2.0L TSI)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '06L-115-562-B',
+        rows: [
+          { brand: 'Volkswagen (OEM)', part: '06L-115-562-B', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+06L-115-562-B+oil+filter') }
+        ],
+        qualifier: {
+          question: 'When was your Tiguan built?',
+          helpText: 'The build month and year are printed on the certification label on the driver\'s door jamb. Volkswagen of America\'s own fluid/capacity chart splits this filter by <b>production date</b>: builds through 04/28/2018 take the earlier cartridge, builds from 04/29/2018 take the later one. The two do <b>not</b> interchange.',
+          options: [
+            { label: 'Built April 29, 2018 or later', useEntry: true },
+            { label: 'Built through April 28, 2018', oemBrand: 'Volkswagen (OEM)', oemPart: '06K-115-562',
+              rows: [
+                { brand: 'Volkswagen (OEM)', part: '06K-115-562', price: 'See today’s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+06K-115-562+oil+filter') },
+                { brand: 'MANN-FILTER', part: 'HU 6013 z', price: 'See today’s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+HU+6013+z+oil+filter') }
+              ],
+              note: 'Early-build 2019 Tiguans take the <b>06K-115-562</b> cartridge — the same filter this site lists for the 2018 Tiguan. Most US 2019s were built after the split, so check the door-jamb date before ordering.' }
+          ]
+        },
+        companion: 'Cartridge filter. Volkswagen of America\'s own fluid/capacity chart (revised 9-24-2019) names <b>06L-115-562-B</b> for 2019 Tiguan builds from 04/29/2018; earlier builds take 06K-115-562. Scoped to 2019 only — 2020 is held until a VW chart for that year is verified.'
+      },
+      {
+        partId: 'oil-filter', make: 'Volkswagen', model: 'Tiguan', y0: 2021, y1: 2021,
+        title: 'Oil Filter (Cartridge) — 2021 Volkswagen Tiguan (2.0L TSI)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '06L-115-562-B',
+        rows: [
+          { brand: 'Volkswagen (OEM)', part: '06L-115-562-B', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+06L-115-562-B+oil+filter') }
+        ],
+        companion: 'Cartridge filter. Volkswagen of America\'s own fluid/capacity chart for the 2021 Tiguan (2.0L Turbo DTEA) names <b>06L-115-562-B</b> with no build split. Scoped to 2021 only — 2020 and 2022 are held until VW charts for those years are verified.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Volkswagen', model: 'Tiguan', y0: 2019, y1: 2019,
+        title: 'Engine Air Filter — 2019 Volkswagen Tiguan (2.0L TSI)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-129-620-B',
+        rows: [
+          { brand: 'Volkswagen (OEM)', part: '5Q0-129-620-B', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-129-620-B+air+filter') }
+        ],
+        companion: 'Volkswagen of America\'s own fluid/capacity chart names <b>5Q0-129-620-B</b> for the 2019 Tiguan 2.0L Turbo. Scoped to 2019 only — the neighbouring years are held until their own VW charts are verified (the same number is verified separately for 2018, 2019 and 2021). <b>Do not substitute</b> the -C, -D or 5QM variants listed for other VW models.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Volkswagen', model: 'Tiguan', y0: 2021, y1: 2021,
+        title: 'Engine Air Filter — 2021 Volkswagen Tiguan (2.0L TSI)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-129-620-B',
+        rows: [
+          { brand: 'Volkswagen (OEM)', part: '5Q0-129-620-B', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-129-620-B+air+filter') }
+        ],
+        companion: 'Volkswagen of America\'s own fluid/capacity chart names <b>5Q0-129-620-B</b> for the 2021 Tiguan 2.0L Turbo. Scoped to 2021 only — the neighbouring years are held until their own VW charts are verified (the same number is verified separately for 2018, 2019 and 2021). <b>Do not substitute</b> the -C, -D or 5QM variants listed for other VW models.'
       }
     ];
     var PARTS = {};
