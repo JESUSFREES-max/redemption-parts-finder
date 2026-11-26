@@ -391,6 +391,7 @@
     // Batch 29 (GMC Canyon 2015-2016 LFX standard four, Mazda6 2014-2018 2.5L standard four, Pathfinder 2017-2020 oil) merged 2026-11-26.
     // Batch 30 (F-150 2015-2020 2.7L EcoBoost standard four + plug split, Tundra 2014-2021 5.7L standard four) merged 2026-11-26.
     // Batch 31 (Acadia 2017-2023 3.6L standard four + oil split, Titan 2017-2024 5.6L oil/air/plugs) merged 2026-11-26.
+    // Batch 32 (Colorado + Canyon 2017-2022 3.6L LGZ standard fours, F-150 2018-2020 3.3L V6 standard four) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -4964,6 +4965,170 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+22401-1LA1C+spark+plug') }
         ],
         companion: 'Set of 8, gap 0.043 in (1.1 mm). Nissan’s Titan manuals specify the NGK <b>DILKAR7B11</b> for the 5.6L VK56VD — the plug Nissan sells as <b>22401-1LA1C</b> (cross-verified on the same engine in the QX80). The Titan XD diesel has no spark plugs.'
+      },
+      {
+        partId: 'oil-filter', make: 'Chevrolet', model: 'Colorado', y0: 2017, y1: 2022,
+        title: 'Oil Filter (Cartridge) — 2017–2022 Chevrolet Colorado (3.6L V6 LGZ)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF2257G',
+        rows: [
+          { brand: 'ACDelco', part: 'PF2257G (GM 55594651)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+PF2257G+oil+filter') }
+        ],
+        companion: 'CARTRIDGE element (not a spin-on). GM’s own Colorado owner manuals (2019 and 2022 read directly) list <b>55594651 / ACDelco PF2257G</b> for the 3.6L LGZ. <b>Do NOT use PF2129 or PF2130</b> — those cartridges fit the 2015–2016 LFX engine only — and do not use a PF63 spin-on.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Chevrolet', model: 'Colorado', y0: 2017, y1: 2022,
+        title: 'Engine Air Filter — 2017–2022 Chevrolet Colorado (3.6L V6)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'A3195C',
+        rows: [
+          { brand: 'ACDelco', part: 'A3195C', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00S0A6FRE?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA11959', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA11959+air+filter') },
+          { brand: 'WIX', part: 'WA10256', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10256+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. GM’s Colorado manuals list <b>94775933 / ACDelco A3195C</b> for all engines — the air filter did not change when the LGZ replaced the LFX, and the FRAM/WIX maker tables pair CA11959 and WA10256 with it.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Chevrolet', model: 'Colorado', y0: 2017, y1: 2022,
+        title: 'Cabin Air Filter — 2017–2022 Chevrolet Colorado',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'CF196',
+        rows: [
+          { brand: 'ACDelco', part: 'CF196 (GM 23135671)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+CF196+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF11966', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11966+cabin+air+filter') },
+          { brand: 'WIX', part: '24211', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24211+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. GM’s Colorado manuals list <b>23135671 / ACDelco CF196</b> across the whole generation; maker cross lists pair FRAM CF11966 and WIX 24211 with that GM number.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Colorado', y0: 2017, y1: 2022,
+        title: 'Spark Plugs — 2017–2022 Chevrolet Colorado (3.6L V6 LGZ)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-130',
+        rows: [
+          { brand: 'ACDelco', part: '41-130 (GM 12646780)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-130+spark+plug') }
+        ],
+        companion: 'Set of 6, gap 0.031–0.035 in. GM’s Colorado manuals list <b>12646780 / ACDelco 41-130</b> for the 3.6L LGZ — the same plug this catalog verifies for the GMC Acadia 3.6L. <b>Do NOT use 41-109</b> — that is the 2015–2016 LFX plug (and the Traverse plug). No NGK/DENSO equivalent published yet: none was verified in the plug makers’ own catalogs for 41-130 this pass.'
+      },
+      {
+        partId: 'oil-filter', make: 'GMC', model: 'Canyon', y0: 2017, y1: 2022,
+        title: 'Oil Filter (Cartridge) — 2017–2022 GMC Canyon (3.6L V6 LGZ)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF2257G',
+        rows: [
+          { brand: 'ACDelco', part: 'PF2257G (GM 55594651)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+PF2257G+oil+filter') }
+        ],
+        companion: 'CARTRIDGE element (not a spin-on). GM’s own 2017 Canyon owner manual lists <b>55594651 / ACDelco PF2257G</b> for the 3.6L LGZ, and GM’s Colorado manuals (2019, 2022) confirm the same number across the LGZ years. <b>Do NOT use PF2130</b> — that cartridge fits the 2015–2016 LFX Canyon only.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'GMC', model: 'Canyon', y0: 2017, y1: 2022,
+        title: 'Engine Air Filter — 2017–2022 GMC Canyon (3.6L V6)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'A3195C',
+        rows: [
+          { brand: 'ACDelco', part: 'A3195C', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00S0A6FRE?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA11959', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA11959+air+filter') },
+          { brand: 'WIX', part: 'WA10256', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10256+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. GM’s Canyon manual table lists <b>94775933 / ACDelco A3195C</b> (all engines) — the same filter verified for the Colorado; the maker catalog table pairs FRAM CA11959 and WIX WA10256 with it.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'GMC', model: 'Canyon', y0: 2017, y1: 2022,
+        title: 'Cabin Air Filter — 2017–2022 GMC Canyon',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'CF196',
+        rows: [
+          { brand: 'ACDelco', part: 'CF196 (GM 23135671)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+CF196+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF11966', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11966+cabin+air+filter') },
+          { brand: 'WIX', part: '24211', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24211+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. GM’s Canyon manual table lists <b>23135671 / ACDelco CF196</b>; maker cross lists pair FRAM CF11966 and WIX 24211 with that GM number.'
+      },
+      {
+        partId: 'spark-plugs', make: 'GMC', model: 'Canyon', y0: 2017, y1: 2022,
+        title: 'Spark Plugs — 2017–2022 GMC Canyon (3.6L V6 LGZ)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-130',
+        rows: [
+          { brand: 'ACDelco', part: '41-130 (GM 12646780)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-130+spark+plug') }
+        ],
+        companion: 'Set of 6, gap 0.031–0.035 in. GM’s 2017 Canyon manual lists <b>12646780 / ACDelco 41-130</b> for the 3.6L LGZ, confirmed across the LGZ years in GM’s Colorado manuals. <b>Do NOT use 41-109</b> — that is the 2015–2016 LFX plug.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'F-150', engine: '3.3L V6', y0: 2018, y1: 2020,
+        title: 'Oil Filter — 2018–2020 Ford F-150 (3.3L V6)',
+        oemBrand: 'Ford (Motorcraft)', oemPart: 'FL-500-S',
+        rows: [
+          { brand: 'Ford (Motorcraft)', part: 'FL-500-S', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B001KR1BQE?tag=redemptionm06-20' },
+          { brand: 'Ford (Motorcraft)', part: 'FL-500-S', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-500-S+oil+filter') },
+          { brand: 'WIX', part: '57502', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57502+oil+filter') },
+          { brand: 'FRAM', part: 'PH10575', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH10575+oil+filter') }
+        ],
+        companion: 'Spin-on filter. Ford’s F-150 owner manuals (2018 and 2020 Motorcraft tables) list <b>FL-500-S</b> for the 3.3L Duratec V6 — the same filter this catalog verifies for the 5.0L V8, with the same WIX 57502 / FRAM PH10575 maker crosses. The 2.7L EcoBoost takes a cartridge (FL-2062-A) — do not cross them.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'F-150', engine: '3.3L V6', y0: 2018, y1: 2020,
+        title: 'Engine Air Filter — 2018–2020 Ford F-150 (3.3L V6)',
+        oemBrand: 'Ford (Motorcraft)', oemPart: 'FA-1883',
+        rows: [
+          { brand: 'Ford (Motorcraft)', part: 'FA-1883', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B000V53VR8?tag=redemptionm06-20' },
+          { brand: 'Ford (Motorcraft)', part: 'FA-1883', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1883+air+filter') }
+        ],
+        companion: 'Ford’s manuals list <b>FA-1883</b> for every gasoline F-150 engine of these years, the 3.3L included — the same filter verified for the 5.0L and EcoBoost trucks.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'F-150', engine: '3.3L V6', y0: 2018, y1: 2020,
+        title: 'Cabin Air Filter — 2018–2020 Ford F-150 (3.3L V6)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-79',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-79', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-79+cabin+air+filter') }
+        ],
+        companion: 'Ford’s manuals list <b>FP-79</b> as the cabin filter for these F-150 years across engines — the same filter verified for the 5.0L trucks. (2021+ trucks take FP-92 — see the 2.7L EcoBoost entry’s note.)'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150', engine: '3.3L V6', y0: 2018, y1: 2020,
+        title: 'Spark Plugs — 2018–2020 Ford F-150 (3.3L V6)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-520',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-520', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-520+spark+plug') }
+        ],
+        companion: 'Set of 6, platinum, factory gap 0.049–0.053 in. Ford’s 2018 and 2020 owner manuals list <b>SP-520</b> for the 3.3L Duratec V6 (Ford Parts lists the current service plug as SP-520AX, the same plug). <b>Do NOT use SP-551</b> — that is the 5.0L V8 plug — or the EcoBoost plugs (SP-534/SP-578).'
       }
     ];
     var PARTS = {};
