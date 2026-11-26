@@ -392,6 +392,7 @@
     // Batch 30 (F-150 2015-2020 2.7L EcoBoost standard four + plug split, Tundra 2014-2021 5.7L standard four) merged 2026-11-26.
     // Batch 31 (Acadia 2017-2023 3.6L standard four + oil split, Titan 2017-2024 5.6L oil/air/plugs) merged 2026-11-26.
     // Batch 32 (Colorado + Canyon 2017-2022 3.6L LGZ standard fours, F-150 2018-2020 3.3L V6 standard four) merged 2026-11-26.
+    // Batch 33 (Colorado + Canyon 2015-2022 2.5L oil + plugs; 3.6L oil/plug entries engine-scoped) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -4286,7 +4287,7 @@
       }
 ,
       {
-        partId: 'oil-filter', make: 'Chevrolet', model: 'Colorado', y0: 2015, y1: 2016,
+        partId: 'oil-filter', make: 'Chevrolet', model: 'Colorado', engine: '3.6L V6', y0: 2015, y1: 2016,
         title: 'Oil Filter (Cartridge) — 2015–2016 Chevrolet Colorado (3.6L V6 LFX)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF2129',
         rows: [
@@ -4336,7 +4337,7 @@
         companion: 'Behind the glove box. GM\'s manual table lists <b>23135671 / ACDelco CF196</b>; maker cross lists pair FRAM CF11966 and WIX 24211 with that GM number for the Colorado.'
       },
       {
-        partId: 'spark-plugs', make: 'Chevrolet', model: 'Colorado', y0: 2015, y1: 2016,
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Colorado', engine: '3.6L V6', y0: 2015, y1: 2016,
         title: 'Spark Plugs — 2015–2016 Chevrolet Colorado (3.6L V6 LFX)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: '41-109',
         rows: [
@@ -4556,7 +4557,7 @@
       }
 ,
       {
-        partId: 'oil-filter', make: 'GMC', model: 'Canyon', y0: 2015, y1: 2016,
+        partId: 'oil-filter', make: 'GMC', model: 'Canyon', engine: '3.6L V6', y0: 2015, y1: 2016,
         title: 'Oil Filter (Cartridge) — 2015–2016 GMC Canyon (3.6L V6 LFX)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF2130',
         rows: [
@@ -4606,7 +4607,7 @@
         companion: 'Behind the glove box. GM’s Canyon manual table lists <b>23135671 / ACDelco CF196</b>; maker cross lists pair FRAM CF11966 and WIX 24211 with that GM number. Note the FRAM number (CF11966) is a different brand number for the same panel — not a typo for CF196.'
       },
       {
-        partId: 'spark-plugs', make: 'GMC', model: 'Canyon', y0: 2015, y1: 2016,
+        partId: 'spark-plugs', make: 'GMC', model: 'Canyon', engine: '3.6L V6', y0: 2015, y1: 2016,
         title: 'Spark Plugs — 2015–2016 GMC Canyon (3.6L V6 LFX)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: '41-109',
         rows: [
@@ -4967,7 +4968,7 @@
         companion: 'Set of 8, gap 0.043 in (1.1 mm). Nissan’s Titan manuals specify the NGK <b>DILKAR7B11</b> for the 5.6L VK56VD — the plug Nissan sells as <b>22401-1LA1C</b> (cross-verified on the same engine in the QX80). The Titan XD diesel has no spark plugs.'
       },
       {
-        partId: 'oil-filter', make: 'Chevrolet', model: 'Colorado', y0: 2017, y1: 2022,
+        partId: 'oil-filter', make: 'Chevrolet', model: 'Colorado', engine: '3.6L V6', y0: 2017, y1: 2022,
         title: 'Oil Filter (Cartridge) — 2017–2022 Chevrolet Colorado (3.6L V6 LGZ)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF2257G',
         rows: [
@@ -5011,7 +5012,7 @@
         companion: 'Behind the glove box. GM’s Colorado manuals list <b>23135671 / ACDelco CF196</b> across the whole generation; maker cross lists pair FRAM CF11966 and WIX 24211 with that GM number.'
       },
       {
-        partId: 'spark-plugs', make: 'Chevrolet', model: 'Colorado', y0: 2017, y1: 2022,
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Colorado', engine: '3.6L V6', y0: 2017, y1: 2022,
         title: 'Spark Plugs — 2017–2022 Chevrolet Colorado (3.6L V6 LGZ)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: '41-130',
         rows: [
@@ -5022,7 +5023,7 @@
         companion: 'Set of 6, gap 0.031–0.035 in. GM’s Colorado manuals list <b>12646780 / ACDelco 41-130</b> for the 3.6L LGZ — the same plug this catalog verifies for the GMC Acadia 3.6L. <b>Do NOT use 41-109</b> — that is the 2015–2016 LFX plug (and the Traverse plug). No NGK/DENSO equivalent published yet: none was verified in the plug makers’ own catalogs for 41-130 this pass.'
       },
       {
-        partId: 'oil-filter', make: 'GMC', model: 'Canyon', y0: 2017, y1: 2022,
+        partId: 'oil-filter', make: 'GMC', model: 'Canyon', engine: '3.6L V6', y0: 2017, y1: 2022,
         title: 'Oil Filter (Cartridge) — 2017–2022 GMC Canyon (3.6L V6 LGZ)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF2257G',
         rows: [
@@ -5066,7 +5067,7 @@
         companion: 'Behind the glove box. GM’s Canyon manual table lists <b>23135671 / ACDelco CF196</b>; maker cross lists pair FRAM CF11966 and WIX 24211 with that GM number.'
       },
       {
-        partId: 'spark-plugs', make: 'GMC', model: 'Canyon', y0: 2017, y1: 2022,
+        partId: 'spark-plugs', make: 'GMC', model: 'Canyon', engine: '3.6L V6', y0: 2017, y1: 2022,
         title: 'Spark Plugs — 2017–2022 GMC Canyon (3.6L V6 LGZ)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: '41-130',
         rows: [
@@ -5129,6 +5130,66 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-520+spark+plug') }
         ],
         companion: 'Set of 6, platinum, factory gap 0.049–0.053 in. Ford’s 2018 and 2020 owner manuals list <b>SP-520</b> for the 3.3L Duratec V6 (Ford Parts lists the current service plug as SP-520AX, the same plug). <b>Do NOT use SP-551</b> — that is the 5.0L V8 plug — or the EcoBoost plugs (SP-534/SP-578).'
+      },
+      {
+        partId: 'oil-filter', make: 'Chevrolet', model: 'Colorado', engine: '2.5L', y0: 2015, y1: 2022,
+        title: 'Oil Filter — 2015–2022 Chevrolet Colorado (2.5L L4)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF64',
+        rows: [
+          { brand: 'ACDelco', part: 'PF64', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B094YWQCNT?tag=redemptionm06-20' },
+          { brand: 'ACDelco', part: 'PF64', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+PF64+oil+filter') },
+          { brand: 'WIX', part: 'WL10290', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10290+oil+filter') },
+          { brand: 'FRAM', part: 'PH12060', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH12060+oil+filter') }
+        ],
+        companion: 'Spin-on filter. GM’s Colorado owner manuals list <b>ACDelco PF64</b> for the 2.5L four across the generation (GM number 12640445 in the early manuals; the 2022 manual lists 12696048/12706595 — the ACDelco PF64 service filter is the same). <b>Do NOT use the 3.6L cartridges</b> (PF2129/PF2130/PF2257G) — the 2.5L takes this spin-on.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Colorado', engine: '2.5L', y0: 2015, y1: 2022,
+        title: 'Spark Plugs — 2015–2022 Chevrolet Colorado (2.5L L4)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-115',
+        rows: [
+          { brand: 'ACDelco', part: '41-115 (GM 12627160)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-115+spark+plug') }
+        ],
+        companion: 'Set of 4, gap 0.037–0.043 in. GM’s Colorado manuals list <b>12627160 / ACDelco 41-115</b> for the 2.5L in every year checked (2015, 2019, 2022). <b>Do NOT use 41-109 or 41-130</b> — those are the 3.6L plugs.'
+      },
+      {
+        partId: 'oil-filter', make: 'GMC', model: 'Canyon', engine: '2.5L', y0: 2015, y1: 2022,
+        title: 'Oil Filter — 2015–2022 GMC Canyon (2.5L L4)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF64',
+        rows: [
+          { brand: 'ACDelco', part: 'PF64', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B094YWQCNT?tag=redemptionm06-20' },
+          { brand: 'ACDelco', part: 'PF64', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+PF64+oil+filter') },
+          { brand: 'WIX', part: 'WL10290', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10290+oil+filter') },
+          { brand: 'FRAM', part: 'PH12060', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH12060+oil+filter') }
+        ],
+        companion: 'Spin-on filter. GM’s Canyon owner manuals list <b>ACDelco PF64</b> for the 2.5L four (GM 12640445 in the early manuals; later manuals list newer GM numbers for the same PF64 service filter) — confirmed for the Canyon itself in the 2017 manual and across the generation in GM’s Colorado manuals. <b>Do NOT use the 3.6L cartridges.</b>'
+      },
+      {
+        partId: 'spark-plugs', make: 'GMC', model: 'Canyon', engine: '2.5L', y0: 2015, y1: 2022,
+        title: 'Spark Plugs — 2015–2022 GMC Canyon (2.5L L4)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-115',
+        rows: [
+          { brand: 'ACDelco', part: '41-115 (GM 12627160)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-115+spark+plug') }
+        ],
+        companion: 'Set of 4, gap 0.037–0.043 in. GM’s 2017 Canyon manual lists <b>12627160 / ACDelco 41-115</b> for the 2.5L, and GM’s Colorado manuals confirm the same number across the generation. <b>Do NOT use 41-109 or 41-130</b> — those are the 3.6L plugs.'
       }
     ];
     var PARTS = {};
