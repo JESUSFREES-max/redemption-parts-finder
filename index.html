@@ -394,6 +394,7 @@
     // Batch 32 (Colorado + Canyon 2017-2022 3.6L LGZ standard fours, F-150 2018-2020 3.3L V6 standard four) merged 2026-11-26.
     // Batch 33 (Colorado + Canyon 2015-2022 2.5L oil + plugs; 3.6L oil/plug entries engine-scoped) merged 2026-11-26.
     // Batch 34 (F-150 2018-2021 3.0L diesel oil/air/cabin/fuel, Ridgeline 2017-2023 oil/air/plugs, Tiguan 2019 + 2021 oil with build-date split + air) merged 2026-11-26.
+    // Batch 35 (Tiguan 2019 cabin three-variant qualifier + 2021 cabin, from the same VWGoA charts) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -5351,6 +5352,49 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-129-620-B+air+filter') }
         ],
         companion: 'Volkswagen of America\'s own fluid/capacity chart names <b>5Q0-129-620-B</b> for the 2021 Tiguan 2.0L Turbo. Scoped to 2021 only — the neighbouring years are held until their own VW charts are verified (the same number is verified separately for 2018, 2019 and 2021). <b>Do not substitute</b> the -C, -D or 5QM variants listed for other VW models.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Volkswagen', model: 'Tiguan', y0: 2019, y1: 2019,
+        title: 'Cabin Air Filter — 2019 Volkswagen Tiguan (2.0L TSI)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-819-644-A',
+        rows: [
+          { brand: 'Volkswagen (OEM)', part: '5Q0-819-644-A', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-644-A+cabin+air+filter') }
+        ],
+        qualifier: {
+          question: 'Which cabin filter does your Tiguan have?',
+          helpText: 'Volkswagen fits <b>three different</b> cabin filters to this car depending on equipment — Volkswagen of America\'s own fluid/capacity chart lists all three for the 2019 Tiguan. The standard dust-and-pollen filter is the plain paper element; the odor/allergen and harmful-substance filters are upgraded elements for cars with electronic climate control. If you are not sure, the standard dust-and-pollen filter is the safe default — or text De a photo of your old filter and he will confirm.',
+          options: [
+            { label: 'Standard dust & pollen filter', useEntry: true },
+            { label: 'Odor & allergen filter (electronic climate control)', oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-819-669',
+              rows: [
+                { brand: 'Volkswagen (OEM)', part: '5Q0-819-669', price: 'See today’s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-669+cabin+air+filter') }
+              ],
+              note: 'The upgraded odor-and-allergen element. Volkswagen\'s 2021 Tiguan chart lists this same number as that car\'s only cabin filter.' },
+            { label: 'Harmful-substance (charcoal) filter', oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-819-653',
+              rows: [
+                { brand: 'Volkswagen (OEM)', part: '5Q0-819-653', price: 'See today’s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-653+cabin+air+filter') }
+              ],
+              note: 'The charcoal harmful-substance element — the premium option in Volkswagen\'s own chart for this car.' }
+          ]
+        },
+        companion: 'Behind the glove box. Volkswagen of America\'s own fluid/capacity chart (revised 9-24-2019) lists three cabin filters for the 2019 Tiguan by equipment: dust & pollen <b>5Q0-819-644-A</b>, odor & allergen <b>5Q0-819-669</b>, harmful substance <b>5Q0-819-653</b>. Scoped to 2019 only — 2020 and 2022 are held until their own VW charts are verified.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Volkswagen', model: 'Tiguan', y0: 2021, y1: 2021,
+        title: 'Cabin Air Filter — 2021 Volkswagen Tiguan (2.0L TSI)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-819-669',
+        rows: [
+          { brand: 'Volkswagen (OEM)', part: '5Q0-819-669', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-669+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Volkswagen of America\'s own fluid/capacity chart for the 2021 Tiguan lists a single cabin filter: <b>5Q0-819-669</b> (the number the 2019 chart calls the odor & allergen filter). Scoped to 2021 only — 2020 and 2022 are held until their own VW charts are verified.'
       }
     ];
     var PARTS = {};
