@@ -246,7 +246,7 @@
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
       'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Crosstrek 2.0L', 'Crosstrek 2.5L', 'Impreza', 'Legacy'],
-      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Tucson 2.0L', 'Santa Fe', 'Accent'],
+      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Tucson 2.0L', 'Santa Fe', 'Accent', 'Ioniq Hybrid'],
       'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Sportage 2.4L', 'Sportage 2.0L Turbo', 'Soul'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
       'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Golf'],
@@ -266,9 +266,11 @@
         { id: 'pcv-valve', name: 'PCV Valve' }, { id: 'crank-position-sensor', name: 'Crankshaft Position Sensor' },
         { id: 'cam-position-sensor', name: 'Camshaft Position Sensor' } ] },
       { name: 'Cooling', parts: [
-        { id: 'radiator', name: 'Radiator' }, { id: 'water-pump', name: 'Water Pump' },
-        { id: 'thermostat', name: 'Thermostat' }, { id: 'upper-radiator-hose', name: 'Upper Radiator Hose' },
+        { id: 'radiator', name: 'Radiator' }, { id: 'inverter-radiator', name: 'Hybrid Inverter Radiator' },
+        { id: 'water-pump', name: 'Water Pump' }, { id: 'thermostat', name: 'Thermostat' },
+        { id: 'upper-radiator-hose', name: 'Upper Radiator Hose' },
         { id: 'lower-radiator-hose', name: 'Lower Radiator Hose' }, { id: 'cooling-fan', name: 'Cooling Fan' },
+        { id: 'inverter-coolant-hoses', name: 'Inverter Coolant Hoses' }, { id: 'radiator-core-support', name: 'Radiator Core Support' },
         { id: 'radiator-cap', name: 'Radiator Cap' }, { id: 'coolant-reservoir', name: 'Coolant Reservoir' } ] },
       { name: 'Brakes', parts: [
         { id: 'front-brake-pads', name: 'Front Brake Pads' }, { id: 'rear-brake-pads', name: 'Rear Brake Pads' },
@@ -285,7 +287,8 @@
       { name: 'Electrical & Starting/Charging', parts: [
         { id: 'alternator', name: 'Alternator' }, { id: 'starter', name: 'Starter Motor' },
         { id: 'battery-cable-set', name: 'Battery Cables' }, { id: 'ignition-switch', name: 'Ignition Switch' }, { id: 'door-lock-actuator', name: 'Door Lock Actuator' },
-        { id: 'fuses-relays', name: 'Fuses & Relays' }, { id: 'ground-strap', name: 'Ground Strap' } ] },
+        { id: 'fuses-relays', name: 'Fuses & Relays' }, { id: 'electrical-connector', name: 'Electrical Connector / Housing' },
+        { id: 'ground-strap', name: 'Ground Strap' } ] },
       { name: 'Ignition', parts: [
         { id: 'spark-plugs', name: 'Spark Plugs' }, { id: 'ignition-coils', name: 'Ignition Coils' },
         { id: 'spark-plug-wires', name: 'Spark Plug Wire Set' }, { id: 'distributor-cap-rotor', name: 'Distributor Cap & Rotor' },
@@ -3708,6 +3711,123 @@
           { brand: 'TSU / Camellia', part: 'W0133-2793356', price: '—', where: 'eBay', nolisting: true }
         ],
         companion: 'For the <b>3.0L twin-turbo (VR30DDTT)</b> engine only — it does <b>not</b> fit the 2.0L turbo Q60 (a Mercedes-built engine) or the older 3.5L / 3.7L VQ cars, and the timing kits sold for those VQ engines (Cloyes, Melling and others) do <b>not</b> fit this engine. <b>DNJ is the only quality aftermarket kit made for the VR30</b> — first pick is the <b>TK4485WP</b>, the full kit with the water pump; the <b>TK4485</b> is the same kit without the pump. The TSU / Camellia row is the camshaft chain by itself (Japanese-made; the engine uses two, one per bank). The Nissan number above (<b>13028-5CA0A</b>, the cam chain) is the factory fitment reference. <b>One thing no kit includes, from any brand: the gaskets and seals for this job.</b> There is no formed front-cover gasket for this engine — the cover is sealed with liquid gasket (RTV) from the factory — and the valve cover gaskets and front crank seal this job disturbs are not bundled in any kit, so plan on those separately. The kits also leave out the VVT cam gears and solenoids, which are inspected and reused unless worn. Amazon and eBay do not carry these kits, so the store slots show <b>No Listing Yet</b> instead of a link — the kits are sold through regular parts catalogs.'
+      },
+      {
+        partId: 'radiator', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Radiator (Engine) — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '25310-G2000',
+        rows: [
+          { brand: 'Go-Parts', part: '25310-G2000', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B09LC7CD3W?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '25310-G2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+25310-G2000+radiator') }
+        ],
+        companion: 'The engine radiator — the big one in the cooling stack. Hyundai number <b>25310-G2000</b> (DPI 13678). Do not mix it up with the smaller hybrid inverter radiator in the same stack (<b>25308-G2000</b>, DPI 13677) — the numbers are close but they cool different systems and do not interchange. The Go-Parts row is the same radiator Redemption bought for this exact repair. Fits the Hybrid and Plug-In Hybrid; the all-electric Ioniq is a different setup.'
+      },
+      {
+        partId: 'inverter-radiator', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Hybrid Inverter Radiator — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '25308-G2000',
+        rows: [
+          { brand: 'Cooling Direct', part: '25308-G2000', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0861W3P2X?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '25308-G2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+25308-G2000+radiator') }
+        ],
+        companion: 'The separate, smaller radiator that cools the hybrid inverter and drive motor. It runs on its own coolant circuit with its own electric pump — separate from the engine cooling system. Hyundai number <b>25308-G2000</b> (DPI 13677, PartsLink HY3011100). Do not flip it with the engine radiator (25310-G2000 / DPI 13678). After the swap, the inverter circuit has to be bled with a scan tool running the electric pump — it will not bleed by hand.'
+      },
+      {
+        partId: 'ac-condenser', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'A/C Condenser — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97606-G2000',
+        rows: [
+          { brand: 'TYC', part: '30102', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'TYC', part: '30102', price: '—', where: 'eBay', nolisting: true }
+        ],
+        companion: 'Hyundai number <b>97606-G2000</b>. The receiver-drier is built into this condenser — there is no separate drier to buy. The pick is the <b>TYC 30102</b> (about $52 through the parts catalogs). No verified Amazon or eBay listing for it when this entry was built, so the slots show <b>No Listing Yet</b> instead of a link. Two job notes: this car takes R-134a (600 g), and the high-voltage electric A/C compressor uses <b>POE oil, not PAG</b> — the wrong oil can damage it. The hybrid service plug comes out and the car sits 5 minutes before condenser or inverter work.'
+      },
+      {
+        partId: 'radiator-core-support', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Radiator Core Support — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '64101-G2000',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '64101-G2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+64101-G2000+radiator+support') },
+          { brand: 'JZPARTFIT', part: '64101-G2000', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'The front panel the whole cooling stack bolts to (PartsLink HY1225216). Hyundai number <b>64101-G2000</b> — buy the CAPA-certified panel. It is a big, fragile piece and ships by freight, so compare the delivered price, not just the part price. The grey Amazon slot is the JZPARTFIT panel Redemption bought on Amazon for this exact repair; its listing could not be re-verified for the catalog, so the slot shows <b>No Listing Yet</b> rather than guess at a link.'
+      },
+      {
+        partId: 'cooling-fan', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Cooling Fan Assembly — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '25380-G2000',
+        rows: [
+          { brand: 'TYC', part: '624770', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'TYC', part: '624770', price: '—', where: 'eBay', nolisting: true }
+        ],
+        companion: 'One fan assembly cools the whole stack — engine radiator, inverter radiator and A/C condenser. Hyundai number <b>25380-G2000</b>; the pick is the <b>TYC 624770</b>, fan control module included. No verified Amazon or eBay listing when this entry was built, so the slots show <b>No Listing Yet</b>. Fits the Hybrid and Plug-In Hybrid only — the all-electric Ioniq takes a different fan.'
+      },
+      {
+        partId: 'upper-radiator-hose', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Radiator Hose — Upper — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '25414-G2300',
+        rows: [
+          { brand: 'Gates', part: '05-5286', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Gates+05-5286+radiator+hose') },
+          { brand: 'Hyundai (OEM)', part: '25414-G2300', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+25414-G2300+radiator+hose') },
+          { brand: 'Gates', part: '05-5286', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'Watch the number: on US cars the upper hose is <b>25414-G2300</b> — not the 25414-G2000 some catalogs list (that hose only fits the first few weeks of Korean production and never reached US cars). The Gates number is <b>05-5286</b>, from Gates application data for the Ioniq. No verified Amazon listing for it, so that slot shows <b>No Listing Yet</b>.'
+      },
+      {
+        partId: 'lower-radiator-hose', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Radiator Hose — Lower — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '25415-G2000',
+        rows: [
+          { brand: 'Gates', part: '05-5261', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Gates+05-5261+radiator+hose') },
+          { brand: 'Gates', part: '05-5261', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'Hyundai number <b>25415-G2000</b>; the Gates number is <b>05-5261</b>, from Gates application data for the Ioniq. No verified Amazon listing for it, so that slot shows <b>No Listing Yet</b>.'
+      },
+      {
+        partId: 'inverter-coolant-hoses', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2020,
+        title: 'Inverter Coolant Hoses — 2017–2020 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '25443-G2100 / 25443-G2900',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '25443-G2100', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'Hyundai (OEM)', part: '25443-G2100', price: '—', where: 'eBay', nolisting: true },
+          { brand: 'Hyundai (OEM)', part: '25443-G2900', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'Hyundai (OEM)', part: '25443-G2900', price: '—', where: 'eBay', nolisting: true }
+        ],
+        companion: 'The two molded hoses on the hybrid inverter coolant circuit: <b>25443-G2100</b> and <b>25443-G2900</b>, read off Hyundai\'s own inverter-cooling parts diagram. <b>Confirm both numbers against your VIN before ordering</b> — the numbers were verified on the 2020 diagram, and inverter hose numbers changed during production. Neither Amazon nor eBay carries them, so the slots show <b>No Listing Yet</b> — for now they are dealer-catalog parts.'
+      },
+      {
+        partId: 'electrical-connector', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2018, y1: 2018,
+        title: 'Connector Housing — TE GET .64, 18-Position — 2018 Hyundai Ioniq Hybrid',
+        oemBrand: 'TE Connectivity', oemPart: '2203663-5',
+        rows: [
+          { brand: 'TE Connectivity', part: '2203663-5', price: '—', where: 'Amazon', nolisting: true },
+          { brand: 'TE Connectivity', part: '2203663-5', price: '—', where: 'eBay', nolisting: true }
+        ],
+        companion: 'The sealed 18-position plug housing identified on this car\'s front-end harness: TE Connectivity GET .64 housing <b>2203663-5</b> — the number is stamped on the housing itself. It takes GET .64 terminals: <b>1393367-1</b> (24–22 AWG) and <b>1393366-1</b> (20–18 AWG). A trap from a real repair: TE Generation Y 0.64 terminals look identical but have a different lock-to-tip length and will <b>not</b> seat in this housing. On the car this was identified on, only 7 of the 18 cavities carry wires; the empty ones take sealed plugs. The genuine TE housing is sold by electronics distributors (DigiKey, Newark) — Amazon and eBay do not carry it, so the slots show <b>No Listing Yet</b>.'
+      },
+      {
+        partId: 'coolant-antifreeze', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Coolant / Antifreeze — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (spec)', oemPart: 'Phosphate-based EG, 45–50% mix',
+        rows: [
+          { brand: 'Zerex', part: '910236', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0G3C8KL1J?tag=redemptionm06-20' }
+        ],
+        companion: 'Both circuits — engine and hybrid inverter — take the same coolant: a phosphate-based (P-HOAT) ethylene-glycol coolant made for Asian vehicles. Factory spec is a 45–50% antifreeze mix, and the two systems hold about 10.45 quarts of mixed coolant in total (engine 7.07 qt, inverter 3.38 qt). The row above is the exact jug Redemption buys for this job: <b>Zerex Asian Vehicle Blue Concentrate (910236)</b>. It is a <b>concentrate</b> — mix it 50/50 with distilled water before it goes in; one gallon makes two gallons of ready coolant. Do not substitute orange OAT (Dex-Cool type) coolant. The inverter circuit needs a scan tool to run its electric pump for bleeding.'
       }
 
     ];
