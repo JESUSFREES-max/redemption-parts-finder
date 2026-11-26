@@ -390,6 +390,7 @@
     // Batch 27 (Colorado 2015-2016 LFX standard four, Mazda3 2014-2018 SkyActiv standard four) merged 2026-11-25.
     // Batch 29 (GMC Canyon 2015-2016 LFX standard four, Mazda6 2014-2018 2.5L standard four, Pathfinder 2017-2020 oil) merged 2026-11-26.
     // Batch 30 (F-150 2015-2020 2.7L EcoBoost standard four + plug split, Tundra 2014-2021 5.7L standard four) merged 2026-11-26.
+    // Batch 31 (Acadia 2017-2023 3.6L standard four + oil split, Titan 2017-2024 5.6L oil/air/plugs) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -4847,6 +4848,122 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01191+spark+plug') }
         ],
         companion: 'Set of 8, gap 0.044 in (1.1 mm). Toyota specifies DENSO <b>SK20HR11</b> for the 5.7L — the plug sold by Toyota as <b>90919-01191</b>, the same number this catalog verifies for the 2010–2013 4Runner. <b>Do NOT use 90919-01249 / FK20HBR11</b> — that is a direct-injection plug for other Toyota/Lexus engines.'
+      },
+      {
+        partId: 'oil-filter', make: 'GMC', model: 'Acadia', y0: 2017, y1: 2019,
+        title: 'Oil Filter — 2017–2019 GMC Acadia (3.6L V6)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF63E',
+        rows: [
+          { brand: 'ACDelco', part: 'PF63 (current service filter)', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00TL5Y8YE?tag=redemptionm06-20' },
+          { brand: 'ACDelco', part: 'PF63E (GM 19330000)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+PF63E+oil+filter') }
+        ],
+        companion: 'GM’s Acadia manuals list <b>19330000 / ACDelco PF63E</b> for the 3.6L; GM’s current service filter is the PF63 (the Amazon row). <b>Do NOT use PF64</b> — that is the 2.5L 4-cylinder filter — and do not use a PF48-class filter: this engine needs the PF63 family’s higher bypass pressure (GM bulletin 15-00-90-002A). 2020+ Acadia 3.6L takes UPF63R — see that entry. Acadia Limited (old body) is a different vehicle.'
+      },
+      {
+        partId: 'oil-filter', make: 'GMC', model: 'Acadia', y0: 2020, y1: 2023,
+        title: 'Oil Filter — 2020–2023 GMC Acadia (3.6L V6)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'UPF63R',
+        rows: [
+          { brand: 'ACDelco', part: 'UPF63R (GM 12693541)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+UPF63R+oil+filter') }
+        ],
+        companion: 'GM’s 2020–2023 Acadia manuals list <b>12693541 / ACDelco UPF63R</b> for the 3.6L — a spec change from the PF63E the 2017–2019 trucks use. <b>Do NOT use PF64</b> (the 2.5L filter). No Amazon ASIN verified for UPF63R this pass.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'GMC', model: 'Acadia', y0: 2017, y1: 2023,
+        title: 'Engine Air Filter — 2017–2023 GMC Acadia (3.6L V6)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'A3212C',
+        rows: [
+          { brand: 'ACDelco', part: 'A3212C', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01G5VF9J4?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA12166', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12166+air+filter') },
+          { brand: 'ACDelco', part: 'A3212C (GM 23321606)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+A3212C+air+filter') }
+        ],
+        companion: 'GM’s manuals list <b>23321606 / ACDelco A3212C</b> — the same filter as the Traverse. <b>Warning:</b> the 2017–2019 Acadia manuals print A3083C for the 3.6L — that is a GM carryover error (A3083C fits the old 2007–2016 Acadia); do not order it for this truck.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'GMC', model: 'Acadia', y0: 2017, y1: 2023,
+        title: 'Cabin Air Filter — 2017–2023 GMC Acadia',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'CF185',
+        rows: [
+          { brand: 'ACDelco', part: 'CF185', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00KUL71CE?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CF11966', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11966+cabin+air+filter') },
+          { brand: 'WIX', part: '24211', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24211+cabin+air+filter') }
+        ],
+        companion: 'Every Acadia manual checked lists <b>13508023 / ACDelco CF185</b> — the same cabin filter as the Traverse. CF179C is the old-body Acadia Limited filter — not this one.'
+      },
+      {
+        partId: 'spark-plugs', make: 'GMC', model: 'Acadia', y0: 2017, y1: 2023,
+        title: 'Spark Plugs — 2017–2023 GMC Acadia (3.6L V6)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-130',
+        rows: [
+          { brand: 'ACDelco', part: '41-130 (GM 12646780)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-130+spark+plug') }
+        ],
+        companion: 'Set of 6, gap 0.031–0.035 in. GM’s Acadia manuals list <b>12646780 / ACDelco 41-130</b> for the 3.6L LGX. <b>Do NOT use 41-109</b> — that is the Traverse 3.6L plug; the platform-mate takes a different plug here. No NGK/DENSO equivalent is published yet: none was verified in the plug makers’ own catalogs for 41-130 this pass.'
+      },
+      {
+        partId: 'oil-filter', make: 'Nissan', model: 'Titan', y0: 2017, y1: 2024,
+        title: 'Oil Filter — 2017–2024 Nissan Titan (5.6L V8)',
+        oemBrand: 'Nissan (OEM)', oemPart: '15208-9E01A',
+        rows: [
+          { brand: 'Nissan (OEM)', part: '15208-9E01A', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00ESTFM8Y?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57356XP', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5SZN9S?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'PH7317', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH7317+oil+filter') },
+          { brand: 'Nissan (OEM)', part: '15208-9E01A', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+15208-9E01A+oil+filter') }
+        ],
+        companion: 'Spin-on filter. The Titan 5.6L takes <b>15208-9E01A</b> (replacing 15208-9E000). FRAM’s own catalog lists its 7317 family for the 2017–2024 Titan; WIX’s application data gives 57356/57356XP for this truck (its generic PH7317 interchange points to a different-height filter — the application number is the one to order). <b>Do NOT use 15208-65F0E</b> — that smaller filter fits Nissan’s 4-cylinder/V6 cars, not this V8.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Nissan', model: 'Titan', y0: 2017, y1: 2023,
+        title: 'Engine Air Filter — 2017–2023 Nissan Titan (5.6L V8)',
+        oemBrand: 'Nissan (OEM)', oemPart: '16546-EZ31A',
+        rows: [
+          { brand: 'Nissan (OEM)', part: '16546-EZ31A', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+16546-EZ31A+air+filter') },
+          { brand: 'FRAM', part: 'CA12168', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12168+air+filter') },
+          { brand: 'Champion', part: 'WAF5273', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Champion+WAF5273+air+filter') }
+        ],
+        companion: 'Champion Laboratories’ application guide lists <b>16546-EZ31A</b> for the 2017 Titan 5.6L. <b>One letter matters:</b> Titan XD gas takes 16546-EZ31<b>B</b> and the XD diesel takes 16546-EZ40A — neither fits this truck. 16546-7S000 is the old 2004–2015 Titan filter. The 2024 model year is not published yet — its air filter was not confirmed in a primary Nissan source this pass.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Nissan', model: 'Titan', y0: 2017, y1: 2024,
+        title: 'Spark Plugs — 2017–2024 Nissan Titan (5.6L V8)',
+        oemBrand: 'Nissan (OEM)', oemPart: '22401-1LA1C',
+        rows: [
+          { brand: 'NGK', part: 'DILKAR7B11', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+DILKAR7B11+spark+plug') },
+          { brand: 'Nissan (OEM)', part: '22401-1LA1C', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+22401-1LA1C+spark+plug') }
+        ],
+        companion: 'Set of 8, gap 0.043 in (1.1 mm). Nissan’s Titan manuals specify the NGK <b>DILKAR7B11</b> for the 5.6L VK56VD — the plug Nissan sells as <b>22401-1LA1C</b> (cross-verified on the same engine in the QX80). The Titan XD diesel has no spark plugs.'
       }
     ];
     var PARTS = {};
