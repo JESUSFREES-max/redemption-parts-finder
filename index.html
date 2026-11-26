@@ -389,6 +389,7 @@
     // Batch 26 (Edge 2.0L with year splits, Traverse 2019-2023 standard four) merged 2026-11-25.
     // Batch 27 (Colorado 2015-2016 LFX standard four, Mazda3 2014-2018 SkyActiv standard four) merged 2026-11-25.
     // Batch 29 (GMC Canyon 2015-2016 LFX standard four, Mazda6 2014-2018 2.5L standard four, Pathfinder 2017-2020 oil) merged 2026-11-26.
+    // Batch 30 (F-150 2015-2020 2.7L EcoBoost standard four + plug split, Tundra 2014-2021 5.7L standard four) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -4702,6 +4703,150 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+15208-65F0E+oil+filter') },
         ],
         companion: 'Spin-on filter. The Pathfinder 3.5L takes the same <b>15208-65F0E</b> this catalog verifies for the Altima, Rogue and Sentra (ECOGARD’s maker catalog lists the Pathfinder 3.5L 2004–2020 against this number family). <b>Do NOT substitute 15208-65F1A/65F1B</b> — Nissan’s own bulletin says those are NOT interchangeable with 65F0E (different bypass relief). Pathfinder air/cabin/plugs are still being verified — not published yet.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'F-150', engine: '2.7L EcoBoost', y0: 2015, y1: 2020,
+        title: 'Oil Filter (Cartridge) — 2015–2020 Ford F-150 (2.7L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-2062-A',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-2062-A', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B08XPWBJYZ?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WL10050', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01KHL0LU0?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'FL-2062-A (FT4Z-6731-A)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-2062-A+oil+filter') },
+          { brand: 'FRAM', part: 'CH11955', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH11955+oil+filter') }
+        ],
+        companion: 'CARTRIDGE element on top of the engine (not a spin-on). Ford’s owner’s-manual Motorcraft tables list <b>FL-2062</b> for the 2.7L EcoBoost in 2015, 2018 and 2020; Ford now sells it as <b>FL-2062-A</b> (Ford FT4Z-6731-A). <b>Do NOT use FL-500-S</b> — that spin-on fits the 3.5L/5.0L/3.3L trucks, not the 2.7L.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'F-150', engine: '2.7L EcoBoost', y0: 2015, y1: 2020,
+        title: 'Engine Air Filter — 2015–2020 Ford F-150 (2.7L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1883',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1883', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B000V53VR8?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'FA-1883', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1883+air+filter') },
+          { brand: 'FRAM', part: 'CA10262', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA10262+air+filter') },
+          { brand: 'WIX', part: '49883', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+49883+air+filter') }
+        ],
+        companion: 'Ford’s manuals list <b>FA-1883</b> (Ford 7C3Z-9601-A) for every 2015–2020 F-150 engine, the 2.7L included — the same filter verified for the 5.0L and 3.5L trucks in this catalog.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'F-150', engine: '2.7L EcoBoost', y0: 2015, y1: 2020,
+        title: 'Cabin Air Filter — 2015–2020 Ford F-150 (2.7L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-92',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-92 (KL3Z-19N619-AA)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-92+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP10266', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10266+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12150', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12150+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Ford’s manuals for these years list <b>FP-79</b>; Ford now services the same filter as <b>FP-92</b> (KL3Z-19N619-AA) — order FP-92. WIX WP10266 is the particulate version; WP10653 is the carbon version.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150', engine: '2.7L EcoBoost', y0: 2015, y1: 2019,
+        title: 'Spark Plugs — 2015–2019 Ford F-150 (2.7L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-542',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-542', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-542+spark+plug') }
+        ],
+        companion: 'Set of 6, gap 0.028–0.031 in. Ford’s 2015 and 2018 owner’s manuals list <b>SP-542</b> for the 2.7L EcoBoost. <b>2020 trucks take SP-578</b> — see the 2020 entry. No NGK/DENSO equivalent is published yet: none was verified in the plug makers’ own catalogs this pass.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150', engine: '2.7L EcoBoost', y0: 2020, y1: 2020,
+        title: 'Spark Plugs — 2020 Ford F-150 (2.7L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-578',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-578', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07TZTW6DW?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'SP-578', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-578+spark+plug') }
+        ],
+        companion: 'Set of 6, gap 0.028–0.031 in. Ford’s 2020 owner’s manual lists <b>SP-578</b> for the 2.7L EcoBoost — a new number for 2020, replacing the SP-542 used through 2019. Do not mix the two.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Tundra', y0: 2014, y1: 2021,
+        title: 'Oil Filter (Cartridge) — 2014–2021 Toyota Tundra (5.7L V8)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04152-YZZA4',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '04152-YZZA4', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04152-YZZA4+oil+filter') },
+          { brand: 'WIX', part: '57041', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57041+oil+filter') },
+          { brand: 'FRAM', part: 'CH10295', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH10295+oil+filter') }
+        ],
+        companion: 'CARTRIDGE element (not a spin-on). Toyota’s service filter for the 5.7L is <b>04152-YZZA4</b>, replacing the production number 04152-38020; maker cross catalogs (Bosch/WIX/FRAM) tie WIX 57041 and FRAM CH10295 to it. <b>Do NOT use 04152-YZZA5</b> — that cartridge is for the 4.0L V6 truck.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'Tundra', y0: 2014, y1: 2021,
+        title: 'Engine Air Filter — 2014–2021 Toyota Tundra (5.7L V8)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-0S010',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-0S010', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-0S010+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 32 014', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+32+014+air+filter') },
+          { brand: 'WIX', part: '49010', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+49010+air+filter') },
+          { brand: 'FRAM', part: 'CA10343', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA10343+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. MANN-FILTER’s own cross lists <b>17801-0S010</b> (prior number 17801-38030) for this truck, with MANN C 32 014, WIX 49010 and FRAM CA10343 as the equivalents. 17801-0P010/0P100 are the 4.0L V6 filter — not this V8.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Toyota', model: 'Tundra', y0: 2014, y1: 2021,
+        title: 'Cabin Air Filter — 2014–2021 Toyota Tundra (5.7L V8)',
+        oemBrand: 'Toyota (OEM)', oemPart: '87139-07020',
+        rows: [
+          { brand: 'FRAM', part: 'CF10285', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B001CEG90I?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '87139-07020', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+87139-07020+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. The 2014–2021 Tundra takes <b>87139-07020</b> (service number 87139-YZZ20) — the same element this catalog verifies for the RAV4 and Highlander; FRAM’s own application list includes the 2007–2021 Tundra 5.7L for CF10285. <b>Do NOT order 87139-0C010</b> — that is the 2022+ Tundra filter.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'Tundra', y0: 2014, y1: 2021,
+        title: 'Spark Plugs — 2014–2021 Toyota Tundra (5.7L V8)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90919-01191',
+        rows: [
+          { brand: 'DENSO', part: '3421 (SK20HR11)', price: 'See today’s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B002FOO884?tag=redemptionm06-20' },
+          { brand: 'NGK', part: '4904 (ILFR6T11)', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+4904+ILFR6T11+spark+plug') },
+          { brand: 'Toyota (OEM)', part: '90919-01191', price: 'See today’s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre= ' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01191+spark+plug') }
+        ],
+        companion: 'Set of 8, gap 0.044 in (1.1 mm). Toyota specifies DENSO <b>SK20HR11</b> for the 5.7L — the plug sold by Toyota as <b>90919-01191</b>, the same number this catalog verifies for the 2010–2013 4Runner. <b>Do NOT use 90919-01249 / FK20HBR11</b> — that is a direct-injection plug for other Toyota/Lexus engines.'
       }
     ];
     var PARTS = {};
