@@ -148,6 +148,19 @@
     }
     .variant-note { font-size: 13px; color: #334155; margin-top: 10px; }
     .variant-note b { color: #0f2439; }
+    .pn-scope { font-size: 13px; color: #475569; margin-top: 12px; }
+    .pn-scope b { color: #0f2439; }
+    .ix-box {
+      margin-top: 12px; border: 1.5px solid #b48327; border-radius: 10px;
+      padding: 12px 14px; background: #fffdf5; font-size: 13.5px; color: #334155;
+    }
+    .ix-box b { color: #0f2439; }
+    .ix-box ul { margin: 6px 0 0; padding-left: 18px; }
+    .ix-box li { margin-top: 2px; }
+    .no-fit-banner {
+      margin-top: 12px; border: 1.5px solid #b91c1c; background: #fef2f2;
+      border-radius: 10px; padding: 11px 14px; font-size: 13.5px; color: #7f1d1d;
+    }
     .footer { max-width: 960px; margin: 20px auto 0; padding: 0 12px; font-size: 12.5px; color: #475569; }
     .footer .verse-name { text-align: center; color: #0284c7; font-weight: 900; font-size: 16px; letter-spacing: .5px; margin: 18px 0 2px; }
     .footer .verse { color: #0f2439; font-size: 13.5px; text-align: center; margin: 0 0 4px; }
@@ -207,7 +220,21 @@
             <select id="selModel" onchange="onYmmChange()"></select>
           </div>
         </div>
+        <div id="trimStep"></div>
+        <div id="engineStep"></div>
         <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Live lookups so far:</b> Toyota Prius, Camry &amp; Corolla, Honda Civic &amp; Accord, Ford F-150, Kia Sorento — under Filters &amp; Fluids, Ignition, and Transmission &amp; Drivetrain. <b>Demo:</b> a 2004–2009 Prius + <b>Oil Filter</b> shows the finished format.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span>Have a part number?</span><span>Search by number</span></div>
+      <div class="card-body">
+        <label class="fld" for="pnInput">Type a part number — the manufacturer's number or an aftermarket brand's number</label>
+        <div class="vin-row">
+          <input type="text" id="pnInput" placeholder="e.g. 25310-G2000, P-2202, SP-578" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();searchPartNumber();}">
+          <button type="button" class="btn-navy" onclick="searchPartNumber()">Find This Part</button>
+        </div>
+        <div class="vehicle-line">This searches every verified OEM part number and every aftermarket number in the catalog. If a number isn't here yet, we'll say so plainly — we never guess a part number.</div>
       </div>
     </div>
 
@@ -238,16 +265,16 @@
     var MAKES_MODELS = {
       'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
       'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V'],
-      'Ford': ['F-150', 'F-150 3.5L EcoBoost', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
-      'Chevrolet': ['Silverado 1500', 'Equinox', 'Equinox 1.5L Turbo', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
+      'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
+      'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
       'Ram': ['1500', '2500', 'ProMaster'],
       'Dodge': ['Charger', 'Challenger', 'Durango', 'Grand Caravan', 'Journey'],
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
-      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Crosstrek 2.0L', 'Crosstrek 2.5L', 'Impreza', 'Legacy'],
-      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Tucson 2.0L', 'Santa Fe', 'Accent', 'Ioniq Hybrid'],
-      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Sportage 2.4L', 'Sportage 2.0L Turbo', 'Soul'],
+      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy'],
+      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid'],
+      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
       'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Golf'],
       'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
@@ -354,6 +381,7 @@
     // Batch 23 (Infiniti Q50/Q60 3.0L VR30DDTT timing chain kit — priority serviced-vehicle build; DNJ kits + TSU chain, all store slots grey No Listing Yet) merged 2026-11-25.
     // Batch 25 (Sienna standard four + plug split, HR-V standard four, Ranger standard four, Sentra 1.8L oil + air) merged 2026-11-25.
     // Batch 26 (Edge 2.0L with year splits, Traverse 2019-2023 standard four) merged 2026-11-25.
+    // Batch 27 (Colorado 2015-2016 LFX standard four, Mazda3 2014-2018 SkyActiv standard four) merged 2026-11-25.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -574,7 +602,7 @@
         ]
       },
       {
-        partId: 'oil-filter', make: 'Ford', model: 'F-150', y0: 2015, y1: 2020,
+        partId: 'oil-filter', make: 'Ford', model: 'F-150', engine: '5.0L V8', y0: 2015, y1: 2020,
         title: 'Oil Filter — 2015–2020 Ford F-150 (5.0L V8)',
         oemBrand: 'Ford (Motorcraft)', oemPart: 'FL-500-S',
         rows: [
@@ -593,7 +621,7 @@
         companion: 'Verified for the 5.0L V8. Trucks with a different engine can take a different filter — confirm your engine before ordering.'
       },
       {
-        partId: 'engine-air-filter', make: 'Ford', model: 'F-150', y0: 2015, y1: 2020,
+        partId: 'engine-air-filter', make: 'Ford', model: 'F-150', engine: '5.0L V8', y0: 2015, y1: 2020,
         title: 'Engine Air Filter — 2015–2020 Ford F-150 (5.0L V8)',
         oemBrand: 'Ford (Motorcraft)', oemPart: 'FA-1883',
         rows: [
@@ -609,7 +637,7 @@
         companion: 'Verified for the 5.0L V8 application.'
       },
       {
-        partId: 'spark-plugs', make: 'Ford', model: 'F-150', y0: 2018, y1: 2020,
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150', engine: '5.0L V8', y0: 2018, y1: 2020,
         title: 'Spark Plugs — 2018–2020 Ford F-150 (5.0L V8)',
         oemBrand: 'Ford (Motorcraft)', oemPart: 'SP-551',
         rows: [
@@ -1156,7 +1184,7 @@
         companion: 'Honda has superseded this filter — the current number is <b>80291-TF3-E01</b>; either fits. The filter sits behind the glove box and swaps out in minutes with no tools.'
       },
       {
-        partId: 'cabin-air-filter', make: 'Ford', model: 'F-150', y0: 2015, y1: 2020,
+        partId: 'cabin-air-filter', make: 'Ford', model: 'F-150', engine: '5.0L V8', y0: 2015, y1: 2020,
         title: 'Cabin Air Filter — 2015–2020 Ford F-150 (5.0L V8)',
         oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-79',
         rows: [
@@ -1498,7 +1526,7 @@
         companion: 'This is Nissan\'s in-cabin microfilter — it sits behind the glove box. The current number is <b>27277-3JC1C</b>; it supersedes 27277-3JC1B and the original 27277-3JC1A, and the earlier numbers fit the same housing.'
       },
       {
-        partId: 'oil-filter', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2015, y1: 2020,
+        partId: 'oil-filter', make: 'Ford', model: 'F-150', engine: '3.5L EcoBoost', y0: 2015, y1: 2020,
         title: 'Oil Filter — 2015–2020 Ford F-150 (3.5L EcoBoost)',
         oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-500-S',
         rows: [
@@ -1517,7 +1545,7 @@
         companion: 'Spin-on filter. Ford\'s owner\'s manuals list this same <b>FL-500-S</b> for the 3.5L EcoBoost in every year 2015–2020 — it is also the 5.0L V8 filter. The 2.7L EcoBoost is the odd one out (it takes a cartridge, FL-2062).'
       },
       {
-        partId: 'engine-air-filter', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2015, y1: 2020,
+        partId: 'engine-air-filter', make: 'Ford', model: 'F-150', engine: '3.5L EcoBoost', y0: 2015, y1: 2020,
         title: 'Engine Air Filter — 2015–2020 Ford F-150 (3.5L EcoBoost)',
         oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1883',
         rows: [
@@ -1533,7 +1561,7 @@
         companion: 'One air filter serves the whole 2015–2020 F-150 line — Ford\'s manuals list <b>FA-1883</b> for the 3.5L EcoBoost and every other engine in these trucks.'
       },
       {
-        partId: 'spark-plugs', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2015, y1: 2019,
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150', engine: '3.5L EcoBoost', y0: 2015, y1: 2019,
         title: 'Spark Plugs — 2015–2019 Ford F-150 (3.5L EcoBoost)',
         oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-534',
         rows: [
@@ -1544,7 +1572,7 @@
         companion: 'Set of 6. Ford\'s owner\'s manuals list <b>SP-534</b> for the 3.5L EcoBoost in 2015, 2018 and 2019 — the second-generation EcoBoost (2017+) kept the same plug. <b>2020 trucks take a different plug (SP-578)</b> — see the 2020 entry. Some websites list SP-550 for these years; that number does not appear in Ford\'s manuals for this engine.'
       },
       {
-        partId: 'spark-plugs', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2020, y1: 2020,
+        partId: 'spark-plugs', make: 'Ford', model: 'F-150', engine: '3.5L EcoBoost', y0: 2020, y1: 2020,
         title: 'Spark Plugs — 2020 Ford F-150 (3.5L EcoBoost)',
         oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-578',
         rows: [
@@ -2745,7 +2773,7 @@
         companion: 'These trucks charge an AGM battery — replace AGM with AGM. After a battery swap, the battery-monitoring system should be reset so the truck charges the new battery correctly.'
       },
       {
-        partId: 'car-battery-12v', make: 'Ford', model: 'F-150 3.5L EcoBoost', y0: 2015, y1: 2020,
+        partId: 'car-battery-12v', make: 'Ford', model: 'F-150', engine: '3.5L EcoBoost', y0: 2015, y1: 2020,
         title: '12V Battery — 2015–2020 Ford F-150 (3.5L EcoBoost)',
         oemBrand: 'BCI Group', oemPart: 'H6 (48) AGM',
         rows: [
@@ -3374,7 +3402,7 @@
         companion: 'Behind the glove box. Maker catalogs list Hyundai <b>97133-D1000</b> (with D3000 / D3200 as equivalent references) for this filter across all 2016–2021 Tucsons. Do not confuse it with the prior generations 97133-1R000.'
       },
       {
-        partId: 'spark-plugs', make: 'Hyundai', model: 'Tucson 2.0L', y0: 2016, y1: 2021,
+        partId: 'spark-plugs', make: 'Hyundai', model: 'Tucson', engine: '2.0L', y0: 2016, y1: 2021,
         title: 'Spark Plugs — 2016–2021 Hyundai Tucson (2.0L only)',
         oemBrand: 'Hyundai (OEM)', oemPart: '18846-11070',
         rows: [
@@ -3451,7 +3479,7 @@
         companion: 'ACDelco CF185 is GM part number <b>13508023</b> per GMs Equinox manual, all years 2018–2022 and all engines. (The similar CF184 / 13356914 is a related GM number — the manual spec for this Equinox is CF185.)'
       },
       {
-        partId: 'spark-plugs', make: 'Chevrolet', model: 'Equinox 1.5L Turbo', y0: 2018, y1: 2019,
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Equinox', engine: '1.5L Turbo', y0: 2018, y1: 2019,
         title: 'Spark Plugs — 2018–2019 Chevrolet Equinox (1.5L Turbo)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: '41-153',
         rows: [
@@ -3465,7 +3493,7 @@
         companion: 'Set of 4, iridium. ACDelco 41-153 is GM part number <b>12673527</b> per GMs manual for the 1.5L. Factory gap: 0.024–0.028 in, preset — GM says do not re-gap. <b>2020–2022 1.5L takes a different plug</b> (41-156), and the 2.0L takes 41-125 — do not cross them.'
       },
       {
-        partId: 'spark-plugs', make: 'Chevrolet', model: 'Equinox 1.5L Turbo', y0: 2020, y1: 2022,
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Equinox', engine: '1.5L Turbo', y0: 2020, y1: 2022,
         title: 'Spark Plugs — 2020–2022 Chevrolet Equinox (1.5L Turbo)',
         oemBrand: 'ACDelco (GM OEM)', oemPart: '41-156',
         rows: [
@@ -3528,7 +3556,7 @@
         companion: 'Behind the glove box. Subaru <b>72880FL00A</b> (superseding 72880FL000) fits the 2018–2023 Crosstrek. Do not use the old-generation 72880FG000 (2013–2017). The 2024+ Crosstrek takes a different filter (72880FN00A).'
       },
       {
-        partId: 'spark-plugs', make: 'Subaru', model: 'Crosstrek 2.0L', y0: 2018, y1: 2023,
+        partId: 'spark-plugs', make: 'Subaru', model: 'Crosstrek', engine: '2.0L', y0: 2018, y1: 2023,
         title: 'Spark Plugs — 2018–2023 Subaru Crosstrek (2.0L only)',
         oemBrand: 'Subaru (OEM)', oemPart: '22401AA880',
         rows: [
@@ -3595,7 +3623,7 @@
         companion: 'Behind the glove box. Maker cross groups (MANN, FRAM, Hengst) group Kia <b>97133-D3000</b> with 97133-D1000 / D3200 for this one filter — the Sportage catalog number is D3000.'
       },
       {
-        partId: 'spark-plugs', make: 'Kia', model: 'Sportage 2.4L', y0: 2017, y1: 2022,
+        partId: 'spark-plugs', make: 'Kia', model: 'Sportage', engine: '2.4L', y0: 2017, y1: 2022,
         title: 'Spark Plugs — 2017–2022 Kia Sportage (2.4L only)',
         oemBrand: 'Kia (OEM)', oemPart: '18849-11070',
         rows: [
@@ -3609,7 +3637,7 @@
         companion: 'Set of 4, iridium. Kia <b>18849-11070</b> is the NGK <b>SILZKR7E11</b> (stock 92315), gap 0.044 in. <b>2.4L ONLY</b> — the 2.0L Turbo takes a different plug (see the Sportage 2.0L Turbo entry).'
       },
       {
-        partId: 'spark-plugs', make: 'Kia', model: 'Sportage 2.0L Turbo', y0: 2017, y1: 2018,
+        partId: 'spark-plugs', make: 'Kia', model: 'Sportage', engine: '2.0L Turbo', y0: 2017, y1: 2018,
         title: 'Spark Plugs — 2017–2018 Kia Sportage (2.0L Turbo only)',
         oemBrand: 'Kia (OEM)', oemPart: '18857-09085',
         rows: [
@@ -3673,7 +3701,7 @@
         companion: 'Behind the glove box. The Purflux maker catalog crosses Hyundai <b>97133-J5000</b> for the Santa Fe IV (TM); Valeo catalog data agrees on the size. <b>Not for the 2019 Santa Fe XL.</b>'
       },
       {
-        partId: 'spark-plugs', make: 'Subaru', model: 'Crosstrek 2.5L', y0: 2021, y1: 2023,
+        partId: 'spark-plugs', make: 'Subaru', model: 'Crosstrek', engine: '2.5L', y0: 2021, y1: 2023,
         title: 'Spark Plugs — 2021–2023 Subaru Crosstrek (2.5L only)',
         oemBrand: 'Subaru (OEM)', oemPart: '22401AA940',
         rows: [
@@ -4246,10 +4274,146 @@
         ],
         companion: 'Set of 6, iridium, gap 0.037–0.043 in. GM\'s manual tables list <b>12622561 / ACDelco 41-109</b> unchanged across 2019–2023 (Amazon carries the same 41-109 under the newer GM number 12681660). DENSO\'s official cross-reference ties its ITV16 to the 41-109; NGK\'s cross is the ILTR6E11 (stock 90117). The genuine plug is also the cheapest verified option, so it leads.'
       }
+,
+      {
+        partId: 'oil-filter', make: 'Chevrolet', model: 'Colorado', y0: 2015, y1: 2016,
+        title: 'Oil Filter (Cartridge) — 2015–2016 Chevrolet Colorado (3.6L V6 LFX)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'PF2129',
+        rows: [
+          { brand: 'ACDelco', part: 'PF2129 (GM 25177917)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+PF2129+oil+filter') },
+          { brand: 'FRAM', part: 'CH8765', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH8765+oil+filter') },
+          { brand: 'Purolator', part: 'L25274', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Purolator+L25274+oil+filter') }
+        ],
+        companion: 'CARTRIDGE element (not a spin-on). GM\'s 2015 Colorado manual table lists <b>25177917 / ACDelco PF2129</b> for the 3.6L LFX; the Hengst maker catalog crosses FRAM CH8765 and Purolator L25274 to it. <b>Do NOT use a PF63 spin-on on this truck</b> — that filter belongs to other GM vehicles. Scope is the manual-verified 2015–2016 LFX years; the 2017+ LGZ engine is still being verified (a PF2130 supersession is reported but not yet confirmed from a GM source).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Chevrolet', model: 'Colorado', y0: 2015, y1: 2016,
+        title: 'Engine Air Filter — 2015–2016 Chevrolet Colorado (3.6L V6)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'A3195C',
+        rows: [
+          { brand: 'ACDelco', part: 'A3195C', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00S0A6FRE?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA11959', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA11959+air+filter') },
+          { brand: 'WIX', part: 'WA10256', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10256+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. GM\'s manual table lists <b>94775933 / ACDelco A3195C</b> for the Colorado (all engines); the FRAM/WIX catalog table pairs FRAM CA11959 and WIX WA10256 with it for the 2015–2019 trucks.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Chevrolet', model: 'Colorado', y0: 2015, y1: 2016,
+        title: 'Cabin Air Filter — 2015–2016 Chevrolet Colorado',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: 'CF196',
+        rows: [
+          { brand: 'ACDelco', part: 'CF196 (GM 23135671)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+CF196+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF11966', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11966+cabin+air+filter') },
+          { brand: 'WIX', part: '24211', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24211+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. GM\'s manual table lists <b>23135671 / ACDelco CF196</b>; maker cross lists pair FRAM CF11966 and WIX 24211 with that GM number for the Colorado.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Chevrolet', model: 'Colorado', y0: 2015, y1: 2016,
+        title: 'Spark Plugs — 2015–2016 Chevrolet Colorado (3.6L V6 LFX)',
+        oemBrand: 'ACDelco (GM OEM)', oemPart: '41-109',
+        rows: [
+          { brand: 'ACDelco', part: '41-109', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00496LZIW?tag=redemptionm06-20' },
+          { brand: 'NGK', part: '90117 (ILTR6E11)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+90117+ILTR6E11+spark+plug') },
+          { brand: 'DENSO', part: 'ITV16', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+ITV16+spark+plug') },
+          { brand: 'ACDelco', part: '41-109 (GM 12622561)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ACDelco+41-109+spark+plug') }
+        ],
+        companion: 'Set of 6, iridium, gap 0.037–0.043 in. GM\'s 2015 Colorado manual table lists <b>12622561 / ACDelco 41-109</b> for the 3.6L — the same plug this catalog verifies for the Traverse. NGK\'s official cross-reference ties its ILTR6E11 (90117) to the 41-109, and DENSO\'s cross ties the ITV16 to it. Scope is the manual-verified 2015–2016 LFX years.'
+      },
+      {
+        partId: 'oil-filter', make: 'Mazda', model: 'Mazda3', y0: 2014, y1: 2018,
+        title: 'Oil Filter — 2014–2018 Mazda Mazda3 (2.0L / 2.5L SkyActiv)',
+        oemBrand: 'Mazda (OEM)', oemPart: 'PE01-14-302A',
+        rows: [
+          { brand: 'Mazda (OEM)', part: 'PE01-14-302A', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00KWELWOW?tag=redemptionm06-20' },
+          { brand: 'Mazda (OEM)', part: 'PE01-14-302A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mazda+PE01-14-302A+oil+filter') },
+          { brand: 'WIX', part: '57002', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57002+oil+filter') },
+          { brand: 'MANN-FILTER', part: 'W 6018', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+W+6018+oil+filter') }
+        ],
+        companion: 'Spin-on filter — one filter serves both SkyActiv engines (the same <b>PE01-14-302A</b> this catalog verifies for the CX-5; Bosch\'s maker catalog crosses the PE01-14-302 family for the Mazda3). Use the SkyActiv-spec filter, not the older Mazda3 filter.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Mazda', model: 'Mazda3', y0: 2014, y1: 2018,
+        title: 'Engine Air Filter — 2014–2018 Mazda Mazda3 (2.0L / 2.5L SkyActiv)',
+        oemBrand: 'Mazda (OEM)', oemPart: 'PE07-13-3A0A',
+        rows: [
+          { brand: 'FRAM', part: 'CA11259', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00J5ZL42O?tag=redemptionm06-20' },
+          { brand: 'Mazda (OEM)', part: 'PE07-13-3A0A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mazda+PE07-13-3A0A+air+filter') },
+          { brand: 'WIX', part: '49247', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+49247+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. Mazda <b>PE07-13-3A0A</b>; FRAM\'s own application data lists the CA11259 for the Mazda3 2.0L (2012–2018) and 2.5L (2014–2018) — the same filter this catalog verifies for the CX-5.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Mazda', model: 'Mazda3', y0: 2014, y1: 2018,
+        title: 'Cabin Air Filter — 2014–2018 Mazda Mazda3 (2.0L / 2.5L SkyActiv)',
+        oemBrand: 'Mazda (OEM)', oemPart: 'KD45-61-J6X',
+        rows: [
+          { brand: 'Mazda (OEM)', part: 'KD45-61-J6X', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mazda+KD45-61-J6X+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF11811', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11811+cabin+air+filter') },
+          { brand: 'WIX', part: '24103', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24103+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Mazda <b>KD45-61-J6X</b> — the same cabin element this catalog verifies for the CX-5 — with FRAM CF11811 and WIX 24103 as the maker crosses.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Mazda', model: 'Mazda3', y0: 2014, y1: 2018,
+        title: 'Spark Plugs — 2014–2018 Mazda Mazda3 (2.0L / 2.5L SkyActiv)',
+        oemBrand: 'Mazda (OEM)', oemPart: 'PE5R-18-110',
+        rows: [
+          { brand: 'NGK', part: '94124 (ILKAR7L11)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+94124+ILKAR7L11+spark+plug') },
+          { brand: 'Mazda (OEM)', part: 'PE5R-18-110', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mazda+PE5R-18-110+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium, gap 0.044 in. Mazda\'s owner\'s manual names the genuine plug <b>PE5R-18-110</b> (or PE5S-18-110) for both SkyActiv engines; NGK\'s catalog crosses its ILKAR7L11 (stock 94124) to both numbers — the same plug this catalog verifies for the CX-5. Do not substitute the earlier Mazda3 plugs.'
+      }
 
     ];
     var PARTS = {};
-    var vehicle = { year: '', make: '', model: '', label: '' };
+    var vehicle = { year: '', make: '', model: '', trim: '', engine: '', label: '' };
 
     // ================= HELPERS =================
     function esc(s) {
@@ -4302,9 +4466,15 @@
         }
       }
     }
-    function setVehicle(year, make, model) {
-      vehicle = { year: String(year), make: make, model: model, label: (year + ' ' + make + ' ' + model) };
+    function syncVehicleLabel() {
+      vehicle.label = vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model +
+        (vehicle.trim ? ' ' + vehicle.trim : '') + (vehicle.engine ? ' ' + vehicle.engine : '');
       document.getElementById('vehicleState').textContent = vehicle.label;
+    }
+    function setVehicle(year, make, model) {
+      vehicle = { year: String(year), make: make, model: model, trim: '', engine: '', label: '' };
+      syncVehicleLabel();
+      renderVariantSteps();
       refreshCatalogMarks();
     }
     function onMakeChange() {
@@ -4320,10 +4490,91 @@
         document.getElementById('vehicleLine').innerHTML =
           '<b>Your vehicle:</b> ' + esc(vehicle.label) + ' — now pick your part below.';
       } else {
-        vehicle = { year: year, make: make, model: model, label: '' };
+        vehicle = { year: year, make: make, model: model, trim: '', engine: '', label: '' };
         document.getElementById('vehicleState').textContent = 'No vehicle picked yet';
+        renderVariantSteps();
       }
       refreshCatalogMarks();
+    }
+    // ================= TRIM & ENGINE STEPS =================
+    // Optional steps between Model and Parts (De, 2026-11-25): Year -> Make ->
+    // Model -> Trim -> Engine -> Parts. An entry may carry `trim`, `engine`,
+    // both, or neither; a scoped entry matches when the visitor picked that
+    // scope or skipped the step (skipped = show all variants, grouped and
+    // labeled, with a warning — a search is NEVER blocked by these steps).
+    // Options come from the catalog itself: the distinct scopes on the picked
+    // model+year's entries. A step appears only when it discriminates (2+
+    // options). ENGINE_LINEUPS adds real engines of a model that the catalog
+    // documents but has no scoped entry for yet (e.g. Tucson 2.4L plugs are
+    // HELD/unverified) — picker options only, never part claims: picking one
+    // lands on the honest not-covered panel for parts without verified
+    // coverage. Sources: batch21-entries.txt (Tucson ECOGARD application list
+    // 2.0L 2011-2021 / 1.6L 2016-18 / 2.4L 2018-21; Equinox GM manual tables
+    // verify the same service parts for the 2.0L Turbo).
+    var ENGINE_LINEUPS = {
+      'Hyundai|Tucson': [
+        { label: '2.4L', y0: 2018, y1: 2021 },
+        { label: '1.6L Turbo', y0: 2016, y1: 2018 }
+      ],
+      'Chevrolet|Equinox': [
+        { label: '2.0L Turbo', y0: 2018, y1: 2022 }
+      ]
+    };
+    function variantOptions(kind) {
+      if (!vehicle.year || !vehicle.make || !vehicle.model) return [];
+      var y = parseInt(vehicle.year, 10);
+      var seen = {}, out = [];
+      for (var i = 0; i < VERIFIED.length; i++) {
+        var e = VERIFIED[i];
+        if (e.make.toLowerCase() !== vehicle.make.toLowerCase() ||
+            e.model.toLowerCase() !== vehicle.model.toLowerCase()) continue;
+        if (y < e.y0 || y > e.y1) continue;
+        var v = e[kind];
+        if (v && !seen[v]) { seen[v] = 1; out.push(v); }
+      }
+      if (kind === 'engine') {
+        var lu = ENGINE_LINEUPS[vehicle.make + '|' + vehicle.model] || [];
+        for (var j = 0; j < lu.length; j++) {
+          if (y >= lu[j].y0 && y <= lu[j].y1 && !seen[lu[j].label]) {
+            seen[lu[j].label] = 1; out.push(lu[j].label);
+          }
+        }
+      }
+      return out;
+    }
+    function renderOneStep(kind, label, elId) {
+      var el = document.getElementById(elId);
+      if (!el) return;
+      var opts = variantOptions(kind);
+      if (opts.length < 2) { el.innerHTML = ''; return; }
+      var cur = vehicle[kind] || '';
+      var h = '<div class="qual-box"><div class="qual-q">Which ' + label + ' does your ' +
+              esc(vehicle.model) + ' have? <span style="font-weight:400; font-size:12.5px;">(optional — you can skip this and still search)</span></div>';
+      h += '<div class="qual-opts">';
+      for (var i = 0; i < opts.length; i++) {
+        h += '<button type="button" class="qual-btn' + (cur === opts[i] ? ' selected' : '') +
+             '" onclick="pickVariantStep(\'' + kind + '\',\'' + opts[i].replace(/'/g, "\\'") + '\')">' +
+             esc(opts[i]) + '</button>';
+      }
+      h += '<button type="button" class="qual-btn' + (cur === '' ? ' selected' : '') +
+           '" onclick="pickVariantStep(\'' + kind + '\',\'\')">Not sure — show me all of them</button>';
+      h += '</div></div>';
+      el.innerHTML = h;
+    }
+    function renderVariantSteps() {
+      renderOneStep('trim', 'trim', 'trimStep');
+      renderOneStep('engine', 'engine', 'engineStep');
+    }
+    function pickVariantStep(kind, val) {
+      vehicle[kind] = val;
+      syncVehicleLabel();
+      renderVariantSteps();
+      refreshCatalogMarks();
+      if (currentPartId) {
+        currentEntries = findPartEntries(currentPartId);
+        currentEntry = currentEntries[0] || null;
+        renderResult(false);
+      }
     }
     function decodeVin() {
       var vin = document.getElementById('vinInput').value.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -4350,8 +4601,35 @@
           var mk = findMake(make);
           if (mk) { document.getElementById('selMake').value = mk; fillModels(mk, model); }
           setVehicle(year, mk || make, model);
+          // Preselect trim/engine from the VIN when they match a catalog
+          // option exactly (displacement for engine). No match = the step
+          // stays unanswered and the show-all path applies.
+          var engNote = '';
+          var disp = parseFloat(get('Displacement (L)'));
+          if (!isNaN(disp)) {
+            var eopts = variantOptions('engine'), hit = null, hits = 0;
+            for (var oi = 0; oi < eopts.length; oi++) {
+              var tok = eopts[oi].match(/^(\d+(?:\.\d+)?)L/);
+              if (tok && Math.abs(parseFloat(tok[1]) - disp) < 0.05) { hit = eopts[oi]; hits++; }
+            }
+            if (hits === 1) {
+              vehicle.engine = hit;
+              engNote = ' Engine from your VIN: <b>' + esc(hit) + '</b> — change it above if that\'s wrong.';
+            }
+          }
+          if (trim) {
+            var topts = variantOptions('trim');
+            for (var ti = 0; ti < topts.length; ti++) {
+              if (topts[ti].toLowerCase() === trim.toLowerCase()) { vehicle.trim = topts[ti]; break; }
+            }
+          }
+          if (vehicle.engine || vehicle.trim) {
+            syncVehicleLabel();
+            renderVariantSteps();
+            refreshCatalogMarks();
+          }
           line.innerHTML = '<b>Decoded:</b> ' + esc(year) + ' ' + esc(make) + ' ' + esc(model) +
-            (trim ? ' · ' + esc(trim) : '') + ' — now pick your part below.';
+            (trim ? ' · ' + esc(trim) : '') + ' — now pick your part below.' + engNote;
         })
         .catch(function () {
           line.innerHTML = 'The VIN decoder didn\'t answer just now — use the year / make / model picker, or text us the VIN at 360-772-8205.';
@@ -4411,6 +4689,9 @@
           }
         }
       }
+      // Keep an on-screen part-number result's fit flags in step with the
+      // vehicle pick.
+      if (pnState) renderPnResults(false);
     }
 
     // ================= RESULT =================
@@ -4423,14 +4704,45 @@
     // exactly as they always have.
     var currentPartId = null;
     var currentEntry = null;
+    var currentEntries = [];
     var qualifierPick = null;
+    var pnState = null;
 
+    // A scoped entry (trim/engine) matches when its scope is unset, when the
+    // visitor skipped that step, or when it equals the visitor's pick.
+    function scopeOk(eVal, vVal) {
+      return !eVal || !vVal || eVal.toLowerCase() === String(vVal).toLowerCase();
+    }
     function vehicleMatches(e) {
       if (!vehicle.year || !vehicle.make || !vehicle.model) return false;
       var y = parseInt(vehicle.year, 10);
       return vehicle.make.toLowerCase() === e.make.toLowerCase() &&
              vehicle.model.toLowerCase() === e.model.toLowerCase() &&
-             y >= e.y0 && y <= e.y1;
+             y >= e.y0 && y <= e.y1 &&
+             scopeOk(e.engine, vehicle.engine) && scopeOk(e.trim, vehicle.trim);
+    }
+    function findPartEntries(id) {
+      var all = [];
+      for (var j = 0; j < VERIFIED.length; j++) {
+        if (VERIFIED[j].partId === id && vehicleMatches(VERIFIED[j])) all.push(VERIFIED[j]);
+      }
+      // When the visitor answered a step, an entry scoped to that answer is
+      // the specific one — it beats a general (unscoped) entry for the part.
+      if (vehicle.engine) {
+        var s = [];
+        for (var a = 0; a < all.length; a++) {
+          if (all[a].engine && all[a].engine.toLowerCase() === vehicle.engine.toLowerCase()) s.push(all[a]);
+        }
+        if (s.length) all = s;
+      }
+      if (vehicle.trim) {
+        var t = [];
+        for (var b = 0; b < all.length; b++) {
+          if (all[b].trim && all[b].trim.toLowerCase() === vehicle.trim.toLowerCase()) t.push(all[b]);
+        }
+        if (t.length) all = t;
+      }
+      return all;
     }
     function rowsTableHtml(rows) {
       var h = '<table class="compare"><thead><tr><th>Brand</th><th>Part #</th><th>Price</th><th>Where</th></tr></thead><tbody>';
@@ -4511,6 +4823,42 @@
       h += fitNoteHtml();
       return h;
     }
+    function entryScopeLabel(e) {
+      var bits = [];
+      if (e.engine) bits.push('Engine: ' + e.engine);
+      if (e.trim) bits.push('Trim: ' + e.trim);
+      return bits.join(' · ');
+    }
+    // Renders the entry set for a part. One unscoped entry renders exactly as
+    // it always has. When engine/trim variants are in play and a step was
+    // skipped (or several variants match), every variant is shown grouped
+    // under its scope with a warning — the same never-locked-out behavior as
+    // the qualifier show-all path.
+    function renderEntrySet(entries) {
+      var grouped = entries.length > 1;
+      if (!grouped && entries.length === 1) {
+        var e0 = entries[0];
+        if ((e0.engine && !vehicle.engine) || (e0.trim && !vehicle.trim)) grouped = true;
+      }
+      if (!grouped) return renderVerified(entries[0]);
+      var kinds = [];
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].engine && kinds.indexOf('engine') < 0) kinds.push('engine');
+        if (entries[i].trim && kinds.indexOf('trim') < 0) kinds.push('trim');
+      }
+      var h = '<div class="warn-banner">⚠ <b>Careful — this part can differ by ' +
+              (kinds.join(' or ') || 'version') +
+              ', so one version does not fit all of these cars.</b> ' +
+              'Every version in the catalog is shown below, grouped by the version it fits. Match yours before you buy — ' +
+              'or pick your ' + (kinds.join(' and ') || 'version') + ' in Step 1 to see only yours. ' +
+              'Not sure? Text De a photo of your door label at <a href="sms:13607728205">360-772-8205</a> and he\'ll tell you which one your car takes.</div>';
+      for (var k = 0; k < entries.length; k++) {
+        var lbl = entryScopeLabel(entries[k]);
+        h += '<div class="variant-head">' + esc(lbl ? lbl : 'Fits all versions') + '</div>';
+        h += renderVerified(entries[k]);
+      }
+      return h;
+    }
     function renderResult(scroll) {
       var part = PARTS[currentPartId];
       if (!part) return;
@@ -4519,8 +4867,8 @@
       h += '<p style="font-size:13px; color:#475569; margin:4px 0 0;">Category: ' + esc(part.cat) + ' · Lookup ' +
            (vehicle.label ? 'for your <b>' + esc(vehicle.label) + '</b>' :
             '(no vehicle picked yet — pick your vehicle in Step 1 for exact fitment)') + '.</p>';
-      if (currentEntry) {
-        h += renderVerified(currentEntry);
+      if (currentEntries.length) {
+        h += renderEntrySet(currentEntries);
       } else {
         if (currentPartId === 'car-battery-12v') {
           h += '<div class="building-box"><b>Find your battery\'s group size first \u2014 it\'s printed on the battery you already have.</b><br><br>' +
@@ -4543,6 +4891,7 @@
     }
     function pickVariant(i) {
       qualifierPick = i;
+      if (pnState) { renderPnResults(false); return; }
       renderResult(false);
     }
     function selectPart(id, btn) {
@@ -4551,13 +4900,252 @@
       if (btn) btn.classList.add('selected');
       var part = PARTS[id];
       if (!part) return;
+      pnState = null;
       currentPartId = id;
       qualifierPick = null;
-      currentEntry = null;
-      for (var j = 0; j < VERIFIED.length; j++) {
-        if (VERIFIED[j].partId === id && vehicleMatches(VERIFIED[j])) { currentEntry = VERIFIED[j]; break; }
-      }
+      currentEntries = findPartEntries(id);
+      currentEntry = currentEntries[0] || null;
       renderResult(true);
+    }
+
+    // ================= PART-NUMBER LOOKUP =================
+    // Searches every entry's OEM number and every row's brand/part number
+    // (aftermarket numbers included — Detroit Axle, NGK, Gates...). Input is
+    // normalized (uppercase, spaces/dashes stripped) on both sides. Exact
+    // matches rank first, then prefix, then substring. Nothing is ever
+    // invented: no match renders the honest not-verified panel.
+    function normPn(s) {
+      return String(s == null ? '' : s).toUpperCase().replace(/[^A-Z0-9]/g, '');
+    }
+    // Supersession numbers recorded in an entry's verified notes. The notes
+    // are prose, so extraction is deliberately conservative: only the clause
+    // starting at the word "supersed..." (up to the next '.' or ';') is read,
+    // and only part-number-shaped tokens in it are kept. Nothing is inferred
+    // beyond what the entry itself records.
+    function entrySupersessions(e) {
+      var out = [], seen = {};
+      var texts = [];
+      if (e.companion) texts.push(e.companion);
+      if (e.qualifier) {
+        for (var k = 0; k < e.qualifier.options.length; k++) {
+          if (e.qualifier.options[k].note) texts.push(e.qualifier.options[k].note);
+        }
+      }
+      for (var t = 0; t < texts.length; t++) {
+        var plain = String(texts[t]).replace(/<[^>]*>/g, ' ');
+        var re = /supersed\w*/gi, m;
+        while ((m = re.exec(plain)) !== null) {
+          var seg = plain.slice(m.index);
+          var cut = seg.search(/[.;]/);
+          if (cut >= 0) seg = seg.slice(0, cut);
+          var toks = seg.match(/[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*/g) || [];
+          for (var i = 0; i < toks.length; i++) {
+            var n = normPn(toks[i]);
+            if (n.length >= 5 && /\d/.test(n) &&
+                (/[A-Z]/.test(n) || toks[i].indexOf('-') >= 0 || n.length >= 7) && !seen[n]) {
+              seen[n] = 1; out.push(toks[i].toUpperCase());
+            }
+          }
+        }
+      }
+      return out;
+    }
+    function entryPnCandidates(e) {
+      var out = [];
+      if (e.oemPart) out.push(e.oemPart);
+      var rows = e.rows || [];
+      for (var i = 0; i < rows.length; i++) if (rows[i].part) out.push(rows[i].part);
+      if (e.qualifier) {
+        for (var k = 0; k < e.qualifier.options.length; k++) {
+          var o = e.qualifier.options[k];
+          if (o.oemPart) out.push(o.oemPart);
+          if (o.rows) for (var m = 0; m < o.rows.length; m++) if (o.rows[m].part) out.push(o.rows[m].part);
+        }
+      }
+      var sup = entrySupersessions(e);
+      for (var s = 0; s < sup.length; s++) out.push(sup[s]);
+      return out;
+    }
+    function searchPartNumber() {
+      var raw = document.getElementById('pnInput').value.trim();
+      var q = normPn(raw);
+      currentPartId = null;
+      currentEntry = null;
+      currentEntries = [];
+      qualifierPick = null;
+      if (q.length < 3) {
+        pnState = { raw: raw, tooShort: true, matches: [] };
+        renderPnResults(true);
+        return;
+      }
+      var exact = [], prefix = [], substr = [];
+      for (var i = 0; i < VERIFIED.length; i++) {
+        var e = VERIFIED[i];
+        var cands = entryPnCandidates(e), rank = 0;
+        for (var c = 0; c < cands.length; c++) {
+          var n = normPn(cands[c]);
+          if (n === q) { rank = 3; break; }
+          if (rank < 2 && n.indexOf(q) === 0) rank = 2;
+          else if (rank < 1 && n.indexOf(q) >= 0) rank = 1;
+        }
+        if (rank === 3) exact.push(e);
+        else if (rank === 2) prefix.push(e);
+        else if (rank === 1) substr.push(e);
+      }
+      var ranked = exact.concat(prefix, substr);
+      // INTERCHANGEABILITY: entries that share one OEM number are the same
+      // verified part on more than one vehicle — merge them into a single
+      // interchange result listing every scope it covers, and expand each
+      // hit to its whole OEM group (a hit on one vehicle's row or on a
+      // superseded number surfaces every vehicle the part fits).
+      // GUARD: battery entries are never merged — their oemPart field holds
+      // a BCI group size (H6, 24F...), not a unique part number.
+      var groups = [], byKey = {};
+      for (var g = 0; g < ranked.length; g++) {
+        var ge = ranked[g], gk = pnGroupKey(ge);
+        if (!byKey[gk]) {
+          byKey[gk] = { key: gk, entries: pnGroupEntries(ge), matched: [] };
+          groups.push(byKey[gk]);
+        }
+        byKey[gk].matched.push(ge);
+      }
+      pnState = { raw: raw, tooShort: false, matches: ranked, groups: groups };
+      renderPnResults(true);
+    }
+    function pnGroupKey(e) {
+      if (e.partId !== 'car-battery-12v' && e.oemPart) return 'OEM|' + normPn(e.oemPart);
+      return 'E|' + VERIFIED.indexOf(e);
+    }
+    function pnGroupEntries(e) {
+      var k = pnGroupKey(e);
+      if (k.indexOf('OEM|') !== 0) return [e];
+      var out = [];
+      for (var i = 0; i < VERIFIED.length; i++) {
+        if (pnGroupKey(VERIFIED[i]) === k) out.push(VERIFIED[i]);
+      }
+      return out;
+    }
+    // Every verified number for a group, from the entries' own data only:
+    // the OEM number(s), the aftermarket numbers on the entry-level rows,
+    // and the supersession chain recorded in the notes. Qualifier-variant
+    // numbers are NOT crosses (a variant can be a different, non-
+    // interchangeable part — e.g. the early-build C-HR pad), so they are
+    // left to the qualifier rendering below and never listed here.
+    function pnGroupNumbers(group) {
+      var byNorm = {}, order = [];
+      function add(label, num) {
+        var n = normPn(num);
+        if (!n) return;
+        if (!byNorm[n]) { byNorm[n] = { num: num, labels: [] }; order.push(n); }
+        if (byNorm[n].labels.indexOf(label) < 0) byNorm[n].labels.push(label);
+      }
+      var i, j;
+      for (i = 0; i < group.entries.length; i++) {
+        if (group.entries[i].oemPart) add(group.entries[i].oemBrand || 'OEM', group.entries[i].oemPart);
+      }
+      for (i = 0; i < group.entries.length; i++) {
+        var rows = group.entries[i].rows || [];
+        for (j = 0; j < rows.length; j++) if (rows[j].part) add(rows[j].brand, rows[j].part);
+      }
+      var supSeen = {}, sup = [];
+      for (i = 0; i < group.entries.length; i++) {
+        var ss = entrySupersessions(group.entries[i]);
+        for (j = 0; j < ss.length; j++) {
+          var sn = normPn(ss[j]);
+          if (!byNorm[sn] && !supSeen[sn]) { supSeen[sn] = 1; sup.push(ss[j]); }
+        }
+      }
+      return { list: order.map(function (n) { return byNorm[n]; }), sup: sup };
+    }
+    function pnIxBoxHtml(group) {
+      var first = group.entries[0];
+      var partName = PARTS[first.partId] ? PARTS[first.partId].name : first.partId;
+      var scopes = [], scopeSeen = {};
+      for (var i = 0; i < group.entries.length; i++) {
+        var st = pnScopeText(group.entries[i]);
+        if (!scopeSeen[st]) { scopeSeen[st] = 1; scopes.push(st); }
+      }
+      var nums = pnGroupNumbers(group);
+      var h = '<div class="ix-box"><b>🔀 Interchange — ' + esc(partName) + '</b><br>';
+      h += 'This same verified part fits:';
+      h += '<ul>';
+      for (var s = 0; s < scopes.length; s++) h += '<li>' + esc(scopes[s]) + '</li>';
+      h += '</ul>';
+      h += 'Verified numbers for this part:';
+      h += '<ul class="ix-nums">';
+      for (var n = 0; n < nums.list.length; n++) {
+        h += '<li><b>' + esc(nums.list[n].labels.join(' / ')) + '</b> ' + esc(nums.list[n].num) + '</li>';
+      }
+      if (nums.sup.length) {
+        h += '<li>Supersession chain (from the verified catalog notes): ' + esc(nums.sup.join(', ')) + '</li>';
+      }
+      h += '</ul>';
+      if (nums.list.length <= 1 && !nums.sup.length) {
+        h += 'No other verified cross numbers are recorded for this part yet — the number above is the verified one for the vehicle listed.';
+      }
+      h += '</div>';
+      return h;
+    }
+    function pnScopeText(e) {
+      return e.y0 + '–' + e.y1 + ' ' + e.make + ' ' + e.model +
+             (e.engine ? ' · Engine: ' + e.engine : '') + (e.trim ? ' · Trim: ' + e.trim : '');
+    }
+    function renderPnResults(scroll) {
+      if (!pnState) return;
+      document.getElementById('resultState').textContent = 'Part # ' + pnState.raw;
+      var h = '';
+      h += '<p style="font-size:13px; color:#475569; margin:4px 0 0;">Part-number lookup for <b>' +
+           esc(pnState.raw) + '</b>' +
+           (vehicle.label ? ' · your vehicle: <b>' + esc(vehicle.label) + '</b>' :
+            ' · (no vehicle picked yet — pick your vehicle in Step 1 and we\'ll flag what fits it)') + '.</p>';
+      if (pnState.tooShort) {
+        h += '<div class="building-box"><b>Type a little more of the number.</b><br><br>' +
+             'Two or three characters can match hundreds of parts — give us at least the first few characters of the number and we\'ll search every verified number in the catalog.</div>';
+      } else if (!pnState.matches.length) {
+        h += '<div class="building-box"><b>That number isn\'t verified in the catalog yet.</b><br><br>' +
+             'Every number on this page is verified against the manufacturer\'s catalog before it\'s published, and <b>' +
+             esc(pnState.raw) + '</b> hasn\'t been verified yet — De is adding verified parts every day.<br><br>' +
+             '<b>Fastest way to the exact number:</b> text a photo of the part — or of the number on it — to De at ' +
+             '<a href="sms:13607728205">360-772-8205</a> and he\'ll get you the exact part number for your vehicle.</div>';
+        h += fitNoteHtml();
+      } else {
+        var shownGroups = pnState.groups.slice(0, 6);
+        if (pnState.groups.length > shownGroups.length) {
+          h += '<p style="font-size:13px; color:#475569; margin:8px 0 0;">' + pnState.groups.length +
+               ' matching parts — showing the first ' + shownGroups.length + '. Add more of the number to narrow it down.</p>';
+        }
+        var hasVehicle = !!(vehicle.year && vehicle.make && vehicle.model);
+        for (var gi = 0; gi < shownGroups.length; gi++) {
+          h += pnIxBoxHtml(shownGroups[gi]);
+          for (var mi = 0; mi < shownGroups[gi].matched.length; mi++) {
+          var e = shownGroups[gi].matched[mi];
+          h += '<p class="pn-scope">Fits: <b>' + esc(pnScopeText(e)) + '</b> · ' +
+               esc(PARTS[e.partId] ? PARTS[e.partId].name : e.partId) + '</p>';
+          if (hasVehicle) {
+            var baseFit = vehicle.make.toLowerCase() === e.make.toLowerCase() &&
+                          vehicle.model.toLowerCase() === e.model.toLowerCase() &&
+                          parseInt(vehicle.year, 10) >= e.y0 && parseInt(vehicle.year, 10) <= e.y1;
+            if (!baseFit) {
+              h += '<div class="no-fit-banner">✗ <b>Doesn\'t fit your ' + esc(vehicle.label) + '</b> — this one fits the vehicle listed above.</div>';
+            } else if ((e.engine && !vehicle.engine) || (e.trim && !vehicle.trim)) {
+              h += '<div class="warn-banner">⚠ <b>Check the version:</b> this one is for the ' +
+                   esc(entryScopeLabel(e)) + ' version. If yours matches, it fits your ' +
+                   esc(vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model) +
+                   ' — or pick your version in Step 1 and we\'ll check it exactly.</div>';
+            } else if (!vehicleMatches(e)) {
+              h += '<div class="no-fit-banner">✗ <b>Doesn\'t fit your ' + esc(vehicle.label) + '</b> — this one is for the ' +
+                   esc(entryScopeLabel(e)) + ' version.</div>';
+            } else {
+              h += '<div class="fits-banner">✓ <b>Fits your ' + esc(vehicle.label) + '.</b></div>';
+            }
+          }
+          h += renderVerified(e);
+          }
+        }
+      }
+      h += ctaHtml();
+      document.getElementById('resultBody').innerHTML = h;
+      if (scroll) document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     // ================= INIT =================
