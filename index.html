@@ -117,6 +117,11 @@
       background: #f8fafc; font-size: 14px; color: #334155; margin-top: 10px;
     }
     .building-box a { color: #0f2439; font-weight: 800; }
+    .diagram-box {
+      margin-top: 12px; border: 1.5px solid #0f2439; border-radius: 10px;
+      padding: 12px 14px; background: #f8fafc; font-size: 14px; color: #334155;
+    }
+    .diagram-box a { color: #0f2439; font-weight: 800; }
     .companion { font-size: 13px; color: #334155; margin-top: 12px; }
     .companion b { color: #0f2439; }
     .qual-box {
@@ -222,6 +227,7 @@
         </div>
         <div id="trimStep"></div>
         <div id="engineStep"></div>
+        <div id="diagramPanel"></div>
         <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Live lookups so far:</b> Toyota Prius, Camry &amp; Corolla, Honda Civic &amp; Accord, Ford F-150, Kia Sorento — under Filters &amp; Fluids, Ignition, and Transmission &amp; Drivetrain. <b>Demo:</b> a 2004–2009 Prius + <b>Oil Filter</b> shows the finished format.</div>
       </div>
     </div>
@@ -4574,6 +4580,70 @@
         '<a href="https://jesusfrees-max.github.io/">Book on our main site</a></div>';
     }
 
+    // ================= FACTORY DIAGRAM ROUTER =================
+    // Exploded OEM parts diagrams are manufacturer-copyrighted artwork, so
+    // this site never copies, embeds or hosts them — it LINKS OUT to the
+    // free public catalogs that publish them (research:
+    // diagram-integration-research-2026-11-25.md). One routing table keyed
+    // on the picked vehicle's make, three doors:
+    //   Door 1 — PartSouq: one genuine-parts catalog (VIN or make/model
+    //     path) covering the Japanese/Korean makes.
+    //   Door 2 — the PartsGiant-family dealer storefronts (GM / Ford /
+    //     Mopar): one operator pattern, full illustrated OEM catalogs.
+    //   Door 3 — catcar.info: the European makes (VW / BMW / Mercedes).
+    // A make with no verified destination gets NO diagram link. The panel
+    // is informational only — it never blocks or gates a search, and it
+    // renders nothing until a vehicle is picked.
+    var DIAGRAM_ROUTES = {
+      'Toyota':        { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Lexus':         { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Honda':         { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Acura':         { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Nissan':        { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Infiniti':      { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Subaru':        { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Mazda':         { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Mitsubishi':    { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Suzuki':        { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Isuzu':         { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Hyundai':       { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Genesis':       { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Kia':           { name: 'PartSouq', url: 'https://partsouq.com/' },
+      'Chevrolet':     { name: 'GM Parts Giant', url: 'https://www.gmpartsgiant.com/' },
+      'GMC':           { name: 'GM Parts Giant', url: 'https://www.gmpartsgiant.com/' },
+      'Buick':         { name: 'GM Parts Giant', url: 'https://www.gmpartsgiant.com/' },
+      'Cadillac':      { name: 'GM Parts Giant', url: 'https://www.gmpartsgiant.com/' },
+      'Ford':          { name: 'Ford Parts Giant', url: 'https://www.fordpartsgiant.com/' },
+      'Ram':           { name: 'Mopar Parts Giant', url: 'https://www.moparpartsgiant.com/' },
+      'Dodge':         { name: 'Mopar Parts Giant', url: 'https://www.moparpartsgiant.com/' },
+      'Jeep':          { name: 'Mopar Parts Giant', url: 'https://www.moparpartsgiant.com/' },
+      'Chrysler':      { name: 'Mopar Parts Giant', url: 'https://www.moparpartsgiant.com/' },
+      'Volkswagen':    { name: 'Catcar', url: 'https://www.catcar.info/' },
+      'BMW':           { name: 'Catcar', url: 'https://www.catcar.info/' },
+      'Mercedes-Benz': { name: 'Catcar', url: 'https://www.catcar.info/' }
+    };
+    function diagramRoute(make) {
+      return DIAGRAM_ROUTES[make] || null;
+    }
+    function diagramPanelHtml() {
+      if (!vehicle.make) return '';
+      var r = diagramRoute(vehicle.make);
+      if (!r) return '';
+      var veh = vehicle.label ? esc(vehicle.label) : esc(vehicle.make);
+      return '<div class="diagram-box">📐 <b>Factory Diagrams</b><br>' +
+        'See the factory parts diagrams for your <b>' + veh + '</b> — the exploded drawings with numbered ' +
+        'callouts — free in the ' + esc(r.name) + ' catalog: ' +
+        '<a href="' + r.url + '" target="_blank" rel="noopener">See the parts diagram for this vehicle →</a>' +
+        '<br><span style="font-size:12.5px; color:#475569;">Spot your part on the drawing and note its OEM number, ' +
+        'then run that number through the part-number search on this page — if it\'s verified here, you\'ll land ' +
+        'right on your options.</span></div>';
+    }
+    function refreshDiagramPanel() {
+      var el = document.getElementById('diagramPanel');
+      if (!el) return;
+      el.innerHTML = (vehicle.year && vehicle.make && vehicle.model) ? diagramPanelHtml() : '';
+    }
+
     // ================= VEHICLE PICKER =================
     function buildVehiclePickers() {
       var yr = document.getElementById('selYear');
@@ -4604,6 +4674,7 @@
       vehicle.label = vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model +
         (vehicle.trim ? ' ' + vehicle.trim : '') + (vehicle.engine ? ' ' + vehicle.engine : '');
       document.getElementById('vehicleState').textContent = vehicle.label;
+      refreshDiagramPanel();
     }
     function setVehicle(year, make, model) {
       vehicle = { year: String(year), make: make, model: model, trim: '', engine: '', label: '' };
@@ -4628,6 +4699,7 @@
         document.getElementById('vehicleState').textContent = 'No vehicle picked yet';
         renderVariantSteps();
       }
+      refreshDiagramPanel();
       refreshCatalogMarks();
     }
     // ================= TRIM & ENGINE STEPS =================
@@ -5019,6 +5091,7 @@
         }
         h += fitNoteHtml();
       }
+      h += diagramPanelHtml();
       h += ctaHtml();
       document.getElementById('resultBody').innerHTML = h;
       if (scroll) document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
