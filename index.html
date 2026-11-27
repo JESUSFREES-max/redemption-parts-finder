@@ -289,7 +289,7 @@
     // ================= DATA =================
     var MAKES_MODELS = {
       'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
-      'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline'],
+      'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline', 'Passport'],
       'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
@@ -425,6 +425,7 @@
     // Batch 45 (Pilot 2023-25 new gen: oil carryover 15400-PLM-A02, air CHANGED 17220-61A-A00, cabin CHANGED 80292-TYA-A41, ATF Type 2.0 08200-9015 with 08200-9020 HCF-2 trap warned, plugs HELD; Pilot 2016-22: ATF qualifier 6-spd DW-1 08200-9008 / 9-spd Type 3.1 08200-9017, coolant OL999-9011 OEM-only; Outback 2020-25 new gen: oil 15208AA21A both engines, air 16546AA16A, cabin 72880FL00A, plugs engine-split 2.5L 22401AA940/NGK 91899 + 2.4L Turbo NGK SILKFR8A6 type with Subaru-box number withheld) merged 2026-11-27.
     // Batch 46 (RAV4 2019-24 2.5L gas NEW gen: oil spin-on 90915-YZZN1 with WL10332/PH4967 and 04152-YZZA1 + WIX 51394 traps warned, air 17801-F0050 gas-only with Hybrid 17801-F0020 trap warned, plugs 90919-01289 = DENSO FC16HR-Q8 first + NGK 96210, cabin HELD 87139-0R030 unverified; Ascent 2019-25 FA24 NEW model: oil 15208AA21A FRAM omitted w/ bypass caution, air 16546AA16A, cabin 72880FL00A, plugs NGK SILKFR8A6 96698 with Subaru-box number withheld) merged 2026-11-27.
     // Batch 47 (Highlander 2020-24 gas: V6 oil cartridge 04152-YZZA1 + plugs 90919-01263/FK20HBR8, 2.4T oil spin-on 90915-YZZN1 + plugs NGK DILZKAR8E7H with Toyota-box number withheld, shared air 17801-F0050 + cabin 87139-0E040/CF12157; Palisade + Telluride 2020-22 3.8L NEW models: oil cartridge 26320-3CKB0 with 26300-35505 spin-on trap warned, air 28113-A9100 verified per vehicle, Palisade cabin 97133-S8000; Telluride cabin + both plugs HELD on conflicting sources) merged 2026-11-27.
+    // Batch 48 (Passport 2019-25 3.5L NEW model: oil 15400-PLM-A02 + air 17220-5J6-A10 + plugs 12290-R9P-A01/NGK 95350, all verified FOR THE PASSPORT BY NAME, cabin HELD like Ridgeline; Forester 2019-23 SK NEW gen: oil 15208AA21A FRAM omitted w/ bypass caution, air 16546AA16A, cabin 72880FL000 with FL00A trap warned, plugs 22401AA940/NGK DILKAR7Q8 91899 with SJ plug trap warned) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -7484,6 +7485,121 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10271+air+filter') }
         ],
         companion: 'Panel filter — Kia <b>28113-A9100</b>, verified for the Telluride by name in maker application data (checked separately from its Hyundai twin — same number, confirmed twice). <b>Warning:</b> 28113-A9200 is a different-dimension filter.'
+      },
+      {
+        partId: 'oil-filter', make: 'Honda', model: 'Passport', y0: 2019, y1: 2025,
+        title: 'Oil Filter — 2019–2025 Honda Passport (3.5L V6)',
+        oemBrand: 'Honda (OEM)', oemPart: '15400-PLM-A02',
+        rows: [
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00BFDFJA2?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57356XP', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5SZN9S?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+15400-PLM-A02+oil+filter') }
+        ],
+        companion: 'Spin-on filter — Honda <b>15400-PLM-A02</b>, named for the Passport in the Passport owner\'s manual itself and verified for this car by name (not copied from the Pilot). One filter serves the whole 2019–2025 run — the 2022 facelift changed no service parts. The all-new 2026 Passport is a different car and is NOT covered here.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Honda', model: 'Passport', y0: 2019, y1: 2025,
+        title: 'Engine Air Filter — 2019–2025 Honda Passport (3.5L V6)',
+        oemBrand: 'Honda (OEM)', oemPart: '17220-5J6-A10',
+        rows: [
+          { brand: 'ECOGARD', part: 'XA10486', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01LWM3AMJ?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '17220-5J6-A10', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+17220-5J6-A10+air+filter') },
+          { brand: 'FRAM', part: 'CA12061', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12061+air+filter') },
+          { brand: 'WIX', part: 'WA10339', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10339+air+filter') }
+        ],
+        companion: 'Rigid panel filter — Honda <b>17220-5J6-A10</b>, verified for the Passport by name in Honda manual data and ECOGARD\'s own application list. ECOGARD Amazon row is first pick (verified filter, faster shipping). <b>Warning:</b> FRAM CA11876 shows up in cross lists for this car but was rejected in this catalog\'s Ridgeline research — no row for it. The 2026 Passport takes the different 17220-61A-A00.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Honda', model: 'Passport', y0: 2019, y1: 2025,
+        title: 'Spark Plugs — 2019–2025 Honda Passport (3.5L V6)',
+        oemBrand: 'Honda (OEM)', oemPart: '12290-R9P-A01',
+        rows: [
+          { brand: 'NGK', part: '95350', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95350+spark+plug') },
+          { brand: 'Honda (OEM)', part: '12290-R9P-A01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+12290-R9P-A01+spark+plug') }
+        ],
+        companion: 'Set of 6. The Passport owner\'s manuals (2021 and 2025 read directly) print <b>NGK DILZKR7B11G</b> for this car — NGK stock 95350; Honda <b>12290-R9P-A01</b> is the same plug in a Honda box (DENSO\'s official cross-reference pairs them). Factory gap: 0.044 in. No DENSO equivalent row — DENSO\'s cross offers none against this number.'
+      },
+      {
+        partId: 'oil-filter', make: 'Subaru', model: 'Forester', y0: 2019, y1: 2023,
+        title: 'Oil Filter — 2019–2023 Subaru Forester (2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '15208AA21A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '15208AA21A', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BQX1RDFK?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57055', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57055+oil+filter') },
+          { brand: 'Subaru (OEM)', part: '15208AA21A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+15208AA21A+oil+filter') },
+          { brand: 'Subaru (OEM)', part: '15208AA15A (6-Pack)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B071J2GZYN?tag=redemptionm06-20' }
+        ],
+        companion: 'Spin-on filter — Subaru\'s current <b>15208AA21A</b> (superseding AA15A / AA160 / AA20A), verified for the SK Forester by name. Change the crush washer (<b>803916010</b>) with the filter. First aftermarket pick is the <b>WIX 57055</b> — its bypass is the closest aftermarket match to Subaru\'s ~23 psi spec; the FRAM 7317 family runs ~13 psi, so no FRAM row is shown.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Subaru', model: 'Forester', y0: 2019, y1: 2023,
+        title: 'Engine Air Filter — 2019–2023 Subaru Forester (2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '16546AA16A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '16546AA16A', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B072YV45X1?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA12295', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07QRB9FQR?tag=redemptionm06-20' },
+          { brand: 'Subaru (OEM)', part: '16546AA16A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+16546AA16A+air+filter') },
+          { brand: 'WIX', part: 'WA10713', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10713+air+filter') }
+        ],
+        companion: 'Panel filter — Subaru <b>16546AA16A</b>, CHANGED from the 2014–2018 car\'s 16546AA12A (that older element does NOT fit the SK). Verified for the 2019+ Forester by name in genuine Subaru listing data.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Subaru', model: 'Forester', y0: 2019, y1: 2023,
+        title: 'Cabin Air Filter — 2019–2023 Subaru Forester (2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '72880FL000',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '72880FL000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+72880FL000+cabin+air+filter') },
+          { brand: 'Baldwin', part: 'PA10432', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Baldwin+PA10432+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP2242', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP2242+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. <b>Read this before ordering:</b> the SK Forester takes <b>72880FL000</b> — NOT the 72880FL00A this site lists for the Outback/Crosstrek/Ascent. The numbers look interchangeable and are not; maker data (Baldwin bulletin Form 560-24, FRAM-group catalog) puts the 2019+ Forester under FL000 only. The old car\'s 72880FG000 does not fit either.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Subaru', model: 'Forester', y0: 2019, y1: 2023,
+        title: 'Spark Plugs — 2019–2023 Subaru Forester (2.5L)',
+        oemBrand: 'Subaru (OEM)', oemPart: '22401AA940',
+        rows: [
+          { brand: 'NGK', part: '91899 (DILKAR7Q8)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+91899+DILKAR7Q8+spark+plug') },
+          { brand: 'Subaru (OEM)', part: '22401AA940', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+22401AA940+spark+plug') }
+        ],
+        companion: 'Set of 4, Laser Iridium. Subaru\'s own Forester manuals (2019 and 2020, Specifications) name <b>NGK DILKAR7Q8</b> (stock 91899) for the direct-injected FB25 — Subaru number <b>22401AA940</b>. <b>Warnings:</b> the old car\'s 22401AA781 / SILZKAR7B11 is actively mislisted for this car — do not use it; and 22401AA95A, claimed by one secondary guide, is unverified. No DENSO row — DENSO\'s global cross list shows no equivalent for this plug.'
       }
 
     ];
