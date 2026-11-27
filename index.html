@@ -7588,6 +7588,21 @@
       h += '</div></div>';
       return h;
     }
+    // INTERCHANGE BOX ON EVERY RESULT (De, 2026-11-27): the vehicle-path
+    // result carries the same interchange box the part-number search shows --
+    // which other vehicles this verified part fits, and every verified cross
+    // number. Deduped per render by OEM group key; suppressed on the
+    // part-number path, which prints its own group box above the entries.
+    var ixShownKeys = {}, ixSuppress = false;
+    function ixBoxForEntry(e) {
+      if (ixSuppress) return '';
+      var key = pnGroupKey(e);
+      if (ixShownKeys[key]) return '';
+      var group = { entries: pnGroupEntries(e) };
+      if (!pnGroupNumbers(group).list.length) return '';
+      ixShownKeys[key] = 1;
+      return pnIxBoxHtml(group);
+    }
     function renderVerified(e) {
       var h = e.demo ? '<p style="margin:12px 0 0;"><span class="demo-badge">Demo entry — the finished format</span></p>' : '';
       h += '<div style="font-size:14.5px; font-weight:800; color:#0f2439; margin-top:8px;">' + esc(e.title) + '</div>';
@@ -7611,6 +7626,7 @@
           h += variantHtml(e, chosen);
         }
       }
+      h += ixBoxForEntry(e);
       h += '<p class="fit-note">Prices change daily, so we send you to today\'s price at the store instead of printing a stale one. ' +
            'More stores join this comparison as affiliate agreements are signed.</p>';
       if (e.companion) h += '<p class="companion">' + e.companion + '</p>';
@@ -7655,6 +7671,7 @@
     }
     function renderResult(scroll) {
       saveRpfState();
+      ixShownKeys = {};
       var part = PARTS[currentPartId];
       if (!part) return;
       document.getElementById('resultState').textContent = part.name;
@@ -7906,6 +7923,7 @@
              '<a href="sms:13607728205">360-772-8205</a> and he\'ll get you the exact part number for your vehicle.</div>';
         h += fitNoteHtml();
       } else {
+        ixSuppress = true;
         var shownGroups = pnState.groups.slice(0, 6);
         if (pnState.groups.length > shownGroups.length) {
           h += '<p style="font-size:13px; color:#475569; margin:8px 0 0;">' + pnState.groups.length +
@@ -7940,6 +7958,7 @@
           }
         }
       }
+      ixSuppress = false;
       h += ctaHtml();
       document.getElementById('resultBody').innerHTML = h;
       if (scroll) document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
