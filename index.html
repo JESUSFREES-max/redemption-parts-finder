@@ -298,8 +298,8 @@
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator', 'Renegade'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
       'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy', 'Ascent'],
-      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid'],
-      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul'],
+      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid', 'Palisade'],
+      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul', 'Telluride'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
       'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Golf'],
       'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
@@ -424,6 +424,7 @@
     // Batch 44 (Escape 2020-25 EcoBoost: FL-910-S oil + 2023 2.0L thread-split qualifier to FL-2127, FA-1939 air 2020-22 / FA-2065+FA-2064 2024-25, FP-100-A cabin, plugs SP-550/SP-578 2020-22 / SP-597-X 2024-25, 2023 air+plugs held; CR-V 2023-26 1.5T: oil carryover 15400-PLM-A02, air CHANGED 17220-64A-A00, cabin 80291-TF3-E01 headline, plugs CHANGED 12290-6A0-A01/NGK 92411) merged 2026-11-27.
     // Batch 45 (Pilot 2023-25 new gen: oil carryover 15400-PLM-A02, air CHANGED 17220-61A-A00, cabin CHANGED 80292-TYA-A41, ATF Type 2.0 08200-9015 with 08200-9020 HCF-2 trap warned, plugs HELD; Pilot 2016-22: ATF qualifier 6-spd DW-1 08200-9008 / 9-spd Type 3.1 08200-9017, coolant OL999-9011 OEM-only; Outback 2020-25 new gen: oil 15208AA21A both engines, air 16546AA16A, cabin 72880FL00A, plugs engine-split 2.5L 22401AA940/NGK 91899 + 2.4L Turbo NGK SILKFR8A6 type with Subaru-box number withheld) merged 2026-11-27.
     // Batch 46 (RAV4 2019-24 2.5L gas NEW gen: oil spin-on 90915-YZZN1 with WL10332/PH4967 and 04152-YZZA1 + WIX 51394 traps warned, air 17801-F0050 gas-only with Hybrid 17801-F0020 trap warned, plugs 90919-01289 = DENSO FC16HR-Q8 first + NGK 96210, cabin HELD 87139-0R030 unverified; Ascent 2019-25 FA24 NEW model: oil 15208AA21A FRAM omitted w/ bypass caution, air 16546AA16A, cabin 72880FL00A, plugs NGK SILKFR8A6 96698 with Subaru-box number withheld) merged 2026-11-27.
+    // Batch 47 (Highlander 2020-24 gas: V6 oil cartridge 04152-YZZA1 + plugs 90919-01263/FK20HBR8, 2.4T oil spin-on 90915-YZZN1 + plugs NGK DILZKAR8E7H with Toyota-box number withheld, shared air 17801-F0050 + cabin 87139-0E040/CF12157; Palisade + Telluride 2020-22 3.8L NEW models: oil cartridge 26320-3CKB0 with 26300-35505 spin-on trap warned, air 28113-A9100 verified per vehicle, Palisade cabin 97133-S8000; Telluride cabin + both plugs HELD on conflicting sources) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -7297,6 +7298,192 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+96698+SILKFR8A6+spark+plug') }
         ],
         companion: 'Set of 4, Laser Iridium. Subaru\'s Ascent manuals specify NGK <b>SILKFR8A6</b> (stock 96698) for the 2.4L turbo (FA24) — that type is the specification, and the Ascent was sold with no other engine. Subaru\'s own box number for this plug is not printed yet: it waits for a dealer catalog session rather than a guess, so confirm it by VIN at a Subaru dealer if you want the Subaru-boxed plug. <b>No DENSO row exists:</b> DENSO\'s own Subaru cross list has no equivalent for this plug. <b>Warnings:</b> NGK ILKAR8H6 (96024) is a colder WRX/performance plug — it is NOT this car\'s factory specification; and 22401AA781 / SILZKAR7B11 is the old Outback 2.5L (FB25) plug mislisted for the Ascent — the Ascent has never had a 2.5L engine, so any listing pairing it with FB25/2.5L plug data is a copy-over error.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Highlander', y0: 2020, y1: 2022,
+        title: 'Oil Filter — 2020–2022 Toyota Highlander (3.5L V6)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04152-YZZA1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '04152-YZZA1', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00A1X8J6S?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57047', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B000RDLBFS?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CH9972', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B000IY60VQ?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '04152-YZZA1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04152-YZZA1+oil+filter') }
+        ],
+        companion: 'Cartridge element in a reusable housing (production number 04152-31090, service number <b>04152-YZZA1</b>) — the 3.5L V6 kept the cartridge even in the new generation. <b>Warning:</b> the spin-on <b>90915-YZZN1 does NOT fit the V6</b> — on 2020–2022 cars it is the Hybrid\'s filter, and on 2023+ it belongs to the 2.4L turbo. Rows mirror the verified set for this exact cartridge.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'Highlander', y0: 2020, y1: 2024,
+        title: 'Engine Air Filter — 2020–2024 Toyota Highlander (gas — Hybrid uses 17801-F0020)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-F0050',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-F0050', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-F0050+air+filter') },
+          { brand: 'Capume', part: '17801-F0050', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0C5ZQVHJV?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WA10859', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10859+air+filter') }
+        ],
+        companion: 'Panel filter — CHANGED from the old car\'s 17801-0P051. Toyota <b>17801-F0050</b> (production 17801-25020, same element) serves BOTH gas engines, the 3.5L V6 and the 2.4L turbo, verified for each. <b>Warning: 17801-F0020 is the Hybrid\'s filter</b> — listings that put it on gas cars are wrong.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Toyota', model: 'Highlander', y0: 2020, y1: 2024,
+        title: 'Cabin Air Filter — 2020–2024 Toyota Highlander (gas)',
+        oemBrand: 'Toyota (OEM)', oemPart: '87139-0E040',
+        rows: [
+          { brand: 'FRAM', part: 'CF12157', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07B155581?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '87139-0E040', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+87139-0E040+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12157', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12157+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. CHANGED from the old car\'s 87139-07020 — the 2020+ Highlander takes <b>87139-0E040</b> (the charcoal version is 87139-58010). The FRAM CF12157 Amazon row is first pick: same verified filter, faster shipping. The old CF10285 does NOT fit this generation.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'Highlander', y0: 2020, y1: 2022,
+        title: 'Spark Plugs — 2020–2022 Toyota Highlander (3.5L V6)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90919-01263',
+        rows: [
+          { brand: 'DENSO', part: 'FK20HBR8', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+FK20HBR8+spark+plug') },
+          { brand: 'Toyota (OEM)', part: '90919-01263', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01263+spark+plug') }
+        ],
+        companion: 'Set of 6, iridium. The direct-injected 2GR-FKS kept the 2017–2019 plug: factory plug is the <b>DENSO FK20HBR8</b> (stock 3491; Toyota <b>90919-01263</b> is the same plug in a Toyota box), gap <b>0.031 in.</b> Do not substitute the FK20HR11 used through 2016.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Highlander', y0: 2023, y1: 2024,
+        title: 'Oil Filter — 2023–2024 Toyota Highlander (2.4L Turbo)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZN1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6SQ1M2T?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-YZZN1+oil+filter') },
+          { brand: 'WIX', part: 'WL10332', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10332+oil+filter') },
+          { brand: 'FRAM', part: 'PH4967', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH4967+oil+filter') }
+        ],
+        companion: 'Spin-on canister — the 2.4L turbo (T24A-FTS) takes <b>90915-YZZN1</b> (superseding 90915-YZZF2), a DIFFERENT filter from the V6\'s cartridge. <b>Warning:</b> 04152-YZZA1 does NOT fit this engine, and WIX 51394 is the wrong WIX — the correct WIX is <b>WL10332</b>.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'Highlander', y0: 2023, y1: 2024,
+        title: 'Spark Plugs — 2023–2024 Toyota Highlander (2.4L Turbo)',
+        oemBrand: 'Toyota (OEM)', oemPart: 'Toyota number not yet verified',
+        rows: [
+          { brand: 'NGK', part: 'DILZKAR8E7H', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+DILZKAR8E7H+spark+plug') }
+        ],
+        companion: 'Set of 4. Toyota\'s manuals and Fast Moving Parts chart specify the <b>NGK DILZKAR8E7H</b> for the 2.4L turbo, gap <b>0.028 in.</b>, on a shorter 40,000-mile change interval — Toyota switched this engine to NGK, and <b>no DENSO plug exists for it</b>. Toyota\'s own box number waits for a dealer catalog check rather than a guess, so confirm it by VIN if you want the Toyota-boxed plug. Ignore pages quoting a 0.044 in. gap for this engine — that is the old V6 figure.'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Palisade', y0: 2020, y1: 2022,
+        title: 'Oil Filter — 2020–2022 Hyundai Palisade (3.8L V6)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26320-3CKB0',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '26320-3CKB0', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07ZQ1T427?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CH11934', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH11934+oil+filter') },
+          { brand: 'WIX', part: 'WL10033', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10033+oil+filter') },
+          { brand: 'Hyundai (OEM)', part: '26320-3CKB0', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+26320-3CKB0+oil+filter') }
+        ],
+        companion: 'Cartridge service kit — <b>26320-3CKB0</b>. <b>Warning:</b> the spin-on 26300-35505 used across most Hyundai/Kia models does <b>NOT fit</b> this car, and the older 26320-3CAA0 kit is not the Palisade\'s kit either. Purolator\'s own application data names the Palisade for this cartridge.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Hyundai', model: 'Palisade', y0: 2020, y1: 2022,
+        title: 'Engine Air Filter — 2020–2022 Hyundai Palisade (3.8L V6)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '28113-A9100',
+        rows: [
+          { brand: 'EPAuto', part: 'GP943 (28113-A9100)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07MLHNLZ5?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '28113-A9100', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+28113-A9100+air+filter') },
+          { brand: 'FRAM', part: 'CA11943', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA11943+air+filter') },
+          { brand: 'WIX', part: 'WA10271', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10271+air+filter') }
+        ],
+        companion: 'Panel filter — Hyundai <b>28113-A9100</b>, verified for the Palisade by name in maker application data. <b>Warning:</b> 28113-A9200 is a different-dimension filter — do not substitute it.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Hyundai', model: 'Palisade', y0: 2020, y1: 2022,
+        title: 'Cabin Air Filter — 2020–2022 Hyundai Palisade (3.8L V6)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97133-S8000',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '97133-S8000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+97133-S8000+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12936', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12936+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP10080', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10080+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Hyundai <b>97133-S8000</b> is the Palisade\'s cabin filter (the accessory-pack number is S8C79-AC000). A similar number, 97133-S8100, shows up in wholesale listings unexplained — it is NOT verified for this car.'
+      },
+      {
+        partId: 'oil-filter', make: 'Kia', model: 'Telluride', y0: 2020, y1: 2022,
+        title: 'Oil Filter — 2020–2022 Kia Telluride (3.8L V6)',
+        oemBrand: 'Kia (OEM)', oemPart: '26320-3CKB0',
+        rows: [
+          { brand: 'Kia (OEM)', part: '26320-3CKB0', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07ZQ1T427?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CH11934', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH11934+oil+filter') },
+          { brand: 'WIX', part: 'WL10033', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10033+oil+filter') },
+          { brand: 'Kia (OEM)', part: '26320-3CKB0', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+26320-3CKB0+oil+filter') }
+        ],
+        companion: 'Cartridge service kit — <b>26320-3CKB0</b>, verified for the Telluride by name in maker application data. <b>Warnings:</b> the spin-on 26300-35505 does NOT fit, and a forum tip to use the older 26320-3CAA0 kit conflicts with all application data — do not follow it.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Kia', model: 'Telluride', y0: 2020, y1: 2022,
+        title: 'Engine Air Filter — 2020–2022 Kia Telluride (3.8L V6)',
+        oemBrand: 'Kia (OEM)', oemPart: '28113-A9100',
+        rows: [
+          { brand: 'EPAuto', part: 'GP943 (28113-A9100)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07MLHNLZ5?tag=redemptionm06-20' },
+          { brand: 'Kia (OEM)', part: '28113-A9100', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+28113-A9100+air+filter') },
+          { brand: 'FRAM', part: 'CA11943', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA11943+air+filter') },
+          { brand: 'WIX', part: 'WA10271', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10271+air+filter') }
+        ],
+        companion: 'Panel filter — Kia <b>28113-A9100</b>, verified for the Telluride by name in maker application data (checked separately from its Hyundai twin — same number, confirmed twice). <b>Warning:</b> 28113-A9200 is a different-dimension filter.'
       }
 
     ];
