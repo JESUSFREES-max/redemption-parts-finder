@@ -418,6 +418,7 @@
     // Batch 36 (Fusion 2017-2020 1.5L EcoBoost + 2018-2020 2.5L standard fours, Ford manual Motorcraft tables, A-suffix split at 2019) merged 2026-11-26.
     // Batch 37 (Fusion 2019-2020 2.0L EcoBoost standard four + GMC Yukon 2015-2020 5.3L standard four with PF63/PF63E oil split, GM/GMC + Ford manuals) merged 2026-11-26.
     // Batch 38 (2010-2015 Toyota Prius Gen 3 whole-car build: brakes, hybrid battery fan + filter, coolant, ATF WS, brake fluid, wipers, bulbs, PCV, both water pumps; Maria Dickey serviced car) merged 2026-11-26.
+    // Batch 41 (Durango 3.6L filters + 2020-21 plugs TSB-verified; Cherokee KL 3.2L/2.4L oil, 2018 3.2L plugs, 2.4L air split at 2019, cabin 2014-18; Sonata 2.4L + Optima 2.4L oil/air/cabin — maker catalogs + FCA TSB) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -6150,6 +6151,248 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-589+spark+plug') }
         ],
         companion: 'Set of 8, iridium, factory gap 0.049–0.053 in. The Ford Mustang manuals list Motorcraft <b>SP-589</b> for the 5.0L in 2022 and 2023; the Mach 1 takes this same plug. The 2021 plug is held (not confirmed from a manual yet) — if your car is a 2021, text De the VIN and he will confirm the exact plug.'
+      },
+      {
+        partId: 'oil-filter', make: 'Dodge', model: 'Durango', y0: 2014, y1: 2020,
+        title: 'Oil Filter (Cartridge) — 2014–2020 Dodge Durango (3.6L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68191349AC',
+        rows: [
+          { brand: 'Mopar', part: '68191349AC', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00ED2I8KK?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WL10010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10010+oil+filter') }
+        ],
+        companion: 'Cartridge element in the housing on top of the engine. WIX\'s own bulletin introduced the WL10010 as the direct replacement for this cartridge with the 2014 Durango 3.6L as a principal application. The current Mopar number is <b>68191349AC</b> (supersedes 68191349AA / AB). <b>2011–2013 Durangos use a different cartridge</b> — do not mix them.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Dodge', model: 'Durango', y0: 2014, y1: 2020,
+        title: 'Engine Air Filter — 2014–2020 Dodge Durango (3.6L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: '04861756AA',
+        rows: [
+          { brand: 'Mopar', part: '04861756AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+04861756AA+air+filter') },
+          { brand: 'WIX', part: '49756', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+49756+air+filter') },
+          { brand: 'WIX', part: '49756', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B006G4HU1Q?tag=redemptionm06-20' }
+        ],
+        companion: 'Panel filter in the engine airbox. WIX\'s application data and AMSOIL\'s OE-number data both tie Mopar <b>04861756AA</b> to the Durango 3.6L specifically (the same element fits the Grand Cherokee 3.6L). No FRAM number is shown — FRAM crosses conflict (CA12620 vs CA10755), so we do not guess.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Dodge', model: 'Durango', y0: 2014, y1: 2020,
+        title: 'Cabin Air Filter — 2014–2020 Dodge Durango (3.6L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68079487AB',
+        rows: [
+          { brand: 'Mopar', part: '68079487AB', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68079487AB+cabin+air+filter') },
+          { brand: 'A-Premium', part: '68079487AB', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BQVVBPS3?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '24017', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24017+cabin+air+filter') },
+          { brand: 'MANN-FILTER', part: 'CU 27 008', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+27+008+cabin+filter') }
+        ],
+        companion: 'The current number is <b>68079487AB</b> (supersedes 68079487AA) — WIX and MANN-FILTER cross data both name the Durango for it. The filter sits behind the glove box and swaps out in minutes with no tools.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Dodge', model: 'Durango', y0: 2020, y1: 2021,
+        title: 'Spark Plugs — 2020–2021 Dodge Durango (3.6L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: 'SP225755AA',
+        rows: [
+          { brand: 'NGK', part: '7751', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+7751+spark+plug') },
+          { brand: 'NGK', part: '7751', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B002QCT4AC?tag=redemptionm06-20' },
+          { brand: 'Mopar', part: 'SP225755AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+SP225755AA+spark+plug') }
+        ],
+        companion: 'Set of 6, iridium. FCA service bulletin 09-013-20 lists Mopar <b>SP225755AA</b> for the 2020–2021 Durango 3.6L (the AB suffix is the later revision of the same plug); the <b>NGK 7751 (ILZKR7B11)</b> is the NGK equivalent, as on the Grand Cherokee and Wrangler 3.6L entries. Check the gap against the under-hood emissions label. <b>2014–2019 Durango plugs are not published yet</b> — the early-year Mopar number is not confirmed for the Durango, and we never copy another model\'s split.'
+      },
+      {
+        partId: 'oil-filter', make: 'Jeep', model: 'Cherokee', engine: '3.2L V6', y0: 2014, y1: 2019,
+        title: 'Oil Filter (Cartridge) — 2014–2019 Jeep Cherokee (3.2L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68191349AC',
+        rows: [
+          { brand: 'Mopar', part: '68191349AC', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00ED2I8KK?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WL10010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10010+oil+filter') }
+        ],
+        companion: 'Cartridge element in the housing on top of the engine — WIX\'s bulletin lists the 2014 Cherokee 3.2L among the principal applications for this cartridge. Current Mopar number <b>68191349AC</b> (supersedes 68191349AA / AB). <b>The 2.4L Cherokee uses a spin-on filter instead</b> — see the 2.4L entry.'
+      },
+      {
+        partId: 'oil-filter', make: 'Jeep', model: 'Cherokee', engine: '2.4L', y0: 2014, y1: 2019,
+        title: 'Oil Filter (Spin-On) — 2014–2019 Jeep Cherokee (2.4L)',
+        oemBrand: 'Mopar (OEM)', oemPart: '04892339AA',
+        rows: [
+          { brand: 'Mopar', part: '04892339AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+04892339AA+oil+filter') },
+          { brand: 'WIX', part: '57060', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57060+oil+filter') },
+          { brand: 'FRAM', part: 'PH10125', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH10125+oil+filter') },
+          { brand: 'MANN-FILTER', part: 'W 815/81', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+W+815+81+oil+filter') }
+        ],
+        companion: 'Spin-on filter (Mopar MO-339 family), verified for the Cherokee 2.4L in WIX\'s application data and Sogefi/Purflux\'s own catalog crosses. <b>Do not use the 3.2L\'s cartridge here</b> — the two Cherokee engines take completely different filters.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Jeep', model: 'Cherokee', engine: '3.2L V6', y0: 2018, y1: 2018,
+        title: 'Spark Plugs — 2018 Jeep Cherokee (3.2L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: 'SP149125AE',
+        rows: [
+          { brand: 'NGK', part: '9723', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00JH5GLTS?tag=redemptionm06-20' },
+          { brand: 'Mopar', part: 'SP149125AE', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+SP149125AE+spark+plug') }
+        ],
+        companion: 'Set of 6. The Mopar dealer catalog for the 2018 Cherokee lists <b>SP149125AE</b> (current suffix AF) for the 3.2L — the plug inside is the Champion 9407 (RER8ZWYCB4), and the <b>NGK 9723 (SILZKR7B11)</b> is the NGK equivalent. Note the Cherokee 3.2L did <b>not</b> follow the Grand Cherokee 3.6L\'s switch to the SP225755 plug. Factory gap for the 3.2L: 0.043 in. <b>Other Cherokee years are held</b> — no Mopar source confirmed their plug number yet.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Jeep', model: 'Cherokee', engine: '2.4L', y0: 2014, y1: 2018,
+        title: 'Engine Air Filter — 2014–2018 Jeep Cherokee (2.4L)',
+        oemBrand: 'Mopar (OEM)', oemPart: '52022378AA',
+        rows: [
+          { brand: 'Mopar', part: '52022378AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+52022378AA+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. K&N\'s own cross data ties their 33-5009 to Mopar <b>52022378AA</b> for this car, and WIX application data carries the same OE number through 2018. <b>2019 and newer Cherokees take a different filter</b> — see the 2019 entry. Only the genuine row is shown; no aftermarket number was verified from a maker catalog this pass.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Jeep', model: 'Cherokee', engine: '2.4L', y0: 2019, y1: 2019,
+        title: 'Engine Air Filter — 2019 Jeep Cherokee (2.4L)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68245310AA',
+        rows: [
+          { brand: 'WIX', part: 'WA10937', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10937+air+filter') },
+          { brand: 'Mopar', part: '68245310AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68245310AA+air+filter') }
+        ],
+        companion: 'The 2019 Cherokee changed air filters: WIX application data lists the <b>WA10937</b> for 2019 with OE number <b>68245310AA</b>. Do not order the 2014–2018 filter (52022378AA) for a 2019 — the housings differ.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Jeep', model: 'Cherokee', y0: 2014, y1: 2018,
+        title: 'Cabin Air Filter — 2014–2018 Jeep Cherokee',
+        oemBrand: 'Mopar (OEM)', oemPart: '68223044AB',
+        rows: [
+          { brand: 'Mopar', part: '68223044AB', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68223044AB+cabin+air+filter') }
+        ],
+        companion: 'Current Mopar number <b>68223044AB</b> (supersedes 68223044AA — Crown Automotive\'s own data sheet documents the AA number for the 2014–2015 KL, and cross data carries it through 2018). The filter sits behind the glove box. <b>The 2019 cabin filter is not published yet</b> — three conflicting candidate numbers exist and no Mopar source settles it, so we hold it rather than guess.'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Sonata', y0: 2015, y1: 2019,
+        title: 'Oil Filter — 2015–2019 Hyundai Sonata (2.4L GDI)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'FRAM', part: 'PH9688', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07BCFMXFN?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B077W4K176?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51334', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51334+oil+filter') }
+        ],
+        companion: 'Spin-on filter. WIX\'s catalog data for the Sonata 2.4L application lists the OE number 26300-35503 — the direct predecessor of the current <b>26300-35505</b> (the chain runs -35503 / -35504 / -35505). Same filter as the Tucson / Santa Fe in this catalog.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Hyundai', model: 'Sonata', y0: 2015, y1: 2019,
+        title: 'Engine Air Filter — 2015–2019 Hyundai Sonata (2.4L GDI)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '28113-C1100',
+        rows: [
+          { brand: 'FRAM', part: 'CA11942', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01HU1MUNG?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '28113-C1100', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+28113-C1100+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 28 036', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+28+036+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox, Hyundai <b>28113-C1100</b> — MAHLE\'s catalog cross (LX 4432) and FRAM\'s CA11942 application both name this Sonata generation. <b>Not</b> the 2020+ Sonata filter (28113-L1000) — different car.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Hyundai', model: 'Sonata', y0: 2015, y1: 2019,
+        title: 'Cabin Air Filter — 2015–2019 Hyundai Sonata (2.4L GDI)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97133-C1000',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '97133-C1000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+97133-C1000+cabin+filter') },
+          { brand: 'FRAM', part: 'CF12159', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12159+cabin+filter') },
+          { brand: 'MANN-FILTER', part: 'CU 26 019', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+26+019+cabin+filter') }
+        ],
+        companion: 'Hyundai <b>97133-C1000</b> (service variant -C1010, same housing), confirmed in maker catalogs (JS Filters and Purflux cross data name this number for the LF Sonata). <b>Do not confuse it with 97133-D1000</b> — that is the Tucson\'s filter. The filter sits behind the glove box.'
+      },
+      {
+        partId: 'oil-filter', make: 'Kia', model: 'Optima', y0: 2016, y1: 2020,
+        title: 'Oil Filter — 2016–2020 Kia Optima (2.4L GDI)',
+        oemBrand: 'Kia (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'FRAM', part: 'PH9688', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07BCFMXFN?tag=redemptionm06-20' },
+          { brand: 'Kia (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B077W4K176?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51334', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51334+oil+filter') }
+        ],
+        companion: 'Spin-on filter. The Optima\'s 2.4L is the same Theta II G4KJ engine as the Sonata\'s, and WIX catalog data ties this application to the 26300-35503 → <b>26300-35505</b> chain. Same filter as the Sportage in this catalog.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Kia', model: 'Optima', y0: 2016, y1: 2020,
+        title: 'Engine Air Filter — 2016–2020 Kia Optima (2.4L GDI)',
+        oemBrand: 'Kia (OEM)', oemPart: '28113-C1100',
+        rows: [
+          { brand: 'FRAM', part: 'CA11942', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01HU1MUNG?tag=redemptionm06-20' },
+          { brand: 'Kia (OEM)', part: '28113-C1100', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+28113-C1100+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 28 036', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+28+036+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox, Kia <b>28113-C1100</b> (Kia catalog suffix variant -C1100AS, same element) — FRAM\'s CA11942 application explicitly scopes it to the 2016–2020 Optima 2.4L. <b>Not</b> the 2021+ K5 filter.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Kia', model: 'Optima', y0: 2016, y1: 2020,
+        title: 'Cabin Air Filter — 2016–2020 Kia Optima (2.4L GDI)',
+        oemBrand: 'Kia (OEM)', oemPart: '97133-C1000',
+        rows: [
+          { brand: 'Kia (OEM)', part: '97133-C1000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+97133-C1000+cabin+filter') },
+          { brand: 'FRAM', part: 'CF12159', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12159+cabin+filter') },
+          { brand: 'MANN-FILTER', part: 'CU 26 019', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+26+019+cabin+filter') }
+        ],
+        companion: 'Kia <b>97133-C1000</b> (service variant -C1010) — maker cross data for the Optima JF lists this number together with the MANN CUK 26 019 and FRAM CF12159. <b>Do not confuse it with 97133-D3000</b> — that is the Sportage\'s filter. The filter sits behind the glove box.'
       }
     ];
     var PARTS = {};
