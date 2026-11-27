@@ -395,6 +395,7 @@
     // Batch 33 (Colorado + Canyon 2015-2022 2.5L oil + plugs; 3.6L oil/plug entries engine-scoped) merged 2026-11-26.
     // Batch 34 (F-150 2018-2021 3.0L diesel oil/air/cabin/fuel, Ridgeline 2017-2023 oil/air/plugs, Tiguan 2019 + 2021 oil with build-date split + air) merged 2026-11-26.
     // Batch 35 (Tiguan 2019 cabin three-variant qualifier + 2021 cabin, from the same VWGoA charts) merged 2026-11-26.
+    // Batch 36 (Fusion 2017-2020 1.5L EcoBoost + 2018-2020 2.5L standard fours, Ford manual Motorcraft tables, A-suffix split at 2019) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -5395,6 +5396,144 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-669+cabin+air+filter') }
         ],
         companion: 'Behind the glove box. Volkswagen of America\'s own fluid/capacity chart for the 2021 Tiguan lists a single cabin filter: <b>5Q0-819-669</b> (the number the 2019 chart calls the odor & allergen filter). Scoped to 2021 only — 2020 and 2022 are held until their own VW charts are verified.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Fusion', engine: '1.5L EcoBoost', y0: 2017, y1: 2020,
+        title: 'Oil Filter — 2017–2020 Ford Fusion (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-910S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'FL-910S', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-910S+oil+filter') }
+        ],
+        companion: 'Spin-on filter. Ford\'s Fusion owner\'s manuals (2017, 2018, 2019 and 2020 read directly) list Motorcraft <b>FL-910S</b> for the 1.5L EcoBoost in every year. <b>Do NOT use FL-500S</b> — web guides list it for this car, but no Fusion manual does. The Hybrid/Energi cars are not covered here.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Fusion', engine: '1.5L EcoBoost', y0: 2017, y1: 2018,
+        title: 'Engine Air Filter — 2017–2018 Ford Fusion (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1912',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1912', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1912+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. Ford\'s 2017 and 2018 Fusion manuals list Motorcraft <b>FA-1912</b> (no \'A\') for the 1.5L EcoBoost. The 2019–2020 cars take the revised FA-1912A — see that entry. No aftermarket number is verified from a maker catalog yet, so only the genuine row is shown.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Fusion', engine: '1.5L EcoBoost', y0: 2019, y1: 2020,
+        title: 'Engine Air Filter — 2019–2020 Ford Fusion (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1912A',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1912A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1912A+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. Ford\'s 2019 and 2020 Fusion manuals list Motorcraft <b>FA-1912A</b> for the 1.5L EcoBoost. The 2017–2018 cars take FA-1912 with no \'A\' — see that entry. No aftermarket number is verified from a maker catalog yet, so only the genuine row is shown.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Fusion', engine: '1.5L EcoBoost', y0: 2017, y1: 2018,
+        title: 'Cabin Air Filter — 2017–2018 Ford Fusion (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-71',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-71', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-71+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Ford\'s 2017 and 2018 Fusion manuals list Motorcraft <b>FP-71</b> (no \'A\') for the 1.5L EcoBoost. The 2019–2020 cars take FP-71A — see that entry. No aftermarket cabin number is verified from a maker catalog yet, so only the genuine row is shown.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Fusion', engine: '1.5L EcoBoost', y0: 2019, y1: 2020,
+        title: 'Cabin Air Filter — 2019–2020 Ford Fusion (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-71A',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-71A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-71A+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Ford\'s 2019 and 2020 Fusion manuals list Motorcraft <b>FP-71A</b> for the 1.5L EcoBoost. The 2017–2018 cars take FP-71 with no \'A\' — see that entry. No aftermarket cabin number is verified from a maker catalog yet, so only the genuine row is shown.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Fusion', engine: '1.5L EcoBoost', y0: 2017, y1: 2020,
+        title: 'Spark Plugs — 2017–2020 Ford Fusion (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-539',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-539', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-539+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium, factory gap 0.025–0.029 in. Ford\'s Fusion manuals list Motorcraft <b>SP-539</b> for the 1.5L EcoBoost in all four years (2017–2020). The 2.5L takes SP-530 and the 2.0L EcoBoost takes SP-550 — do not mix them. No maker-catalog equivalent is verified yet, so only the genuine row is shown.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Fusion', engine: '2.5L', y0: 2018, y1: 2020,
+        title: 'Oil Filter — 2018–2020 Ford Fusion (2.5L)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-910S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'FL-910S', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-910S+oil+filter') }
+        ],
+        companion: 'Spin-on filter. Ford\'s Fusion manuals (2018, 2019 and 2020 read directly) list Motorcraft <b>FL-910S</b> for the 2.5L — the same filter as the EcoBoost cars. <b>Do NOT use FL-500S</b> — web guides list it for this car, but no Fusion manual does. The 2017 2.5L table is still being verified — text us at 360-772-8205 for that year. Hybrid cars are not covered here (the Hybrid\'s air filter is a different number).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Fusion', engine: '2.5L', y0: 2018, y1: 2018,
+        title: 'Engine Air Filter — 2018 Ford Fusion (2.5L)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1912',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1912', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1912+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. Ford\'s 2018 Fusion manual lists Motorcraft <b>FA-1912</b> (no \'A\') for the 2.5L. The 2019–2020 cars take the revised FA-1912A — see that entry. <b>Hybrid warning:</b> the Fusion Hybrid takes FA-1911, a different filter — this entry is the gasoline 2.5L only.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Fusion', engine: '2.5L', y0: 2019, y1: 2020,
+        title: 'Engine Air Filter — 2019–2020 Ford Fusion (2.5L)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1912A',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1912A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1912A+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox. Ford\'s 2019 and 2020 Fusion manuals list Motorcraft <b>FA-1912A</b> for the 2.5L. The 2018 car takes FA-1912 with no \'A\' — see that entry. No aftermarket number is verified from a maker catalog yet, so only the genuine row is shown.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Fusion', engine: '2.5L', y0: 2018, y1: 2018,
+        title: 'Cabin Air Filter — 2018 Ford Fusion (2.5L)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-71',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-71', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-71+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Ford\'s 2018 Fusion manual lists Motorcraft <b>FP-71</b> (no \'A\') for the 2.5L. The 2019–2020 cars take FP-71A — see that entry. No aftermarket cabin number is verified from a maker catalog yet, so only the genuine row is shown.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Fusion', engine: '2.5L', y0: 2019, y1: 2020,
+        title: 'Cabin Air Filter — 2019–2020 Ford Fusion (2.5L)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-71A',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-71A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-71A+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Ford\'s 2019 and 2020 Fusion manuals list Motorcraft <b>FP-71A</b> for the 2.5L. The 2018 car takes FP-71 with no \'A\' — see that entry. No aftermarket cabin number is verified from a maker catalog yet, so only the genuine row is shown.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Fusion', engine: '2.5L', y0: 2018, y1: 2020,
+        title: 'Spark Plugs — 2018–2020 Ford Fusion (2.5L)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-530',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-530', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-530+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-530', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B009TKP5AW?tag=redemptionm06-20' }
+        ],
+        companion: 'Set of 4, iridium, factory gap 0.049–0.053 in. Ford\'s Fusion manuals list Motorcraft <b>SP-530</b> for the 2.5L (2018–2020); Ford\'s current service number <b>SP-530X</b> is the same plug in current packaging. The EcoBoost engines take different plugs (SP-539 / SP-550). The 2017 2.5L table is still being verified.'
       }
     ];
     var PARTS = {};
