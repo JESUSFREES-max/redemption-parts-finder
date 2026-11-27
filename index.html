@@ -295,7 +295,7 @@
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
       'Ram': ['1500', '2500', 'ProMaster'],
       'Dodge': ['Charger', 'Challenger', 'Durango', 'Grand Caravan', 'Journey'],
-      'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator'],
+      'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator', 'Renegade'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
       'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy'],
       'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid'],
@@ -420,6 +420,7 @@
     // Batch 38 (2010-2015 Toyota Prius Gen 3 whole-car build: brakes, hybrid battery fan + filter, coolant, ATF WS, brake fluid, wipers, bulbs, PCV, both water pumps; Maria Dickey serviced car) merged 2026-11-26.
     // Batch 41 (Durango 3.6L filters + 2020-21 plugs TSB-verified; Cherokee KL 3.2L/2.4L oil, 2018 3.2L plugs, 2.4L air split at 2019, cabin 2014-18; Sonata 2.4L + Optima 2.4L oil/air/cabin — maker catalogs + FCA TSB) merged 2026-11-27.
     // Batch 42 (Elantra 2017-20 2.0L + Forte 2019-24 2.0L standard fours — NGK catalog trap: ILZKR8C8G, NOT SILZKR7B11; Compass MP 2017-22 2.4L oil/air/cabin + 2017-18 plugs, 2017 MK/MP split warned) merged 2026-11-27.
+    // Batch 43 (Ioniq Hybrid oil/air/cabin whole-car continuation — plugs held; Renegade BU 2015-21 2.4L oil/air/cabin + 2015-18 plugs, verified separately from Compass; Rogue T33 2021-25 oil/air split by engine/cabin/plugs split by engine — T32 65F0E oil trap warned) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -6571,7 +6572,220 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Champion+9775+spark+plug') }
         ],
         companion: 'Set of 4, iridium, factory gap 0.044 in. NGK\'s catalog data names the <b>NGK LZFR5CI-11 (stock 92145)</b> Laser Iridium for the Compass Tigershark by name, and Champion\'s fitment table covers the <b>Champion 9775 (REC10WMPB4)</b> for 2017–2018 in every trim. No Mopar plug number is printed — none was confirmed in a Mopar source, and the Cherokee candidate SP148183AB was NOT carried over. <b>2019–2022 plugs are held</b> until a year-specific maker-catalog read confirms them (the engine is unchanged, but we publish only what a catalog states). <b>2017 warning:</b> two different Compasses were sold as 2017s — these numbers fit the NEW-body MP Compass only (VIN starts <b>3C4NJ</b>, Tigershark SOHC engine). If your 2017 VIN starts 1C4NJ, you have the older Compass and these parts do not fit.'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Oil Filter — 2017–2022 Hyundai Ioniq Hybrid (1.6L GDI)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'FRAM', part: 'PH9688', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07BCFMXFN?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B077W4K176?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51334', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51334+oil+filter') }
+        ],
+        companion: 'Spin-on filter. WIX\'s catalog data for the Ioniq 1.6L lists the OE number 26300-35503 — the chain runs -35503 / -35504 / current <b>26300-35505</b>. Same filter family as the Tucson / Sonata in this catalog. <b>Warning:</b> the shorter 26300-0250x can (WIX 51358) threads on but is a different, smaller filter — not this car\'s spec. The all-electric Ioniq has no engine oil filter.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Engine Air Filter — 2017–2022 Hyundai Ioniq Hybrid (1.6L GDI)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '28113-G2700',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '28113-G2700', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+28113-G2700+air+filter') },
+          { brand: 'K&N', part: '33-3077', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=K%26N+33-3077+air+filter') }
+        ],
+        companion: 'Panel filter, Hyundai <b>28113-G2700</b> — WIX and Baldwin catalog data both list this OE number for the Ioniq. The number most listings shout, 28113-G2100, is the <b>Kia</b> number for the identical element (the Kia Niro twin) — same part, but the Hyundai number is G2700. 28113-F2000 (Elantra/Kona) does NOT fit this car. The K&N row is their washable performance panel for this air box.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Hyundai', model: 'Ioniq Hybrid', y0: 2017, y1: 2022,
+        title: 'Cabin Air Filter — 2017–2022 Hyundai Ioniq Hybrid',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97133-G2000',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '97133-G2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+97133-G2000+cabin+filter') },
+          { brand: 'WIX', part: 'WP2064', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP2064+cabin+filter') },
+          { brand: 'MANN-FILTER', part: 'CU 24 004', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+24+004+cabin+filter') },
+          { brand: 'FRAM', part: 'CF10889', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF10889+cabin+filter') }
+        ],
+        companion: 'Hyundai <b>97133-G2000</b> — WIX\'s catalog data lists this OE number for the Ioniq against their WP2064, and Bosch\'s catalog cross pairs it with the MANN and FRAM rows shown. <b>Warning:</b> 97133-F2100 / F2200 is a different, later housing (Tucson/Kona) that some listings merge in — it does not fit the 2017–2022 Ioniq.'
+      },
+      {
+        partId: 'oil-filter', make: 'Jeep', model: 'Renegade', y0: 2015, y1: 2021,
+        title: 'Oil Filter (Spin-On) — 2015–2021 Jeep Renegade (2.4L Tigershark)',
+        oemBrand: 'Mopar (OEM)', oemPart: '04892339AA',
+        rows: [
+          { brand: 'Mopar', part: '04892339AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+04892339AA+oil+filter') },
+          { brand: 'WIX', part: '57060', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57060+oil+filter') },
+          { brand: 'FRAM', part: 'PH10060', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH10060+oil+filter') }
+        ],
+        companion: 'Spin-on filter, Mopar MO-339 family — WIX\'s own application list names the <b>Jeep Renegade 2015–2021 2.4L</b> for their 57060, which crosses Mopar <b>04892339AA</b> (current supersession 4892339BE). Same filter as the Compass MP in this catalog, verified for the Renegade by name. <b>Warnings:</b> guides naming FRAM PH10575 / WIX 57502 have the wrong family — the verified FRAM cross is PH10060; and 68157291AA is not an oil filter at all (it is a Ram Cummins fuel filter). The 2.4L was dropped for 2022 — 2022 Renegades are 1.3L Turbo only and take different parts.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Jeep', model: 'Renegade', y0: 2015, y1: 2021,
+        title: 'Engine Air Filter — 2015–2021 Jeep Renegade (2.4L Tigershark)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68247339AA',
+        rows: [
+          { brand: 'Mopar', part: '68247339AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68247339AA+air+filter') },
+          { brand: 'FRAM', part: 'CA12066', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12066+air+filter') },
+          { brand: 'A-Premium', part: '68247339AA', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BLYNVGYT?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WA10337', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10337+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 21 002', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+21+002+air+filter') }
+        ],
+        companion: 'Flexible panel filter, Mopar <b>68247339AA</b> — Bosch\'s maker catalog cross (for their F 026 400 502) lists this OE number with Renegade fitment and the FRAM, MANN and WIX equivalents shown, and K&N\'s own cross for their 33-5034 names the same number for the Renegade. Same element as the Compass MP. One aggregated list showed a WIX WA9804 cross — Bosch\'s own catalog says WA10337, so WA9804 is not used.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Jeep', model: 'Renegade', y0: 2015, y1: 2021,
+        title: 'Cabin Air Filter — 2015–2021 Jeep Renegade (2.4L)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68212070AA',
+        rows: [
+          { brand: 'ECOGARD', part: 'XC10336', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0115MT8A4?tag=redemptionm06-20' },
+          { brand: 'Mopar', part: '68212070AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68212070AA+cabin+filter') },
+          { brand: 'WIX', part: 'WP10106', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10106+cabin+filter') }
+        ],
+        companion: 'The Renegade\'s own Mopar number is <b>68212070AA</b> — ECOGARD\'s catalog data for their XC10336 names the 2015–2021 Renegade 2.4L and lists 68212070AA alongside 68350346AA (the Compass number for the same physical element) in its replaces family, with WIX WP10106. The filter sits behind the glove box.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Jeep', model: 'Renegade', y0: 2015, y1: 2018,
+        title: 'Spark Plugs — 2015–2018 Jeep Renegade (2.4L Tigershark)',
+        oemBrand: 'Mopar (OEM)', oemPart: 'Mopar number not yet verified',
+        rows: [
+          { brand: 'Champion', part: '9775', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Champion+9775+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium. Champion\'s own fitment table lists the <b>Champion 9775 (REC10WMPB4)</b> for the Renegade 2015–2018 in every trim. Renegade service references spec the gap at <b>0.047 in</b> — check the gap before installing. No Mopar plug number is printed — none was confirmed in a Mopar source. <b>2019–2021 plugs are held</b> until a year-specific maker-catalog read confirms them, and the NGK 92145 verified for the Compass is held for the Renegade until NGK\'s own catalog names this car.'
+      },
+      {
+        partId: 'oil-filter', make: 'Nissan', model: 'Rogue', y0: 2021, y1: 2025,
+        title: 'Oil Filter — 2021–2025 Nissan Rogue (T33)',
+        oemBrand: 'Nissan (OEM)', oemPart: '15208-65F1E',
+        rows: [
+          { brand: 'Nissan (OEM)', part: '15208-65F1E', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+15208-65F1E+oil+filter') }
+        ],
+        companion: 'Nissan\'s own parts store lists <b>15208-65F1E</b> for the 2018–2025 Rogue, superseding 15208-65F1A / 65F1B — it covers both the 2021 2.5L and the 2022+ 1.5L VC-Turbo. <b>Big warning:</b> the older Rogue\'s 15208-65F0E is widely listed for this car, but Nissan bulletin NPSB/24-808 says it is <b>not a valid replacement</b> here — its bypass valve opens at 98 kPa against this filter\'s 250 kPa spec, which may cause premature engine wear. The common WIX 51358 / FRAM PH7317 crosses run to the old spec, so no aftermarket row is shown until the makers\' own catalogs confirm a cross for this number.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Nissan', model: 'Rogue', y0: 2021, y1: 2021,
+        title: 'Engine Air Filter — 2021 Nissan Rogue (2.5L, T33)',
+        oemBrand: 'Nissan (OEM)', oemPart: '16546-6RA0A',
+        rows: [
+          { brand: 'ECOGARD', part: 'XA12002', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B09Y2LQWQK?tag=redemptionm06-20' },
+          { brand: 'Nissan (OEM)', part: '16546-6RA0A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+16546-6RA0A+air+filter') },
+          { brand: 'FRAM', part: 'CA12967', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12967+air+filter') },
+          { brand: 'WIX', part: 'WA9994', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA9994+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 20 906', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+20+906+air+filter') }
+        ],
+        companion: '2021 only — the 2.5L year of this generation. Nissan\'s parts store lists <b>16546-6RA0A</b> for the 2021 Rogue. Maker catalogs (MANN, Hengst, FRAM, WIX) cross this number and the 1.5L car\'s 16546-6RC1A to one identical element, so the aftermarket rows are shared with the 2022+ entry. The 2014–2020 Rogue\'s 16546-4BA1A does NOT fit this generation.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Nissan', model: 'Rogue', y0: 2022, y1: 2025,
+        title: 'Engine Air Filter — 2022–2025 Nissan Rogue (1.5L VC-Turbo, T33)',
+        oemBrand: 'Nissan (OEM)', oemPart: '16546-6RC1A',
+        rows: [
+          { brand: 'ECOGARD', part: 'XA12002', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B09Y2LQWQK?tag=redemptionm06-20' },
+          { brand: 'Nissan (OEM)', part: '16546-6RC1A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+16546-6RC1A+air+filter') },
+          { brand: 'FRAM', part: 'CA12967', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12967+air+filter') },
+          { brand: 'WIX', part: 'WA9994', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA9994+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 20 906', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+20+906+air+filter') }
+        ],
+        companion: '2022–2025 — the 1.5L VC-Turbo cars. Nissan\'s dealer catalog assigns <b>16546-6RC1A</b> to the 1.5L; maker catalogs (Hengst, Febi, MANN) cross it and the 2021 car\'s 16546-6RA0A to the same physical element, so the aftermarket rows match the 2021 entry. The 2014–2020 Rogue\'s 16546-4BA1A does NOT fit this generation.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Nissan', model: 'Rogue', y0: 2021, y1: 2025,
+        title: 'Cabin Air Filter — 2021–2025 Nissan Rogue (T33)',
+        oemBrand: 'Nissan (OEM)', oemPart: 'B7277-6RC0J',
+        rows: [
+          { brand: 'Nissan (OEM)', part: 'B7277-6RC0J', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+B7277-6RC0J+cabin+filter') },
+          { brand: 'FRAM', part: 'CF12552', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12552+cabin+filter') },
+          { brand: 'K&N', part: 'VF2076', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=K%26N+VF2076+cabin+filter') }
+        ],
+        companion: 'Nissan\'s current catalog number is the kit <b>B7277-6RC0J</b>, which supersedes the bare element numbers 27277-6RC0A / 27277-6RC0B / 27277-6RR0A — a listing under any of those four numbers can be the right part. FRAM\'s own page verifies their CF12552 for this car. <b>Warning:</b> the 2014–2020 Rogue\'s 27277-4BU0A and the Sentra\'s 27277-5NA1A (seen in combo kits) are different filters.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Nissan', model: 'Rogue', y0: 2021, y1: 2021,
+        title: 'Spark Plugs — 2021 Nissan Rogue (2.5L, T33)',
+        oemBrand: 'Nissan (OEM)', oemPart: 'Nissan number not yet verified',
+        rows: [
+          { brand: 'DENSO', part: 'DXE22H11C', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+DXE22H11C+spark+plug') }
+        ],
+        companion: 'Set of 4. The 2021 car\'s 2.5L (PR25DD) takes the <b>DENSO DXE22H11C</b> (DENSO stock 3529), gap 0.043 in — that type and gap are printed in Nissan\'s own owner\'s-manual spec table. Nissan\'s 22401-series number for this plug is not printed yet: dealer-catalog candidates conflict, so it waits for a Nissan catalog session rather than a guess. <b>Warning:</b> the older Rogue\'s FXE20HE11C and NGK DILKAR6A-11 are widely listed for the 2021 — both are wrong for this engine.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Nissan', model: 'Rogue', y0: 2022, y1: 2025,
+        title: 'Spark Plugs — 2022–2025 Nissan Rogue (1.5L VC-Turbo, T33)',
+        oemBrand: 'Nissan (OEM)', oemPart: '22401-6RC1E',
+        rows: [
+          { brand: 'Nissan (OEM)', part: '22401-6RC1E', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+22401-6RC1E+spark+plug') },
+          { brand: 'NGK', part: 'ILMAR8G8GS', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+ILMAR8G8GS+spark+plug') }
+        ],
+        companion: 'Set of <b>3</b> — the 1.5L VC-Turbo is a 3-cylinder. Nissan dealer catalogs list <b>22401-6RC1E</b> for this engine; the plug is the <b>NGK ILMAR8G8GS</b>, gap 0.031 in, per Nissan\'s owner\'s-manual and service-manual spec tables. Neither Rogue 2.5L plug type fits this engine.'
       }
+
     ];
     var PARTS = {};
     var vehicle = { year: '', make: '', model: '', trim: '', engine: '', label: '' };
