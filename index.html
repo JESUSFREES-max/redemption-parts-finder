@@ -6071,6 +6071,7 @@
       }
     }
     function syncVehicleLabel() {
+      saveRpfState();
       vehicle.label = vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model +
         (vehicle.trim ? ' ' + vehicle.trim : '') + (vehicle.engine ? ' ' + vehicle.engine : '');
       document.getElementById('vehicleState').textContent = vehicle.label;
@@ -6470,6 +6471,7 @@
       return h;
     }
     function renderResult(scroll) {
+      saveRpfState();
       var part = PARTS[currentPartId];
       if (!part) return;
       document.getElementById('resultState').textContent = part.name;
@@ -6702,6 +6704,7 @@
              (e.engine ? ' · Engine: ' + e.engine : '') + (e.trim ? ' · Trim: ' + e.trim : '');
     }
     function renderPnResults(scroll) {
+      saveRpfState();
       if (!pnState) return;
       document.getElementById('resultState').textContent = 'Part # ' + pnState.raw;
       var h = '';
@@ -6759,10 +6762,75 @@
       if (scroll) document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
+    // ================= SESSION MEMORY =================
+    // The page remembers the visitor's vehicle and what they were looking
+    // at, on their own device only (localStorage — nothing is sent
+    // anywhere), so leaving and coming back lands them right where they
+    // left off instead of at a blank picker (De, 2026-11-26). 14-day
+    // expiry. Saves are hooked into syncVehicleLabel / renderResult /
+    // renderPnResults, which every state-changing path passes through.
+    var RPF_KEY = 'rpf-state-v1';
+    function saveRpfState() {
+      try {
+        var st = {
+          t: Date.now(),
+          vehicle: (vehicle && vehicle.make) ? { year: vehicle.year, make: vehicle.make, model: vehicle.model, trim: vehicle.trim || '', engine: vehicle.engine || '' } : null,
+          mode: pnState ? 'pn' : (currentPartId ? 'part' : ''),
+          partId: currentPartId || null,
+          pn: pnState ? pnState.raw : '',
+          qualifierPick: qualifierPick
+        };
+        localStorage.setItem(RPF_KEY, JSON.stringify(st));
+      } catch (e) {}
+    }
+    function loadRpfState() {
+      try {
+        var raw = localStorage.getItem(RPF_KEY);
+        if (!raw) return null;
+        var st = JSON.parse(raw);
+        if (!st || !st.t || (Date.now() - st.t) > 14 * 24 * 3600 * 1000) return null;
+        return st;
+      } catch (e) { return null; }
+    }
+    function restoreRpfState() {
+      var st = loadRpfState();
+      if (!st) return;
+      if (st.vehicle && st.vehicle.make && st.vehicle.model) {
+        var mkVal = findMake(st.vehicle.make) || st.vehicle.make;
+        if (st.vehicle.year) setSelectValue('selYear', st.vehicle.year);
+        document.getElementById('selMake').value = mkVal;
+        fillModels(mkVal, st.vehicle.model);
+        setVehicle(st.vehicle.year, mkVal, st.vehicle.model);
+        if (st.vehicle.trim) vehicle.trim = st.vehicle.trim;
+        if (st.vehicle.engine) vehicle.engine = st.vehicle.engine;
+        if (st.vehicle.trim || st.vehicle.engine) { syncVehicleLabel(); renderVariantSteps(); }
+        document.getElementById('vehicleLine').innerHTML =
+          '<b>Your vehicle:</b> ' + esc(vehicle.label) + ' — picked up right where you left off. Change it above anytime.';
+      }
+      // Render the restored result quietly — no auto-scroll on a return
+      // visit (the finder is also embedded in the main site, and a scroll
+      // there would yank the host page).
+      var EP = Element.prototype, origSIV = EP.scrollIntoView;
+      EP.scrollIntoView = function () {};
+      try {
+        if (st.mode === 'part' && st.partId && PARTS[st.partId]) {
+          var btn = document.querySelector('.part-btn[data-part="' + st.partId + '"]');
+          if (btn) { var det = btn.closest('details'); if (det) det.open = true; }
+          selectPart(st.partId, btn);
+          if (st.qualifierPick !== null && st.qualifierPick !== undefined) { qualifierPick = st.qualifierPick; renderResult(false); }
+        } else if (st.mode === 'pn' && st.pn) {
+          document.getElementById('pnInput').value = st.pn;
+          searchPartNumber();
+          if (st.qualifierPick !== null && st.qualifierPick !== undefined) { qualifierPick = st.qualifierPick; renderPnResults(false); }
+        }
+      } finally { EP.scrollIntoView = origSIV; }
+    }
+
     // ================= INIT =================
     buildVehiclePickers();
     buildCategories();
     refreshCatalogMarks();
+    restoreRpfState();
   </script>
 
 </body>
