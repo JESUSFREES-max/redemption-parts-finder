@@ -110,6 +110,11 @@
     table.compare td.where a { color: #0f2439; font-weight: 800; }
     table.compare tr.nolisting td { color: #94a3b8; background: #f8fafc; }
     table.compare tr.nolisting td.where span { font-weight: 700; }
+    table.compare td.where a.order-btn { display: inline-block; font-weight: 900; padding: 8px 14px; border-radius: 9px; text-decoration: none; font-size: 13.5px; white-space: nowrap; }
+    table.compare td.where a.order-btn.amz { background: #e0a966; color: #1a1206; }
+    table.compare td.where a.order-btn.ebay { background: #0f2439; color: #fff; border: 1px solid #334155; }
+    .order-hint { font-size: 13.5px; color: #92400e; font-weight: 700; margin: 10px 0 0; }
+    .order-note { font-size: 12.5px; color: #64748b; margin: 8px 0 0; }
     .demo-badge {
       display: inline-block; background: #b48327; color: #ffffff;
       font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
@@ -205,7 +210,7 @@
         <div class="grid-3">
           <div class="step-box"><b>1. Tell us your vehicle</b><br>Decode your VIN free, or pick year / make / model.</div>
           <div class="step-box"><b>2. Pick the part</b><br>Browse the categories below and tap the part you need.</div>
-          <div class="step-box"><b>3. Compare &amp; book</b><br>Get the OEM part number and equivalents side by side — then book De to install it.</div>
+          <div class="step-box"><b>3. Compare &amp; order</b><br>Get the OEM part number and equivalents side by side, tap <b>Order</b> to buy the part at the store — then book De to install it.</div>
         </div>
         <p style="font-size:13px; color:#475569; margin:12px 0 0;">Every part number shown on this site is verified against a real parts catalog before it is published. If a lookup is still being built for your selection, we say so plainly — we never guess a part number.</p>
       </div>
@@ -6656,21 +6661,31 @@
       return all;
     }
     function rowsTableHtml(rows) {
-      var h = '<table class="compare"><thead><tr><th>Brand</th><th>Part #</th><th>Price</th><th>Where</th></tr></thead><tbody>';
+      var anyListing = false;
+      for (var j = 0; j < rows.length; j++) { if (!rows[j].nolisting) anyListing = true; }
+      var h = '';
+      if (anyListing) {
+        h += '<p class="order-hint">🛒 Tap a button to open that part\'s listing and order it — the store ships it to you. Prices are live at the store.</p>';
+      }
+      h += '<table class="compare"><thead><tr><th>Brand</th><th>Part #</th><th>Order</th></tr></thead><tbody>';
       for (var i = 0; i < rows.length; i++) {
         var r = rows[i];
         if (r.nolisting) {
           // NO-LISTING RULE: no verified listing exists for this part at this
           // store — show a greyed, non-clickable slot, never a search link.
-          h += '<tr class="nolisting"><td>' + esc(r.brand) + '</td><td>' + esc(r.part) + '</td><td>' + esc(r.price) +
+          h += '<tr class="nolisting"><td>' + esc(r.brand) + '</td><td>' + esc(r.part) +
                '</td><td class="where"><span>' + esc(r.where) + ' — No Listing Yet</span></td></tr>';
         } else {
-          h += '<tr><td>' + esc(r.brand) + '</td><td>' + esc(r.part) + '</td><td>' + esc(r.price) +
-               '</td><td class="where"><a href="' + r.url + '" target="_blank" rel="noopener sponsored">' +
-               esc(r.where) + '</a></td></tr>';
+          var cls = (r.where === 'Amazon') ? 'order-btn amz' : 'order-btn ebay';
+          h += '<tr><td>' + esc(r.brand) + '</td><td>' + esc(r.part) +
+               '</td><td class="where"><a class="' + cls + '" href="' + r.url + '" target="_blank" rel="noopener sponsored">' +
+               'Order on ' + esc(r.where) + ' →</a></td></tr>';
         }
       }
       h += '</tbody></table>';
+      if (anyListing) {
+        h += '<p class="order-note">Ordering through these links may earn Redemption a small commission — at no extra cost to you. Thank you for supporting a small local shop. 🙏</p>';
+      }
       return h;
     }
     // Renders one variant: the entry itself (opt == null or opt.useEntry) or one
