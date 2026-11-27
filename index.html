@@ -421,6 +421,7 @@
     // Batch 41 (Durango 3.6L filters + 2020-21 plugs TSB-verified; Cherokee KL 3.2L/2.4L oil, 2018 3.2L plugs, 2.4L air split at 2019, cabin 2014-18; Sonata 2.4L + Optima 2.4L oil/air/cabin — maker catalogs + FCA TSB) merged 2026-11-27.
     // Batch 42 (Elantra 2017-20 2.0L + Forte 2019-24 2.0L standard fours — NGK catalog trap: ILZKR8C8G, NOT SILZKR7B11; Compass MP 2017-22 2.4L oil/air/cabin + 2017-18 plugs, 2017 MK/MP split warned) merged 2026-11-27.
     // Batch 43 (Ioniq Hybrid oil/air/cabin whole-car continuation — plugs held; Renegade BU 2015-21 2.4L oil/air/cabin + 2015-18 plugs, verified separately from Compass; Rogue T33 2021-25 oil/air split by engine/cabin/plugs split by engine — T32 65F0E oil trap warned) merged 2026-11-27.
+    // Batch 44 (Escape 2020-25 EcoBoost: FL-910-S oil + 2023 2.0L thread-split qualifier to FL-2127, FA-1939 air 2020-22 / FA-2065+FA-2064 2024-25, FP-100-A cabin, plugs SP-550/SP-578 2020-22 / SP-597-X 2024-25, 2023 air+plugs held; CR-V 2023-26 1.5T: oil carryover 15400-PLM-A02, air CHANGED 17220-64A-A00, cabin 80291-TF3-E01 headline, plugs CHANGED 12290-6A0-A01/NGK 92411) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -6784,6 +6785,238 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+ILMAR8G8GS+spark+plug') }
         ],
         companion: 'Set of <b>3</b> — the 1.5L VC-Turbo is a 3-cylinder. Nissan dealer catalogs list <b>22401-6RC1E</b> for this engine; the plug is the <b>NGK ILMAR8G8GS</b>, gap 0.031 in, per Nissan\'s owner\'s-manual and service-manual spec tables. Neither Rogue 2.5L plug type fits this engine.'
+      }
+,
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Escape', engine: '1.5L EcoBoost', y0: 2020, y1: 2025,
+        title: 'Oil Filter — 2020–2025 Ford Escape (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-910-S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51348', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51348+oil+filter') },
+          { brand: 'FRAM', part: 'PH3614', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3614+oil+filter') }
+        ],
+        companion: 'Spin-on filter. Ford\'s owner\'s-manual Motorcraft tables list <b>FL-910-S</b> for the 1.5L in both the 2020 and 2024 manuals; WIX\'s interchange crosses it to their 51348 and the FRAM PH3614. This 1.5L is the newer 3-cylinder — not the 2013–19 1.5L 4-cylinder, whose numbers do not carry over. Ford\'s manuals list this same filter for the 2.5L Hybrid.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Escape', engine: '2.0L EcoBoost', y0: 2020, y1: 2022,
+        title: 'Oil Filter — 2020–2022 Ford Escape (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-910-S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51348', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51348+oil+filter') },
+          { brand: 'FRAM', part: 'PH3614', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3614+oil+filter') }
+        ],
+        companion: 'Spin-on filter, 3/4-16 thread. Ford\'s 2020 manual lists <b>FL-910-S</b> for the 2.0L, and WIX\'s own product bulletin groups the 2019–2022 2.0L with the FL-910-S equivalent. <b>2023 is a split year</b> — see the 2023 entry and check your thread before ordering.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Escape', engine: '2.0L EcoBoost', y0: 2023, y1: 2023,
+        title: 'Oil Filter — 2023 Ford Escape (2.0L EcoBoost) — Check Your Thread',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-910-S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51348', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51348+oil+filter') },
+          { brand: 'FRAM', part: 'PH3614', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3614+oil+filter') }
+        ],
+        qualifier: {
+          question: 'Which thread does the oil filter you removed have?',
+          helpText: 'Ford changed the 2.0L\'s oil filter during 2023 production. WIX\'s own product bulletin (10222025) lists <b>both</b> filters for the 2023–2026 2.0L and says fitment is decided by the filter thread: early builds use the <b>3/4-16</b> thread (FL-910-S), late builds the <b>M22×1.5</b> thread (FL-2127). The two cans look almost identical and do <b>not</b> interchange — check the thread on the filter you take off.',
+          options: [
+            { label: '3/4-16 thread (early 2023 build)', useEntry: true },
+            { label: 'M22×1.5 thread (late 2023 build)', oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-2127',
+              rows: [
+                { brand: 'ACDelco', part: 'PF64', price: 'See today\'s price', where: 'Amazon',
+                  url: 'https://www.amazon.com/dp/B094YWQCNT?tag=redemptionm06-20' },
+                { brand: 'WIX', part: 'WL10290', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10290+oil+filter') },
+                { brand: 'Motorcraft', part: 'FL-2127', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                       encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-2127+oil+filter') }
+              ],
+              note: 'Late-build 2023 2.0L cars take the <b>FL-2127</b> spin-on (Ford NU2Z-6731-F) with the M22×1.5 thread — the same filter the 2024–2025 entry uses. WIX\'s bulletin crosses it to their WL10290, and WIX data crosses the ACDelco PF64 to the same spec.' }
+          ]
+        },
+        companion: '2023 is the changeover year for the 2.0L oil filter — Ford\'s manuals list FL-910-S through 2022 and FL-2127 from 2024, and WIX\'s bulletin confirms both occur in 2023. Answer the thread question above, or use the "show me all" view and match the thread on your old filter.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Escape', engine: '2.0L EcoBoost', y0: 2024, y1: 2025,
+        title: 'Oil Filter — 2024–2025 Ford Escape (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FL-2127',
+        rows: [
+          { brand: 'ACDelco', part: 'PF64', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B094YWQCNT?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WL10290', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10290+oil+filter') },
+          { brand: 'Motorcraft', part: 'FL-2127', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-2127+oil+filter') }
+        ],
+        companion: 'Spin-on filter (one dealer page mislabels it a cartridge — it is a spin-on can), Ford <b>FL-2127</b> (NU2Z-6731-F) per the 2024 manual\'s Motorcraft table. <b>Warning:</b> its M22×1.5 thread will NOT fit the earlier FL-910-S cars despite the near-identical can — the two do not interchange.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Escape', y0: 2020, y1: 2022,
+        title: 'Engine Air Filter — 2020–2022 Ford Escape (1.5L & 2.0L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-1939',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1939', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1939+air+filter') },
+          { brand: 'WIX', part: 'WA10981', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10981+air+filter') }
+        ],
+        companion: 'Panel filter, Motorcraft <b>FA-1939</b> (Ford JX6Z-9601-A) — Ford\'s 2020 manual lists it for both EcoBoost engines, and WIX\'s application data ties their WA10981 to that Ford number for both engines. <b>Warnings:</b> the 2013–19 filters FA-1910 / FA-1908 do NOT fit this generation, and the 2.5L Hybrid takes a different filter (FA-1948). The 2023 filter is held until that year\'s manual table is verified — the number changes by 2024 (see the 2024–2025 entries).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Escape', engine: '1.5L EcoBoost', y0: 2024, y1: 2025,
+        title: 'Engine Air Filter — 2024–2025 Ford Escape (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-2065',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-2065', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-2065+air+filter') }
+        ],
+        companion: 'Panel filter, Motorcraft <b>FA-2065</b> (Ford PZ1Z-9601-B) per the 2024 manual\'s Motorcraft table and Ford\'s own catalog page. The 2020–2022 FA-1939 does not carry into these years, and the 2.0L takes a different filter (FA-2064). No aftermarket cross was verified from a maker catalog yet, so the OEM row stands alone for now.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Escape', engine: '2.0L EcoBoost', y0: 2024, y1: 2025,
+        title: 'Engine Air Filter — 2024–2025 Ford Escape (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FA-2064',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-2064', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-2064+air+filter') }
+        ],
+        companion: 'Panel filter, Motorcraft <b>FA-2064</b> per the 2024 manual\'s Motorcraft table. The 1.5L takes a different filter (FA-2065), and the 2020–2022 FA-1939 does not carry into these years. No aftermarket cross was verified from a maker catalog yet, so the OEM row stands alone for now.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Escape', y0: 2020, y1: 2025,
+        title: 'Cabin Air Filter — 2020–2025 Ford Escape',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'FP-100-A',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-100-A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-100-A+cabin+filter') },
+          { brand: 'FRAM', part: 'CF12772', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12772+cabin+filter') }
+        ],
+        companion: 'Motorcraft <b>FP-100-A</b> is Ford\'s current service number for this filter across 2020–2025, all engines including the Hybrid (Motorcraft fitment data; the 2020 manual prints the earlier number FP-89 for the same housing — a listing under FP-89 can be the same part). FRAM\'s fitment verifies their CF12772 for the 2020–2026 Escape. <b>Warning:</b> the 2013–19 FP-70 does NOT fit this generation.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Escape', engine: '1.5L EcoBoost', y0: 2020, y1: 2022,
+        title: 'Spark Plugs — 2020–2022 Ford Escape (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-550',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-550', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-550+spark+plug') }
+        ],
+        companion: 'Set of 3 — this 1.5L is a 3-cylinder. Ford\'s 2020 manual lists <b>SP-550</b> for it. <b>Warnings:</b> SP-539 belongs to the older 2013–19 1.5L 4-cylinder and does not carry over; SP-530 is the 2.5L Hybrid\'s plug, not an EcoBoost plug. No NGK equivalent is shown — retailer feeds conflict on this engine, so the plug waits for an NGK catalog read rather than a guess.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Escape', engine: '2.0L EcoBoost', y0: 2020, y1: 2022,
+        title: 'Spark Plugs — 2020–2022 Ford Escape (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-578',
+        rows: [
+          { brand: 'NGK', part: '95927', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95927+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-578', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-578+spark+plug') }
+        ],
+        companion: 'Set of 4. Ford\'s 2020 manual lists <b>SP-578</b> for the 2.0L; NGK\'s manufacturer data names their <b>ILTR6S8 (stock 95927)</b> Laser Iridium for the 2020–2022 Escape 2.0L. The 2023 plug is held until that year\'s manual table is verified — by 2024 both EcoBoosts take SP-597-X.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Escape', y0: 2024, y1: 2025,
+        title: 'Spark Plugs — 2024–2025 Ford Escape (1.5L & 2.0L EcoBoost)',
+        oemBrand: 'Motorcraft (Ford OEM)', oemPart: 'SP-597-X',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-597-X', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-597-X+spark+plug') }
+        ],
+        companion: 'Ford\'s 2024 manual lists <b>SP-597-X</b> for BOTH EcoBoost engines, gap 0.026–0.030 in (the 1.5L takes 3 plugs, the 2.0L takes 4). <b>Warning:</b> some AI-generated pages claim an "SP-538" for these years — that number is not in Ford\'s manual; do not use it. The 2023 plug is held until that year\'s manual table is verified.'
+      },
+      {
+        partId: 'oil-filter', make: 'Honda', model: 'CR-V', y0: 2023, y1: 2026,
+        title: 'Oil Filter — 2023–2026 Honda CR-V (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '15400-PLM-A02',
+        rows: [
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00BFDFJA2?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57356XP', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5SZN9S?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+15400-PLM-A02+oil+filter') }
+        ],
+        companion: 'The oil filter did NOT change for this generation — Honda\'s manuals for the 2023+ CR-V still list <b>15400-PLM-A02</b>, the same filter as the 2017–2022 car and most Honda 4-cylinders, so the verified rows carry over.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Honda', model: 'CR-V', y0: 2023, y1: 2026,
+        title: 'Engine Air Filter — 2023–2026 Honda CR-V (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '17220-64A-A00',
+        rows: [
+          { brand: 'Honda (OEM)', part: '17220-64A-A00', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+17220-64A-A00+air+filter') },
+          { brand: 'K&N', part: '33-5120', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=K%26N+33-5120+air+filter') }
+        ],
+        companion: 'The air filter CHANGED for this generation: Honda <b>17220-64A-A00</b> (the smaller 11th-gen Civic 1.5T airbox element). <b>Warnings:</b> the 2017–2022 filter 17220-5AA-A00 does NOT fit, and 17220-6MA-J01 is the Hybrid\'s filter — combo kits repeatedly bundle it with the 1.5T parts. The K&N row is their washable panel, cross-verified against this Honda number on K&N\'s own product data.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Honda', model: 'CR-V', y0: 2023, y1: 2026,
+        title: 'Cabin Air Filter — 2023–2026 Honda CR-V',
+        oemBrand: 'Honda (OEM)', oemPart: '80291-TF3-E01',
+        rows: [
+          { brand: 'ECOGARD', part: 'XC36080', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00I8IU150?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '80291-TF3-E01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+80291-TF3-E01+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF11182', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11182+cabin+filter') },
+          { brand: 'WIX', part: '49101', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+49101+cabin+filter') }
+        ],
+        companion: 'Same physical filter as the 2017–2022 car — Honda lists it for 2017–2026 — but the current service number is <b>80291-TF3-E01</b> (it supersedes the older 80292-TF0-G01 the earlier entry headlines). FRAM\'s fitment verifies their CF11182 for these years. The filter sits behind the glove box.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Honda', model: 'CR-V', y0: 2023, y1: 2026,
+        title: 'Spark Plugs — 2023–2026 Honda CR-V (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '12290-6A0-A01',
+        rows: [
+          { brand: 'NGK', part: '92411', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+92411+spark+plug') },
+          { brand: 'Honda (OEM)', part: '12290-6A0-A01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+12290-6A0-A01+spark+plug') }
+        ],
+        companion: 'Set of 4. The plug CHANGED for this generation: Honda <b>12290-6A0-A01</b> = <b>NGK DILKAR8P8SY (stock 92411)</b>, per Honda\'s owner\'s-manual data. <b>Warning:</b> the 2017–2022 plug (12290-5PA-A01 / NGK ILZKAR8J8SY) does NOT carry over, and 12290-59B-003 pushed by low-quality gap sites is an older Civic plug — not this car\'s. Honda publishes no gap figure for this plug, so none is printed.'
       }
 
     ];
