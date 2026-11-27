@@ -419,6 +419,7 @@
     // Batch 37 (Fusion 2019-2020 2.0L EcoBoost standard four + GMC Yukon 2015-2020 5.3L standard four with PF63/PF63E oil split, GM/GMC + Ford manuals) merged 2026-11-26.
     // Batch 38 (2010-2015 Toyota Prius Gen 3 whole-car build: brakes, hybrid battery fan + filter, coolant, ATF WS, brake fluid, wipers, bulbs, PCV, both water pumps; Maria Dickey serviced car) merged 2026-11-26.
     // Batch 41 (Durango 3.6L filters + 2020-21 plugs TSB-verified; Cherokee KL 3.2L/2.4L oil, 2018 3.2L plugs, 2.4L air split at 2019, cabin 2014-18; Sonata 2.4L + Optima 2.4L oil/air/cabin — maker catalogs + FCA TSB) merged 2026-11-27.
+    // Batch 42 (Elantra 2017-20 2.0L + Forte 2019-24 2.0L standard fours — NGK catalog trap: ILZKR8C8G, NOT SILZKR7B11; Compass MP 2017-22 2.4L oil/air/cabin + 2017-18 plugs, 2017 MK/MP split warned) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -6393,6 +6394,183 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+26+019+cabin+filter') }
         ],
         companion: 'Kia <b>97133-C1000</b> (service variant -C1010) — maker cross data for the Optima JF lists this number together with the MANN CUK 26 019 and FRAM CF12159. <b>Do not confuse it with 97133-D3000</b> — that is the Sportage\'s filter. The filter sits behind the glove box.'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Elantra', y0: 2017, y1: 2020,
+        title: 'Oil Filter — 2017–2020 Hyundai Elantra (2.0L)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'FRAM', part: 'PH9688', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07BCFMXFN?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B077W4K176?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51334', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51334+oil+filter') }
+        ],
+        companion: 'Spin-on filter — WIX catalog data ties this application to OE 26300-35504, the direct predecessor of the current <b>26300-35505</b>. The same filter serves most Hyundai/Kia cars in this catalog (Tucson, Sonata, Sportage, Optima).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Hyundai', model: 'Elantra', y0: 2017, y1: 2020,
+        title: 'Engine Air Filter — 2017–2020 Hyundai Elantra (2.0L)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '28113-F2000',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '28113-F2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+28113-F2000+air+filter') },
+          { brand: 'K&N', part: '33-5050', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=K&N+33-5050+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox, Hyundai <b>28113-F2000</b> — WIX catalog data prints this OE number for the Elantra 2.0L, and K&N\'s own catalog data lists their washable 33-5050 for the car. FRAM/WIX aftermarket numbers are not shown — they surfaced only in retailer cross lists, not maker catalogs.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Hyundai', model: 'Elantra', y0: 2017, y1: 2020,
+        title: 'Cabin Air Filter — 2017–2020 Hyundai Elantra (2.0L)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97133-F2000',
+        rows: [
+          { brand: 'Hyundai (OEM)', part: '97133-F2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+97133-F2000+cabin+filter') }
+        ],
+        companion: 'Hyundai <b>97133-F2000</b>, verified for the Elantra AD in WIX catalog data across 2017, 2019 and 2020. The filter sits behind the glove box. Only the genuine row is shown — the aftermarket crosses (WIX WP10319, FRAM CF12058) appear only in retailer lists so far, and we never publish a number a maker catalog has not confirmed.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Hyundai', model: 'Elantra', y0: 2017, y1: 2020,
+        title: 'Spark Plugs — 2017–2020 Hyundai Elantra (2.0L)',
+        oemBrand: 'Hyundai (OEM)', oemPart: 'OEM number not yet verified',
+        rows: [
+          { brand: 'NGK', part: 'ILZKR8C8G', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+ILZKR8C8G+spark+plug') },
+          { brand: 'DENSO', part: 'SXU22HCR11S', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+SXU22HCR11S+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium, factory gap 0.032 in (0.8 mm). NGK\'s catalog data for this engine lists the <b>NGK ILZKR8C8G</b> Laser Iridium, and DENSO\'s catalog marks the <b>SXU22HCR11S</b> as the OEM plug. Hyundai does not publish the plug\'s OEM number in its manuals, so no Hyundai number is printed here yet. <b>Warning:</b> the widely listed NGK SILZKR7B11 (9723) is the older Nu GDI plug — NGK\'s catalog does NOT list it for this Atkinson-cycle 2.0L; do not buy it for this car.'
+      },
+      {
+        partId: 'oil-filter', make: 'Kia', model: 'Forte', y0: 2019, y1: 2024,
+        title: 'Oil Filter — 2019–2024 Kia Forte (2.0L)',
+        oemBrand: 'Kia (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'FRAM', part: 'PH9688', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07BCFMXFN?tag=redemptionm06-20' },
+          { brand: 'Kia (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B077W4K176?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51334', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51334+oil+filter') }
+        ],
+        companion: 'Spin-on filter — WIX catalog data for the Forte 2.0L notes OE 26300-35504, the direct predecessor of the current <b>26300-35505</b>. Scoped to the 2019+ BD-generation Forte; the 2014–2018 Forte is not covered by this entry.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Kia', model: 'Forte', y0: 2019, y1: 2024,
+        title: 'Engine Air Filter — 2019–2024 Kia Forte (2.0L)',
+        oemBrand: 'Kia (OEM)', oemPart: '28113-F2000',
+        rows: [
+          { brand: 'Kia (OEM)', part: '28113-F2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+28113-F2000+air+filter') },
+          { brand: 'K&N', part: '33-5050', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=K&N+33-5050+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox, Kia <b>28113-F2000</b> — the same element as the Elantra AD (WIX catalog data prints this OE number on both the 2019 and 2024 Forte pages; a Baldwin catalog entry confirms it independently). K&N\'s 33-5050 is the maker-verified washable option.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Kia', model: 'Forte', y0: 2019, y1: 2024,
+        title: 'Cabin Air Filter — 2019–2024 Kia Forte (2.0L)',
+        oemBrand: 'Kia (OEM)', oemPart: '97133-F2000',
+        rows: [
+          { brand: 'Kia (OEM)', part: '97133-F2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+97133-F2000+cabin+filter') }
+        ],
+        companion: 'Kia <b>97133-F2000</b> — verified for the Forte BD specifically in WIX catalog data (the Elantra AD uses the same number; each was checked separately). The filter sits behind the glove box. Only the genuine row is shown until a maker catalog confirms an aftermarket cross.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Kia', model: 'Forte', y0: 2019, y1: 2024,
+        title: 'Spark Plugs — 2019–2024 Kia Forte (2.0L)',
+        oemBrand: 'Kia (OEM)', oemPart: 'OEM number not yet verified',
+        rows: [
+          { brand: 'NGK', part: 'ILZKR8C8G', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+ILZKR8C8G+spark+plug') },
+          { brand: 'DENSO', part: 'SXU22HCR11S', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+SXU22HCR11S+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium, factory gap 0.032 in (0.8 mm). NGK\'s catalog data lists the <b>NGK ILZKR8C8G</b> Laser Iridium for the Forte 2.0L across 2019, 2022 and 2024, and DENSO\'s catalog marks the <b>SXU22HCR11S</b> as OEM. Kia does not publish the plug\'s OEM number in its manuals, so none is printed here yet. <b>Warning:</b> NGK SILZKR7B11 (9723) listings for this car are the older Nu GDI plug — not the plug NGK specifies for this engine.'
+      },
+      {
+        partId: 'oil-filter', make: 'Jeep', model: 'Compass', y0: 2017, y1: 2022,
+        title: 'Oil Filter (Spin-On) — 2017–2022 Jeep Compass (2.4L, MP)',
+        oemBrand: 'Mopar (OEM)', oemPart: '04892339AA',
+        rows: [
+          { brand: 'Mopar', part: '04892339AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+04892339AA+oil+filter') },
+          { brand: 'WIX', part: '57060', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57060+oil+filter') },
+          { brand: 'FRAM', part: 'PH10060', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH10060+oil+filter') }
+        ],
+        companion: 'Spin-on filter, Mopar MO-339 family — WIX\'s own interchange catalog crosses both <b>04892339AA</b> and its current supersession 4892339BE to the WIX 57060. Note the Compass takes the FRAM PH10060 cross, NOT the Cherokee 2.4L\'s PH10125 — same engine family, different filter spec per the maker catalogs. <b>2017 warning:</b> two different Compasses were sold as 2017s — these numbers fit the NEW-body MP Compass only (VIN starts <b>3C4NJ</b>, Tigershark SOHC engine). If your 2017 VIN starts 1C4NJ, you have the older Compass and these parts do not fit.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Jeep', model: 'Compass', y0: 2017, y1: 2022,
+        title: 'Engine Air Filter — 2017–2022 Jeep Compass (2.4L, MP)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68247339AA',
+        rows: [
+          { brand: 'Mopar', part: '68247339AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68247339AA+air+filter') },
+          { brand: 'FRAM', part: 'CA12066', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12066+air+filter') },
+          { brand: 'A-Premium', part: '68247339AA', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BLYNVGYT?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WA10337', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10337+air+filter') },
+          { brand: 'MANN-FILTER', part: 'C 21 002', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+C+21+002+air+filter') }
+        ],
+        companion: 'Flexible panel filter, Mopar <b>68247339AA</b> — Bosch\'s maker catalog cross (for their F 026 400 502) lists this OE number with the FRAM, MANN and WIX equivalents shown. All trims including Trailhawk take the same element (the Compass shares it with the Renegade). One aggregated list showed a WIX WA9804 cross — Bosch\'s own catalog says WA10337, so WA9804 is not used. <b>2017 warning:</b> two different Compasses were sold as 2017s — these numbers fit the NEW-body MP Compass only (VIN starts <b>3C4NJ</b>, Tigershark SOHC engine). If your 2017 VIN starts 1C4NJ, you have the older Compass and these parts do not fit.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Jeep', model: 'Compass', y0: 2017, y1: 2022,
+        title: 'Cabin Air Filter — 2017–2022 Jeep Compass (2.4L, MP)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68350346AA',
+        rows: [
+          { brand: 'ECOGARD', part: 'XC10336', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0115MT8A4?tag=redemptionm06-20' },
+          { brand: 'Mopar', part: '68350346AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68350346AA+cabin+filter') },
+          { brand: 'WIX', part: 'WP10106', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10106+cabin+filter') }
+        ],
+        companion: 'Mopar <b>68350346AA</b> (68350351AA is the activated-carbon version of the same element). WIX catalog data names this OE number for the Compass 2.4L, and ECOGARD\'s own cross lists their XC10336 against it. The filter sits behind the glove box. <b>2017 warning:</b> two different Compasses were sold as 2017s — these numbers fit the NEW-body MP Compass only (VIN starts <b>3C4NJ</b>, Tigershark SOHC engine). If your 2017 VIN starts 1C4NJ, you have the older Compass and these parts do not fit.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Jeep', model: 'Compass', y0: 2017, y1: 2018,
+        title: 'Spark Plugs — 2017–2018 Jeep Compass (2.4L Tigershark, MP)',
+        oemBrand: 'Mopar (OEM)', oemPart: 'Mopar number not yet verified',
+        rows: [
+          { brand: 'NGK', part: '92145', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+92145+spark+plug') },
+          { brand: 'Champion', part: '9775', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Champion+9775+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium, factory gap 0.044 in. NGK\'s catalog data names the <b>NGK LZFR5CI-11 (stock 92145)</b> Laser Iridium for the Compass Tigershark by name, and Champion\'s fitment table covers the <b>Champion 9775 (REC10WMPB4)</b> for 2017–2018 in every trim. No Mopar plug number is printed — none was confirmed in a Mopar source, and the Cherokee candidate SP148183AB was NOT carried over. <b>2019–2022 plugs are held</b> until a year-specific maker-catalog read confirms them (the engine is unchanged, but we publish only what a catalog states). <b>2017 warning:</b> two different Compasses were sold as 2017s — these numbers fit the NEW-body MP Compass only (VIN starts <b>3C4NJ</b>, Tigershark SOHC engine). If your 2017 VIN starts 1C4NJ, you have the older Compass and these parts do not fit.'
       }
     ];
     var PARTS = {};
