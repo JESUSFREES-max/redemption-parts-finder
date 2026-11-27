@@ -90,6 +90,7 @@
     .part-btn.selected { background: #0f2439; color: #ffffff; border-color: #0f2439; border-bottom: 3px solid #b48327; }
     .part-btn .incat { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: #dcfce7; color: #166534; font-size: 11px; font-weight: 800; vertical-align: 1px; }
     .part-btn .incat[hidden] { display: none !important; }
+    select option.cov { color: #14532d; font-weight: 700; background-color: #86efac; }
     .part-btn.has-entry { border-color: #16a34a; background: #f0fdf4; }
     .part-btn.has-entry.selected { background: #0f2439; color: #ffffff; border-color: #0f2439; }
     table.compare { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 10px; }
@@ -228,7 +229,7 @@
         <div id="trimStep"></div>
         <div id="engineStep"></div>
         <div id="diagramPanel"></div>
-        <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Live lookups so far:</b> Toyota Prius, Camry &amp; Corolla, Honda Civic &amp; Accord, Ford F-150, Kia Sorento — under Filters &amp; Fluids, Ignition, and Transmission &amp; Drivetrain. <b>Demo:</b> a 2004–2009 Prius + <b>Oil Filter</b> shows the finished format.</div>
+        <div class="vehicle-line" id="vehicleLine">Pick your vehicle above, then choose a part below. <b>Green &#10003; = searchable parts in the catalog</b> for that year, make, or model. No green yet? Pick it anyway — Step 2 shows exactly which of its parts are verified so far, and the catalog grows every day.</div>
       </div>
     </div>
 
@@ -300,7 +301,7 @@
         { id: 'cam-position-sensor', name: 'Camshaft Position Sensor' } ] },
       { name: 'Cooling', parts: [
         { id: 'radiator', name: 'Radiator' }, { id: 'inverter-radiator', name: 'Hybrid Inverter Radiator' },
-        { id: 'water-pump', name: 'Water Pump' }, { id: 'thermostat', name: 'Thermostat' },
+        { id: 'water-pump', name: 'Water Pump' }, { id: 'inverter-water-pump', name: 'Inverter Water Pump' }, { id: 'thermostat', name: 'Thermostat' },
         { id: 'upper-radiator-hose', name: 'Upper Radiator Hose' },
         { id: 'lower-radiator-hose', name: 'Lower Radiator Hose' }, { id: 'cooling-fan', name: 'Cooling Fan' },
         { id: 'inverter-coolant-hoses', name: 'Inverter Coolant Hoses' }, { id: 'radiator-core-support', name: 'Radiator Core Support' },
@@ -344,7 +345,7 @@
       { name: 'Filters & Fluids', parts: [
         { id: 'oil-filter', name: 'Oil Filter' }, { id: 'engine-air-filter', name: 'Engine Air Filter' },
         { id: 'cabin-air-filter', name: 'Cabin Air Filter' }, { id: 'engine-oil', name: 'Engine Oil' },
-        { id: 'coolant-antifreeze', name: 'Coolant / Antifreeze' }, { id: 'brake-fluid', name: 'Brake Fluid' },
+        { id: 'coolant-antifreeze', name: 'Coolant / Antifreeze' }, { id: 'transmission-fluid', name: 'Transmission Fluid' }, { id: 'brake-fluid', name: 'Brake Fluid' },
         { id: 'power-steering-fluid', name: 'Power Steering Fluid' }, { id: 'washer-fluid', name: 'Windshield Washer Fluid' } ] },
       { name: 'Belts & Hoses', parts: [
         { id: 'serpentine-belt', name: 'Serpentine Belt' }, { id: 'belt-tensioner', name: 'Belt Tensioner' },
@@ -362,6 +363,7 @@
       { name: 'Batteries (12V & Hybrid)', parts: [
         { id: 'car-battery-12v', name: '12V Car Battery' }, { id: 'battery-terminal-ends', name: 'Battery Terminal Ends' },
         { id: 'hybrid-battery-pack', name: 'Hybrid Battery Pack' }, { id: 'hybrid-battery-fan', name: 'Hybrid Battery Cooling Fan' },
+        { id: 'hybrid-battery-fan-filter', name: 'Hybrid Battery Fan Filter' },
         { id: 'battery-charger', name: 'Battery Charger / Maintainer' } ] },
       { name: 'Heating & A/C', parts: [
         { id: 'ac-compressor', name: 'A/C Compressor' }, { id: 'ac-condenser', name: 'A/C Condenser' },
@@ -397,6 +399,7 @@
     // Batch 35 (Tiguan 2019 cabin three-variant qualifier + 2021 cabin, from the same VWGoA charts) merged 2026-11-26.
     // Batch 36 (Fusion 2017-2020 1.5L EcoBoost + 2018-2020 2.5L standard fours, Ford manual Motorcraft tables, A-suffix split at 2019) merged 2026-11-26.
     // Batch 37 (Fusion 2019-2020 2.0L EcoBoost standard four + GMC Yukon 2015-2020 5.3L standard four with PF63/PF63E oil split, GM/GMC + Ford manuals) merged 2026-11-26.
+    // Batch 38 (2010-2015 Toyota Prius Gen 3 whole-car build: brakes, hybrid battery fan + filter, coolant, ATF WS, brake fluid, wipers, bulbs, PCV, both water pumps; Maria Dickey serviced car) merged 2026-11-26.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -5654,6 +5657,193 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=GM+12622441+spark+plug') }
         ],
         companion: 'Set of 8, iridium, factory gap 0.037–0.043 in (plugs are preset — GMC does not recommend re-gapping). Every Yukon manual from 2015 through 2020 lists GM <b>12622441</b> / ACDelco <b>41-114</b> for the 5.3L — the same plug this site lists for the Tahoe and Sierra.'
+      },
+      {
+        partId: 'front-brake-pads', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Front Brake Pads — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04465-47070',
+        rows: [
+          { brand: 'Akebono', part: 'ACT1184A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Akebono+ACT1184A+brake+pads') },
+          { brand: 'Toyota', part: '04465-47070', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04465-47070+brake+pads') },
+          { brand: 'Akebono', part: 'ACT1184A', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'Ceramic pads, OE compound. Toyota\'s number is <b>04465-47070</b> (it supersedes 04465-47060). First pick is the <b>Akebono ACT1184A</b> — Akebono is Toyota\'s OE friction maker, and this is their D1184 pad for this car. Shim and fitting kits are separate Toyota numbers and are not in the pad box.'
+      },
+      {
+        partId: 'rear-brake-pads', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Rear Brake Pads — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04466-47101',
+        rows: [
+          { brand: 'Akebono', part: 'ACT1354', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Akebono+ACT1354+brake+pads') },
+          { brand: 'Toyota', part: '04466-47101', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04466-47101+brake+pads') },
+          { brand: 'Akebono', part: 'ACT1354', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'Toyota\'s number is <b>04466-47101</b> (supersedes 04466-47100; the earliest production variants -47020/-47030/-47040 all sub forward to it). First pick is the <b>Akebono ACT1354</b> (D1354), the OE friction maker\'s pad. The parking brake is a separate drum-in-hat setup inside the rear rotor — these pads are the service brake only.'
+      },
+      {
+        partId: 'front-brake-rotors', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Front Brake Rotors — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '43512-47040',
+        rows: [
+          { brand: 'Toyota', part: '43512-47040', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+43512-47040+rotor') }
+        ],
+        companion: 'Vented front rotor, Toyota <b>43512-47040</b>. Only the genuine row is shown — no aftermarket cross was verified from a maker catalog this pass, and we never guess a rotor number. Text a photo of your old rotor or the door-jamb sticker to 360-772-8205 and we will pin the exact options.'
+      },
+      {
+        partId: 'rear-brake-rotors', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Rear Brake Rotors — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '42431-12310',
+        rows: [
+          { brand: 'Toyota', part: '42431-12310', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+42431-12310+rotor') }
+        ],
+        companion: 'Solid rear rotor, 259 mm, Toyota <b>42431-12310</b>, with the drum-in-hat parking brake inside it. Only the genuine row is shown — no aftermarket cross was verified from a maker catalog this pass.'
+      },
+      {
+        partId: 'hybrid-battery-fan', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Hybrid Battery Cooling Fan — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: 'G9230-76010',
+        rows: [
+          { brand: 'Toyota', part: 'G9230-76010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+G9230-76010+battery+fan') },
+          { brand: 'Toyota', part: 'G9230-76010', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'The fan that cools the hybrid battery, mounted behind the rear seat. Toyota\'s current number is <b>G9230-76010</b> (supersedes G9230-47020 and G9230-47070) for the non-Plug-In cars. A failing fan logs code <b>P0A82</b> and lets the battery overheat. <b>Do not confuse it with the cabin HVAC blower motor</b> — a different part that some listings dress up as this fan. No verified Amazon listing for the genuine fan exists, so that slot shows No Listing Yet.'
+      },
+      {
+        partId: 'hybrid-battery-fan-filter', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Hybrid Battery Fan Filter — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: 'G92DH-47010',
+        rows: [
+          { brand: 'Toyota', part: 'G92DH-47010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+G92DH-47010+filter') },
+          { brand: 'Toyota', part: 'G92DH-47010', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'The clip-on intake screen for the hybrid battery cooling fan, Toyota <b>G92DH-47010</b> ("Filter, HV Battery Intake, No. 1" — Toyota bulletins T-SB-0098-12 and T-SB-0013-14). Many 2010–2012 cars left the factory with <b>no filter at all</b> — the bulletin adds this screen. A clogged or missing filter starves the battery of cooling air and is the cheap first check on a P0A80/P0A82 car.'
+      },
+      {
+        partId: 'coolant-antifreeze', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Coolant / Antifreeze — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '00272-SLLC2',
+        rows: [
+          { brand: 'Toyota', part: '00272-SLLC2', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+00272-SLLC2+coolant') },
+          { brand: 'Zerex', part: '910234', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Zerex+910234+Asian+Vehicle+Red') },
+          { brand: 'Zerex', part: 'Asian Vehicle Red', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'Toyota <b>Super Long Life Coolant (pink)</b>, 00272-SLLC2, 1 gallon 50/50. Per the owner\'s manual this car runs SLLC in <b>both</b> loops: the engine loop (about 8.6 L total) and the separate inverter/converter loop (about 2.7 L). The two systems share the coolant type but never mix with other colors, and the inverter loop must be bled with its pump running (scan tool) after service.'
+      },
+      {
+        partId: 'transmission-fluid', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Transmission Fluid (ATF WS) — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '00289-ATFWS',
+        rows: [
+          { brand: 'AISIN', part: 'ATF-0WS', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=AISIN+ATF-0WS') },
+          { brand: 'Toyota', part: '00289-ATFWS', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+00289-ATFWS+ATF+WS') },
+          { brand: 'AISIN', part: 'ATF-0WS', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'The P410 hybrid transaxle takes <b>Toyota ATF WS only</b> (00289-ATFWS) — about 3.6–4.0 qt on a drain-and-fill. First pick is <b>AISIN ATF-0WS</b>, AISIN\'s own WS fluid (AISIN builds the transaxle). The fluid electrically insulates the motor windings inside the case — conventional ATF must never be substituted.'
+      },
+      {
+        partId: 'brake-fluid', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Brake Fluid — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '00475-1BF03',
+        rows: [
+          { brand: 'Toyota', part: '00475-1BF03', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+00475-1BF03+brake+fluid') },
+          { brand: 'Toyota', part: '00475-1BF03', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: '<b>DOT 3 only</b>, per Toyota\'s spec for this car (Toyota 00475-1BF03). The Prius brake actuator system is bled with a scan tool — fluid choice is not the place to improvise, and DOT 5 silicone must never go in.'
+      },
+      {
+        partId: 'wiper-blades', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Wiper Blades — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '85222-75010',
+        rows: [
+          { brand: 'Toyota', part: '85222-75010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+85222-75010+wiper') },
+          { brand: 'Toyota', part: '85212-47040', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+85212-47040+wiper') }
+        ],
+        companion: 'Sizes: <b>26 in driver, 19 in passenger, 16 in rear</b>, all years 2010–2015. The Toyota numbers (from TRICO\'s OE cross data) are <b>85222-75010</b> for the driver blade and <b>85212-47040</b> for the passenger blade — one row each above. The rear blade\'s Toyota number is not published here because it could not be verified; match the 16 in size.'
+      },
+      {
+        partId: 'headlight-bulb', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Headlight Bulbs — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM spec)', oemPart: 'H11 / 9005',
+        rows: [
+          { brand: 'Sylvania', part: 'H11', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Sylvania+H11+headlight+bulb') },
+          { brand: 'Sylvania', part: '9005', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Sylvania+9005+headlight+bulb') },
+          { brand: 'Sylvania', part: 'H11', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'From the owner\'s manual bulb table: halogen <b>low beam H11</b> (55W), <b>high beam 9005 / HB3</b> (60W). Cars with the optional <b>LED low beams</b> have no replaceable low-beam bulb — it is an integrated LED assembly — but their high beam is still a 9005. Check which headlights your car has before ordering.'
+      },
+      {
+        partId: 'pcv-valve', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'PCV Valve — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '12204-37010',
+        rows: [
+          { brand: 'Toyota', part: '12204-37010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+12204-37010+PCV') },
+          { brand: 'Toyota', part: '12204-37010', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'Toyota <b>12204-37010</b>. It screws into the valve-cover ventilation case under the intake manifold — easiest to reach with the manifold off (the EGR-service moment); 20 N·m with thread adhesive. A sticking PCV feeds this engine\'s known oil-use and EGR carbon problems, so it is cheap insurance on a high-mile car.'
+      },
+      {
+        partId: 'water-pump', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Engine Water Pump (Electric) — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: '161A0-29015',
+        rows: [
+          { brand: 'AISIN', part: 'WPT-190', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00DUR65LI?tag=redemptionm06-20' },
+          { brand: 'Toyota', part: '161A0-29015', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+161A0-29015+water+pump') }
+        ],
+        companion: 'This pump is <b>electric</b> — no belt, no pulley (this engine has no accessory belt at all). Toyota\'s number is <b>161A0-29015</b> (supersedes 161A0-39015; Toyota bulletin T-SB-0143-10 covers its P261B/P261C codes). First pick is the <b>AISIN WPT-190</b> — AISIN is the OE maker of the pump. This is the ENGINE loop pump only; the inverter has its own pump (see Inverter Water Pump).'
+      },
+      {
+        partId: 'inverter-water-pump', make: 'Toyota', model: 'Prius', y0: 2010, y1: 2015,
+        title: 'Inverter Water Pump — 2010–2015 Toyota Prius (1.8L Hybrid)',
+        oemBrand: 'Toyota (OEM)', oemPart: 'G9040-52010',
+        rows: [
+          { brand: 'AISIN', part: 'WQT-001', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=AISIN+WQT-001') },
+          { brand: 'Toyota', part: 'G9040-52010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+G9040-52010+pump') },
+          { brand: 'AISIN', part: 'WQT-001', price: '—', where: 'Amazon', nolisting: true }
+        ],
+        companion: 'The electric pump on the inverter\'s own pink-coolant loop. Current US service number is <b>G9040-52010</b>; earlier production cars carry G9040-48020 — AISIN (the OE maker) interchanges G9040-48020 / G9040-52010 / G9040-47090 as one pump family under <b>WQT-001</b>, so match the number on your old pump and any of the family fits. First pick is the AISIN row.'
       }
     ];
     var PARTS = {};
@@ -5749,23 +5939,71 @@
     }
 
     // ================= VEHICLE PICKER =================
-    function buildVehiclePickers() {
+    // Coverage index (De, 2026-11-26): a green check on a year, make or model
+    // means the verified catalog holds at least one searchable part for it.
+    function entryCoversModel(e, make, model) {
+      if (e.make.toLowerCase() !== make.toLowerCase()) return false;
+      var em = e.model.toLowerCase(), m = model.toLowerCase();
+      return em === m || em.indexOf(m + ' ') === 0;
+    }
+    function makeCovered(make) {
+      for (var i = 0; i < VERIFIED.length; i++)
+        if (VERIFIED[i].make.toLowerCase() === make.toLowerCase()) return true;
+      return false;
+    }
+    function modelCovered(make, model) {
+      for (var i = 0; i < VERIFIED.length; i++)
+        if (entryCoversModel(VERIFIED[i], make, model)) return true;
+      return false;
+    }
+    function yearCovered(year, make, model) {
+      var y = parseInt(year, 10);
+      for (var i = 0; i < VERIFIED.length; i++) {
+        var e = VERIFIED[i];
+        if (y < e.y0 || y > e.y1) continue;
+        if (make && model) { if (entryCoversModel(e, make, model)) return true; }
+        else if (make) { if (e.make.toLowerCase() === make.toLowerCase()) return true; }
+        else return true;
+      }
+      return false;
+    }
+    function fillYears() {
       var yr = document.getElementById('selYear');
+      var cur = yr.value;
+      var make = document.getElementById('selMake').value;
+      var model = document.getElementById('selModel').value;
       var yh = '<option value="">Year</option>';
-      for (var y = 2026; y >= 1996; y--) yh += '<option value="' + y + '">' + y + '</option>';
+      for (var y = 2026; y >= 1996; y--) {
+        var cov = yearCovered(y, make, model);
+        yh += '<option value="' + y + '"' + (cov ? ' class="cov"' : '') + '>' + y + (cov ? ' \u2713' : '') + '</option>';
+      }
       yr.innerHTML = yh;
+      if (cur) yr.value = cur;
+    }
+    function buildVehiclePickers() {
       var mk = document.getElementById('selMake');
+      var makes = [];
+      for (var k in MAKES_MODELS) makes.push(k);
+      makes.sort(function(a, b) { return a.localeCompare(b, undefined, { numeric: true }); });
       var mh = '<option value="">Make</option>';
-      for (var k in MAKES_MODELS) mh += '<option value="' + k + '">' + k + '</option>';
+      for (var i = 0; i < makes.length; i++) {
+        var cov = makeCovered(makes[i]);
+        mh += '<option value="' + makes[i] + '"' + (cov ? ' class="cov"' : '') + '>' + makes[i] + (cov ? ' \u2713' : '') + '</option>';
+      }
       mh += '<option value="Other">Other</option>';
       mk.innerHTML = mh;
       fillModels('', '');
+      fillYears();
     }
     function fillModels(make, selected) {
       var md = document.getElementById('selModel');
-      var list = MAKES_MODELS[make] || [];
+      var list = (MAKES_MODELS[make] || []).slice();
+      list.sort(function(a, b) { return a.localeCompare(b, undefined, { numeric: true }); });
       var h = '<option value="">Model</option>';
-      for (var i = 0; i < list.length; i++) h += '<option value="' + list[i] + '">' + list[i] + '</option>';
+      for (var i = 0; i < list.length; i++) {
+        var cov = make && modelCovered(make, list[i]);
+        h += '<option value="' + list[i] + '"' + (cov ? ' class="cov"' : '') + '>' + list[i] + (cov ? ' \u2713' : '') + '</option>';
+      }
       h += '<option value="Other">Other / Not Listed</option>';
       md.innerHTML = h;
       if (selected) {
@@ -5805,6 +6043,7 @@
       }
       refreshDiagramPanel();
       refreshCatalogMarks();
+      fillYears();
     }
     // ================= TRIM & ENGINE STEPS =================
     // Optional steps between Model and Parts (De, 2026-11-25): Year -> Make ->
