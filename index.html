@@ -91,6 +91,7 @@
     .part-btn .incat { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: #dcfce7; color: #166534; font-size: 11px; font-weight: 800; vertical-align: 1px; }
     .part-btn .incat[hidden] { display: none !important; }
     select option.cov { color: #14532d; font-weight: 700; background-color: #86efac; }
+    select.covsel { background-color: #dcfce7; color: #14532d; font-weight: 700; border-color: #16a34a; }
     .part-btn.has-entry { border-color: #16a34a; background: #f0fdf4; }
     .part-btn.has-entry.selected { background: #0f2439; color: #ffffff; border-color: #0f2439; }
     table.compare { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 10px; }
@@ -5919,15 +5920,62 @@
     function diagramRoute(make) {
       return DIAGRAM_ROUTES[make] || null;
     }
+    // Vehicle-level diagram links (De, 2026-11-26): the make-level homepage
+    // link made visitors look their vehicle up a second time. Resolution
+    // order: (1) the exact car, when the visitor decoded a VIN this session
+    // and the picked vehicle still matches it; (2) a tabled vehicle-level
+    // catalog page for the picked model/generation; (3) the make-level door.
+    // Every tabled URL was fetch-verified before shipping — see
+    // diagram-deeplinks-research-2026-11-26.md (rounds 1-2). Never add a
+    // row here on a guess: an unverified model keeps the make-level door.
+    var decodedVinInfo = null; // set by decodeVin(): {vin, year, make, model}
+    var PS_VARIANTS = { // PartSouq representative NA variant per generation
+      'toyota|prius|2010|2015':  { sy: 2009, seg: 'PRIUS',  code: 'ZVW30L-AHXGBA' },
+      'toyota|rav4|2019|2026':   { sy: 2018, seg: 'RAV4',   code: 'AXAA54L-CNZVBA' },
+      'toyota|tacoma|2016|2023': { sy: 2015, seg: 'TACOMA', code: 'GRN305L-PRFSHA' }
+    };
+    var GIANT_DEEP = { // Parts Giant family vehicle-page templates (year interpolated)
+      'chevrolet|silverado 1500': function (y) { return 'https://www.gmpartsgiant.com/' + y + '-chevrolet-silverado-1500_2wd-parts.html'; },
+      'ford|f-150':  function (y) { return 'https://www.fordpartsgiant.com/' + y + '-ford-f_150-parts.html'; },
+      'ford|fusion': function (y) { return 'https://www.fordpartsgiant.com/' + y + '-ford-fusion-parts.html'; },
+      'jeep|wrangler': function (y) { return 'https://www.moparpartsgiant.com/' + y + '-jeep-wrangler-parts.html'; },
+      'ram|1500':    function (y) { return y >= 2019 ? 'https://www.moparpartsgiant.com/' + y + '-ram-1500-parts.html' : null; }
+    };
+    function diagramUrlFor() {
+      var r = diagramRoute(vehicle.make);
+      if (!r) return null;
+      var y = parseInt(vehicle.year, 10);
+      var mk = vehicle.make.toLowerCase(), md = (vehicle.model || '').toLowerCase();
+      if (vehicle.make === 'Toyota' && decodedVinInfo && decodedVinInfo.vin &&
+          String(decodedVinInfo.year) === String(vehicle.year) &&
+          decodedVinInfo.make.toLowerCase() === mk &&
+          decodedVinInfo.model.toLowerCase() === md) {
+        return { url: 'https://partsouq.com/catalogs/vin/' + decodedVinInfo.vin + '/', kind: 'vin' };
+      }
+      for (var k in PS_VARIANTS) {
+        var p = k.split('|'), v = PS_VARIANTS[k];
+        if (p[0] === mk && p[1] === md && y >= +p[2] && y <= +p[3]) {
+          return { url: 'https://partsouq.com/en/catalog/toyota/vehicle/NA/' + v.sy + '/' + v.seg + '/' + v.code + '/category/groups', kind: 'vehicle' };
+        }
+      }
+      var g = GIANT_DEEP[mk + '|' + md];
+      if (g) { var gu = g(y); if (gu) return { url: gu, kind: 'vehicle' }; }
+      return { url: r.url, kind: 'make' };
+    }
     function diagramPanelHtml() {
       if (!vehicle.make) return '';
       var r = diagramRoute(vehicle.make);
       if (!r) return '';
+      var du = diagramUrlFor();
       var veh = vehicle.label ? esc(vehicle.label) : esc(vehicle.make);
+      var deep = '';
+      if (du.kind === 'vin') deep = '<br><span style="font-size:12.5px; color:#475569;">That link opens the catalog for the exact car your VIN decoded to — no second lookup.</span>';
+      else if (du.kind === 'vehicle') deep = '<br><span style="font-size:12.5px; color:#475569;">That link opens your vehicle\'s own catalog pages — no second lookup.</span>';
       return '<div class="diagram-box">📐 <b>Factory Diagrams</b><br>' +
         'See the factory parts diagrams for your <b>' + veh + '</b> — the exploded drawings with numbered ' +
         'callouts — free in the ' + esc(r.name) + ' catalog: ' +
-        '<a href="' + r.url + '" target="_blank" rel="noopener">See the parts diagram for this vehicle →</a>' +
+        '<a href="' + du.url + '" target="_blank" rel="noopener">See the parts diagram for this vehicle →</a>' +
+        deep +
         '<br><span style="font-size:12.5px; color:#475569;">Spot your part on the drawing and note its OEM number, ' +
         'then run that number through the part-number search on this page — if it\'s verified here, you\'ll land ' +
         'right on your options.</span></div>';
@@ -5966,6 +6014,16 @@
         else return true;
       }
       return false;
+    }
+    // Closed-dropdown tint (De, 2026-11-26): when the picked year/make/model
+    // itself has catalog coverage, the closed select box turns green too —
+    // the option tint alone only showed while the list was open.
+    function markSelects() {
+      var yr = document.getElementById('selYear'), mk = document.getElementById('selMake'), md = document.getElementById('selModel');
+      if (!yr || !mk || !md) return;
+      mk.classList.toggle('covsel', !!mk.value && makeCovered(mk.value));
+      md.classList.toggle('covsel', !!md.value && !!mk.value && modelCovered(mk.value, md.value));
+      yr.classList.toggle('covsel', !!yr.value && yearCovered(yr.value, mk.value, md.value));
     }
     function fillYears() {
       var yr = document.getElementById('selYear');
@@ -6017,6 +6075,7 @@
         (vehicle.trim ? ' ' + vehicle.trim : '') + (vehicle.engine ? ' ' + vehicle.engine : '');
       document.getElementById('vehicleState').textContent = vehicle.label;
       refreshDiagramPanel();
+      markSelects();
     }
     function setVehicle(year, make, model) {
       vehicle = { year: String(year), make: make, model: model, trim: '', engine: '', label: '' };
@@ -6044,6 +6103,7 @@
       refreshDiagramPanel();
       refreshCatalogMarks();
       fillYears();
+      markSelects();
     }
     // ================= TRIM & ENGINE STEPS =================
     // Optional steps between Model and Parts (De, 2026-11-25): Year -> Make ->
@@ -6149,6 +6209,7 @@
           setSelectValue('selYear', year);
           var mk = findMake(make);
           if (mk) { document.getElementById('selMake').value = mk; fillModels(mk, model); }
+          decodedVinInfo = { vin: vin, year: String(year), make: mk || make, model: model };
           setVehicle(year, mk || make, model);
           // Preselect trim/engine from the VIN when they match a catalog
           // option exactly (displacement for engine). No match = the step
