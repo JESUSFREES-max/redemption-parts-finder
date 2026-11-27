@@ -297,7 +297,7 @@
       'Dodge': ['Charger', 'Challenger', 'Durango', 'Grand Caravan', 'Journey'],
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator', 'Renegade'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
-      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy'],
+      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy', 'Ascent'],
       'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid'],
       'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
@@ -423,6 +423,7 @@
     // Batch 43 (Ioniq Hybrid oil/air/cabin whole-car continuation — plugs held; Renegade BU 2015-21 2.4L oil/air/cabin + 2015-18 plugs, verified separately from Compass; Rogue T33 2021-25 oil/air split by engine/cabin/plugs split by engine — T32 65F0E oil trap warned) merged 2026-11-27.
     // Batch 44 (Escape 2020-25 EcoBoost: FL-910-S oil + 2023 2.0L thread-split qualifier to FL-2127, FA-1939 air 2020-22 / FA-2065+FA-2064 2024-25, FP-100-A cabin, plugs SP-550/SP-578 2020-22 / SP-597-X 2024-25, 2023 air+plugs held; CR-V 2023-26 1.5T: oil carryover 15400-PLM-A02, air CHANGED 17220-64A-A00, cabin 80291-TF3-E01 headline, plugs CHANGED 12290-6A0-A01/NGK 92411) merged 2026-11-27.
     // Batch 45 (Pilot 2023-25 new gen: oil carryover 15400-PLM-A02, air CHANGED 17220-61A-A00, cabin CHANGED 80292-TYA-A41, ATF Type 2.0 08200-9015 with 08200-9020 HCF-2 trap warned, plugs HELD; Pilot 2016-22: ATF qualifier 6-spd DW-1 08200-9008 / 9-spd Type 3.1 08200-9017, coolant OL999-9011 OEM-only; Outback 2020-25 new gen: oil 15208AA21A both engines, air 16546AA16A, cabin 72880FL00A, plugs engine-split 2.5L 22401AA940/NGK 91899 + 2.4L Turbo NGK SILKFR8A6 type with Subaru-box number withheld) merged 2026-11-27.
+    // Batch 46 (RAV4 2019-24 2.5L gas NEW gen: oil spin-on 90915-YZZN1 with WL10332/PH4967 and 04152-YZZA1 + WIX 51394 traps warned, air 17801-F0050 gas-only with Hybrid 17801-F0020 trap warned, plugs 90919-01289 = DENSO FC16HR-Q8 first + NGK 96210, cabin HELD 87139-0R030 unverified; Ascent 2019-25 FA24 NEW model: oil 15208AA21A FRAM omitted w/ bypass caution, air 16546AA16A, cabin 72880FL00A, plugs NGK SILKFR8A6 96698 with Subaru-box number withheld) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -7180,6 +7181,122 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+96698+SILKFR8A6+spark+plug') }
         ],
         companion: 'Set of 4, Laser Iridium. Subaru\'s manuals specify NGK <b>SILKFR8A6</b> (stock 96698) for the 2.4L turbo across 2020–2025 — that type is the specification. Subaru\'s own box number for this plug is not printed yet: it waits for a dealer catalog session rather than a guess, so confirm it by VIN at a Subaru dealer if you want the Subaru-boxed plug. <b>Warnings:</b> NGK ILKAR8H6 (96024) is a colder WRX/performance plug marketed for FA24 turbos — it is NOT this car\'s factory specification; and the old 2.5L plug SILZKAR7B11 / 22401AA781 is mislisted for XT cars — do not use it. <b>2.4L Turbo ONLY:</b> the 2.5L takes DILKAR7Q8 / 22401AA940.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'RAV4', y0: 2019, y1: 2024,
+        title: 'Oil Filter — 2019–2024 Toyota RAV4 (2.5L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZN1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6SQ1M2T?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-YZZN1+oil+filter') },
+          { brand: 'WIX', part: 'WL10332', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10332+oil+filter') },
+          { brand: 'FRAM', part: 'PH4967', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH4967+oil+filter') }
+        ],
+        companion: 'Spin-on canister filter — this generation went BACK to a spin-on can (Toyota <b>90915-YZZN1</b>, superseding 90915-YZZF2; the factory-fill number 90915-10009 is the same filter). Oil is SAE 0W-16, 4.8 qt with filter. <b>Warnings:</b> the 2013–2018 RAV4 cartridge <b>04152-YZZA1 does NOT fit</b> this car — do not carry it forward; and <b>WIX 51394 is the wrong WIX</b> for this car (it is the older YZZF2-era cross and WIX\'s own list excludes the 2019+ RAV4) — the correct WIX is <b>WL10332</b>.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'RAV4', y0: 2019, y1: 2024,
+        title: 'Engine Air Filter — 2019–2024 Toyota RAV4 (2.5L, gas — Hybrid uses 17801-F0020)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-F0050',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-F0050', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-F0050+air+filter') },
+          { brand: 'Capume', part: '17801-F0050', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0C5ZQVHJV?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WA10859', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10859+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox — GAS car only. Toyota <b>17801-F0050</b> is the service number; the production number <b>17801-25020</b> is the same element in factory dress. <b>Warning:</b> <b>17801-F0020 is the Hybrid\'s filter, not the gas car\'s</b> — WIX\'s own data splits them exactly this way, so do not order the F0020 for a gasoline RAV4. The 2013–2018 filter 17801-0V020 is also a different element.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'RAV4', y0: 2019, y1: 2024,
+        title: 'Spark Plugs — 2019–2024 Toyota RAV4 (2.5L)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90919-01289',
+        rows: [
+          { brand: 'DENSO', part: 'FC16HR-Q8', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+FC16HR-Q8+spark+plug') },
+          { brand: 'NGK', part: '96210 (DILKAR6T8)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+96210+DILKAR6T8+spark+plug') },
+          { brand: 'Toyota (OEM)', part: '90919-01289', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01289+spark+plug') }
+        ],
+        companion: 'Set of 4, iridium. The factory plug is the <b>DENSO FC16HR-Q8</b> (DENSO stock 3524; Toyota 90919-01289 is the same plug in a Toyota box) — the owner\'s manual names it, so the DENSO maker row is first pick. Factory gap: <b>0.031 in. (0.8 mm)</b> — Toyota says use only iridium-tipped plugs and do not adjust the gap. The verified NGK equivalent is <b>DILKAR6T8</b> (stock 96210). <b>Warnings:</b> the 2013–2018 SK16HR11 family (90919-01233, gap 0.043 in.) is a different plug — do not use it; and 90919-01276 is not this car\'s Toyota number.'
+      },
+      {
+        partId: 'oil-filter', make: 'Subaru', model: 'Ascent', y0: 2019, y1: 2025,
+        title: 'Oil Filter — 2019–2025 Subaru Ascent (2.4L Turbo)',
+        oemBrand: 'Subaru (OEM)', oemPart: '15208AA21A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '15208AA21A', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BQX1RDFK?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57055', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57055+oil+filter') },
+          { brand: 'Subaru (OEM)', part: '15208AA21A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+15208AA21A+oil+filter') },
+          { brand: 'Subaru (OEM)', part: '15208AA15A (6-Pack)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B071J2GZYN?tag=redemptionm06-20' }
+        ],
+        companion: 'Spin-on filter — the Ascent was sold ONLY with the 2.4L turbo (FA24), so one filter covers all years. Subaru\'s current filter is <b>15208AA21A</b>, superseding 15208AA15A / 15208AA160 / 15208AA20A — any of those numbers on the box is the same application. Change the crush washer (<b>803916010</b>) with the filter. The first aftermarket pick is the <b>WIX 57055</b>: WIX\'s own catalog lists it for the Ascent FA24 by name, and its bypass is the closest aftermarket match to Subaru\'s ~23 psi spec. <b>Warnings:</b> 15208AA170 is the WRX/BRZ filter — it is NOT this car\'s filter despite the \'turbo\' listings; and the FRAM 7317 family, though FRAM lists the fitment, runs a ~13 psi bypass well under Subaru\'s spec, so no FRAM row is shown. Confirm by VIN at a Subaru dealer if in doubt.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Subaru', model: 'Ascent', y0: 2019, y1: 2025,
+        title: 'Engine Air Filter — 2019–2025 Subaru Ascent (2.4L Turbo)',
+        oemBrand: 'Subaru (OEM)', oemPart: '16546AA16A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '16546AA16A', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B072YV45X1?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA12295', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07QRB9FQR?tag=redemptionm06-20' },
+          { brand: 'Subaru (OEM)', part: '16546AA16A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+16546AA16A+air+filter') },
+          { brand: 'WIX', part: 'WA10713', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10713+air+filter') }
+        ],
+        companion: 'Panel filter in the engine airbox — Subaru <b>16546AA16A</b>, the same element as the Outback (WIX\'s own catalog lists its WA10713 cross for the Ascent FA24 by name, and the genuine Subaru listing names the Ascent). <b>Warning:</b> 16546AA12A is the previous-generation element and does NOT fit. <b>Caution:</b> some combo-kit listings swap this number with the cabin number 72880FL00A — copy numbers from here, never from kit listings.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Subaru', model: 'Ascent', y0: 2019, y1: 2025,
+        title: 'Cabin Air Filter — 2019–2025 Subaru Ascent',
+        oemBrand: 'Subaru (OEM)', oemPart: '72880FL00A',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '72880FL00A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+72880FL00A+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12436', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12436+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP10322', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10322+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Subaru <b>72880FL00A</b> (superseding 72880FL000) fits the Ascent, all years — the same filter this site lists for the Outback and Crosstrek; WIX\'s own catalog lists its WP10322 for the Ascent by name. <b>Warnings:</b> 72880FG000 is an older, half-inch-off size that does not fit, and 72880FN00A is the 2024+ Crosstrek/Impreza filter — not the Ascent. One combo kit cross-lists a Toyota CF12157 number for this car — that is a listing error; the verified FRAM cross is <b>CF12436</b>.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Subaru', model: 'Ascent', y0: 2019, y1: 2025,
+        title: 'Spark Plugs — 2019–2025 Subaru Ascent (2.4L Turbo only)',
+        oemBrand: 'Subaru (OEM)', oemPart: 'Subaru number not yet verified',
+        rows: [
+          { brand: 'NGK', part: '96698 (SILKFR8A6)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+96698+SILKFR8A6+spark+plug') }
+        ],
+        companion: 'Set of 4, Laser Iridium. Subaru\'s Ascent manuals specify NGK <b>SILKFR8A6</b> (stock 96698) for the 2.4L turbo (FA24) — that type is the specification, and the Ascent was sold with no other engine. Subaru\'s own box number for this plug is not printed yet: it waits for a dealer catalog session rather than a guess, so confirm it by VIN at a Subaru dealer if you want the Subaru-boxed plug. <b>No DENSO row exists:</b> DENSO\'s own Subaru cross list has no equivalent for this plug. <b>Warnings:</b> NGK ILKAR8H6 (96024) is a colder WRX/performance plug — it is NOT this car\'s factory specification; and 22401AA781 / SILZKAR7B11 is the old Outback 2.5L (FB25) plug mislisted for the Ascent — the Ascent has never had a 2.5L engine, so any listing pairing it with FB25/2.5L plug data is a copy-over error.'
       }
 
     ];
