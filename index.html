@@ -288,7 +288,7 @@
   <script>
     // ================= DATA =================
     var MAKES_MODELS = {
-      'Toyota': ['Camry', 'Corolla', 'Corolla Cross', 'Corolla Cross Hybrid', 'GR86', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
+      'Toyota': ['Camry', 'Corolla', 'Corolla Cross', 'Corolla Cross Hybrid', 'GR86', 'GR Supra', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
       'Honda': ['Accord', 'Accord Hybrid', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline', 'Passport'],
       'Ford': ['F-150', 'Escape', 'Bronco', 'Bronco Sport', 'Maverick', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
@@ -296,7 +296,7 @@
       'Ram': ['1500', '2500', 'ProMaster'],
       'Dodge': ['Charger', 'Challenger', 'Durango', 'Grand Caravan', 'Journey'],
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator', 'Renegade'],
-      'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
+      'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder', 'Z'],
       'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy', 'Ascent', 'BRZ', 'WRX'],
       'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid', 'Palisade'],
       'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul', 'Telluride'],
@@ -434,6 +434,7 @@
     // Batch 54 (Bronco 2021-24 NEW model x6 from Ford Bronco manuals read for all four years: oil SPLIT 2.3L spin-on FL-910-S vs 2.7L cartridge FL-2062-A with FL-500-S trap warned, air FA-2022 shared with Bronco Sport FA-1939 + Raptor FA-2058 traps warned, cabin FP-93 with FRAM CF12772 REJECTED as the Sport family, plugs engine-scoped SP-594 headline with the 2021 SP-578 manual split + Ford supersession noted per the Ranger precedent and NGK held retailer-only; Bronco Sport 2021-24 NEW model x7 verified BY NAME from its own manuals — it DIFFERS from the Escape in four places: oil FL-910-S both engines all years with NO 2023 thread split, air FA-1939 unchanged with the Escape FA-2065/2064 change warned off, cabin FP-89 2021-22 then FP-100-A 2023-24 with the FP-99 first-printing note, plugs 1.5L SP-550-X merged entry + 2.0L SP-578 2021-only then SP-594 2022-24 with SP-597-X warned off) merged 2026-11-27.
     // Batch 55 (Maverick 2022-24 NEW model x7 engine-scoped from the Maverick's OWN manuals (2022 + 2024 read directly; 2023 corroborated at identical endpoints, flagged in research): oil FL-910-S both engines with NO thread split — the Escape FL-2127 change arrives on Maverick only in 2025; air SPLIT FA-1939 EcoBoost vs FA-1948 Hybrid with WA10981 warned off the Hybrid and the Escape FA-2065/2064 change warned off entirely; cabin FP-89 every year with the Bronco Sport FP-99/FP-100-A printings warned off; plugs SPLIT SP-594 EcoBoost whole-run (never SP-578/SP-597-X) vs SP-530 Hybrid with the wide 0.049-0.053 gap; FA-1948 aftermarket + Hybrid NGK held) merged 2026-11-27.
     // Batch 56 (Santa Fe 2021-23 TM facelift filters x3 shared both engines: oil CARTRIDGE 26350-2S000 with the 2019-20 spin-on 26300-35505 change warned, air 28113-L1000 with A9100 + Hybrid L5100 traps warned, cabin 97133-L1000 with J5000 trap warned — plugs HELD both engines, manuals print no number and NGK Part Finder unreadable; the 2019-20 Santa Fe plug retry is STILL CONFLICTING in primary sources, stated plainly in research; Sorento MQ4 2021-23 NEW generation filters x3 verified BY NAME with the same three numbers on ECOGARD/K&N/FRAM-group maker data: oil 26350-2S000, air 28113-L1000, cabin 97133-L1000, old-Sorento traps warned — plugs HELD both engines, 18875-09085 candidate rests on an owner's video only) merged 2026-11-27.
+    // Batch 57 (GR Supra 2020-24 x6 engine-scoped: oil 3.0L 04152-WAA03 with MANN HU 6022 z Amazon first + HU 6013 z VW trap warned, oil 2.0L 04152-WAA01, air 3.0L 17801-WAA01 FRAM CA12628 first from the Purflux maker sheet, air 2.0L 17801-WAA02 OEM-only with conflicting crosses held, cabin 87139-WAA01 both engines, plugs 3.0L 90118-WA461 OEM-only with the NGK 94201-vs-96206 conflict held and warned; 2.0L plugs HELD entirely; Nissan Z 2023-25 oil 15208-65F1B from Nissan bulletin NPSB/24-808 with the 65F0E family explicitly invalid and warned — Z air/cabin/plugs HELD, no primary Nissan number) merged 2026-11-28.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -8925,6 +8926,118 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ECOGARD+XC11893+cabin+filter') }
         ],
         companion: 'Behind the glove box — Kia <b>97133-L1000</b>; the FRAM-group catalog bulletin ties CF12820 to this number and the Sorento IV, and FRAM fitment lists the Sorento 2021–2026 by name. <b>Traps:</b> the old Sorento\'s 97133-C5000 does NOT fit, and 97133-L1100 is not this car\'s headline number. Spark plugs are not listed yet — no Kia or NGK primary source names an MQ4 plug, so they are held rather than guessed.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'GR Supra', engine: '3.0L', y0: 2020, y1: 2024,
+        title: 'Oil Filter — 2020–2024 Toyota GR Supra 3.0L (B58)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04152-WAA03',
+        rows: [
+          { brand: 'MANN-FILTER', part: 'HU 6022 z', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07FBVHG3Z?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '04152-WAA03', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04152-WAA03+oil+filter') },
+          { brand: 'MAHLE', part: 'OX 1146 D', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MAHLE+OX+1146+D+oil+filter') },
+          { brand: 'FRAM', part: 'CH12059', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH12059+oil+filter') }
+        ],
+        companion: 'CARTRIDGE element kit — Toyota <b>04152-WAA03</b> (supersedes 04152-WAA02; BMW 11428583898 underneath — this car is BMW-built). MANN-FILTER is the OE supplier for this element and its HU 6022 z is the first pick. <b>Traps:</b> the 2.0L car\'s 04152-WAA01 element is shorter and does NOT fit; MANN HU 6013 z is a VW filter that surfaces in searches for this car and does NOT fit. Use named makers only — cheap no-name B58 elements are a documented collapse risk.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'GR Supra', engine: '2.0L', y0: 2021, y1: 2024,
+        title: 'Oil Filter — 2021–2024 Toyota GR Supra 2.0L (B48)',
+        oemBrand: 'Toyota (OEM)', oemPart: '04152-WAA01',
+        rows: [
+          { brand: 'MANN-FILTER', part: 'HU 6014/1 z', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+HU+6014+1+z+oil+filter') },
+          { brand: 'Toyota (OEM)', part: '04152-WAA01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+04152-WAA01+oil+filter') },
+          { brand: 'MAHLE', part: 'OX 813/1D', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MAHLE+OX+813+1D+oil+filter') },
+          { brand: 'FRAM', part: 'CH11913', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH11913+oil+filter') }
+        ],
+        companion: 'CARTRIDGE element kit — Toyota <b>04152-WAA01</b> (BMW 11428575211 underneath). No US 2.0L Supra exists for 2020. <b>Trap:</b> the 3.0L car\'s 04152-WAA03 / HU 6022 z element is taller (~155 mm vs ~134 mm) and does NOT fit this engine.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'GR Supra', engine: '3.0L', y0: 2020, y1: 2024,
+        title: 'Engine Air Filter — 2020–2024 Toyota GR Supra 3.0L (B58)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-WAA01',
+        rows: [
+          { brand: 'FRAM', part: 'CA12628', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12628+air+filter') },
+          { brand: 'Toyota (OEM)', part: '17801-WAA01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-WAA01+air+filter') },
+          { brand: 'MAHLE', part: 'LX 3985', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MAHLE+LX+3985+air+filter') }
+        ],
+        companion: 'Panel element 273 x 232 x 61 mm — Toyota <b>17801-WAA01</b> (BMW 13718635102), verified on the FRAM-group (Purflux) maker sheet INFO NR.1653 naming the Supra 3.0 GR. <b>Trap:</b> 17801-WAA02 is the 2.0L element — same footprint but only ~42 mm tall; performance listings that claim one element fits both ignore that height difference.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'GR Supra', engine: '2.0L', y0: 2021, y1: 2024,
+        title: 'Engine Air Filter — 2021–2024 Toyota GR Supra 2.0L (B48)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-WAA02',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-WAA02', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+17801-WAA02+air+filter') }
+        ],
+        companion: 'Panel element ~275 x 234 x 42 mm — Toyota <b>17801-WAA02</b> (BMW 13718580428). OEM row only for now: the aftermarket cross bundles for this number conflict (the BMW ...428 vs ...429 families pull different FRAM/WIX numbers), so aftermarket rows are held rather than guessed. <b>Trap:</b> 17801-WAA01 is the taller 3.0L element and does NOT fit.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Toyota', model: 'GR Supra', y0: 2020, y1: 2024,
+        title: 'Cabin Air Filter — 2020–2024 Toyota GR Supra (both engines)',
+        oemBrand: 'Toyota (OEM)', oemPart: '87139-WAA01',
+        rows: [
+          { brand: 'MANN-FILTER', part: 'CU 30 007', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+30+007+cabin+filter') },
+          { brand: 'MANN-FILTER', part: 'CUK 30 007', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CUK+30+007+cabin+filter') },
+          { brand: 'Toyota (OEM)', part: '87139-WAA01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+87139-WAA01+cabin+filter') },
+          { brand: 'MAHLE', part: 'LA 1398', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MAHLE+LA+1398+cabin+filter') }
+        ],
+        companion: 'Microfilter — Toyota <b>87139-WAA01</b> (87139-WAA02 variant; BMW 64119382885 set underneath). CU 30 007 is the plain element, CUK 30 007 the carbon version. <b>Note:</b> listings quoting BMW 64119382886 are quoting the second element of the BMW set — confirm the listing is the full set. <b>Trap:</b> generic Toyota cabin numbers (87139-0D010 family) do NOT fit this BMW-built car.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'GR Supra', engine: '3.0L', y0: 2020, y1: 2024,
+        title: 'Spark Plugs (set of 6) — 2020–2024 Toyota GR Supra 3.0L (B58)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90118-WA461',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90118-WA461', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90118-WA461+spark+plug') }
+        ],
+        companion: 'Toyota <b>90118-WA461</b> — the A90\'s plug, confirmed in DENSO\'s genuine-parts index and Toyota maintenance data. OEM row only: the NGK equivalent is CONFLICTING in primary sources (94201 is the Gen-1 B58 plug; 96206 is the Gen-2 B58TU plug this car\'s engine points to, but no NGK or Toyota primary source ties either to 90118-WA461), so the NGK row is held rather than guessed. <b>Trap:</b> NGK 94201 is mislisted for this car everywhere via copied Gen-1 B58 content — do not buy it on a retailer fitment badge. The 2.0L car\'s plugs are not listed yet (no Toyota number verified).'
+      },
+      {
+        partId: 'oil-filter', make: 'Nissan', model: 'Z', y0: 2023, y1: 2025,
+        title: 'Oil Filter — 2023–2025 Nissan Z (3.0L VR30DDTT)',
+        oemBrand: 'Nissan (OEM)', oemPart: '15208-65F1B',
+        rows: [
+          { brand: 'Nissan (OEM)', part: '15208-65F1B', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+15208-65F1B+oil+filter') },
+          { brand: 'Nissan Value Advantage', part: 'A5208-65F1PNW', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+A5208-65F1PNW+oil+filter') }
+        ],
+        companion: 'Spin-on — Nissan <b>15208-65F1B</b> (paired number 15208-65F1A), verified in Nissan\'s own bulletin NPSB/24-808 for the Z VR30DDTT with a 250 kPa relief valve. <b>Major trap:</b> 15208-65F0E — the standard Nissan filter and its whole WIX 51358 / FRAM PH7317 cross family — is explicitly NOT a valid replacement on this car (98 kPa bypass; Nissan warns it may cause premature engine wear), so no conventional aftermarket row is listed. Oil: SAE 0W-20, 5.6 qt with filter. Air filters (twin elements), cabin filter and spark plugs for this car are not listed yet — no primary Nissan source names their numbers, so they are held rather than guessed.'
       }
 
     ];
