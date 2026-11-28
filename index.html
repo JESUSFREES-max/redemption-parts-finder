@@ -288,7 +288,7 @@
   <script>
     // ================= DATA =================
     var MAKES_MODELS = {
-      'Toyota': ['Camry', 'Corolla', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
+      'Toyota': ['Camry', 'Corolla', 'Corolla Cross', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
       'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline', 'Passport'],
       'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
@@ -426,6 +426,7 @@
     // Batch 46 (RAV4 2019-24 2.5L gas NEW gen: oil spin-on 90915-YZZN1 with WL10332/PH4967 and 04152-YZZA1 + WIX 51394 traps warned, air 17801-F0050 gas-only with Hybrid 17801-F0020 trap warned, plugs 90919-01289 = DENSO FC16HR-Q8 first + NGK 96210, cabin HELD 87139-0R030 unverified; Ascent 2019-25 FA24 NEW model: oil 15208AA21A FRAM omitted w/ bypass caution, air 16546AA16A, cabin 72880FL00A, plugs NGK SILKFR8A6 96698 with Subaru-box number withheld) merged 2026-11-27.
     // Batch 47 (Highlander 2020-24 gas: V6 oil cartridge 04152-YZZA1 + plugs 90919-01263/FK20HBR8, 2.4T oil spin-on 90915-YZZN1 + plugs NGK DILZKAR8E7H with Toyota-box number withheld, shared air 17801-F0050 + cabin 87139-0E040/CF12157; Palisade + Telluride 2020-22 3.8L NEW models: oil cartridge 26320-3CKB0 with 26300-35505 spin-on trap warned, air 28113-A9100 verified per vehicle, Palisade cabin 97133-S8000; Telluride cabin + both plugs HELD on conflicting sources) merged 2026-11-27.
     // Batch 48 (Passport 2019-25 3.5L NEW model: oil 15400-PLM-A02 + air 17220-5J6-A10 + plugs 12290-R9P-A01/NGK 95350, all verified FOR THE PASSPORT BY NAME, cabin HELD like Ridgeline; Forester 2019-23 SK NEW gen: oil 15208AA21A FRAM omitted w/ bypass caution, air 16546AA16A, cabin 72880FL000 with FL00A trap warned, plugs 22401AA940/NGK DILKAR7Q8 91899 with SJ plug trap warned) merged 2026-11-27.
+    // Batch 49 (Corolla Cross 2022-25 2.0L GAS NEW model x4: oil 90915-YZZN1/WL10332 with 51394 trap warned, air 17801-F0020 GAS with Hybrid F2060 trap warned, cabin 87139-0E040 + 0R030 both Toyota-chart verified, plugs 90919-01297/DENSO FC20HR-Q8 with Hybrid 01289 trap warned; Atlas 2018-21 3.6L x3: oil 03H-115-562/MANN HU 8009 z, air 3QF-129-620, cabin 5Q0-819-644-A — plugs + 2022-23 HELD; Jetta 2019-21 1.4T x3: oil 04E-115-561-H/MANN W 712/95, air 5QM-129-620-B OEM-only, cabin qualifier 644-A/669 — plugs + 1.5T HELD) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -7600,6 +7601,176 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+22401AA940+spark+plug') }
         ],
         companion: 'Set of 4, Laser Iridium. Subaru\'s own Forester manuals (2019 and 2020, Specifications) name <b>NGK DILKAR7Q8</b> (stock 91899) for the direct-injected FB25 — Subaru number <b>22401AA940</b>. <b>Warnings:</b> the old car\'s 22401AA781 / SILZKAR7B11 is actively mislisted for this car — do not use it; and 22401AA95A, claimed by one secondary guide, is unverified. No DENSO row — DENSO\'s global cross list shows no equivalent for this plug.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'Corolla Cross', y0: 2022, y1: 2025,
+        title: 'Oil Filter — 2022–2025 Toyota Corolla Cross (2.0L Gas)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZN1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0D6SQ1M2T?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WL10332', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10332+oil+filter') },
+          { brand: 'FRAM', part: 'PH4967', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH4967+oil+filter') },
+          { brand: 'Toyota (OEM)', part: '90915-YZZN1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-YZZN1+oil+filter') }
+        ],
+        companion: 'Spin-on filter — Toyota <b>90915-YZZN1</b> (superseding 90915-YZZF2), named for the Corolla Cross in Toyota\'s own Parts &amp; Service oil-filter chart for the M20A-FKS gas engine. The correct WIX is <b>WL10332</b> — <b>WIX 51394 is the older YZZF2 cross and WIX does not list it for this car</b>. Gas and hybrid take the same oil filter.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'Corolla Cross', y0: 2022, y1: 2025,
+        title: 'Engine Air Filter — 2022–2025 Toyota Corolla Cross (2.0L Gas)',
+        oemBrand: 'Toyota (OEM)', oemPart: '17801-F0020',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '17801-F0020', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0DY8RVBT9?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA12289', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12289+air+filter') },
+          { brand: 'WIX', part: 'WA10807', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10807+air+filter') }
+        ],
+        companion: 'Panel filter — Toyota <b>17801-F0020</b>, the GAS Corolla Cross element in Toyota\'s own air-filter chart (M20A-FKS, 2022–). <b>Warning — do not copy the RAV4 pattern:</b> on this car F0020 is the GAS filter; the Hybrid takes 17801-F2060 / 17801-24040, which do NOT fit the gas car.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Toyota', model: 'Corolla Cross', y0: 2022, y1: 2025,
+        title: 'Cabin Air Filter — 2022–2025 Toyota Corolla Cross',
+        oemBrand: 'Toyota (OEM)', oemPart: '87139-0E040',
+        rows: [
+          { brand: 'FRAM', part: 'CF12157', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B07B155581?tag=redemptionm06-20' },
+          { brand: 'Toyota (OEM)', part: '87139-0E040', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+87139-0E040+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP10322', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10322+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Toyota\'s cabin-filter chart lists TWO factory elements for the Corolla Cross: charcoal <b>87139-0E040</b> (the 2022 gas row) and pollen <b>87139-0R030</b> (2023– rows) — same housing, either fits; the FRAM CF12157 row crosses the family. Premium service replacements are 87139-YZZ93 (charcoal) / 87139-YZZ83. Gas and hybrid share this filter. <b>87139-58010 does NOT belong to this car</b> — it is the Japan-built Corolla sedan element.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'Corolla Cross', y0: 2022, y1: 2025,
+        title: 'Spark Plugs — 2022–2025 Toyota Corolla Cross (2.0L Gas)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90919-01297',
+        rows: [
+          { brand: 'DENSO', part: 'FC20HR-Q8', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+FC20HR-Q8+spark+plug') },
+          { brand: 'Toyota (OEM)', part: '90919-01297', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90919-01297+spark+plug') }
+        ],
+        companion: 'Set of 4. Toyota\'s spark-plug chart names <b>90919-01297 = DENSO FC20HR-Q8</b> for the gas M20A-FKS. <b>Big trap:</b> most listings push 90919-01289 / FC16HR-Q8 for \'Corolla Cross\' — that is the HYBRID (M20A-FXS) plug and is WRONG for the gas car. No NGK row — no NGK primary-catalog pairing to this plug was verified.'
+      },
+      {
+        partId: 'oil-filter', make: 'Volkswagen', model: 'Atlas', y0: 2018, y1: 2021,
+        title: 'Oil Filter — 2018–2021 Volkswagen Atlas (3.6L VR6)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '03H-115-562',
+        rows: [
+          { brand: 'MANN-FILTER', part: 'HU 8009 z', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B012730PP2?tag=redemptionm06-20' },
+          { brand: 'Volkswagen (OEM)', part: '03H-115-562', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+03H+115+562+oil+filter') }
+        ],
+        companion: 'Cartridge element — VW <b>03H 115 562</b>, listed for the 3.6L in Volkswagen of America\'s Atlas charts for 2018, 2019, 2020 and 2021. MANN HU 8009 z is the maker-verified equivalent and first pick. <b>Warnings:</b> \'03H 115 562 B\' does not exist in any VW source; the 2.0T Atlas takes a different filter (06K 115 562 family). Scoped 2018–2021 — the 2022–2023 charts were not verified, so those years are not claimed here.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Volkswagen', model: 'Atlas', y0: 2018, y1: 2021,
+        title: 'Engine Air Filter — 2018–2021 Volkswagen Atlas (3.6L VR6)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '3QF-129-620',
+        rows: [
+          { brand: 'FRAM', part: 'CA12293', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12293+air+filter') },
+          { brand: 'Volkswagen (OEM)', part: '3QF-129-620', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+3QF+129+620+air+filter') }
+        ],
+        companion: 'Panel filter — VW <b>3QF 129 620</b>; Volkswagen\'s Atlas charts list this one element under BOTH Atlas engines. <b>Do NOT use the Tiguan\'s 5Q0-129-620-B</b> — different filter. FRAM CA12293 is verified in the FRAM-group maker bulletin cross for 3QF129620.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Volkswagen', model: 'Atlas', y0: 2018, y1: 2021,
+        title: 'Cabin Air Filter — 2018–2021 Volkswagen Atlas (3.6L VR6)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-819-644-A',
+        rows: [
+          { brand: 'MANN-FILTER', part: 'CU 26 009', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+26+009+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP10159', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10159+cabin+air+filter') },
+          { brand: 'Volkswagen (OEM)', part: '5Q0-819-644-A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-644-A+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box. Volkswagen\'s Atlas charts list ONE cabin filter for this car — pollen element <b>5Q0 819 644 A</b> (unlike the Tiguan\'s three variants). MANN CU 26 009 is the direct maker cross; the charcoal upgrade is MANN CUK 26 009.'
+      },
+      {
+        partId: 'oil-filter', make: 'Volkswagen', model: 'Jetta', y0: 2019, y1: 2021,
+        title: 'Oil Filter — 2019–2021 Volkswagen Jetta (1.4T)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '04E-115-561-H',
+        rows: [
+          { brand: 'MANN-FILTER', part: 'W 712/95', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00K3KTMRO?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WL7503', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL7503+oil+filter') },
+          { brand: 'FRAM', part: 'PH11457', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH11457+oil+filter') },
+          { brand: 'Volkswagen (OEM)', part: '04E-115-561-H', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+04E+115+561+H+oil+filter') }
+        ],
+        companion: 'Spin-on filter — VW <b>04E 115 561 H</b>, named for the 1.4T Jetta in Volkswagen of America\'s charts for 2019, 2020 and 2021. MANN W 712/95 first pick (maker equivalent, Amazon). Scoped to the 1.4T — the 2022+ 1.5T numbers are held until a VW chart for those years is verified.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Volkswagen', model: 'Jetta', y0: 2019, y1: 2021,
+        title: 'Engine Air Filter — 2019–2021 Volkswagen Jetta (1.4T)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '5QM-129-620-B',
+        rows: [
+          { brand: 'Volkswagen (OEM)', part: '5QM-129-620-B', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5QM+129+620+B+air+filter') }
+        ],
+        companion: 'Panel filter — VW <b>5QM 129 620 B</b>, the Jetta 1.4T element in Volkswagen\'s own charts. <b>Traps:</b> the 5Q0-129-620-B/C/D and 5QM-129-620-A family (the Tiguan rows) does NOT cross to this B element, and the Taos chart\'s 5QM-129-629-B is a different part. OEM row only — no maker-catalog equivalent was verified for this exact number.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Volkswagen', model: 'Jetta', y0: 2019, y1: 2021,
+        title: 'Cabin Air Filter — 2019–2021 Volkswagen Jetta (1.4T)',
+        oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-819-644-A',
+        rows: [
+          { brand: 'Volkswagen (OEM)', part: '5Q0-819-644-A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-644-A+cabin+air+filter') },
+          { brand: 'MANN-FILTER', part: 'CU 26 009', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+26+009+cabin+air+filter') }
+        ],
+        qualifier: {
+          question: 'Does your Jetta have electronic climate control regulation?',
+          helpText: 'Volkswagen of America\'s Jetta charts list two cabin filters by equipment: the standard pollen filter <b>5Q0 819 644 A</b> for cars without electronic regulation, and the upgraded <b>5Q0 819 669</b> element for cars with it (the 2021 chart lists 669 only). Not sure? The standard filter is the safe default — or text De a photo of your old filter.',
+          options: [
+            { label: 'Standard pollen filter (no electronic regulation)', useEntry: true },
+            { label: 'Electronic climate control regulation', oemBrand: 'Volkswagen (OEM)', oemPart: '5Q0-819-669',
+              rows: [
+                { brand: 'Volkswagen (OEM)', part: '5Q0-819-669', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-669+cabin+air+filter') },
+                { brand: 'MANN-FILTER', part: 'CUK 26 009', price: 'See today\'s price', where: 'eBay',
+                  url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CUK+26+009+cabin+air+filter') }
+              ],
+              note: 'The upgraded odor/allergen element — the only cabin filter Volkswagen\'s 2021 Jetta chart lists.' }
+          ]
+        },
+        companion: 'Behind the glove box. Volkswagen\'s Jetta charts (2019/2020/2021 read) split this filter by equipment — answer the question above, or take the standard element. MANN CU 26 009 / CUK 26 009 and WIX WP10159 cross the family in maker data.'
       }
 
     ];
