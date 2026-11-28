@@ -289,7 +289,7 @@
     // ================= DATA =================
     var MAKES_MODELS = {
       'Toyota': ['Camry', 'Corolla', 'Corolla Cross', 'Corolla Cross Hybrid', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
-      'Honda': ['Accord', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline', 'Passport'],
+      'Honda': ['Accord', 'Accord Hybrid', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline', 'Passport'],
       'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
@@ -428,6 +428,7 @@
     // Batch 48 (Passport 2019-25 3.5L NEW model: oil 15400-PLM-A02 + air 17220-5J6-A10 + plugs 12290-R9P-A01/NGK 95350, all verified FOR THE PASSPORT BY NAME, cabin HELD like Ridgeline; Forester 2019-23 SK NEW gen: oil 15208AA21A FRAM omitted w/ bypass caution, air 16546AA16A, cabin 72880FL000 with FL00A trap warned, plugs 22401AA940/NGK DILKAR7Q8 91899 with SJ plug trap warned) merged 2026-11-27.
     // Batch 49 (Corolla Cross 2022-25 2.0L GAS NEW model x4: oil 90915-YZZN1/WL10332 with 51394 trap warned, air 17801-F0020 GAS with Hybrid F2060 trap warned, cabin 87139-0E040 + 0R030 both Toyota-chart verified, plugs 90919-01297/DENSO FC20HR-Q8 with Hybrid 01289 trap warned; Atlas 2018-21 3.6L x3: oil 03H-115-562/MANN HU 8009 z, air 3QF-129-620, cabin 5Q0-819-644-A — plugs + 2022-23 HELD; Jetta 2019-21 1.4T x3: oil 04E-115-561-H/MANN W 712/95, air 5QM-129-620-B OEM-only, cabin qualifier 644-A/669 — plugs + 1.5T HELD) merged 2026-11-27.
     // Batch 50 (Grand Cherokee WL 2021-25 3.6L x3 NEW gen: oil 68191349AC carryover verified FOR THE WL with 5.0 qt note, air 68542769AA NEW with WK2 trap warned, plugs SP225755AB/NGK 7751 — cabin HELD 68608193AA vs 68542125AA conflict; Corolla Cross Hybrid 2023-25 NEW model x4: oil YZZN1 shared, air 17801-F2060/24040 split with gas F0020 trap warned, cabin shared 0E040/0R030, plugs 90919-01289/FC16HR-Q8 with gas 01297 mirror trap; Atlas 2.0T 2018-21 x4 engine-scoped: oil 06K-115-562/MANN HU 6013 z with 562L artifact resolved, air + cabin shared with 3.6L, plugs NGK ILFER7B8EG 95749 with VW-box number withheld + PLFER trap warned; Batch 49 Atlas/Jetta entries gained engine scope) merged 2026-11-27.
+// Batch 51 (Accord 2023-25 1.5T x4 NEW gen: oil PLM-A02 unchanged, air CHANGED 17220-64A-A00 with 6A0 + Hybrid 6MA traps warned, cabin CHANGED 80291-TF3-E01 superseding TBA-A11 with SDA-407 trap warned, plugs UNCHANGED 12290-6A0-A01/NGK 92411 with CR-V contrast; Accord Hybrid 2023-25 NEW model x4: oil shared, air 17220-6MA-J01 OEM-only, cabin shared TF3-E01, plugs 12290-6MA-J01/NGK DILZKAR7G11Y stock number withheld; Accord depth x2: coolant Type 2 OL999-9011 2018-25 with Toyota SLLC2 trap warned, CVT HCF-2 08200-HCF2 2018-25 with 08200-9020 bottle flag + Type 2.0/DW-1 traps warned; Wrangler JL 2.0L Turbo x4 engine-scoped: oil SPIN-ON 04892339AA/4892339BE with 3.6L cartridge trap + 5W-30 spec, air + cabin shared with 3.6L verified by name, plugs 68292346AA/NGK 90219 ILZKR7G7G 0.026 gap 60k with SP225755AB + SILZKR7B11 traps warned; existing Wrangler 3.6L x4 gained engine scope; Gladiator JT 3.6L x4 verified BY NAME: oil 68191349AC, air 68257030AA, plugs SP225755AB/NGK 7751 via TSB 09-013-20, cabin 68301863AA scoped 2020-2022 ONLY with supersession changeover held) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -2201,7 +2202,7 @@
         companion: 'Set of 4. Ford lists <b>SP-578</b> for the 2.3L EcoBoost — the same plug this site lists for the F-150 3.5L EcoBoost. Factory gap: 0.028–0.031 in. The 3.0L Explorer takes a different plug — do not cross them.'
       },
       {
-        partId: 'oil-filter', make: 'Jeep', model: 'Wrangler', y0: 2019, y1: 2023,
+        partId: 'oil-filter', make: 'Jeep', model: 'Wrangler', engine: '3.6L V6', y0: 2019, y1: 2023,
         title: 'Oil Filter — 2019–2023 Jeep Wrangler JL (3.6L V6)',
         oemBrand: 'Mopar (OEM)', oemPart: '68191349AC',
         rows: [
@@ -2214,7 +2215,7 @@
         companion: 'Cartridge filter on top of the engine — the same <b>68191349AC</b> this site lists for the Grand Cherokee 3.6L. The 2011–2013 Pentastar uses a different cartridge — do not mix them.'
       },
       {
-        partId: 'engine-air-filter', make: 'Jeep', model: 'Wrangler', y0: 2019, y1: 2023,
+        partId: 'engine-air-filter', make: 'Jeep', model: 'Wrangler', engine: '3.6L V6', y0: 2019, y1: 2023,
         title: 'Engine Air Filter — 2019–2023 Jeep Wrangler JL (3.6L V6)',
         oemBrand: 'Mopar (OEM)', oemPart: '68257030AA',
         rows: [
@@ -2231,7 +2232,7 @@
         companion: 'Panel filter. The JL 3.6L (and 2.0L) share element <b>68257030AA</b>; the 3.0L diesel Wrangler takes a different filter.'
       },
       {
-        partId: 'cabin-air-filter', make: 'Jeep', model: 'Wrangler', y0: 2019, y1: 2023,
+        partId: 'cabin-air-filter', make: 'Jeep', model: 'Wrangler', engine: '3.6L V6', y0: 2019, y1: 2023,
         title: 'Cabin Air Filter — 2019–2023 Jeep Wrangler JL (3.6L V6)',
         oemBrand: 'Mopar (OEM)', oemPart: '68301863AA',
         rows: [
@@ -2248,7 +2249,7 @@
         companion: 'The JL cabin filter is NOT the same as the older JK Wrangler\'s — order by the JL number <b>68301863AA</b>.'
       },
       {
-        partId: 'spark-plugs', make: 'Jeep', model: 'Wrangler', y0: 2019, y1: 2023,
+        partId: 'spark-plugs', make: 'Jeep', model: 'Wrangler', engine: '3.6L V6', y0: 2019, y1: 2023,
         title: 'Spark Plugs — 2019–2023 Jeep Wrangler JL (3.6L V6)',
         oemBrand: 'Mopar (OEM)', oemPart: 'SP225755AB',
         rows: [
@@ -7941,6 +7942,290 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95749+ILFER7B8EG+spark+plug') }
         ],
         companion: 'Set of 4. NGK\'s own catalog lists <b>ILFER7B8EG</b> (stock 95749, gap 0.032 in., torque 30 Nm) for the Atlas 2.0L for every year 2018–2021 with no split. The Volkswagen-boxed plug number is not stated in any VW source found, so it is withheld rather than guessed — the NGK is the plug-maker original. <b>Trap:</b> NGK PLFER7A8EG / 94833 belongs to other EA888 engines and is NOT the Atlas plug.'
+      },
+      {
+        partId: 'oil-filter', make: 'Honda', model: 'Accord', y0: 2023, y1: 2025,
+        title: 'Oil Filter — 2023–2025 Honda Accord (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '15400-PLM-A02',
+        rows: [
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00BFDFJA2?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57356XP', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5SZN9S?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+15400-PLM-A02+oil+filter') },
+          { brand: 'FRAM', part: 'PH7317', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH7317+oil+filter') }
+        ],
+        companion: 'Spin-on filter — Honda <b>15400-PLM-A02</b> did NOT change for the 11th generation (Honda dealer maintenance data read from the owner\'s manual). Same filter as the 2018–2022 car; oil is 0W-20, 3.7 qt with filter.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Honda', model: 'Accord', y0: 2023, y1: 2025,
+        title: 'Engine Air Filter — 2023–2025 Honda Accord (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '17220-64A-A00',
+        rows: [
+          { brand: 'Honda (OEM)', part: '17220-64A-A00', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+17220-64A-A00+air+filter') },
+          { brand: 'K&N', part: '33-5120', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=K%26N+33-5120+air+filter') }
+        ],
+        companion: 'Panel filter — the air filter CHANGED for this generation: Honda <b>17220-64A-A00</b>. <b>Warnings:</b> the 2018–2022 filter 17220-6A0-A00 does NOT fit, and 17220-6MA-J01 is the Hybrid\'s filter — combo kits repeatedly bundle it with 1.5T parts. The K&N row is their washable panel, cross-verified against this Honda number on K&N\'s own product data.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Honda', model: 'Accord', y0: 2023, y1: 2025,
+        title: 'Cabin Air Filter — 2023–2025 Honda Accord',
+        oemBrand: 'Honda (OEM)', oemPart: '80291-TF3-E01',
+        rows: [
+          { brand: 'ECOGARD', part: 'XC36080', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00I8IU150?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '80291-TF3-E01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+80291-TF3-E01+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF11182', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11182+cabin+filter') },
+          { brand: 'FRAM', part: 'CF11182', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00EAOIRI4?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '49101', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+49101+cabin+filter') },
+          { brand: 'EPAuto', part: 'CP182', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B074BHR574?tag=redemptionm06-20' }
+        ],
+        companion: 'Behind the glove box — the cabin filter CHANGED for this generation: current Honda service number <b>80291-TF3-E01</b> (it supersedes the factory-fitted 80292-TBA-A11). <b>Warning:</b> the 2018–2022 car\'s 80292-SDA-407 / FRAM CF10134 does NOT fit the 11th-gen housing. ECOGARD Amazon row is first pick.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Honda', model: 'Accord', y0: 2023, y1: 2025,
+        title: 'Spark Plugs — 2023–2025 Honda Accord (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: '12290-6A0-A01',
+        rows: [
+          { brand: 'Honda (OEM)', part: '12290-6A0-A01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+12290-6A0-A01+spark+plug') },
+          { brand: 'NGK', part: '92411 DILKAR8P8SY', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+DILKAR8P8SY+spark+plug') },
+          { brand: 'MEYNSSHA', part: '92411 DILKAR8P8SY (4-Pack)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0DT9TKFZ4?tag=redemptionm06-20' }
+        ],
+        companion: 'Set of 4. Unlike the CR-V, the Accord 1.5T plug CARRIES OVER from 2018–2022: Honda <b>12290-6A0-A01</b> = <b>NGK DILKAR8P8SY (stock 92411)</b>. <b>Traps:</b> 12290-5PA-A01 / ILZKAR8J8SY is a different Honda plug, and 12290-59B-003 is an older Civic plug — neither is this car. Honda publishes no gap figure for this plug, so none is printed.'
+      },
+      {
+        partId: 'oil-filter', make: 'Honda', model: 'Accord Hybrid', y0: 2023, y1: 2025,
+        title: 'Oil Filter — 2023–2025 Honda Accord Hybrid (2.0L)',
+        oemBrand: 'Honda (OEM)', oemPart: '15400-PLM-A02',
+        rows: [
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00BFDFJA2?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '57356XP', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5SZN9S?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '15400-PLM-A02', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+15400-PLM-A02+oil+filter') },
+          { brand: 'FRAM', part: 'PH7317', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH7317+oil+filter') }
+        ],
+        companion: 'Spin-on filter — Honda <b>15400-PLM-A02</b>, the same filter as the 1.5T car (Honda\'s 2025 parts-catalog data for the Hybrid). Oil capacity differs from the turbo car: 4.2 qt with filter.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Honda', model: 'Accord Hybrid', y0: 2023, y1: 2025,
+        title: 'Engine Air Filter — 2023–2025 Honda Accord Hybrid (2.0L)',
+        oemBrand: 'Honda (OEM)', oemPart: '17220-6MA-J01',
+        rows: [
+          { brand: 'Honda (OEM)', part: '17220-6MA-J01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+17220-6MA-J01+air+filter') }
+        ],
+        companion: 'Panel filter — the Hybrid takes its OWN element, Honda <b>17220-6MA-J01</b> (Honda 2025 parts-catalog data). <b>Warning:</b> the 1.5T car\'s 17220-64A-A00 does NOT fit the Hybrid, whatever combo-kit listings claim. OEM row only: no maker-catalog aftermarket cross was verified for this number.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Honda', model: 'Accord Hybrid', y0: 2023, y1: 2025,
+        title: 'Cabin Air Filter — 2023–2025 Honda Accord Hybrid',
+        oemBrand: 'Honda (OEM)', oemPart: '80291-TF3-E01',
+        rows: [
+          { brand: 'ECOGARD', part: 'XC36080', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00I8IU150?tag=redemptionm06-20' },
+          { brand: 'Honda (OEM)', part: '80291-TF3-E01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+80291-TF3-E01+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF11182', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF11182+cabin+filter') },
+          { brand: 'FRAM', part: 'CF11182', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00EAOIRI4?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '49101', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+49101+cabin+filter') },
+          { brand: 'EPAuto', part: 'CP182', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B074BHR574?tag=redemptionm06-20' }
+        ],
+        companion: 'Behind the glove box — shared with the 1.5T car: current Honda service number <b>80291-TF3-E01</b> (supersedes 80292-TBA-A11). ECOGARD Amazon row is first pick.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Honda', model: 'Accord Hybrid', y0: 2023, y1: 2025,
+        title: 'Spark Plugs — 2023–2025 Honda Accord Hybrid (2.0L)',
+        oemBrand: 'Honda (OEM)', oemPart: '12290-6MA-J01',
+        rows: [
+          { brand: 'NGK', part: 'DILZKAR7G11Y', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+DILZKAR7G11Y+spark+plug') },
+          { brand: 'Honda (OEM)', part: '12290-6MA-J01', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+12290-6MA-J01+spark+plug') }
+        ],
+        companion: 'Set of 4. Honda <b>12290-6MA-J01</b> = <b>NGK DILZKAR7G11Y</b> (Honda dealer data from the 2025 parts catalog; the NGK stock number was not retrieved from NGK\'s own data, so none is printed). <b>Trap:</b> the 1.5T plug 12290-6A0-A01 / DILKAR8P8SY is a different plug — do not mix them.'
+      },
+      {
+        partId: 'coolant-antifreeze', make: 'Honda', model: 'Accord', y0: 2018, y1: 2025,
+        title: 'Coolant / Antifreeze — 2018–2025 Honda Accord (1.5L Turbo)',
+        oemBrand: 'Honda (OEM)', oemPart: 'OL999-9011',
+        rows: [
+          { brand: 'Honda (OEM)', part: 'OL999-9011', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+OL999-9011+coolant+Type+2') }
+        ],
+        companion: 'Honda <b>Long Life Antifreeze/Coolant Type 2</b> (blue, 50/50 premixed, 1-gallon bottle <b>OL999-9011</b>) — the fluid Honda\'s manuals specify for this Accord (11th-gen change capacity 1.61 US gal incl. reserve tank). The bottle number is named in American Honda service bulletins. <b>Trap:</b> 00272-SLLC2 is TOYOTA pink coolant, not Honda\'s, despite the similar naming. OEM row only: no maker-verified equivalent was confirmed for this car.'
+      },
+      {
+        partId: 'transmission-fluid', make: 'Honda', model: 'Accord', y0: 2018, y1: 2025,
+        title: 'Transmission Fluid (CVT HCF-2) — 2018–2025 Honda Accord (1.5L Turbo, CVT)',
+        oemBrand: 'Honda (OEM)', oemPart: '08200-HCF2',
+        rows: [
+          { brand: 'Honda (OEM)', part: '08200-HCF2', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Honda+08200-HCF2+HCF-2+CVT+fluid') }
+        ],
+        companion: 'The 1.5T Accord\'s CVT takes <b>Honda HCF-2 only</b> (change capacity 3.9 US qt) — American Honda TSB 13-053 names the HCF-2 bottle <b>08200-HCF2</b>; American Honda bulletin 21-047 cites bottle 08200-9020 as HCF-2, so match the HCF-2 label, not just a bottle number. <b>Serious traps:</b> ATF Type 2.0 (08200-9015) is the 2.0T 10-speed\'s fluid and DW-1 (08200-9008) is the older automatic\'s — neither belongs in this CVT.'
+      },
+      {
+        partId: 'oil-filter', make: 'Jeep', model: 'Wrangler', engine: '2.0L Turbo', y0: 2019, y1: 2023,
+        title: 'Oil Filter — 2019–2023 Jeep Wrangler JL (2.0L Turbo)',
+        oemBrand: 'Mopar (OEM)', oemPart: '04892339AA',
+        rows: [
+          { brand: 'Mopar', part: '04892339AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+04892339AA+oil+filter') },
+          { brand: 'WIX', part: '57060', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57060+oil+filter') }
+        ],
+        companion: '<b>The big JL trap:</b> the 2.0L Turbo takes a conventional <b>spin-on</b> filter — Mopar <b>04892339AA</b> (current number 4892339BE, MO-339 family) — NOT the 3.6L\'s top-mount cartridge 68191349AC. Dealer maintenance tables list 4892339BE for the Wrangler 2.0L by name. Oil also differs: 5W-30 full synthetic (MS-13340), 5.0 qt — not the 3.6L\'s 0W-20.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Jeep', model: 'Wrangler', engine: '2.0L Turbo', y0: 2019, y1: 2023,
+        title: 'Engine Air Filter — 2019–2023 Jeep Wrangler JL (2.0L Turbo)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68257030AA',
+        rows: [
+          { brand: 'Mopar (OEM)', part: '68257030AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68257030AA+air+filter') },
+          { brand: 'WIX', part: 'WA10841', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10841+air+filter') },
+          { brand: 'FRAM', part: 'CA12373', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12373+air+filter') }
+        ],
+        companion: 'Panel filter — SHARED with the 3.6L: dealer tables list Mopar <b>68257030AA</b> for both JL engines by name. The 3.0L diesel Wrangler takes a different filter.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Jeep', model: 'Wrangler', engine: '2.0L Turbo', y0: 2019, y1: 2023,
+        title: 'Cabin Air Filter — 2019–2023 Jeep Wrangler JL (2.0L Turbo)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68301863AA',
+        rows: [
+          { brand: 'Mopar (OEM)', part: '68301863AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68301863AA+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12450', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12450+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP10371', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10371+cabin+air+filter') }
+        ],
+        companion: 'The JL cabin element is not engine-specific — Baldwin\'s catalog names the Wrangler 2.0L for Mopar <b>68301863AA</b>. It is NOT the older JK Wrangler\'s filter.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Jeep', model: 'Wrangler', engine: '2.0L Turbo', y0: 2019, y1: 2023,
+        title: 'Spark Plugs — 2019–2023 Jeep Wrangler JL (2.0L Turbo)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68292346AA',
+        rows: [
+          { brand: 'NGK', part: '90219 (ILZKR7G7G)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+90219+ILZKR7G7G+spark+plug') },
+          { brand: 'Mopar (OEM)', part: '68292346AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68292346AA+spark+plug') }
+        ],
+        companion: 'Set of 4. Mopar <b>68292346AA</b> = <b>NGK ILZKR7G7G (stock 90219)</b>, pre-gapped 0.026 in., 60,000-mile interval (dealer tables + NGK\'s own catalog). <b>Traps:</b> the 3.6L plug SP225755AB / NGK 7751 does NOT fit this engine, and neither does SILZKR7B11, whatever combined-engine gap guides claim.'
+      },
+      {
+        partId: 'oil-filter', make: 'Jeep', model: 'Gladiator', y0: 2020, y1: 2023,
+        title: 'Oil Filter — 2020–2023 Jeep Gladiator JT (3.6L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68191349AC',
+        rows: [
+          { brand: 'Mopar (OEM)', part: '68191349AC', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00ED2I8KK?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WL10010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10010+oil+filter') }
+        ],
+        companion: 'Top-mount cartridge — Mopar <b>68191349AC</b>, verified FOR THE GLADIATOR by name in dealer maintenance tables (not copied from the Wrangler). 5.0 qt of 0W-20 (MS-6395).'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Jeep', model: 'Gladiator', y0: 2020, y1: 2023,
+        title: 'Engine Air Filter — 2020–2023 Jeep Gladiator JT (3.6L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68257030AA',
+        rows: [
+          { brand: 'Mopar (OEM)', part: '68257030AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68257030AA+air+filter') },
+          { brand: 'WIX', part: 'WA10841', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10841+air+filter') },
+          { brand: 'FRAM', part: 'CA12373', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12373+air+filter') }
+        ],
+        companion: 'Panel filter — Mopar <b>68257030AA</b>, verified FOR THE GLADIATOR by name in dealer maintenance tables.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Jeep', model: 'Gladiator', y0: 2020, y1: 2022,
+        title: 'Cabin Air Filter — 2020–2022 Jeep Gladiator JT (3.6L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68301863AA',
+        rows: [
+          { brand: 'Mopar (OEM)', part: '68301863AA', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68301863AA+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12450', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12450+cabin+air+filter') },
+          { brand: 'WIX', part: 'WP10371', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10371+cabin+air+filter') }
+        ],
+        companion: 'Mopar <b>68301863AA</b> — Baldwin and WIX catalog data name the Gladiator 3.6L for this number in 2020–2022. <b>Scope warning:</b> this entry stops at 2022 — the Gladiator\'s Mopar cabin number was superseded (68535621AA, then 68565698AA) and the changeover year is not pinned by a primary source, so 2023+ is held rather than guessed.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Jeep', model: 'Gladiator', y0: 2020, y1: 2023,
+        title: 'Spark Plugs — 2020–2023 Jeep Gladiator JT (3.6L V6)',
+        oemBrand: 'Mopar (OEM)', oemPart: 'SP225755AB',
+        rows: [
+          { brand: 'NGK', part: '7751', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B002QCT4AC?tag=redemptionm06-20' },
+          { brand: 'NGK', part: '7751', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+7751+spark+plug') },
+          { brand: 'Mopar (OEM)', part: 'SP225755AB', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+SP225755AB+spark+plug') }
+        ],
+        companion: 'Set of 6. Mopar <b>SP225755AB</b> = NGK 7751 — FCA TSB 09-013-20 Rev. A names the (JT) Gladiator for this plug family, and dealer Gladiator tables list SP225755AB by name. 100,000-mile interval. Check the gap against the under-hood emissions label.'
       }
 
     ];
