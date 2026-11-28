@@ -298,8 +298,8 @@
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator', 'Renegade'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder', 'Z'],
       'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy', 'Ascent', 'BRZ', 'WRX'],
-      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid', 'Palisade'],
-      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul', 'Telluride'],
+      'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid', 'Palisade', 'Kona'],
+      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul', 'Telluride', 'Seltos'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
       'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Atlas Cross Sport', 'Golf'],
       'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
@@ -435,6 +435,7 @@
     // Batch 55 (Maverick 2022-24 NEW model x7 engine-scoped from the Maverick's OWN manuals (2022 + 2024 read directly; 2023 corroborated at identical endpoints, flagged in research): oil FL-910-S both engines with NO thread split — the Escape FL-2127 change arrives on Maverick only in 2025; air SPLIT FA-1939 EcoBoost vs FA-1948 Hybrid with WA10981 warned off the Hybrid and the Escape FA-2065/2064 change warned off entirely; cabin FP-89 every year with the Bronco Sport FP-99/FP-100-A printings warned off; plugs SPLIT SP-594 EcoBoost whole-run (never SP-578/SP-597-X) vs SP-530 Hybrid with the wide 0.049-0.053 gap; FA-1948 aftermarket + Hybrid NGK held) merged 2026-11-27.
     // Batch 56 (Santa Fe 2021-23 TM facelift filters x3 shared both engines: oil CARTRIDGE 26350-2S000 with the 2019-20 spin-on 26300-35505 change warned, air 28113-L1000 with A9100 + Hybrid L5100 traps warned, cabin 97133-L1000 with J5000 trap warned — plugs HELD both engines, manuals print no number and NGK Part Finder unreadable; the 2019-20 Santa Fe plug retry is STILL CONFLICTING in primary sources, stated plainly in research; Sorento MQ4 2021-23 NEW generation filters x3 verified BY NAME with the same three numbers on ECOGARD/K&N/FRAM-group maker data: oil 26350-2S000, air 28113-L1000, cabin 97133-L1000, old-Sorento traps warned — plugs HELD both engines, 18875-09085 candidate rests on an owner's video only) merged 2026-11-27.
     // Batch 57 (GR Supra 2020-24 x6 engine-scoped: oil 3.0L 04152-WAA03 with MANN HU 6022 z Amazon first + HU 6013 z VW trap warned, oil 2.0L 04152-WAA01, air 3.0L 17801-WAA01 FRAM CA12628 first from the Purflux maker sheet, air 2.0L 17801-WAA02 OEM-only with conflicting crosses held, cabin 87139-WAA01 both engines, plugs 3.0L 90118-WA461 OEM-only with the NGK 94201-vs-96206 conflict held and warned; 2.0L plugs HELD entirely; Nissan Z 2023-25 oil 15208-65F1B from Nissan bulletin NPSB/24-808 with the 65F0E family explicitly invalid and warned — Z air/cabin/plugs HELD, no primary Nissan number) merged 2026-11-28.
+    // Batch 58 (Kona 2018-23 2.0L x3: oil 26300-35505 WIX 51334XP Amazon first, air 28113-F2000 ECOGARD XA10578 Amazon first, cabin 97133-D1000 FRAM CF12160 first, plugs HELD retailer-tier only with the 1.6T SILZKR8E8G trap; Seltos 2021-24 2.0L x3 verified BY NAME: oil 26300-35505, air 28113-Q5000 OEM first (different headline than Kona), cabin 97133-J9000 FRAM first, plugs HELD independently; Wrangler JL depth: coolant MS.90032 OAT premix 68163849AB Amazon first with HOAT traps warned, front pads QUALIFIER heavy-duty 68383243AB PowerStop 17-1589 Amazon first with BRY standard variant note-only HELD, rear pads QUALIFIER heavy-duty 68386838AD Akebono ACT2186 first + standard 68385238AC ACT2172 variant + 350mm BR3/4/5 note-only HELD; serpentine belts HELD both engines) merged 2026-11-28.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -9038,6 +9039,187 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Nissan+A5208-65F1PNW+oil+filter') }
         ],
         companion: 'Spin-on — Nissan <b>15208-65F1B</b> (paired number 15208-65F1A), verified in Nissan\'s own bulletin NPSB/24-808 for the Z VR30DDTT with a 250 kPa relief valve. <b>Major trap:</b> 15208-65F0E — the standard Nissan filter and its whole WIX 51358 / FRAM PH7317 cross family — is explicitly NOT a valid replacement on this car (98 kPa bypass; Nissan warns it may cause premature engine wear), so no conventional aftermarket row is listed. Oil: SAE 0W-20, 5.6 qt with filter. Air filters (twin elements), cabin filter and spark plugs for this car are not listed yet — no primary Nissan source names their numbers, so they are held rather than guessed.'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Kona', engine: '2.0L', y0: 2018, y1: 2023,
+        title: 'Oil Filter — 2018–2023 Hyundai Kona 2.0L',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'WIX', part: '51334XP', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5T79PS?tag=redemptionm06-20' },
+          { brand: 'Hyundai/Kia (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B077W4K176?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'PH3593A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3593A+oil+filter') },
+          { brand: 'ECOGARD', part: 'X4459', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ECOGARD+X4459+oil+filter') }
+        ],
+        companion: 'Spin-on — Hyundai <b>26300-35505</b> (supersedes -35504); WIX\'s own application data names the Kona 2.0L for its 51334 cross, and the WIX row leads on price and shipping. <b>Trap:</b> the 1.6L Turbo car\'s parts do not carry to this 2.0L MPI engine. Spark plugs are not listed yet — the candidate NGK number rests on retailer lists only, so plugs are held rather than guessed.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Hyundai', model: 'Kona', engine: '2.0L', y0: 2018, y1: 2023,
+        title: 'Engine Air Filter — 2018–2023 Hyundai Kona 2.0L',
+        oemBrand: 'Hyundai (OEM)', oemPart: '28113-F2000',
+        rows: [
+          { brand: 'ECOGARD', part: 'XA10578', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B072FRWWLH?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '28113-F2000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+28113-F2000+air+filter') },
+          { brand: 'WIX', part: 'WA10420', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10420+air+filter') },
+          { brand: 'FRAM', part: 'CA12057', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12057+air+filter') },
+          { brand: 'K&N', part: '33-5050', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01MU394WL?tag=redemptionm06-20' }
+        ],
+        companion: 'Panel filter — Hyundai <b>28113-F2000</b>; WIX\'s own data names the 2018–2023 Kona 2.0L for WA10420, and ECOGARD\'s own listing names this car for XA10578 (first pick). <b>Traps:</b> the 2024+ Kona\'s 28113-AA100 and the Tucson\'s 28113-D3100 do NOT fit this car.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Hyundai', model: 'Kona', engine: '2.0L', y0: 2018, y1: 2023,
+        title: 'Cabin Air Filter — 2018–2023 Hyundai Kona',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97133-D1000',
+        rows: [
+          { brand: 'FRAM', part: 'CF12160', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12160+cabin+filter') },
+          { brand: 'Hyundai (OEM)', part: '97133-D1000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+97133-D1000+cabin+filter') },
+          { brand: 'WIX', part: 'WP10265', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10265+cabin+filter') }
+        ],
+        companion: 'Behind the glove box — Hyundai <b>97133-D1000</b>, verified FOR THE KONA by name in the CF12160 fit lists (97133-1R000 is an equivalent reference for the same element). <b>Trap:</b> 97133-L1000 belongs to other Hyundai/Kia cars, not this Kona. No ECOGARD row: its two candidate numbers conflict in cross lists, so that row is held.'
+      },
+      {
+        partId: 'oil-filter', make: 'Kia', model: 'Seltos', engine: '2.0L', y0: 2021, y1: 2024,
+        title: 'Oil Filter — 2021–2024 Kia Seltos 2.0L',
+        oemBrand: 'Kia (OEM)', oemPart: '26300-35505',
+        rows: [
+          { brand: 'WIX', part: '51334XP', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00C5T79PS?tag=redemptionm06-20' },
+          { brand: 'Hyundai/Kia (OEM)', part: '26300-35505', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B077W4K176?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'PH3593A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3593A+oil+filter') },
+          { brand: 'ECOGARD', part: 'X4459', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ECOGARD+X4459+oil+filter') }
+        ],
+        companion: 'Spin-on — Kia <b>26300-35505</b>, verified FOR THE SELTOS by name (not copied from the Kona). WIX row leads on price and shipping. <b>Trap:</b> FRAM lists two numbers against this filter family — PH3593A is the one published here; the 1.6L Turbo car\'s parts do not carry to this 2.0L. Spark plugs held — retailer-tier candidate only.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Kia', model: 'Seltos', engine: '2.0L', y0: 2021, y1: 2024,
+        title: 'Engine Air Filter — 2021–2024 Kia Seltos 2.0L',
+        oemBrand: 'Kia (OEM)', oemPart: '28113-Q5000',
+        rows: [
+          { brand: 'Kia (OEM)', part: '28113-Q5000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+28113-Q5000+air+filter') },
+          { brand: 'K&N', part: '33-5050', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01MU394WL?tag=redemptionm06-20' },
+          { brand: 'FRAM', part: 'CA12057', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12057+air+filter') },
+          { brand: 'WIX', part: 'WA10420', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10420+air+filter') }
+        ],
+        companion: 'Panel filter — Kia <b>28113-Q5000</b>, the Seltos\'s own headline number (the Kona\'s 28113-F2000 is the platform-mate reference for the same element, but this entry headlines the Kia number verified for the Seltos). OEM leads: no cheaper-and-faster separation was proven among the Seltos-verified rows. No ECOGARD row — ECOGARD\'s own fit list does not name the Seltos.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Kia', model: 'Seltos', engine: '2.0L', y0: 2021, y1: 2024,
+        title: 'Cabin Air Filter — 2021–2024 Kia Seltos',
+        oemBrand: 'Kia (OEM)', oemPart: '97133-J9000',
+        rows: [
+          { brand: 'FRAM', part: 'CF12160', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12160+cabin+filter') },
+          { brand: 'Kia (OEM)', part: '97133-J9000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+97133-J9000+cabin+filter') },
+          { brand: 'WIX', part: 'WP10265', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WP10265+cabin+filter') }
+        ],
+        companion: 'Behind the glove box — Kia <b>97133-J9000</b> (current Kia service kit K2C79-AC001 replaces it), verified FOR THE SELTOS by name — the same physical CF12160-family element as the Kona, under the Seltos\'s own number. No ECOGARD row: its candidate numbers conflict, so that row is held.'
+      },
+      {
+        partId: 'coolant-antifreeze', make: 'Jeep', model: 'Wrangler', y0: 2019, y1: 2023,
+        title: 'Coolant / Antifreeze — 2019–2023 Jeep Wrangler JL (all engines)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68163849AB',
+        rows: [
+          { brand: 'Mopar (OEM)', part: '68163849AB (50/50 Premix)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B017DP43ZC?tag=redemptionm06-20' },
+          { brand: 'Mopar (OEM)', part: '68163848AB (Concentrate)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B017DP433O?tag=redemptionm06-20' }
+        ],
+        companion: 'Mopar <b>10-Year/150,000-Mile OAT</b> coolant meeting spec <b>MS.90032</b> (purple) — the spec in the JL owner\'s manuals and Mopar\'s own owner site. Premix <b>68163849AB</b> leads (ready to pour, lowest verified price); concentrate <b>68163848AB</b> makes two gallons at 50/50 for a flush. <b>Traps:</b> Zerex G05 and Mopar 68048953AC are HOAT — wrong chemistry for this Jeep; Dex-Cool is not MS.90032; never mix OAT with HOAT. No aftermarket row: no maker sheet naming MS.90032 was verified (PEAK OET Purple held).'
+      },
+      {
+        partId: 'front-brake-pads', make: 'Jeep', model: 'Wrangler', engine: '3.6L V6', y0: 2019, y1: 2023,
+        title: 'Front Brake Pads — 2019–2023 Jeep Wrangler JL 3.6L (Heavy Duty package)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68383243AB',
+        rows: [
+          { brand: 'PowerStop', part: '17-1589', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B00QXXOUS6?tag=redemptionm06-20' },
+          { brand: 'Akebono', part: 'ACT1589', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Akebono+ACT1589+brake+pads') },
+          { brand: 'Mopar (OEM)', part: '68383243AB', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68383243AB+brake+pads') }
+        ],
+        qualifier: {
+          question: 'Which front brake package does your Wrangler have?',
+          helpText: 'JL Wranglers were sold with two front brake packages. <b>Heavy Duty</b> (brake codes BR2/BR6 — standard on Sahara and Rubicon) uses a 330 x 28 mm front rotor. <b>Standard</b> (code BRY — mostly Sport / Sport S) uses a 330 x 24 mm rotor. Check the brake code on the door-jamb label or measure the rotor thickness. The heavy-duty pad below is verified; the standard-package pad is NOT verified yet, so it is explained but not sold.',
+          options: [
+            { label: 'Heavy Duty — Sahara / Rubicon (330 x 28 mm front rotor)', useEntry: true },
+            { label: 'Standard — Sport / Sport S (330 x 24 mm front rotor)', note: 'The standard-package (BRY) front pad is <b>not listed yet</b>: no Mopar or maker-catalog source isolates its number, and the one retailer lead points at the older JK pad family, which does not fit. Do NOT order the heavy-duty pad for a standard-package Jeep on a guess — text De a photo of the pad or the VIN door-jamb sticker at 360-772-8205 and he will get the exact number.' }
+          ]
+        },
+        companion: 'Heavy-duty package only (Sahara/Rubicon, 330 x 28 mm rotors) — Mopar <b>68383243AA/AB</b>, FMSI D1589 shape, isolated in TEXTAR\'s own maker cross. PowerStop\'s own Amazon listing for 17-1589 names the JL and leads on price and shipping. <b>Warning:</b> standard-package (Sport/Sport S) Jeeps take a different, not-yet-verified pad — see the package question above.'
+      },
+      {
+        partId: 'rear-brake-pads', make: 'Jeep', model: 'Wrangler', engine: '3.6L V6', y0: 2019, y1: 2023,
+        title: 'Rear Brake Pads — 2019–2023 Jeep Wrangler JL 3.6L (Heavy Duty package)',
+        oemBrand: 'Mopar (OEM)', oemPart: '68386838AD',
+        rows: [
+          { brand: 'Akebono', part: 'ACT2186', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Akebono+ACT2186+brake+pads') },
+          { brand: 'Mopar (OEM)', part: '68386838AD', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68386838AD+brake+pads') }
+        ],
+        qualifier: {
+          question: 'Which rear brake package does your Wrangler have?',
+          helpText: 'Two rear packages cover most JL Wranglers: <b>Standard</b> (code BRY — mostly Sport / Sport S) with a 328 mm rear rotor, and <b>Heavy Duty</b> (codes BR2/BR6 — Sahara / Rubicon) with a 342 mm rear rotor. Measure the rotor or check the brake code on the door-jamb label. <b>2021+ cars with brake codes BR3/BR4/BR5 carry a 350 mm rear rotor — that pad is not verified yet</b> (third option below).',
+          options: [
+            { label: 'Heavy Duty — Sahara / Rubicon (342 mm rear rotor)', useEntry: true },
+            { label: 'Standard — Sport / Sport S (328 mm rear rotor)', oemBrand: 'Mopar (OEM)', oemPart: '68385238AC',
+              rows: [
+                  { brand: 'Akebono', part: 'ACT2172', price: 'See today\'s price', where: 'eBay',
+                    url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Akebono+ACT2172+brake+pads') },
+                  { brand: 'TEXTAR', part: '2613601', price: 'See today\'s price', where: 'eBay',
+                    url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=TEXTAR+2613601+brake+pads') },
+                  { brand: 'Mopar (OEM)', part: '68385238AC', price: 'See today\'s price', where: 'eBay',
+                    url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+68385238AC+brake+pads') }
+              ],
+              note: 'Standard package: Mopar <b>68385238AA to AC</b>, FMSI D2172 — TEXTAR\'s own cross lists only this family plus Akebono ACT2172 for this pad, a clean un-lumped cross.' },
+            { label: '350 mm rear rotor (2021+, brake codes BR3/BR4/BR5)', note: 'This variant is real (a maker\'s own kit listing scopes 2021+ cars with codes BR3/BR4/BR5 to a 350 mm rear rotor) but its pad number is <b>not verified yet</b>, so nothing is sold for it here. Text De a photo of the pad or the VIN door-jamb sticker at 360-772-8205 for the exact number.' }
+          ]
+        },
+        companion: 'Heavy-duty package (342 mm rear rotors) — Mopar <b>68386838AA to AD</b>, FMSI D2186; Akebono\'s catalog data scopes ACT2186 to exactly this 342 mm heavy-duty fitment and leads the rows. Standard-package (328 mm) and 2021+ 350 mm cars differ — see the package question above. Serpentine belts for this Jeep are not listed yet: the published candidates conflict and the 3.6L eTorque uses a dual-belt system, so belts are held rather than guessed.'
       }
 
     ];
