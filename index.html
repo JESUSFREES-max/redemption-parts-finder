@@ -290,7 +290,7 @@
     var MAKES_MODELS = {
       'Toyota': ['Camry', 'Corolla', 'Corolla Cross', 'Corolla Cross Hybrid', 'GR86', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
       'Honda': ['Accord', 'Accord Hybrid', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline', 'Passport'],
-      'Ford': ['F-150', 'Escape', 'Bronco', 'Bronco Sport', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
+      'Ford': ['F-150', 'Escape', 'Bronco', 'Bronco Sport', 'Maverick', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
       'Ram': ['1500', '2500', 'ProMaster'],
@@ -432,6 +432,7 @@
     // Batch 52 (GR86 2022-24 FA24 NEW model x4: oil 90915-YZZS1 US service + SU003-08412 factory with gen-1 SU003-00311/AA130 + YZZN1 traps warned and FRAM omitted on bypass spec, air CHANGED SU003-09025 with gen-1 06405 + TRD PTR03 traps warned, cabin CARRYOVER 88568-37020, plugs CARRYOVER SU003-04931/DENSO ZXE27HBR8 0.8mm with turbo-plug traps warned and NO NGK row; BRZ 2022-24 FA24 NEW model x4 verified separately: oil 15208AA170 with AA130 + AA21A traps warned and FRAM omitted, air 16546AA170 with AA16A trap warned, cabin CARRYOVER 72880AJ010, plugs 22401AA801/DENSO ZXE27HBR8 with AA830 + SILKFR8A6 + FB-plug traps warned; all rows eBay-only — no ASIN exists in the verified catalog for any Batch 52 number) merged 2026-11-27.
     // Batch 53 (WRX 2022-24 VB FA24 Turbo NEW model x4: oil 15208AA170 with AA21A + AA130 traps warned and FRAM omitted on bypass spec, air 16546AA16A shared with Outback family and WRX named in a genuine listing, cabin CORRECTED 72880FL000 — the Forester SK filter, Baldwin bulletin names the 2022 WRX — with FL00A + CF12436/WP10322 traps warned, plugs NGK SILKFR8A6 96698 from the WRX manual with the Subaru-box number withheld and AA970/ZXE27HBR8/ILKAR8H6 traps warned; Atlas Cross Sport 2020-21 NEW model x6 engine-scoped from VW charts TITLED 'Atlas / Atlas Cross Sport': oil 03H-115-562 3.6L + 06K-115-562 2.0T with 562L artifact noted, air 3QF-129-620 + cabin 5Q0-819-644-A shared — plugs HELD for the Cross Sport, retailer-tier only, and 2022-23 HELD for both bodies, no VW chart exists) merged 2026-11-27.
     // Batch 54 (Bronco 2021-24 NEW model x6 from Ford Bronco manuals read for all four years: oil SPLIT 2.3L spin-on FL-910-S vs 2.7L cartridge FL-2062-A with FL-500-S trap warned, air FA-2022 shared with Bronco Sport FA-1939 + Raptor FA-2058 traps warned, cabin FP-93 with FRAM CF12772 REJECTED as the Sport family, plugs engine-scoped SP-594 headline with the 2021 SP-578 manual split + Ford supersession noted per the Ranger precedent and NGK held retailer-only; Bronco Sport 2021-24 NEW model x7 verified BY NAME from its own manuals — it DIFFERS from the Escape in four places: oil FL-910-S both engines all years with NO 2023 thread split, air FA-1939 unchanged with the Escape FA-2065/2064 change warned off, cabin FP-89 2021-22 then FP-100-A 2023-24 with the FP-99 first-printing note, plugs 1.5L SP-550-X merged entry + 2.0L SP-578 2021-only then SP-594 2022-24 with SP-597-X warned off) merged 2026-11-27.
+    // Batch 55 (Maverick 2022-24 NEW model x7 engine-scoped from the Maverick's OWN manuals (2022 + 2024 read directly; 2023 corroborated at identical endpoints, flagged in research): oil FL-910-S both engines with NO thread split — the Escape FL-2127 change arrives on Maverick only in 2025; air SPLIT FA-1939 EcoBoost vs FA-1948 Hybrid with WA10981 warned off the Hybrid and the Escape FA-2065/2064 change warned off entirely; cabin FP-89 every year with the Bronco Sport FP-99/FP-100-A printings warned off; plugs SPLIT SP-594 EcoBoost whole-run (never SP-578/SP-597-X) vs SP-530 Hybrid with the wide 0.049-0.053 gap; FA-1948 aftermarket + Hybrid NGK held) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -8703,6 +8704,106 @@
             url: 'https://www.amazon.com/dp/B084T7SFG3?tag=redemptionm06-20' }
         ],
         companion: 'Set of 4, gap 0.028–0.031 in. The Bronco Sport 2.0L plug changed EARLIER than the Escape\'s: <b>SP-594 from 2022</b> in this car\'s own manuals, and it never takes the Escape\'s SP-597-X in these years. The NGK 95927 row rests on the plug-level NGK verification for SP-578 plus Ford\'s SP-578 to SP-594 supersession — the same pairing this catalog carries on the 2024 Edge.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Maverick', engine: '2.0L EcoBoost', y0: 2022, y1: 2024,
+        title: 'Oil Filter — 2022–2024 Ford Maverick (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'FL-910-S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51348', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51348+oil+filter') },
+          { brand: 'FRAM', part: 'PH3614', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3614+oil+filter') }
+        ],
+        companion: 'Spin-on filter — Motorcraft <b>FL-910-S</b> in the Maverick\'s own manuals for the whole run. <b>Differs from the Escape:</b> the platform-mate Escape\'s 2.0L switched thread (FL-2127) during 2023 — on the Maverick that change does not arrive until 2025 (Ford\'s Oil Quick Reference), so there is NO thread split on a 2022–2024 Maverick. Do not let an Escape listing talk you into FL-2127.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Maverick', engine: '2.5L Hybrid', y0: 2022, y1: 2024,
+        title: 'Oil Filter — 2022–2024 Ford Maverick (2.5L Hybrid)',
+        oemBrand: 'Motorcraft', oemPart: 'FL-910-S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51348', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51348+oil+filter') },
+          { brand: 'FRAM', part: 'PH3614', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3614+oil+filter') }
+        ],
+        companion: 'Spin-on filter — Motorcraft <b>FL-910-S</b>, shared with the EcoBoost in the Maverick manuals. Rows mirror the 2.0L entry.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Maverick', engine: '2.0L EcoBoost', y0: 2022, y1: 2024,
+        title: 'Engine Air Filter — 2022–2024 Ford Maverick (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'FA-1939',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1939', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1939+air+filter') },
+          { brand: 'WIX', part: 'WA10981', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10981+air+filter') }
+        ],
+        companion: 'Panel filter — Motorcraft <b>FA-1939</b> (JX6Z-9601-A) for the whole run in the Maverick manuals. <b>Differs from the Escape:</b> the Escape\'s 2024 change to FA-2065/FA-2064 never happens on the Maverick (FA-2064 is a 2025 Maverick number). WIX ties WA10981 to JX6Z-9601-A in its own application data.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Maverick', engine: '2.5L Hybrid', y0: 2022, y1: 2024,
+        title: 'Engine Air Filter — 2022–2024 Ford Maverick (2.5L Hybrid)',
+        oemBrand: 'Motorcraft', oemPart: 'FA-1948',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1948', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1948+air+filter') }
+        ],
+        companion: 'Panel filter — the Hybrid takes its OWN element, Motorcraft <b>FA-1948</b> (LX6Z-9601-A), in the Maverick manuals. <b>Warning:</b> the EcoBoost\'s FA-1939 and its WIX WA10981 cross do NOT fit the Hybrid. OEM row only: the aftermarket crosses seen (FRAM CA12813, WIX WA11407) rest on retailer-tier or internally inconsistent sources and are held.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Maverick', y0: 2022, y1: 2024,
+        title: 'Cabin Air Filter — 2022–2024 Ford Maverick',
+        oemBrand: 'Motorcraft', oemPart: 'FP-89',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-89', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-89+cabin+filter') },
+          { brand: 'FRAM', part: 'CF12772', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12772+cabin+filter') }
+        ],
+        companion: 'Motorcraft <b>FP-89</b> in EVERY Maverick manual 2022–2024 — this truck never got the Bronco Sport\'s FP-99/FP-100-A printing changes (FP-100-A exists only as a service supersession; FP-131 is 2025-only). FRAM\'s fitment lists CF12772 for the Maverick 2022–2026 by name.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Maverick', engine: '2.0L EcoBoost', y0: 2022, y1: 2024,
+        title: 'Spark Plugs — 2022–2024 Ford Maverick (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'SP-594',
+        rows: [
+          { brand: 'NGK', part: '95927', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95927+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-594', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-594+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-594 (6-pack)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B084T7SFG3?tag=redemptionm06-20' }
+        ],
+        companion: 'Set of 4, gap 0.028–0.031 in. The Maverick 2.0L takes <b>SP-594 for the whole run</b> in its own manuals — never SP-578, and SP-597-X is a 2025+ number here. NGK\'s data (via NAPA\'s NGK listing) names the Maverick 2022–2024 for its 95927 / ILTR6S8 equivalent.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Maverick', engine: '2.5L Hybrid', y0: 2022, y1: 2024,
+        title: 'Spark Plugs — 2022–2024 Ford Maverick (2.5L Hybrid)',
+        oemBrand: 'Motorcraft', oemPart: 'SP-530',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-530', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B009TKP5AW?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'SP-530', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-530+spark+plug') }
+        ],
+        companion: 'Set of 4, gap 0.049–0.053 in. — the Hybrid plug gap is much wider than the EcoBoost\'s; do not cross them. The Maverick manuals print <b>SP-530</b> for the Hybrid (SP-530-X is ford.com\'s current-packaging form of the same plug). No NGK row: the NGK equivalent rests on a same-engine Escape Hybrid feed, not a Maverick-by-name read, and is held at this catalog\'s standard.'
       }
 
     ];
