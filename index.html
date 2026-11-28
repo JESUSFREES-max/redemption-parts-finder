@@ -299,7 +299,7 @@
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder', 'Z'],
       'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy', 'Ascent', 'BRZ', 'WRX'],
       'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid', 'Palisade', 'Kona'],
-      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul', 'Telluride', 'Seltos'],
+      'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul', 'Telluride', 'Seltos', 'K5'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
       'Volkswagen': ['Jetta', 'Passat', 'Tiguan', 'Atlas', 'Atlas Cross Sport', 'Golf'],
       'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
@@ -438,6 +438,7 @@
     // Batch 58 (Kona 2018-23 2.0L x3: oil 26300-35505 WIX 51334XP Amazon first, air 28113-F2000 ECOGARD XA10578 Amazon first, cabin 97133-D1000 FRAM CF12160 first, plugs HELD retailer-tier only with the 1.6T SILZKR8E8G trap; Seltos 2021-24 2.0L x3 verified BY NAME: oil 26300-35505, air 28113-Q5000 OEM first (different headline than Kona), cabin 97133-J9000 FRAM first, plugs HELD independently; Wrangler JL depth: coolant MS.90032 OAT premix 68163849AB Amazon first with HOAT traps warned, front pads QUALIFIER heavy-duty 68383243AB PowerStop 17-1589 Amazon first with BRY standard variant note-only HELD, rear pads QUALIFIER heavy-duty 68386838AD Akebono ACT2186 first + standard 68385238AC ACT2172 variant + 350mm BR3/4/5 note-only HELD; serpentine belts HELD both engines) merged 2026-11-28.
     // Batch 59 (Legacy 2020-24 x5 verified BY NAME: oil 15208AA21A OEM Amazon first with AA170 turbo trap + FRAM bypass omission, air 16546AA16A, cabin 72880FL00A — the FL000 Forester filter is the TRAP here, plugs engine-split 2.5L 22401AA940/NGK 91899 vs 2.4T NGK SILKFR8A6 96698 with Subaru box number withheld; Civic 2022-25 11th gen x6: oil PLM-A02 carryover, air engine-split 1.5T CHANGED 17220-64A-A00 vs 2.0L carryover 17220-5BA-A00, cabin 80291-TF3-E01 superseding TBA-A11 ECOGARD Amazon first, plugs engine-split 1.5T CHANGED 12290-6A0-A01/NGK 92411 with 59B-003 trap vs 2.0L carryover 12290-RDF-A01/NGK 96964; HELD: Civic Hybrid 2025 scope + Type R scope, Legacy ECOGARD rows) merged 2026-11-28.
     // Batch 60 (Acura RDX 2019-24 x3 + plugs 2022-24 only, MDX 2014-20 x5 with air split at 2016; oil PLM-A02 both cars maker-verified BY NAME, RDX air 17220-5MS-H00 maker data, RDX cabin 80292-TBA-A11 CF11182 family with TZ5/CF10134 trap, RDX plugs 12290-6A0-A01/NGK DILKAR8P8SY from the 2022 factory manual — 2019-21 plugs HELD on a conflicting secondary claim, MDX air 17220-5J6-A10 2016-20 / -A00 2014-15, MDX cabin 80292-SDA-407 CF10134 family, MDX plugs 12290-R9P-A01/NGK DILZKR7B11G manual + DENSO cross; HELD: MDX 2022+ air/cabin OEM numbers, RDX air aftermarket crosses) merged 2026-11-28.
+    // Batch 61 (Sonata DN8 2020-23 x5 + Kia K5 DL3 2021-24 x5, K5 added to picker; oil CARTRIDGE split by engine 2.5 26350-2S000->2S001 vs 1.6T 26350-2M000 — WIX WL10514 vs WL10473 proves the split, spin-on 26300-35505 trap warned; air 28113-L1000 both engines both cars verified BY NAME, Sonata Hybrid L5100 trap; cabin 97133-L1000 = L0000 same filter noted, no fake split; plugs 1.6T only 18875-08085/NGK SILZKR8J8GS 95077 with 94595 trap — 2.5 plugs HELD both cars, no primary source; K5 2.5 scoped '2.5L Turbo' GT only in the US) merged 2026-11-28.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -9565,6 +9566,173 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+VFXUHC22FG+spark+plug') }
         ],
         companion: 'Set of 6. The MDX factory owner\'s manual specifies <b>NGK DILZKR7B11G</b> — Acura <b>12290-R9P-A01</b> (NGK stock 95350); DENSO\'s own cross catalog ties this OEM number to its VFXUHC22FG. The NGK row is the factory plug itself, so it is first pick. Mind the <b>G</b> suffix — DILZKR7B11GS is a different plug.'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Sonata', engine: '2.5L', y0: 2020, y1: 2023,
+        title: 'Oil Filter — 2020–2023 Hyundai Sonata (2.5L)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26350-2S000',
+        rows: [
+          { brand: 'Hyundai/Kia (OEM)', part: '26350-2S001', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0DH32KFYG?tag=redemptionm06-20' },
+          { brand: 'ECOGARD', part: 'S11914', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ECOGARD+S11914+oil+filter') },
+          { brand: 'WIX', part: 'WL10514', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10514+oil+filter') },
+          { brand: 'FRAM', part: 'CH12811', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH12811+oil+filter') }
+        ],
+        companion: 'CARTRIDGE service kit (element + cap drain plug + O-ring + washer) — Hyundai <b>26350-2S000</b>, superseded by <b>26350-2S001</b> (the kit you receive today will likely say 2S001), verified for the Sonata 2.5L in Hyundai dealer data and ECOGARD\'s maker article naming this car. <b>Warnings:</b> the old Hyundai spin-on 26300-35505 does NOT fit this generation, and the 1.6L Turbo takes a different cartridge (26350-2M000).'
+      },
+      {
+        partId: 'oil-filter', make: 'Hyundai', model: 'Sonata', engine: '1.6L Turbo', y0: 2020, y1: 2023,
+        title: 'Oil Filter — 2020–2023 Hyundai Sonata (1.6L Turbo)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '26350-2M000',
+        rows: [
+          { brand: 'ECOGARD', part: 'S11830', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B08K3VZLW5?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '26350-2M000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+26350-2M000+oil+filter') },
+          { brand: 'WIX', part: 'WL10473', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10473+oil+filter') }
+        ],
+        companion: 'CARTRIDGE service kit — Hyundai <b>26350-2M000</b>, verified for the Sonata 1.6T in Hyundai dealer data and maker catalogs (ECOGARD S11830 article names the Sonata; WIX WL10473 names Sonata 2020–23 1.6L). ECOGARD Amazon row first. Drain the cap plug first (it locks into the element with a twist, plus a cotter pin). <b>Warning:</b> the 2.5L cartridge 26350-2S000 is a different element — never substitute.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Hyundai', model: 'Sonata', y0: 2020, y1: 2023,
+        title: 'Engine Air Filter — 2020–2023 Hyundai Sonata (2.5L & 1.6L Turbo)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '28113-L1000',
+        rows: [
+          { brand: 'WIX', part: 'WA11090', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B09T4QG64B?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '28113-L1000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+28113-L1000+air+filter') },
+          { brand: 'K&N', part: '33-5108', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=K&N+33-5108+air+filter') }
+        ],
+        companion: 'Panel filter — Hyundai <b>28113-L1000</b> serves BOTH engines, verified in Hyundai dealer-catalog data and maker crosses (WIX WA11090 and K&N 33-5108 name the Sonata). WIX Amazon row first. <b>Warning:</b> the Sonata Hybrid takes 28113-L5100 — a different filter.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Hyundai', model: 'Sonata', y0: 2020, y1: 2023,
+        title: 'Cabin Air Filter — 2020–2023 Hyundai Sonata',
+        oemBrand: 'Hyundai (OEM)', oemPart: '97133-L1000',
+        rows: [
+          { brand: 'Capume', part: '97133-L1000', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BLGQHF22?tag=redemptionm06-20' },
+          { brand: 'Hyundai (OEM)', part: '97133-L1000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+97133-L1000+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12820', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12820+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box — Hyundai <b>97133-L1000</b>; the Hyundai dealer catalog also lists this same filter as <b>97133-L0000</b> — one filter, two catalog numbers, NOT a production split (FRAM\'s CF12820 maker cross covers both numbers for this car).'
+      },
+      {
+        partId: 'spark-plugs', make: 'Hyundai', model: 'Sonata', engine: '1.6L Turbo', y0: 2020, y1: 2023,
+        title: 'Spark Plugs — 2020–2023 Hyundai Sonata (1.6L Turbo)',
+        oemBrand: 'Hyundai (OEM)', oemPart: '18875-08085',
+        rows: [
+          { brand: 'Hyundai/Kia (OEM)', part: '18875-08085', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B08LH4ZL1Z?tag=redemptionm06-20' },
+          { brand: 'NGK', part: '95077 (SILZKR8J8GS)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95077+SILZKR8J8GS+spark+plug') },
+          { brand: 'Hyundai (OEM)', part: '18875-08085', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Hyundai+18875-08085+spark+plug') }
+        ],
+        companion: 'Set of 4, Laser Iridium, gap 0.7–0.8 mm. Hyundai <b>18875-08085</b> = <b>NGK SILZKR8J8GS (stock 95077)</b> for the Smartstream 1.6 T-GDi, per NGK engine-family data and the Hyundai factory plug specification for this car. <b>Warnings:</b> the old Gamma 1.6T plug NGK 94595 does NOT fit this engine despite retailer listings, and the 2.5L plug is a different, still-unverified number — no 2.5L plug is published yet rather than guessed.'
+      },
+      {
+        partId: 'oil-filter', make: 'Kia', model: 'K5', engine: '2.5L Turbo', y0: 2021, y1: 2024,
+        title: 'Oil Filter — 2021–2024 Kia K5 (2.5L Turbo GT)',
+        oemBrand: 'Kia (OEM)', oemPart: '26350-2S000',
+        rows: [
+          { brand: 'Hyundai/Kia (OEM)', part: '26350-2S001', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0DH32KFYG?tag=redemptionm06-20' },
+          { brand: 'ECOGARD', part: 'S11914', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ECOGARD+S11914+oil+filter') },
+          { brand: 'WIX', part: 'WL10514', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10514+oil+filter') },
+          { brand: 'FRAM', part: 'CH12811', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH12811+oil+filter') }
+        ],
+        companion: 'CARTRIDGE service kit (element + cap drain plug + O-ring + washer) — Kia <b>26350-2S000</b>, superseded by <b>26350-2S001</b>, verified FOR THE K5 by name in ECOGARD\'s maker article. <b>Note:</b> in the US the 2021–2024 K5 2.5 is ONLY the 2.5T GT — there is no 2.5L NA K5 in these years. <b>Warnings:</b> the old Kia spin-on 26300-35505 does NOT fit, and the 1.6L Turbo takes a different cartridge (26350-2M000).'
+      },
+      {
+        partId: 'oil-filter', make: 'Kia', model: 'K5', engine: '1.6L Turbo', y0: 2021, y1: 2024,
+        title: 'Oil Filter — 2021–2024 Kia K5 (1.6L Turbo)',
+        oemBrand: 'Kia (OEM)', oemPart: '26350-2M000',
+        rows: [
+          { brand: 'Kia (OEM)', part: '26350-2M000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+26350-2M000+oil+filter') },
+          { brand: 'ECOGARD', part: 'S11830', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=ECOGARD+S11830+oil+filter') },
+          { brand: 'WIX', part: 'WL10473', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WL10473+oil+filter') }
+        ],
+        companion: 'CARTRIDGE service kit — Kia <b>26350-2M000</b>, verified FOR THE K5 by name in WIX\'s WL10473 cross naming K5 2021–24 1.6L (ECOGARD S11830 is the maker equivalent). Drain the cap plug first (twist-lock + cotter pin design). <b>Warning:</b> the 2.5T cartridge 26350-2S000 is a different element — never substitute.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Kia', model: 'K5', y0: 2021, y1: 2024,
+        title: 'Engine Air Filter — 2021–2024 Kia K5 (1.6L Turbo & 2.5L Turbo)',
+        oemBrand: 'Kia (OEM)', oemPart: '28113-L1000',
+        rows: [
+          { brand: 'WIX', part: 'WA11090', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B09T4QG64B?tag=redemptionm06-20' },
+          { brand: 'Kia (OEM)', part: '28113-L1000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+28113-L1000+air+filter') },
+          { brand: 'K&N', part: '33-5108', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=K&N+33-5108+air+filter') }
+        ],
+        companion: 'Panel filter — Kia <b>28113-L1000</b> serves BOTH K5 engines, verified FOR THE K5 by name (WIX\'s own WA11090 listing names the K5; K&N 33-5108 crosses this OEM number for the K5). WIX Amazon row first.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Kia', model: 'K5', y0: 2021, y1: 2024,
+        title: 'Cabin Air Filter — 2021–2024 Kia K5',
+        oemBrand: 'Kia (OEM)', oemPart: '97133-L1000',
+        rows: [
+          { brand: 'Capume', part: '97133-L1000', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B0BLGQHF22?tag=redemptionm06-20' },
+          { brand: 'Kia (OEM)', part: '97133-L1000', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+97133-L1000+cabin+air+filter') },
+          { brand: 'FRAM', part: 'CF12820', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12820+cabin+air+filter') }
+        ],
+        companion: 'Behind the glove box — Kia <b>97133-L1000</b> (the same filter Hyundai catalogs also as 97133-L0000 — one filter, two numbers, NOT a split), verified for the K5 in FRAM\'s CF12820 maker application naming the 2021–2024 K5.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Kia', model: 'K5', engine: '1.6L Turbo', y0: 2021, y1: 2024,
+        title: 'Spark Plugs — 2021–2024 Kia K5 (1.6L Turbo)',
+        oemBrand: 'Kia (OEM)', oemPart: '18875-08085',
+        rows: [
+          { brand: 'Hyundai/Kia (OEM)', part: '18875-08085', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B08LH4ZL1Z?tag=redemptionm06-20' },
+          { brand: 'NGK', part: '95077 (SILZKR8J8GS)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95077+SILZKR8J8GS+spark+plug') },
+          { brand: 'Kia (OEM)', part: '18875-08085', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Kia+18875-08085+spark+plug') }
+        ],
+        companion: 'Set of 4, Laser Iridium, gap 0.7–0.8 mm. Kia <b>18875-08085</b> = <b>NGK SILZKR8J8GS (stock 95077)</b> for the Smartstream 1.6 T-GDi, per NGK engine-family data (the K5 1.6T is that engine family). <b>Warnings:</b> the old Gamma 1.6T plug NGK 94595 does NOT fit despite retailer listings, and the 2.5T GT plug is a different, still-unverified number — no 2.5T plug is published yet rather than guessed.'
       }
 
     ];
