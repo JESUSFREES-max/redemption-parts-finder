@@ -288,7 +288,7 @@
   <script>
     // ================= DATA =================
     var MAKES_MODELS = {
-      'Toyota': ['Camry', 'Corolla', 'Corolla Cross', 'Corolla Cross Hybrid', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
+      'Toyota': ['Camry', 'Corolla', 'Corolla Cross', 'Corolla Cross Hybrid', 'GR86', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
       'Honda': ['Accord', 'Accord Hybrid', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline', 'Passport'],
       'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
@@ -297,7 +297,7 @@
       'Dodge': ['Charger', 'Challenger', 'Durango', 'Grand Caravan', 'Journey'],
       'Jeep': ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Gladiator', 'Renegade'],
       'Nissan': ['Altima', 'Sentra', 'Rogue', 'Maxima', 'Frontier', 'Titan', 'Pathfinder'],
-      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy', 'Ascent'],
+      'Subaru': ['Outback', 'Forester', 'Crosstrek', 'Impreza', 'Legacy', 'Ascent', 'BRZ'],
       'Hyundai': ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Accent', 'Ioniq Hybrid', 'Palisade'],
       'Kia': ['Optima', 'Forte', 'Sorento', 'Sportage', 'Soul', 'Telluride'],
       'Mazda': ['Mazda3', 'Mazda6', 'CX-5', 'CX-9'],
@@ -429,6 +429,7 @@
     // Batch 49 (Corolla Cross 2022-25 2.0L GAS NEW model x4: oil 90915-YZZN1/WL10332 with 51394 trap warned, air 17801-F0020 GAS with Hybrid F2060 trap warned, cabin 87139-0E040 + 0R030 both Toyota-chart verified, plugs 90919-01297/DENSO FC20HR-Q8 with Hybrid 01289 trap warned; Atlas 2018-21 3.6L x3: oil 03H-115-562/MANN HU 8009 z, air 3QF-129-620, cabin 5Q0-819-644-A — plugs + 2022-23 HELD; Jetta 2019-21 1.4T x3: oil 04E-115-561-H/MANN W 712/95, air 5QM-129-620-B OEM-only, cabin qualifier 644-A/669 — plugs + 1.5T HELD) merged 2026-11-27.
     // Batch 50 (Grand Cherokee WL 2021-25 3.6L x3 NEW gen: oil 68191349AC carryover verified FOR THE WL with 5.0 qt note, air 68542769AA NEW with WK2 trap warned, plugs SP225755AB/NGK 7751 — cabin HELD 68608193AA vs 68542125AA conflict; Corolla Cross Hybrid 2023-25 NEW model x4: oil YZZN1 shared, air 17801-F2060/24040 split with gas F0020 trap warned, cabin shared 0E040/0R030, plugs 90919-01289/FC16HR-Q8 with gas 01297 mirror trap; Atlas 2.0T 2018-21 x4 engine-scoped: oil 06K-115-562/MANN HU 6013 z with 562L artifact resolved, air + cabin shared with 3.6L, plugs NGK ILFER7B8EG 95749 with VW-box number withheld + PLFER trap warned; Batch 49 Atlas/Jetta entries gained engine scope) merged 2026-11-27.
 // Batch 51 (Accord 2023-25 1.5T x4 NEW gen: oil PLM-A02 unchanged, air CHANGED 17220-64A-A00 with 6A0 + Hybrid 6MA traps warned, cabin CHANGED 80291-TF3-E01 superseding TBA-A11 with SDA-407 trap warned, plugs UNCHANGED 12290-6A0-A01/NGK 92411 with CR-V contrast; Accord Hybrid 2023-25 NEW model x4: oil shared, air 17220-6MA-J01 OEM-only, cabin shared TF3-E01, plugs 12290-6MA-J01/NGK DILZKAR7G11Y stock number withheld; Accord depth x2: coolant Type 2 OL999-9011 2018-25 with Toyota SLLC2 trap warned, CVT HCF-2 08200-HCF2 2018-25 with 08200-9020 bottle flag + Type 2.0/DW-1 traps warned; Wrangler JL 2.0L Turbo x4 engine-scoped: oil SPIN-ON 04892339AA/4892339BE with 3.6L cartridge trap + 5W-30 spec, air + cabin shared with 3.6L verified by name, plugs 68292346AA/NGK 90219 ILZKR7G7G 0.026 gap 60k with SP225755AB + SILZKR7B11 traps warned; existing Wrangler 3.6L x4 gained engine scope; Gladiator JT 3.6L x4 verified BY NAME: oil 68191349AC, air 68257030AA, plugs SP225755AB/NGK 7751 via TSB 09-013-20, cabin 68301863AA scoped 2020-2022 ONLY with supersession changeover held) merged 2026-11-27.
+    // Batch 52 (GR86 2022-24 FA24 NEW model x4: oil 90915-YZZS1 US service + SU003-08412 factory with gen-1 SU003-00311/AA130 + YZZN1 traps warned and FRAM omitted on bypass spec, air CHANGED SU003-09025 with gen-1 06405 + TRD PTR03 traps warned, cabin CARRYOVER 88568-37020, plugs CARRYOVER SU003-04931/DENSO ZXE27HBR8 0.8mm with turbo-plug traps warned and NO NGK row; BRZ 2022-24 FA24 NEW model x4 verified separately: oil 15208AA170 with AA130 + AA21A traps warned and FRAM omitted, air 16546AA170 with AA16A trap warned, cabin CARRYOVER 72880AJ010, plugs 22401AA801/DENSO ZXE27HBR8 with AA830 + SILKFR8A6 + FB-plug traps warned; all rows eBay-only — no ASIN exists in the verified catalog for any Batch 52 number) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -8226,6 +8227,145 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Mopar+SP225755AB+spark+plug') }
         ],
         companion: 'Set of 6. Mopar <b>SP225755AB</b> = NGK 7751 — FCA TSB 09-013-20 Rev. A names the (JT) Gladiator for this plug family, and dealer Gladiator tables list SP225755AB by name. 100,000-mile interval. Check the gap against the under-hood emissions label.'
+      },
+      {
+        partId: 'oil-filter', make: 'Toyota', model: 'GR86', y0: 2022, y1: 2024,
+        title: 'Oil Filter — 2022–2024 Toyota GR86 (2.4L FA24)',
+        oemBrand: 'Toyota (OEM)', oemPart: '90915-YZZS1',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '90915-YZZS1', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+90915-YZZS1+oil+filter') },
+          { brand: 'Toyota (OEM)', part: 'SU003-08412', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+SU003-08412+oil+filter') },
+          { brand: 'WIX', part: '57055', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57055+oil+filter') }
+        ],
+        companion: 'Spin-on filter on top of the engine — Toyota\'s charts list factory filter <b>SU003-08412</b> for the FA24, with US service replacement <b>90915-YZZS1</b> (the number a US Toyota counter hands over; same application). <b>Traps:</b> gen-1 SU003-00311 / Subaru 15208AA130 do NOT carry over, and ordinary Toyota spin-ons (90915-YZZN1 family) are NOT this filter — this engine takes the Subaru-style M20x1.5 filter. FRAM rows are omitted on purpose: the FRAM 7317 family runs a ~13 psi bypass vs this engine\'s ~23 psi spec; WIX 57055 (~27 psi) is the closest aftermarket match. Change the drain-plug crush washer (Subaru 803916010) with the filter.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Toyota', model: 'GR86', y0: 2022, y1: 2024,
+        title: 'Engine Air Filter — 2022–2024 Toyota GR86 (2.4L FA24)',
+        oemBrand: 'Toyota (OEM)', oemPart: 'SU003-09025',
+        rows: [
+          { brand: 'Toyota (OEM)', part: 'SU003-09025', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+SU003-09025+air+filter') },
+          { brand: 'FRAM', part: 'CA12289', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12289+air+filter') },
+          { brand: 'WIX', part: 'WA10807', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10807+air+filter') }
+        ],
+        companion: 'Panel filter — the OE number CHANGED for gen 2: Toyota <b>SU003-09025</b> (Toyota\'s air-filter chart, FA24 row). <b>Traps:</b> gen-1 SU003-06405 is NOT this car\'s OE number (it survives only inside aftermarket cross lists), and PTR03-18222 is a TRD performance accessory, not the standard element. The FRAM/WIX rows are the makers\' shared panel for this car, fit-listed for the 2022–2024 GR86 by name.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Toyota', model: 'GR86', y0: 2022, y1: 2024,
+        title: 'Cabin Air Filter — 2022–2024 Toyota GR86',
+        oemBrand: 'Toyota (OEM)', oemPart: '88568-37020',
+        rows: [
+          { brand: 'Toyota (OEM)', part: '88568-37020', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+88568-37020+cabin+filter') },
+          { brand: 'FRAM', part: 'CF10549', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF10549+cabin+filter') },
+          { brand: 'WIX', part: '24212', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24212+cabin+filter') },
+          { brand: 'MANN-FILTER', part: 'CU 1827', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+1827+cabin+filter') }
+        ],
+        companion: 'The cabin filter CARRIES OVER from gen 1 — Toyota\'s cabin chart lists <b>88568-37020</b> (also boxed as SU003-02112) for the FA20 2017–2020 AND the FA24 2022– rows. <b>Warning:</b> the Camry/Corolla 87139-family filters do NOT fit this car. FRAM\'s current number for this OE family is CF10549 (older CF10285 listings are superseded).'
+      },
+      {
+        partId: 'spark-plugs', make: 'Toyota', model: 'GR86', y0: 2022, y1: 2024,
+        title: 'Spark Plugs — 2022–2024 Toyota GR86 (2.4L FA24)',
+        oemBrand: 'Toyota (OEM)', oemPart: 'SU003-04931',
+        rows: [
+          { brand: 'DENSO', part: 'ZXE27HBR8', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+ZXE27HBR8+spark+plug') },
+          { brand: 'DENSO', part: 'VXEBH27', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+VXEBH27+spark+plug') },
+          { brand: 'Toyota (OEM)', part: 'SU003-04931', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Toyota+SU003-04931+spark+plug') }
+        ],
+        companion: 'Set of 4. The plug did NOT change with the new engine: Toyota <b>SU003-04931</b> = <b>DENSO ZXE27HBR8</b>, gap 0.031 in. (0.8 mm) — both owner\'s manuals and Toyota\'s plug chart list the same box for FA20 and FA24. Use only iridium plugs; do not adjust the gap. <b>Critical traps:</b> NGK ILKAR8H6 / 22401AA830 is the turbo FA20 (WRX) plug at 0.6 mm, and NGK SILKFR8A6 is the TURBO FA24 plug — neither fits this naturally-aspirated car. No NGK row exists for this plug — none is listed rather than inventing one.'
+      },
+      {
+        partId: 'oil-filter', make: 'Subaru', model: 'BRZ', y0: 2022, y1: 2024,
+        title: 'Oil Filter — 2022–2024 Subaru BRZ (2.4L FA24)',
+        oemBrand: 'Subaru (OEM)', oemPart: '15208AA170',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '15208AA170', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+15208AA170+oil+filter') },
+          { brand: 'WIX', part: '57055', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+57055+oil+filter') }
+        ],
+        companion: 'Spin-on filter on top of the engine — Subaru <b>15208AA170</b>, the gen-2 BRZ number (genuine Subaru listing data names the 2022–2026 BRZ for this exact filter). <b>Traps:</b> gen-1 15208AA130 does NOT carry over, and the turbo-FA24 cars\' 15208AA21A family is NOT this filter. FRAM rows omitted on purpose (~13 psi 7317-family bypass vs Subaru\'s ~23 psi spec); WIX 57055 (~27 psi) is the closest aftermarket match. Change the crush washer 803916010 with the filter. <b>Careful:</b> 15208AA170 (oil) vs 16546AA170 (air) — same suffix, different parts.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Subaru', model: 'BRZ', y0: 2022, y1: 2024,
+        title: 'Engine Air Filter — 2022–2024 Subaru BRZ (2.4L FA24)',
+        oemBrand: 'Subaru (OEM)', oemPart: '16546AA170',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '16546AA170', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+16546AA170+air+filter') },
+          { brand: 'WIX', part: 'WA10807', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10807+air+filter') },
+          { brand: 'FRAM', part: 'CA12289', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CA12289+air+filter') }
+        ],
+        companion: 'Panel filter — Subaru <b>16546AA170</b> (K&N\'s maker catalog names this OE number for the BRZ; WIX fit data names the 2022–2025 BRZ for WA10807). <b>Traps:</b> 16546AA16A is the Outback/Forester/Ascent element — NOT the BRZ — and 15208AA170 is this car\'s OIL filter, not its air filter.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Subaru', model: 'BRZ', y0: 2022, y1: 2024,
+        title: 'Cabin Air Filter — 2022–2024 Subaru BRZ',
+        oemBrand: 'Subaru (OEM)', oemPart: '72880AJ010',
+        rows: [
+          { brand: 'Subaru (OEM)', part: '72880AJ010', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+72880AJ010+cabin+filter') },
+          { brand: 'FRAM', part: 'CF10549', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF10549+cabin+filter') },
+          { brand: 'WIX', part: '24212', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+24212+cabin+filter') },
+          { brand: 'MANN-FILTER', part: 'CU 1827', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=MANN+CU+1827+cabin+filter') }
+        ],
+        companion: 'The cabin filter CARRIES OVER from gen 1 — Subaru <b>72880AJ010</b>, the same element Toyota boxes as 88568-37020 (FRAM\'s CF10549 reference list names all three OE numbers together, and its fit list names the BRZ 2013–2024). <b>Warning:</b> the Impreza/Forester/Outback cabin filters (72880FG000 / FL00A / FL000 families) do NOT fit this car.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Subaru', model: 'BRZ', y0: 2022, y1: 2024,
+        title: 'Spark Plugs — 2022–2024 Subaru BRZ (2.4L FA24)',
+        oemBrand: 'Subaru (OEM)', oemPart: '22401AA801',
+        rows: [
+          { brand: 'DENSO', part: 'ZXE27HBR8', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+ZXE27HBR8+spark+plug') },
+          { brand: 'DENSO', part: 'VXEBH27', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=DENSO+VXEBH27+spark+plug') },
+          { brand: 'Subaru (OEM)', part: '22401AA801', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Subaru+22401AA801+spark+plug') }
+        ],
+        companion: 'Set of 4. Subaru <b>22401AA801</b> = <b>DENSO ZXE27HBR8</b> — the BRZ owner\'s manual specifies this DENSO type for the FA24 at 0.031 in. (0.8 mm), and DENSO\'s own cross-reference pairs 22401AA800/AA801 with ZXE27HBR8 (VXEBH27 is its Iridium Tough counterpart). Do not adjust the gap. <b>Critical traps:</b> NGK ILKAR8H6 / 22401AA830 (turbo FA20) and SILKFR8A6 (turbo FA24) are NOT this car, and the FB-engine plugs from this catalog\'s other Subarus (22401AA940, 22401AA781) are different engines entirely.'
       }
 
     ];
