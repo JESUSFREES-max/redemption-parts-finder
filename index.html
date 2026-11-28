@@ -290,7 +290,7 @@
     var MAKES_MODELS = {
       'Toyota': ['Camry', 'Corolla', 'Corolla Cross', 'Corolla Cross Hybrid', 'GR86', 'Prius', 'RAV4', 'Tacoma', 'Tundra', 'Highlander', 'Sienna', 'Avalon', '4Runner', 'C-HR'],
       'Honda': ['Accord', 'Accord Hybrid', 'Civic', 'CR-V', 'Pilot', 'Odyssey', 'Fit', 'HR-V', 'Ridgeline', 'Passport'],
-      'Ford': ['F-150', 'Escape', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
+      'Ford': ['F-150', 'Escape', 'Bronco', 'Bronco Sport', 'Explorer', 'Fusion', 'Focus', 'Mustang', 'Edge', 'Ranger'],
       'Chevrolet': ['Silverado 1500', 'Equinox', 'Malibu', 'Tahoe', 'Traverse', 'Colorado', 'Impala'],
       'GMC': ['Sierra 1500', 'Acadia', 'Yukon', 'Canyon'],
       'Ram': ['1500', '2500', 'ProMaster'],
@@ -431,6 +431,7 @@
 // Batch 51 (Accord 2023-25 1.5T x4 NEW gen: oil PLM-A02 unchanged, air CHANGED 17220-64A-A00 with 6A0 + Hybrid 6MA traps warned, cabin CHANGED 80291-TF3-E01 superseding TBA-A11 with SDA-407 trap warned, plugs UNCHANGED 12290-6A0-A01/NGK 92411 with CR-V contrast; Accord Hybrid 2023-25 NEW model x4: oil shared, air 17220-6MA-J01 OEM-only, cabin shared TF3-E01, plugs 12290-6MA-J01/NGK DILZKAR7G11Y stock number withheld; Accord depth x2: coolant Type 2 OL999-9011 2018-25 with Toyota SLLC2 trap warned, CVT HCF-2 08200-HCF2 2018-25 with 08200-9020 bottle flag + Type 2.0/DW-1 traps warned; Wrangler JL 2.0L Turbo x4 engine-scoped: oil SPIN-ON 04892339AA/4892339BE with 3.6L cartridge trap + 5W-30 spec, air + cabin shared with 3.6L verified by name, plugs 68292346AA/NGK 90219 ILZKR7G7G 0.026 gap 60k with SP225755AB + SILZKR7B11 traps warned; existing Wrangler 3.6L x4 gained engine scope; Gladiator JT 3.6L x4 verified BY NAME: oil 68191349AC, air 68257030AA, plugs SP225755AB/NGK 7751 via TSB 09-013-20, cabin 68301863AA scoped 2020-2022 ONLY with supersession changeover held) merged 2026-11-27.
     // Batch 52 (GR86 2022-24 FA24 NEW model x4: oil 90915-YZZS1 US service + SU003-08412 factory with gen-1 SU003-00311/AA130 + YZZN1 traps warned and FRAM omitted on bypass spec, air CHANGED SU003-09025 with gen-1 06405 + TRD PTR03 traps warned, cabin CARRYOVER 88568-37020, plugs CARRYOVER SU003-04931/DENSO ZXE27HBR8 0.8mm with turbo-plug traps warned and NO NGK row; BRZ 2022-24 FA24 NEW model x4 verified separately: oil 15208AA170 with AA130 + AA21A traps warned and FRAM omitted, air 16546AA170 with AA16A trap warned, cabin CARRYOVER 72880AJ010, plugs 22401AA801/DENSO ZXE27HBR8 with AA830 + SILKFR8A6 + FB-plug traps warned; all rows eBay-only — no ASIN exists in the verified catalog for any Batch 52 number) merged 2026-11-27.
     // Batch 53 (WRX 2022-24 VB FA24 Turbo NEW model x4: oil 15208AA170 with AA21A + AA130 traps warned and FRAM omitted on bypass spec, air 16546AA16A shared with Outback family and WRX named in a genuine listing, cabin CORRECTED 72880FL000 — the Forester SK filter, Baldwin bulletin names the 2022 WRX — with FL00A + CF12436/WP10322 traps warned, plugs NGK SILKFR8A6 96698 from the WRX manual with the Subaru-box number withheld and AA970/ZXE27HBR8/ILKAR8H6 traps warned; Atlas Cross Sport 2020-21 NEW model x6 engine-scoped from VW charts TITLED 'Atlas / Atlas Cross Sport': oil 03H-115-562 3.6L + 06K-115-562 2.0T with 562L artifact noted, air 3QF-129-620 + cabin 5Q0-819-644-A shared — plugs HELD for the Cross Sport, retailer-tier only, and 2022-23 HELD for both bodies, no VW chart exists) merged 2026-11-27.
+    // Batch 54 (Bronco 2021-24 NEW model x6 from Ford Bronco manuals read for all four years: oil SPLIT 2.3L spin-on FL-910-S vs 2.7L cartridge FL-2062-A with FL-500-S trap warned, air FA-2022 shared with Bronco Sport FA-1939 + Raptor FA-2058 traps warned, cabin FP-93 with FRAM CF12772 REJECTED as the Sport family, plugs engine-scoped SP-594 headline with the 2021 SP-578 manual split + Ford supersession noted per the Ranger precedent and NGK held retailer-only; Bronco Sport 2021-24 NEW model x7 verified BY NAME from its own manuals — it DIFFERS from the Escape in four places: oil FL-910-S both engines all years with NO 2023 thread split, air FA-1939 unchanged with the Escape FA-2065/2064 change warned off, cabin FP-89 2021-22 then FP-100-A 2023-24 with the FP-99 first-printing note, plugs 1.5L SP-550-X merged entry + 2.0L SP-578 2021-only then SP-594 2022-24 with SP-597-X warned off) merged 2026-11-27.
     // Batch 21 (Tucson + Equinox 1.5L + Crosstrek standard fours, with year/engine splits) merged 2026-11-25.
     // Batch 17 (32 verified 12V battery entries for catalog vehicles + footer KJV/30-mile fixes + Step 2 catalog marks + useful fallbacks) merged 2026-11-24.
     // FITMENT FLEXIBILITY (De, 2026-11-24): an entry may carry an optional
@@ -8515,6 +8516,193 @@
                  encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Volkswagen+5Q0-819-644-A+cabin+air+filter') }
         ],
         companion: 'Behind the glove box — VW <b>5Q0 819 644 A</b>, a single vehicle-level part in the combined \'Atlas / Atlas Cross Sport\' charts, same for both engines. Rows mirror the Atlas entry.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Bronco', engine: '2.3L EcoBoost', y0: 2021, y1: 2024,
+        title: 'Oil Filter — 2021–2024 Ford Bronco (2.3L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'FL-910-S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51348', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51348+oil+filter') },
+          { brand: 'FRAM', part: 'PH3614', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3614+oil+filter') }
+        ],
+        companion: 'Spin-on filter — Motorcraft <b>FL-910-S</b> in every Bronco owner\'s manual 2021–2024 for the 2.3L. <b>Trap:</b> the 2.7L takes a cartridge (FL-2062-A) — the two Bronco engines do NOT share an oil filter, and FL-500-S fits neither.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Bronco', engine: '2.7L EcoBoost', y0: 2021, y1: 2024,
+        title: 'Oil Filter — 2021–2024 Ford Bronco (2.7L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'FL-2062-A',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-2062-A', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B08XPWBJYZ?tag=redemptionm06-20' },
+          { brand: 'WIX', part: 'WL10050', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B01KHL0LU0?tag=redemptionm06-20' },
+          { brand: 'Motorcraft', part: 'FL-2062-A (FT4Z-6731-A)', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FL-2062-A+oil+filter') },
+          { brand: 'FRAM', part: 'CH11955', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CH11955+oil+filter') }
+        ],
+        companion: 'CARTRIDGE element on top of the engine — Motorcraft <b>FL-2062-A</b> (Ford FT4Z-6731-A) in every Bronco manual 2021–2024 for the 2.7L; the manuals print the -A suffix from 2021 on. Rows mirror this catalog\'s F-150 2.7L entry for the same filter. <b>Trap:</b> FL-910-S (the 2.3L\'s spin-on) and FL-500-S do NOT fit this engine.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Bronco', y0: 2021, y1: 2024,
+        title: 'Engine Air Filter — 2021–2024 Ford Bronco (2.3L & 2.7L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'FA-2022',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-2022', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-2022+air+filter') },
+          { brand: 'Premium Guard', part: 'PA99846', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Premium+Guard+PA99846+air+filter') }
+        ],
+        companion: 'Panel filter — Motorcraft <b>FA-2022</b> (Ford MB3Z-9601-A) for BOTH engines in every Bronco manual 2021–2024. <b>Traps:</b> the Bronco SPORT\'s FA-1939 does NOT fit the full-size Bronco, and the Raptor\'s FA-2058 is a different filter again. Premium Guard\'s row is from their own Bronco guide. WIX/FRAM crosses are held — interchange-list corroboration only, no maker-catalog confirmation.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Bronco', y0: 2021, y1: 2024,
+        title: 'Cabin Air Filter — 2021–2024 Ford Bronco',
+        oemBrand: 'Motorcraft', oemPart: 'FP-93',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-93', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-93+cabin+filter') },
+          { brand: 'Premium Guard', part: 'PC99806P', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Premium+Guard+PC99806P+cabin+filter') }
+        ],
+        companion: 'Motorcraft <b>FP-93</b> (Ford MB3Z-19N619-A) in every Bronco manual 2021–2024. <b>Trap:</b> FRAM CF12772 belongs to the Bronco Sport / Explorer FP-89 family — retailer fitment lists conflate the two Broncos; it is NOT this truck\'s filter. Premium Guard keeps the families separate and their PC99806P is the maker-verified cross.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Bronco', engine: '2.3L EcoBoost', y0: 2021, y1: 2024,
+        title: 'Spark Plugs — 2021–2024 Ford Bronco (2.3L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'SP-594',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-594', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-594+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-594 (6-pack)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B084T7SFG3?tag=redemptionm06-20' }
+        ],
+        companion: 'Set of 4, gap 0.028–0.031 in. The Bronco manuals list <b>SP-578 for 2021</b> and <b>SP-594 for 2022–2024</b>; Ford supersedes SP-578 to SP-594, so SP-594 is the plug to order for every year — the same treatment this catalog uses on the Ranger, which shares this engine. Rows mirror the Ranger entry. No NGK row: the NGK equivalent rests on retailer data only for the Bronco and is held.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Bronco', engine: '2.7L EcoBoost', y0: 2021, y1: 2024,
+        title: 'Spark Plugs — 2021–2024 Ford Bronco (2.7L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'SP-594',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-594', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-594+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-594 (6-pack)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B084T7SFG3?tag=redemptionm06-20' }
+        ],
+        companion: 'Set of 6, gap 0.028–0.031 in. Same manual split as the 2.3L: <b>SP-578 for 2021</b>, <b>SP-594 for 2022–2024</b>, and Ford\'s supersession makes SP-594 the orderable plug for all years. No NGK row — retailer-tier only for the Bronco, held.'
+      },
+      {
+        partId: 'oil-filter', make: 'Ford', model: 'Bronco Sport', y0: 2021, y1: 2024,
+        title: 'Oil Filter — 2021–2024 Ford Bronco Sport (1.5L & 2.0L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'FL-910-S',
+        rows: [
+          { brand: 'Motorcraft', part: 'FL-910-S', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B004A2BCWY?tag=redemptionm06-20' },
+          { brand: 'WIX', part: '51348', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+51348+oil+filter') },
+          { brand: 'FRAM', part: 'PH3614', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+PH3614+oil+filter') }
+        ],
+        companion: 'Spin-on filter — Motorcraft <b>FL-910-S</b> for BOTH engines in every Bronco Sport manual 2021–2024, read by name. <b>Differs from the Escape:</b> the platform-mate Escape\'s 2.0L switched to the FL-2127 thread in 2023 — the Bronco Sport did NOT; there is no thread split on this car, and FL-2127 does not belong here.'
+      },
+      {
+        partId: 'engine-air-filter', make: 'Ford', model: 'Bronco Sport', y0: 2021, y1: 2024,
+        title: 'Engine Air Filter — 2021–2024 Ford Bronco Sport (1.5L & 2.0L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'FA-1939',
+        rows: [
+          { brand: 'Motorcraft', part: 'FA-1939', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FA-1939+air+filter') },
+          { brand: 'WIX', part: 'WA10981', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=WIX+WA10981+air+filter') }
+        ],
+        companion: 'Panel filter — Motorcraft <b>FA-1939</b> (Ford JX6Z-9601-A) for both engines, UNCHANGED through the 2024 manual. <b>Differs from the Escape:</b> the Escape\'s 2024 change to FA-2065/FA-2064 does NOT apply to the Bronco Sport. WIX ties its WA10981 to JX6Z-9601-A in its own application data.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Bronco Sport', y0: 2021, y1: 2022,
+        title: 'Cabin Air Filter — 2021–2022 Ford Bronco Sport',
+        oemBrand: 'Motorcraft', oemPart: 'FP-89',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-89', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-89+cabin+filter') },
+          { brand: 'FRAM', part: 'CF12772', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12772+cabin+filter') }
+        ],
+        companion: 'Motorcraft <b>FP-89</b> in the 2021–2022 Bronco Sport manuals. FRAM\'s own fitment names the Bronco Sport 2021–2026 for CF12772, covering both cabin eras of this car.'
+      },
+      {
+        partId: 'cabin-air-filter', make: 'Ford', model: 'Bronco Sport', y0: 2023, y1: 2024,
+        title: 'Cabin Air Filter — 2023–2024 Ford Bronco Sport',
+        oemBrand: 'Motorcraft', oemPart: 'FP-100-A',
+        rows: [
+          { brand: 'Motorcraft', part: 'FP-100-A', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+FP-100-A+cabin+filter') },
+          { brand: 'FRAM', part: 'CF12772', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=FRAM+CF12772+cabin+filter') }
+        ],
+        companion: 'Motorcraft <b>FP-100-A</b> — the current service number (2023 Third-Printing manual + 2024 manual). Note: the 2023 First-Printing manual listed FP-99 for the same housing; Ford superseded it to FP-100-A within the model year, so FP-99 is not sold as a separate entry. FRAM CF12772 covers both eras per FRAM\'s own Bronco Sport fitment.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Bronco Sport', engine: '1.5L EcoBoost', y0: 2021, y1: 2024,
+        title: 'Spark Plugs — 2021–2024 Ford Bronco Sport (1.5L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'SP-550-X',
+        rows: [
+          { brand: 'Motorcraft', part: 'SP-550-X', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-550-X+spark+plug') }
+        ],
+        companion: 'Set of 3 (this is a 3-cylinder), gap 0.031 in. The manuals print <b>SP-550 for 2021–2022</b> and <b>SP-550-X for 2023–2024</b> — the -X is Ford\'s current-packaging form of the same plug (ford.com lists SKU SP550X), so order SP-550-X for every year. <b>Differs from the Escape:</b> this car never takes SP-597-X in these years. No NGK row — the 1.5L NGK equivalent rests on conflicting retailer feeds and is held.'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Bronco Sport', engine: '2.0L EcoBoost', y0: 2021, y1: 2021,
+        title: 'Spark Plugs — 2021 Ford Bronco Sport (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'SP-578',
+        rows: [
+          { brand: 'NGK', part: '95927', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95927+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-578', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-578+spark+plug') }
+        ],
+        companion: 'Set of 4, gap 0.028–0.031 in. The 2021 Bronco Sport manual lists <b>SP-578</b> for the 2.0L — one year only; from 2022 the manual plug is SP-594 (next entry). NGK 95927 (ILTR6S8) is the verified equivalent, mirroring this catalog\'s Escape 2.0L entry. Rows follow that entry\'s order (NGK first).'
+      },
+      {
+        partId: 'spark-plugs', make: 'Ford', model: 'Bronco Sport', engine: '2.0L EcoBoost', y0: 2022, y1: 2024,
+        title: 'Spark Plugs — 2022–2024 Ford Bronco Sport (2.0L EcoBoost)',
+        oemBrand: 'Motorcraft', oemPart: 'SP-594',
+        rows: [
+          { brand: 'NGK', part: '95927', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=NGK+95927+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-594', price: 'See today\'s price', where: 'eBay',
+            url: 'https://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5339257663&mpre=' +
+                 encodeURIComponent('https://www.ebay.com/sch/i.html?_nkw=Motorcraft+SP-594+spark+plug') },
+          { brand: 'Motorcraft', part: 'SP-594 (6-pack)', price: 'See today\'s price', where: 'Amazon',
+            url: 'https://www.amazon.com/dp/B084T7SFG3?tag=redemptionm06-20' }
+        ],
+        companion: 'Set of 4, gap 0.028–0.031 in. The Bronco Sport 2.0L plug changed EARLIER than the Escape\'s: <b>SP-594 from 2022</b> in this car\'s own manuals, and it never takes the Escape\'s SP-597-X in these years. The NGK 95927 row rests on the plug-level NGK verification for SP-578 plus Ford\'s SP-578 to SP-594 supersession — the same pairing this catalog carries on the 2024 Edge.'
       }
 
     ];
